@@ -48,7 +48,7 @@ $ dot(x) = f(t, x) $
 
 #figure(
   image("./images/block/closed.drawio.png", width: 40%),
-  caption: [closed-loop],
+  caption: [闭环控制器],
   supplement: [图]
 )
 
@@ -71,7 +71,7 @@ $ dot(x) = f(t, x) $
     [电容], [法拉（F）], [$C$], [$Q/U$],
     [电感], [亨利（H）], [$L$], [$U/I^′$],
  ),
-  caption: [],
+  caption: [电学单元],
   supplement: [表],
   kind: table
 )
@@ -100,19 +100,17 @@ e_L = L frac(dif I, dif t) = L I^′ $
 
 == RLC 电路
 
-#h(2em)RLC 电路是一种由电阻 R、电感 L、电容 C 组成的电路结构。
+#h(2em) RLC 电路是一种由电阻 R、电感 L、电容 C 组成的电路结构。
 
 #figure(
   image("./images/model/circuit-rlc.drawio.png", width: 40%),
-  caption: [RLC],
+  caption: [ RLC],
   supplement: [图]
 )
 
 定义上图区域 1 和区域 2 的电流方向均为顺时针，则
 
-- 电容 C 上端为电压为正，下端电压为负- 电感 L 左端为电压为正，右端电压为负- 电阻 R 左端为电压为正，右端电压为负],
-  indent: 1.2em
-)
+- 电容 C 上端为电压为正，下端电压为负- 电感 L 左端为电压为正，右端电压为负- 电阻 R 左端为电压为正，右端电压为负
 
 由 KVL
 
@@ -170,7 +168,7 @@ $ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
     [磁感应强度], [特斯拉（T）], [$B$],
     [磁通量], [韦伯（Wb）],[$ϕ$]
  ),
-  caption: [],
+  caption: [电磁学基础],
   supplement: [表],
   kind: table
 )
@@ -218,7 +216,7 @@ $ P_("gauge") = P_("abs") - P_a = ρ g h $
 
 #figure(
   image("./images/model/liquid.drawio.png", width: 40%),
-  caption: [liquid],
+  caption: [流体系统],
   supplement: [图]
 )
 
@@ -274,3 +272,22 @@ $ frac(dif P, dif t) = ρ g frac(dif h, dif t) = frac(ρ g, A)(q_("in") - q_("ou
 由上，可得
 
 $ frac(dif h, dif t) = q_("in")/A - frac(g h, A R) $
+
+#pagebreak(weak: true)
+
+= 辅助知识
+
+== 自动化系统
+
+#h(2em) 一个典型的自动化系统由 4 部分构成
+
++ Sense (collect data)
++ Perceive (interpret data)
++ Plan (find path)
++ Act (follow path)
+
+#h(2em) 其中，前 2 步的工作并称为传感融合（sensor fusion）。其作用有 3 个
+
++ 提高数据质量（降低噪声）
++ 估计未量测状态
++ 提高覆盖率

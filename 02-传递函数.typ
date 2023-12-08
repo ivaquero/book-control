@@ -58,7 +58,7 @@ $ frac(1, Δ T) Δ T = 1 $
   tablex(
     columns: 2,
     align: center + horizon,
-    inset: 7pt,
+    inset: 6pt,
     auto-vlines: false,
     [$f(t)$], [$x(t)$],
     [$δ(t)_Δ$],
@@ -68,7 +68,7 @@ $ frac(1, Δ T) Δ T = 1 $
     [$A δ(t - i Δ T)_Δ$],
     [$A h_Δ(t - i Δ T)$],
  ),
-  caption: [],
+  caption: [输入与输出],
   supplement: [表],
   kind: table
 )
@@ -174,8 +174,6 @@ $ e^(-j ω t) = cos ω t - i sin ω t $
 
 $ σ > - a $
 
-#pagebreak(weak: true)
-
 = 常用 Laplace 变换
 <常用-Laplace-变换>
 
@@ -183,15 +181,15 @@ $ σ > - a $
 
 对函数$f(t) = e^(-a t)$
 
-$ ℒ[e^(-a t)] &= ∫_0^∞ e^(-a t) e^(-s t) dif t\
- &= ∫_0^∞ e^(-(a + s))t dif t\
- &= -[frac(1, a + s)e^(-(a + s))t]bar.v_0^∞\
- &= (lim_(t → ∞) - frac(1, a + s) e^(-(a + s))t) - (- frac(1, a + s))\
- &= frac(1, a + s) $
+$ ℒ[e^(-a t)] &= ∫_0^∞ e^(-a t) e^(-s t) dif t
+ = ∫_0^∞ e^(-(a + s))t dif t
+ = frac(1, a + s) $
 
 显然，θ
 
 $ ℒ[1] = 1/s $
+
+#pagebreak(weak: true)
 
 == 三角函数
 
@@ -214,8 +212,6 @@ $ ℒ[sin(a t)] &= ℒ (frac(e^(i a t), 2 i)) - ℒ (frac(e^(-i a t), 2 i))\
  &= 1/2i (ℒ[e^(i a t)]) - ℒ[e^(-i a t)] (\
  &= 1/2i (frac(1, s - a i) - frac(1, s + a i))\
  &= frac(a, s^2 + a^2) $
-
-#pagebreak(weak: true)
 
 #h(2em) 同理
 
@@ -261,8 +257,6 @@ $ ℒ[∫_0^t f(τ) dif t] = 1/s F(s) $
 
 $ ℒ (- frac(1, s + a)) = e^(-a t) $
 
-#pagebreak(weak: true)
-
 #h(2em) 三角函数
 
 $ sin 2 t &= frac(e^(-2 i t) - e^(2 i t), 2 i)\
@@ -284,6 +278,8 @@ cos 2 t &= frac(e^(-2 i t) + e^(2 i t), 2) $
 #h(2em) 由 KCL 有
 
 $ e^′ = L i^″ + R i^′ + 1/C i $
+
+#pagebreak(weak: true)
 
 #h(2em) 令初始条件为$0$，等式两边进行导数的 Laplace 变换，得
 
@@ -310,8 +306,6 @@ $ I(s) = frac(s, L s^2 + R s + 1/C) 𝔼[s] $
   caption: [流体系统],
   supplement: [图]
 )
-
-#pagebreak(weak: true)
 
 #h(2em) 由上图
 
@@ -343,9 +337,7 @@ $ lim_(t → ∞) h = C R/g $
 
 #figure(
   image("./images/model/liquid-feedback.drawio.png", width: 40%),
-  caption: [
-    闭环反馈
-  ],
+  caption: [闭环反馈],
   supplement: [图]
 )
 
@@ -372,8 +364,6 @@ $ X = V frac(D G, 1 + H D G) $
 #h(2em) 对一阶方程
 
 $ x ̇(t) + a x(t) = u(t) $
-
-#pagebreak(weak: true)
 
 #h(2em) 当$x(0) = 0$时，有
 

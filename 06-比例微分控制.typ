@@ -19,9 +19,7 @@
 
 #figure(
   image("./images/block/closed-1.drawio.png", width: 40%),
-  caption: [
-    closed-root
-  ],
+  caption: [闭环控制],
   supplement: [图]
 )
 
@@ -59,9 +57,7 @@ $ G(s) = frac(N(s), D(s)) = frac(∑_(i=1)^m (s - z_i), ∑_(j=1)^n (s - p_j)) $
 
 #figure(
   image("./images/model/vibration.drawio.png", width: 40%),
-  caption: [
-    vibration
-  ],
+  caption: [弹簧阻尼系统],
   supplement: [图]
 )
 
@@ -108,6 +104,7 @@ $ K(σ) = 1 = ζ $
 
 == 几何性质
 <几何性质>
+
 对复数
 
 - $z_1 = σ_1 + j ω_1 = r_1 e^(i θ_1)$
@@ -137,15 +134,13 @@ $ G(s) = frac(N(s), D(s)) $
 
 #figure(
   image("./images/block/closed-2.drawio.png", width: 40%),
-  caption: [
-    closed-lead
-  ],
+  caption: [闭环系统],
   supplement: [图]
 )
 
 - 极点：$p_1 = 0$和$p_2 = -2$
 - 零点：无
-- 渐近线：$σ_a = (-2 + 0 - 0))/(2 - 0)) = -1$
+- 渐近线：$σ_a = (-2 + 0 - 0)/(2 - 0) = -1$
 - 夹角：$θ_a = π/2$
 
 绘制出图像，对$K$分析
@@ -172,9 +167,7 @@ $ C(t) = C e^(-σ_a t) sin ω_n t $
 
 #figure(
   image("./images/block/compens-lead-1.drawio.png", width: 40%),
-  caption: [
-    closed-lead
-  ],
+  caption: [PD 控制],
   supplement: [图]
 )
 
@@ -237,8 +230,8 @@ $ e_(s s) = frac(D(0), D(0)) + K N(0) * z/p $
   当$p = 0$，$e_(s s) → 0$，$H(s) = 1 + z/s$，此为比例积分控制。
 ]
 
-= πD 控制器
-<πd-控制器>
+= PID 控制器
+<PID-控制器>
 
 == 控制途径
 <控制途径>
@@ -257,10 +250,10 @@ $ u = k_p e + k_I ∫e dif t + k_D frac(dif e, dif t) $
 
 $ U(s) = (k_p + k_I 1/s + k_D s) 𝔼[s] $
 
-由此得到的 πD 控制兼具了以下两种控制的优点
+由此得到的 PID 控制兼具了以下两种控制的优点
 
 - PD 控制：提高稳定性，改善瞬态响应
-- π 控制：降低稳态误差
+- PI 控制：降低稳态误差
 
 == Cauchy 幅角原理
 <Cauchy-幅角原理>
@@ -279,7 +272,7 @@ $ U(s) = (k_p + k_I 1/s + k_D s) 𝔼[s] $
     [极点], [$ϕ_2$], [$-ϕ_2$], [$v_2$], [$1/v_2$],
     [零点 + 极点], [$ϕ_1, ϕ_2$], [$ϕ_1 - ϕ_2$], [$v_1, v_2$], [$v_1/v_2$],
  ),
-  caption: [],
+  caption: [幅角],
   supplement: [表],
   kind: table
 )
@@ -299,7 +292,11 @@ $ U(s) = (k_p + k_I 1/s + k_D s) 𝔼[s] $
 
 对如下系统
 
-![sensor](./images/ch07/sensor.drawio.png)
+#figure(
+  image("images/block/sensor.drawio.png", width: 40%),
+  caption: "传感器",
+  supplement: [图]
+)
 
 - 开环传递函数：$G(s)H(s)$
 - 闭环传递函数：$G(s)/(1+G(s)H(s))$

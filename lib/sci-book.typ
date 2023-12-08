@@ -90,7 +90,7 @@
     }
   }
 
-  // set figure.caption(separator: none)
+  set figure.caption(separator: none)
 
   show figure: it => align(center, block(breakable: figure-break)[
     #it.body#h(0.35em)#it.caption

@@ -66,9 +66,7 @@ $ frac(M(s), U(s) + D(s)) = frac(1, 7000 s + 100) $
 
 #figure(
   image("./images/block/prop.drawio.png", width: 40%),
-  caption: [
-    prop
-  ],
+  caption: [比例控制],
   supplement: [图]
 )
 
@@ -80,6 +78,7 @@ $ u = k_p e $
 
 == 引入比例
 <引入比例>
+
 这里，有
 
 $ [k_p(R - M) + D] frac(1, 7000 s + 10 α) = M $
@@ -128,9 +127,7 @@ $ lim_(t → ∞) x(t) = lim_(s → 0) s X(s) $
 
 #figure(
   image("./images/model/vibration.drawio.png", width: 40%),
-  caption: [
-    vibration
-  ],
+  caption: [弹簧阻尼系统],
   supplement: [图]
 )
 
@@ -176,9 +173,7 @@ $ lim_(t → ∞) x(t) = lim_(s → 0) c/s frac(s, m s^2 + B s + k) = c/k $
 
 #figure(
   image("./images/block/prop-simple.drawio.png", width: 40%),
-  caption: [
-    prop-simple
-  ],
+  caption: [弹簧阻尼系统框图],
   supplement: [图]
 )
 

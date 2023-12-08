@@ -23,13 +23,14 @@
     columns: 4,
     align: center + horizon,
     inset: 4pt,
+    auto-vlines: false,
     [∀x ∈ D - {0}], [Abbr.], [V(0)], [V(x)],
     [正定], [PD], [0], [$>$],
     [半正定], [PSD], [0], [$≥$],
     [负定], [ND], [0], [$<$],
     [半负定], [NSD], [0], [$≤$],
  ),
-  caption: [],
+  caption: [Lyapunov 稳定性],
   supplement: [表],
   kind: table
 )
@@ -51,7 +52,11 @@
 
 $ ∑F_x = m a_x = l dot.double(θ) $
 
-![pendulum](./images/ch10/pendulum.drawio.png)
+#figure(
+  image("images/model/pendulum.drawio.png", width: 40%),
+  caption: "钟摆",
+  supplement: [图]
+)
 
 即
 
@@ -82,8 +87,7 @@ mat(delim: "[", frac(∂V, ∂x_1), frac(∂V, ∂x_2))
 mat(delim: "[", f_1; f_2) \ &=
 mat(delim: "[", m g l sin(x_1) & m l^2 x_2)
 mat(delim: "[", x_2 \ -frac(g, L) sin(x_1)) \
-&= 0
-$
+&= 0 $
 
 又
 
@@ -99,8 +103,7 @@ $
 
 对有摩擦单摆系统
 
-$ dot.double(θ) + frac(g, L) sin θ + frac(k, m) dot(θ) = 0
-$
+$ dot.double(θ) + frac(g, L) sin θ + frac(k, m) dot(θ) = 0 $
 
 令
 
@@ -146,9 +149,7 @@ $ dot(x) = f(x, ϕ (x)) $
 
 #figure(
   image("./images/block/feedback.drawio.png", width: 40%),
-  caption: [
-    feedback
-  ],
+  caption: [反馈],
   supplement: [图]
 )
 
@@ -195,9 +196,7 @@ $ m dot.double(x) + α x^3 = F $
 
 #figure(
   image("./images/model/vibration-nl.drawio.png", width: 40%),
-  caption: [
-    vibration-nl
-  ],
+  caption: [非线性弹簧系统],
   supplement: [图]
 )
 

@@ -20,9 +20,7 @@
 
 #figure(
   image("./images/vehicle/unicycle.drawio.png", width: 40%),
-  caption:[
-    unicycle
-  ],
+  caption:[独轮车],
   supplement: [图]
 )
 
@@ -136,9 +134,7 @@ $ 𝒖^* ∈ Ω $
 
 #figure(
   image("./images/vehicle/drone.drawio.png", width: 40%),
-  caption:[
-    drone
-  ],
+  caption:[无人机],
   supplement: [图]
 )
 
