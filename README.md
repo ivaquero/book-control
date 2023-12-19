@@ -17,7 +17,7 @@
 
 - Typst
   - [ctheorems](https://github.com/sahasatvik/typst-theorems): v1.0.0
-  - [tablex](https://github.com/PgBiel/typst-tablex): v0.0.6
+  - [tablex](https://github.com/PgBiel/typst-tablex): v0.0.7
 
 ## 一些说明
 
