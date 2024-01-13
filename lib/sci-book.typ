@@ -41,6 +41,8 @@
       linebreaks: "optimized"
   )
   set block(above: 1em, below: 0.5em)
+  set list(indent: 1.2em)
+  set enum(indent: 1.2em)
 
   let font = {
     if lang == "en" {"Arial"}

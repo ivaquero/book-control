@@ -59,6 +59,14 @@ $ frac(1, Δ T) Δ T = 1 $
     columns: 2,
     align: center + horizon,
     inset: 6pt,
+    map-hlines: v => (
+      if v.y > 1 and v.y < 4 {
+        return (..v, stroke: color.rgb("#CCC"))
+      }
+      else {
+        return (..v, stroke: color.rgb("#000"))
+      }
+    ),
     auto-vlines: false,
     [$f(t)$], [$x(t)$],
     [$δ(t)_Δ$],

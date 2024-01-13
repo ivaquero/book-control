@@ -178,6 +178,14 @@ mat(delim: "[", z(t)_1; z(t)_2) $
     columns: 4,
     align: center + horizon,
     inset: 4pt,
+    map-hlines: v => (
+      if v.y > 1 and v.y < 4 {
+        return (..v, stroke: color.rgb("#CCC"))
+      }
+      else {
+        return (..v, stroke: color.rgb("#000"))
+      }
+    ),
     auto-vlines: false,
     [$λ_1 λ_2$], [$λ_1 + λ_2$], [点类型], [稳定性],
     [$> 0$], [$< 0$], [node], [✓],
@@ -196,11 +204,19 @@ mat(delim: "[", z(t)_1; z(t)_2) $
     columns: 3,
     align: center + horizon,
     inset: 4pt,
-  auto-vlines: false,
-  [$λ_(1, 2)$], [点类型], [稳定性],
-  [$a > 0$], [focus], [×],
-  [$a < 0$], [focus], [✓],
-  [$a = 0$], [center], [✓⁻],
+    map-hlines: v => (
+      if v.y > 1 and v.y < 4 {
+        return (..v, stroke: color.rgb("#CCC"))
+      }
+      else {
+        return (..v, stroke: color.rgb("#000"))
+      }
+    ),
+    auto-vlines: false,
+    [$λ_(1, 2)$], [点类型], [稳定性],
+    [$a > 0$], [focus], [×],
+    [$a < 0$], [focus], [✓],
+    [$a = 0$], [center], [✓⁻],
 ),
   caption: [复数根],
   supplement: [表],

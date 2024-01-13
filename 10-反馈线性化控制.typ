@@ -23,6 +23,14 @@
     columns: 4,
     align: center + horizon,
     inset: 4pt,
+    map-hlines: v => (
+      if v.y > 1 and v.y < 5 {
+        return (..v, stroke: color.rgb("#CCC"))
+      }
+      else {
+        return (..v, stroke: color.rgb("#000"))
+      }
+    ),
     auto-vlines: false,
     [∀x ∈ D - {0}], [Abbr.], [V(0)], [V(x)],
     [正定], [PD], [0], [$>$],
@@ -53,7 +61,7 @@
 $ ∑F_x = m a_x = l dot.double(θ) $
 
 #figure(
-  image("images/model/pendulum.drawio.png", width: 40%),
+  image("images/model/pendulum.drawio.png", width: 10%),
   caption: "钟摆",
   supplement: [图]
 )
@@ -72,7 +80,11 @@ $ dot.double(θ) + frac(g, L) sin θ = 0 $
 - $x_2 = dot(x)_1 = dot(θ)$
 - $dot(x)_2 = -frac(g, L) sin(x_1)$
 
-又$E = K("kinetic") + P("potential")$，于是令
+又
+
+$ E = K("kinetic") + P("potential") $
+
+于是令
 
 $
 V &= E = frac(1, 2) m v^2 + m g h \

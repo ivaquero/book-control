@@ -62,6 +62,14 @@ $ dot(x) = f(t, x) $
     columns: 4,
     align: center + horizon,
     inset: 4pt,
+    map-hlines: v => (
+      if v.y > 1 and v.y < 7 {
+        return (..v, stroke: color.rgb("#CCC"))
+      }
+      else {
+        return (..v, stroke: color.rgb("#000"))
+      }
+    ),
     auto-vlines: false,
     [], [单位], [符号], [定义公式],
     [电量], [库仑（C）], [$Q$], [],
@@ -163,6 +171,14 @@ $ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
     columns: 3,
     align: center + horizon,
     inset: 4pt,
+    map-hlines: v => (
+      if v.y > 1 and v.y < 3 {
+        return (..v, stroke: color.rgb("#CCC"))
+      }
+      else {
+        return (..v, stroke: color.rgb("#000"))
+      }
+    ),
     auto-vlines: false,
     [], [单位], [符号],
     [磁感应强度], [特斯拉（T）], [$B$],

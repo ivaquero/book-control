@@ -169,6 +169,14 @@ $ lim_(t → ∞) e ≤ sqrt(ɛ/k) $
     columns: 7,
     align: center + horizon,
     inset: 4pt,
+    map-hlines: v => (
+      if v.y > 1 and v.y < 6 {
+        return (..v, stroke: color.rgb("#CCC"))
+      }
+      else {
+        return (..v, stroke: color.rgb("#000"))
+      }
+    ),
     auto-vlines: false,
     [Name], [$u_(a u x)$], [$ɛ$], [稳态误差], [收敛速度],
     [瞬态输入], [稳态输入],
