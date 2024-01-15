@@ -1,4 +1,3 @@
-#import "lib/mathmod.typ": *
 #import "lib/sci-book.typ": *
 #show: doc => conf(
   title: "附录A：Fourier 变换",

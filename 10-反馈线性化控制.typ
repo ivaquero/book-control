@@ -1,4 +1,3 @@
-#import "lib/mathmod.typ": *
 #import "lib/sci-book.typ": *
 #show: doc => conf(
   title: "反馈线性化控制",
