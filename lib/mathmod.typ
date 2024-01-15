@@ -1,5 +1,5 @@
 // theorems
-#import "ctheorems.typ": *
+#import "@preview/ctheorems:1.1.0": *
 
 #let terms = (
   "def": "定义",

@@ -16,13 +16,20 @@
 ### 依赖包
 
 - Typst
-  - [ctheorems](https://github.com/sahasatvik/typst-theorems): v1.0.0
-  - [tablex](https://github.com/PgBiel/typst-tablex): v0.0.7
+  - [ctheorems](https://github.com/sahasatvik/typst-theorems): v1.1.0
+  - [tablex](https://github.com/PgBiel/typst-tablex): v0.0.8
+
+为保证正常编译，请参考 [typst-packages](https://github.com/typst/packages) 上的说明，在如下路径下克隆 `https://github.com/typst/packages` 仓库
+
+- Linux：
+  - `$XDG_DATA_HOME/typst`
+  - `~/.local/share/typst`
+- macOS：`~/Library/Application Support/typst`
+- Windows：`%APPDATA%/typst`
 
 ## 一些说明
 
 目前存在样式的样式问题
 
 - 图表
-  - 题头重复
   - 部分标题缺失
