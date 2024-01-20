@@ -94,7 +94,7 @@ $
 
 $
 dot(V)(x) = ∇V_f &=
-mat(delim: "[", frac(∂V, ∂x_1), frac(∂V, ∂x_2))
+mat(delim: "[", pdv(V, x_1), pdv(V, x_2))
 mat(delim: "[", f_1; f_2) \ &=
 mat(delim: "[", m g l sin(x_1) & m l^2 x_2)
 mat(delim: "[", x_2 \ -frac(g, L) sin(x_1)) \
@@ -125,7 +125,7 @@ $ dot.double(θ) + frac(g, L) sin θ + frac(k, m) dot(θ) = 0 $
 
 $
 dot(V)(x) = ∇V_f &=
-mat(delim: "[", frac(∂V, ∂x_1) & frac(∂V, ∂x_2))
+mat(delim: "[", pdv(V, x_1) & pdv(V, x_2))
 mat(delim: "[", f_1; f_2) \ &=
 mat(delim: "[", m g l sin(x_1), m l^2 x_2)
 mat(delim: "[", x_2; -frac(g, L)sin(x_1) - frac(k, m)x_2) \
@@ -185,7 +185,7 @@ $ dot(x) = x^2 - x^3 + u $
 
 求导，得
 
-$ dot(V)= frac(∂V, ∂x) dv(x, t) = x dot(x) = x(x^2 - x^3 + u) = x^3 - x^4 + x u $
+$ dot(V)= pdv(V, x) dv(x, t) = x dot(x) = x(x^2 - x^3 + u) = x^3 - x^4 + x u $
 
 由于$-x^4$负定，则为得到稳定点，简单方法是使$x^3 + x u$负定或为$0$，显然可令
 
@@ -231,7 +231,7 @@ $ dot(e) = dot(x)_(1 d) - dot(x)_1 = dot(x)_(1 d) - x_2 $
 
 又令$V = 1/2 e^2$，则
 
-$ dot(V)_1 = frac(∂V_1, ∂e)⋅dv(e, t) = e dot(e) = e (dot(x)_(1 d) - x_2) $
+$ dot(V)_1 = pdv(V_1, e)⋅dv(e, t) = e dot(e) = e (dot(x)_(1 d) - x_2) $
 
 == 引入中间输入
 <引入中间输入>
