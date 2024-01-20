@@ -24,7 +24,7 @@ $ u(t) = cases(delim: "{", 0 & t = 0, 1 & t > 0) $
 
 则
 
-$ ℒ[u(t)] &= ∫_0^(+∞) 1⋅e^(-s t) dif t\
+$ ℒ[u(t)] &= ∫_0^(+∞) 1⋅e^(-s t) dd(t)\
  &= -1/s e^(-s t) bar.v_0^∞ = 1/s $
 
 于是
@@ -186,7 +186,7 @@ $ x(t) = e^(-ζ ω_n t)(C_1 cos ω_n sqrt(1 - ζ^2)t + C_2 sin ω_n sqrt(1 - ζ^
 
 令$ω_d = ω_n sqrt(1 - ζ^2)$，称阻尼固有频率（damped natural frequency），可得
 
-$ x(t) = e^(-ζ ω_n t) sqrt(c_1 + c_2)(sin(ω_dif t + ϕ)) $
+$ x(t) = e^(-ζ ω_n t) sqrt(c_1 + c_2)(sin(ω_dd(t) + ϕ)) $
 
 其中，$ϕ = arctan c_1/c_2$。
 
@@ -259,11 +259,11 @@ $ C = -1/2 (1 + ζ/sqrt(1 - ζ^2) i) $
 
 代回原方程
 
-$ x(t) = 1 - e^(-ζ ω_n t) sqrt(frac(1, 1 - ζ^2)) sin(ω_dif t + ϕ) $
+$ x(t) = 1 - e^(-ζ ω_n t) sqrt(frac(1, 1 - ζ^2)) sin(ω_dd(t) + ϕ) $
 
 其中
 
-- 正弦函数$sin(ω_dif t + ϕ)$的频率为$w_d$（周期为$2π/w_d$）
+- 正弦函数$sin(ω_dd(t) + ϕ)$的频率为$w_d$（周期为$2π/w_d$）
 - $e^(-ζ ω_n t)$是一个衰减（单调递减）函数
 
 = 性能分析

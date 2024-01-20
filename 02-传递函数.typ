@@ -35,7 +35,7 @@ $ δ(t) = cases(∞ & t = 0, 0 & t ≠ 0) $
 单位冲激函数，又称为 Dirac $δ$函数，满足
 
 - $t ≠ 0$时，$δ(t) = 0$
-- $∫_(-∞)^∞ δ(t) dif t = 1$
+- $∫_(-∞)^∞ δ(t) dd(t) = 1$
 
 #tip[
   $δ$函数的宽度为 0，面积为 1，仅存在于数学中
@@ -84,9 +84,9 @@ $ frac(1, Δ T) Δ T = 1 $
 
 $ x(t) = ∑_(i = 0)^i Δ T f(i Δ T) h_Δ(t - i Δ T) $
 
-#h(2em) 令$lim_(Δ T → 0)$，则$Δ T = dif τ$，$i Δ T = τ$，从而有
+#h(2em) 令$lim_(Δ T → 0)$，则$Δ T = dd(τ)$，$i Δ T = τ$，从而有
 
-$ x(t) &= ∫_0^t f(τ) h(t - τ) dif τ\
+$ x(t) &= ∫_0^t f(τ) h(t - τ) dd(τ)\
  &= f(t) ∗ h(t) $
 
 #h(2em) 这就是#strong[卷积的定义]，$∗$即为卷积运算（不是$*$）。
@@ -102,22 +102,22 @@ $ x(t) &= ∫_0^t f(τ) h(t - τ) dif τ\
 
 #h(2em)Laplace 变换定义为
 
-$ F(s) = ℒ[f(t)] = ∫_0^(∞) f(t) e^(-s t) dif t $
+$ F(s) = ℒ[f(t)] = ∫_0^(∞) f(t) e^(-s t) dd(t) $
 
 由之前的卷积的定义
 
-$ ℒ[x(t) ∗ h(t)] = ∫_0^(∞)∫_0^t x(τ)h(t - τ) dif τ e^(-s t) dif t $
+$ ℒ[x(t) ∗ h(t)] = ∫_0^(∞)∫_0^t x(τ)h(t - τ) dd(τ) e^(-s t) dd(t) $
 
 变换积分顺序，可以写成
 
-$ ℒ[f(t) ∗ h(t)] = ∫_0^(∞)∫_τ^(∞) f(τ)h(t - τ) e^(-s t) dif t dif τ $
+$ ℒ[f(t) ∗ h(t)] = ∫_0^(∞)∫_τ^(∞) f(τ)h(t - τ) e^(-s t) dd(t, τ) $
 
-令$u = t - τ ∈ [0, ∞)$，则$t = u + τ$，$dif t = dif u$，从而有
+令$u = t - τ ∈ [0, ∞)$，则$t = u + τ$，$dd(t) = dd(u)$，从而有
 
 $
 ℒ[f(t) ∗ h(t)]
-&= ∫_0^(∞)∫_0^(∞) f(τ)h(u) e^(-s(u + τ)) dif u dif τ \
-&= ∫_0^(∞) f(τ)e^(-s τ) dif τ ∫_0^(∞) h(u) e^(-s u) dif u \
+&= ∫_0^(∞)∫_0^(∞) f(τ)h(u) e^(-s(u + τ)) dd(u, τ) \
+&= ∫_0^(∞) f(τ)e^(-s τ) dd(τ) ∫_0^(∞) h(u) e^(-s u) dd(u) \
 &= ℒ[f(s)] ℒ[h(s)] \
 &= F(s)H(s) $
 
@@ -130,7 +130,7 @@ $
   $ y (0) = y ̇ (0) = y ̈ (0) = … = y^((n-1))(0) = 0 $
 
   则
-  $ ℒ (frac(d^n y(t), dif t^n)) = s^n ℒ[y(t)] = s^n Y(s) $
+  $ ℒ (dv(y(t), t, n)) = s^n ℒ[y(t)] = s^n Y(s) $
 ]
 
 #pagebreak(weak: true)
@@ -143,7 +143,7 @@ $ f(t) F(s) $
 
 #h(2em) 即
 
-$ ℒ[f(t)] = F(s) = ∫_0^∞ f(t) e^(-s t) dif t $
+$ ℒ[f(t)] = F(s) = ∫_0^∞ f(t) e^(-s t) dd(t) $
 
 #h(2em) 得到复数
 
@@ -153,7 +153,7 @@ $ s = σ + ω i $
 
 当$σ = 0$时
 
-$ F(s) = F(ω) = ∫_0^∞ f(t) e^(-j ω t) dif t $
+$ F(s) = F(ω) = ∫_0^∞ f(t) e^(-j ω t) dd(t) $
 
 #h(2em) $F(j ω)$-$j ω$的图像即为$f(t)$的 Fourier 变换。
 
@@ -165,13 +165,13 @@ $ F(s) = F(ω) = ∫_0^∞ f(t) e^(-j ω t) dif t $
 
 #h(2em) 所以，还要加上关于$s$的收敛域（region of convergence，ROC）。如
 
-$ ℒ[e^(-a t)] = ∫_0^∞ e^(-a t) e^(-s t) dif t = underbrace(∫_0^(+∞) e^(-(s + a))t) dif t, 可 积 $
+$ ℒ[e^(-a t)] = ∫_0^∞ e^(-a t) e^(-s t) dd(t) = underbrace(∫_0^(+∞) e^(-(s + a))t) dd(t), 可 积 $
 
 $e^(-a t)$的 Laplace 变换存在的条件是上式的积分可积
 
 #h(2em) 令$s = σ + j ω$
 
-$ ℒ[e^(-a t)] = ∫_0^(+∞) e^(-a t) e^(-(σ + j ω)t) dif t = ∫_0^(+∞) e^(-(a + σ))t e^(-j ω t) dif t $
+$ ℒ[e^(-a t)] = ∫_0^(+∞) e^(-a t) e^(-(σ + j ω)t) dd(t) = ∫_0^(+∞) e^(-(a + σ))t e^(-j ω t) dd(t) $
 
 #h(2em) 由 Euler 公式
 
@@ -188,8 +188,8 @@ $ σ > - a $
 
 对函数$f(t) = e^(-a t)$
 
-$ ℒ[e^(-a t)] &= ∫_0^∞ e^(-a t) e^(-s t) dif t
- = ∫_0^∞ e^(-(a + s))t dif t
+$ ℒ[e^(-a t)] &= ∫_0^∞ e^(-a t) e^(-s t) dd(t)
+ = ∫_0^∞ e^(-(a + s))t dd(t)
  = frac(1, a + s) $
 
 显然，θ
@@ -230,13 +230,13 @@ $ ℒ[cos(a t)] = frac(s, s^2 + a^2)\
 
 #h(2em) 分部积分
 
-$ ∫f^′(t) g(t) dif t = f(t) g(t) - ∫f(t) g^′(t) dif t $
+$ ∫f^′(t) g(t) dd(t) = f(t) g(t) - ∫f(t) g^′(t) dd(t) $
 
 #h(2em) 有
 
-$ ℒ[f^′(t)] &= ∫_0^(+∞) f^′(t) e^(-s t) dif t\
- &= f(t) e^(-s t) bar.v_0^∞ - ∫_0^(+∞) f(t)(-s e^(-s t))) dif t\
- &= lim_(t → ∞) f(∞) e^(-s t) - f(0) + s ∫_0^(+∞) f(t) e^(-s t) dif t\
+$ ℒ[f^′(t)] &= ∫_0^(+∞) f^′(t) e^(-s t) dd(t)\
+ &= f(t) e^(-s t) bar.v_0^∞ - ∫_0^(+∞) f(t)(-s e^(-s t))) dd(t)\
+ &= lim_(t → ∞) f(∞) e^(-s t) - f(0) + s ∫_0^(+∞) f(t) e^(-s t) dd(t)\
  &= s F(s) - f(0) $
 
 #tip[
@@ -250,7 +250,7 @@ $ ℒ[f^″(t)] = s^2 F(s) - s f(0) - f^′(0) $
 
 #h(2em) 以及
 
-$ ℒ[∫_0^t f(τ) dif t] = 1/s F(s) $
+$ ℒ[∫_0^t f(τ) dd(t)] = 1/s F(s) $
 
 == 逆变换
 

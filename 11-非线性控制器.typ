@@ -53,7 +53,7 @@ $ lim_(t → ∞) k e^2 = 0 $
 
 由上，可得
 
-$ u = dot(x)_d + x^2 ∫_0^t e x^2 dif t + k e $
+$ u = dot(x)_d + x^2 ∫_0^t e x^2 dd(t) + k e $
 
 #theorem("Barbalat 引理")[
   若函数$V$和$g(t)$满足
