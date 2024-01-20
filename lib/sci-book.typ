@@ -116,11 +116,7 @@
   doc
 }
 
-// import
-#import "@preview/tablex:0.0.8": *
-
 // functions
-
 #let code(text, lang:"python", breakable: false, width: 100%) = block(
   fill: rgb("#f3f3f3"),
   stroke: rgb("#dbdbdb"),
@@ -132,6 +128,9 @@
   raw(text,
       lang: lang,
       align: left))
+
+// tables
+#import "@preview/tablex:0.0.8": *
 
 // theorems
 #import "@preview/ctheorems:1.1.0": *
@@ -211,3 +210,6 @@
  separator: [],
  // stroke: rgb("#000000")
 ).with(numbering: none)
+
+// physics
+#import "@preview/physica:0.9.2": *
