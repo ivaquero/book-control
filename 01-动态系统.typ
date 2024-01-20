@@ -89,7 +89,7 @@ $ dot(x) = f(t, x) $
 
 $ e_R = I R\
 e_C = Q/C = 1/C ∫_0^t I dif t\
-e_L = L frac(dif I, dif t) = L I^′ $
+e_L = L dv(I, t) = L I^′ $
 
 == 电学定律
 
@@ -266,27 +266,27 @@ $ q_("out")
 
 - 质量守恒
 
-$ frac(dif m, dif t) = m_("in") - m_("out") $
+$ dv(m, t) = m_("in") - m_("out") $
 
 等式两端除以$ρ$，得
 
-$ frac(dif V, dif t) = q_("in") - q_("out") $
+$ dv(V, t) = q_("in") - q_("out") $
 
 两端除以$A$，从而有
 
-$ frac(dif h, dif t) = 1/A (q_("in") - q_("out")) $
+$ dv(h, t) = 1/A (q_("in") - q_("out")) $
 
 - 压力守恒
 
-$ frac(dif P, dif t) = frac(dif(P_a + ρ g h), dif t) $
+$ dv(P, t) = dv(P_a + ρ g h, t) $
 
 可得
 
-$ frac(dif P, dif t) = ρ g frac(dif h, dif t) = frac(ρ g, A)(q_("in") - q_("out")) $
+$ dv(P, t) = ρ g dv(h, t) = frac(ρ g, A)(q_("in") - q_("out")) $
 
 由上，可得
 
-$ frac(dif h, dif t) = q_("in")/A - frac(g h, A R) $
+$ dv(h, t) = q_("in")/A - frac(g h, A R) $
 
 #pagebreak(weak: true)
 

@@ -43,7 +43,7 @@ $ 𝒖(t) = mat(delim: "[", u_1(t); u_2(t)) = mat(delim: "[", α_1(t); ω_2(t)) 
 
 可得
 
-$ frac(dif 𝒙(t), dif t) =
+$ dv(𝒙(t), t) =
 mat(delim: "[", v(t) cos θ(t); v(t) sin θ(t); 0; 0) +
 mat(delim: "[", 1; 0; α(t); ω(t)) = f(𝒙(t)), 𝒖(t) $
 

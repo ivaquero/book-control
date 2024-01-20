@@ -19,7 +19,7 @@
 
 于是，有
 
-$ frac(dif m, dif t) = frac(E_i - E_e, 7000) $
+$ dv(m, t) = frac(E_i - E_e, 7000) $
 
 其中，$m$为体重，$E_i$为饮食摄入热量，$E_e$为消耗（expenditure）热量，$E_e$的计算方法为
 

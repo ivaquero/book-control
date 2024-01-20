@@ -239,11 +239,11 @@ $ e_(s s) = frac(D(0), D(0)) + K N(0) * z/p $
 
 - 比例控制：基于当前误差，调节$k_p⋅e$，其中，$k_p$为比例增益
 - 积分控制：基于过去误差，调节$k_I ∫e dif t$，其中，$k_I$为积分增益
-- 微分控制：基于误差变化，调节$k_D frac(dif e, dif t)$，其中，$k_D$为微分增益
+- 微分控制：基于误差变化，调节$k_D dv(e, t)$，其中，$k_D$为微分增益
 
 将三者整合，得
 
-$ u = k_p e + k_I ∫e dif t + k_D frac(dif e, dif t) $
+$ u = k_p e + k_I ∫e dif t + k_D dv(e, t) $
 
 两端同时 Laplace 变换，得
 

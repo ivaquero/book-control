@@ -316,7 +316,7 @@ $ I(s) = frac(s, L s^2 + R s + 1/C) 𝔼[s] $
 
 #h(2em) 由上图
 
-$ frac(dif h, dif t) + frac(g, R A) h = q_(i n)/A $
+$ dv(h, t) + frac(g, R A) h = q_(i n)/A $
 
 #h(2em) 令
 
@@ -360,9 +360,7 @@ $ X = V frac(D G, 1 + H D G) $
 
 #figure(
   image("./images/block/block.drawio.png", width: 40%),
-  caption: [
-    block
-  ],
+  caption: [block],
   supplement: [图]
 )
 
