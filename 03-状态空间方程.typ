@@ -155,19 +155,23 @@ $ 𝒙(t) = e^(𝑨 (t - t_0)) 𝒙(t_0) + ∫_(t_0)^t e^((t - τ)) 𝑩 𝒖(τ
 
 设$𝑷 = mat(delim: "[", arrow(v)_1, arrow(v)_2)$，则
 
+#let mv = (i, j) => $v_(#(i)#(j))$
+
 $ 𝑨 𝑷 &= mat(delim: "[", 𝑨 arrow(v)_1, 𝑨 arrow(v)_2)
  = mat(delim: "[", 𝑨 mat(delim: "[", v_11; v_12), 𝑨 mat(delim: "[", v_12; v_22))\
- &= mat(delim: "[", v_11, v_12; v_21, v_22)
- mat(delim: "[", λ_1, med; med, λ_2) = 𝑷
- mat(delim: "[", λ_1, med; med, λ_2) $
+ &= xmat(delim: "[", 2, 2, #mv)
+ dmat(delim: "[", λ_1, λ_2) = 𝑷
+ dmat(delim: "[", λ_1, λ_2) $
 
 == 二维相平面
 <二维相平面>
 
+#let ma = (i, j) => $a_(#(i)#(j))$
+
 $ dv(, t)
 mat(delim: "[", z(t)_1; z(t)_2) = 𝑨
 mat(delim: "[", z(t)_1; z(t)_2) =
-mat(delim: "[", a_11, a_12; a_21, a_22)
+xmat(delim: "[", 2, 2, #ma)
 mat(delim: "[", z(t)_1; z(t)_2) $
 
 - 实数根

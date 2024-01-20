@@ -93,7 +93,7 @@ $
 求导，可得
 
 $
-dot(V)(x) = ∇V_f &=
+dot(V)(x) = grad V_f &=
 mat(delim: "[", pdv(V, x_1), pdv(V, x_2))
 mat(delim: "[", f_1; f_2) \ &=
 mat(delim: "[", m g l sin(x_1) & m l^2 x_2)
@@ -124,7 +124,7 @@ $ dot.double(θ) + frac(g, L) sin θ + frac(k, m) dot(θ) = 0 $
 令$V = E = K("kinetic") + P("potential")$，求导，可得
 
 $
-dot(V)(x) = ∇V_f &=
+dot(V)(x) = grad V_f &=
 mat(delim: "[", pdv(V, x_1) & pdv(V, x_2))
 mat(delim: "[", f_1; f_2) \ &=
 mat(delim: "[", m g l sin(x_1), m l^2 x_2)
