@@ -358,10 +358,16 @@ $ X = V frac(D G, 1 + H D G) $
 
 #h(2em) 于是可知
 
-#figure(
-  image("./images/block/block.drawio.png", width: 40%),
-  caption: [block],
-  supplement: [图]
+#align(center,
+   diagram(
+   spacing: (2em, 2em),
+   node-stroke: 1pt,
+   mark-scale: 80%,
+   let (M,A,B)=((4,1),(2,1),(6,+1)),
+   node(M, $frac(D G, 1 + H D G)$, height: 2em,corner-radius: 3pt),
+   edge(A, M, $V$, "-|>"),
+   edge(M, B, $X$, "-|>")
+  )
 )
 
 == 非零初始条件

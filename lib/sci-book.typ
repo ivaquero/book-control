@@ -9,7 +9,6 @@
     eqnumlevel: 1,
     citestyle: none,
     figure-break: false,
-    lang: "zh",
     doc,
 ) = {
   set page(
@@ -44,13 +43,8 @@
   set list(indent: 1.2em)
   set enum(indent: 1.2em)
 
-  let font = {
-    if lang == "en" {"Arial"}
-    if lang == "zh" {"Songti SC"}
-  }
-
   set text(
-      font: font,
+      font: "Songti SC",
       size: 10.5pt,
   )
 
@@ -75,8 +69,7 @@
       eqNumbering(n, loc)
     }),
     supplement: [
-      #if lang == "en" [#h(-.15em)Eq.#h(-.5em)]
-      #if lang == "zh" [#h(-.25em) 式#h(-.5em)]
+      #h(-.25em) 式#h(-.5em)
     ]
   )
 
@@ -104,10 +97,7 @@
 
   if outline-on == true [
     #outline(
-        title: [
-          #if lang == "en" [Content]
-          #if lang == "zh" [主要内容]
-        ],
+        title: "主要内容",
         indent: auto,
         depth: 2
      )
@@ -213,3 +203,6 @@
 
 // physics
 #import "@preview/physica:0.9.2": *
+
+// diagram
+#import "@preview/fletcher:0.4.2": diagram, edge, node
