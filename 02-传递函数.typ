@@ -3,7 +3,7 @@
   title: "传递函数",
   header: "现代控制理论",
   author: ("ivaquero"),
-  header-cap: "github/ivaquero",
+  header-cap: "github@ivaquero",
   outline-on: true,
   doc,
 )
