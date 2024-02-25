@@ -19,7 +19,7 @@
   - [ctheorems](https://github.com/sahasatvik/typst-theorems): v1.1.1
   - [tablex](https://github.com/PgBiel/typst-tablex): v0.0.8
   - [phyisca](https://github.com/leedehai/typst-physics): v0.9.2
-  - [fletcher](https://github.com/Jollywatt/typst-fletcher): v0.9.2
+  - [fletcher](https://github.com/Jollywatt/typst-fletcher): v0.4.2
 
 为保证正常编译，请参考 [typst-packages](https://github.com/typst/packages) 上的说明，在如下路径下克隆 `https://github.com/typst/packages` 仓库
 
