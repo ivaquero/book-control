@@ -67,7 +67,7 @@ $ "Re"["Eig"(𝑨 - 𝑳 𝑪)] < 0 $
 #figure(
   image("./images/model/vibration.drawio.png", width: 40%),
   caption: [弹簧阻尼系统],
-  supplement: [图]
+  supplement: "图"
 )
 
 令

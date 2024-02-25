@@ -76,7 +76,7 @@ $ frac(1, Δ T) Δ T = 1 $
     [$A h_Δ(t - i Δ T)$],
  ),
   caption: [输入与输出],
-  supplement: [表],
+  supplement: "表",
   kind: table
 )
 
@@ -279,7 +279,7 @@ cos 2 t &= frac(e^(-2 i t) + e^(2 i t), 2) $
   caption: [
     circuit
   ],
-  supplement: [图]
+  supplement: "图"
 )
 
 #h(2em) 由 KCL 有
@@ -301,7 +301,7 @@ $ I(s) = frac(s, L s^2 + R s + 1/C) 𝔼[s] $
 #figure(
   image("./images/block/unit.drawio.png", width: 40%),
   caption: [框图],
-  supplement: [图]
+  supplement: "图"
 )
 
 #h(2em) 中间的函数即输出函数与输入函数的比值，称为#strong[传递函数（transfer function）]。
@@ -311,7 +311,7 @@ $ I(s) = frac(s, L s^2 + R s + 1/C) 𝔼[s] $
 #figure(
   image("./images/model/liquid.drawio.png", width: 40%),
   caption: [流体系统],
-  supplement: [图]
+  supplement: "图"
 )
 
 #h(2em) 由上图
@@ -342,10 +342,23 @@ $ lim_(t → ∞) h = C R/g $
 
 #h(2em) 对闭环系统，此时引入参考值$V(s)$，输入值变成了$X(s) H(s)$
 
-#figure(
-  image("./images/block/liquid.drawio.png", width: 40%),
-  caption: [闭环反馈],
-  supplement: [图]
+#align(center,
+  diagram(
+     spacing: (2em, 2em),
+     node-stroke: 1pt,
+     mark-scale: 80%,
+
+     let (R,O,T,H,A)=((1,1),(2,2),(4,1),(4,2),(5,1.5)),
+     node(R, $V(s)$, height: 2em,corner-radius: 3pt),
+     node(O, text($+ quad -$, size: 0.6em), inset: 1em,radius: 1em),
+     node(T, $D(s)G(s)$, height: 2em, width:6em, corner-radius: 3pt),
+     node(H, $H(s)$, height: 2em, width:6em, corner-radius: 3pt),
+     edge(R, O, "-|>", corner: left),
+     edge(O, T, text($V(s)-X(s)H(s)$, size: 0.6em), "-|>", corner: right, label-pos: 0.7),
+     edge(T, A, text($X(s)$, size: 0.6em), "-", corner: right, label-pos: 0.4),
+     edge(A, H, "-", corner: right),
+     edge(H, O, text($X(s)H(s)$, size: 0.6em), "-|>"),
+    )
 )
 
 #h(2em) 由

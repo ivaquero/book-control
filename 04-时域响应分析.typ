@@ -51,7 +51,7 @@ $ x(t_(s s)) = x(4/a) = 1 - e^(-4) = 0.98 $
 #figure(
   image("./images/model/liquid.drawio.png", width: 40%),
   caption: [liquid],
-  supplement: [图]
+  supplement: "图"
 )
 
 $ x(t) = frac(C R, g)(1 - e^(-g/R t)) $
@@ -108,7 +108,7 @@ $ dot(x) = a(1 - x) $
 #figure(
   image("./images/model/vibration.drawio.png", width: 40%),
   caption: [vibration],
-  supplement: [图]
+  supplement: "图"
 )
 
 对弹簧阻尼系统

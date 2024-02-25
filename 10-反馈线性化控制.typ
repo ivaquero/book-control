@@ -38,7 +38,7 @@
     [半负定], [NSD], [0], [$≤$],
  ),
   caption: [Lyapunov 稳定性],
-  supplement: [表],
+  supplement: "表",
   kind: table
 )
 
@@ -62,7 +62,7 @@ $ ∑F_x = m a_x = l dot.double(θ) $
 #figure(
   image("images/model/pendulum.drawio.png", width: 10%),
   caption: "钟摆",
-  supplement: [图]
+  supplement: "图"
 )
 
 即
@@ -161,7 +161,7 @@ $ dot(x) = f(x, ϕ (x)) $
 #figure(
   image("./images/block/feedback.drawio.png", width: 40%),
   caption: [反馈],
-  supplement: [图]
+  supplement: "图"
 )
 
 考虑系统
@@ -208,7 +208,7 @@ $ m dot.double(x) + α x^3 = F $
 #figure(
   image("./images/model/vibration-nl.drawio.png", width: 40%),
   caption: [非线性弹簧系统],
-  supplement: [图]
+  supplement: "图"
 )
 
 令

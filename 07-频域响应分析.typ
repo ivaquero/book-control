@@ -299,7 +299,7 @@ $ "dB" = 10 lg P_M/P_R = 10 lg (M_0/M_i)^2 = 20 lg M $
     [高频], [≫], [$1\/ω$], [$-20 lg ω$], [$-π\/2$],
  ),
   caption: [],
-  supplement: [表],
+  supplement: "表",
   kind: table
 )
 

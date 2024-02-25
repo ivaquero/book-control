@@ -20,7 +20,7 @@
 #figure(
   image("./images/model/unicycle.drawio.png", width: 40%),
   caption:[独轮车],
-  supplement: [图]
+  supplement: "图"
 )
 
 令
@@ -134,7 +134,7 @@ $ 𝒖^* ∈ Ω $
 #figure(
   image("./images/model/drone.drawio.png", width: 40%),
   caption:[无人机],
-  supplement: [图]
+  supplement: "图"
 )
 
 初始和最终条件为

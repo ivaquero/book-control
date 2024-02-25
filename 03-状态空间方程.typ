@@ -196,7 +196,7 @@ mat(delim: "[", z(t)_1; z(t)_2) $
     [$< 0$], [], [saddle], [×],
  ),
   caption: [实数根],
-  supplement: [表],
+  supplement: "表",
   kind: table
 )
 
@@ -222,7 +222,7 @@ mat(delim: "[", z(t)_1; z(t)_2) $
     [$a = 0$], [center], [✓⁻],
 ),
   caption: [复数根],
-  supplement: [表],
+  supplement: "表",
   kind: table
 )
 

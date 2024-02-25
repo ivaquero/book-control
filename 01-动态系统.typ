@@ -46,9 +46,25 @@ $ dot(x) = f(t, x) $
 - 闭环控制：通过测量系统输出与参考值之间的误差，反馈（feedback）至输入端，决定控制量
 
 #figure(
-  image("./images/block/closed.drawio.png", width: 40%),
-  caption: [闭环控制器],
-  supplement: [图]
+ diagram(
+   spacing: (2em, 2em),
+   node-stroke: 1pt,
+   mark-scale: 80%,
+
+   let (R,O,T,H,A)=((1,1),(2,2),(4,1),(4,2),(5.5,1.5)),
+   node(R, text($V(s)$, size: 0.9em), height: 2em,corner-radius: 3pt),
+   node(O, text("误差表", size: 0.5em), inset: 1em,radius: 1em),
+   node(T, text("控制器", size: 0.8em), height: 2em, width:6em, corner-radius: 3pt),
+   node(H, text("传感器", size: 0.8em), height: 2em, width:6em, corner-radius: 3pt),
+   node(A, text("设备", size: 0.8em), height: 2em, width: 4em, corner-radius: 3pt),
+   edge(R, O, "-|>", corner: left),
+   edge(O, T, text("输入", size: 0.7em), "-|>", corner: right, label-pos: 0.7),
+   edge(T, A, text("输出", size: 0.7em), "-|>", corner: right, label-pos: 0.25),
+   edge(A, H, "-|>", corner: right),
+   edge(H, O, "-|>"),
+  ),
+  caption: "闭环控制器",
+  supplement: "\n图",
 )
 
 = 电学基础
@@ -79,7 +95,7 @@ $ dot(x) = f(t, x) $
     [电感], [亨利（H）], [$L$], [$U\/I^′$],
  ),
   caption: [电学单元],
-  supplement: [表],
+  supplement: "表",
   kind: table
 )
 
@@ -112,7 +128,7 @@ e_L = L dv(I, t) = L I^′ $
 #figure(
   image("./images/model/circuit-rlc.drawio.png", width: 40%),
   caption: [ RLC],
-  supplement: [图]
+  supplement: "图"
 )
 
 定义上图区域 1 和区域 2 的电流方向均为顺时针，则
@@ -155,7 +171,7 @@ $ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
 #figure(
   image("./images/model/circuit-rlc.png", width: 60%),
   caption: [RLC],
-  supplement: [图]
+  supplement: "图"
 )
 
 #pagebreak(weak: true)
@@ -184,7 +200,7 @@ $ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
     [磁通量], [韦伯（Wb）],[$ϕ$]
  ),
   caption: [电磁学基础],
-  supplement: [表],
+  supplement: "表",
   kind: table
 )
 
@@ -232,7 +248,7 @@ $ P_("gauge") = P_("abs") - P_a = ρ g h $
 #figure(
   image("./images/model/liquid.drawio.png", width: 40%),
   caption: [流体系统],
-  supplement: [图]
+  supplement: "图"
 )
 
 == 阻力

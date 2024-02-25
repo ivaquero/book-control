@@ -19,7 +19,7 @@
 #figure(
   image("./images/block/closed-1.drawio.png", width: 40%),
   caption: [闭环控制],
-  supplement: [图]
+  supplement: "图"
 )
 
 $ frac(Y(s), R(s)) = frac(K G(s), 1 + K G(s)) $
@@ -57,7 +57,7 @@ $ G(s) = frac(N(s), D(s)) = frac(∑_(i=1)^m (s - z_i), ∑_(j=1)^n (s - p_j)) $
 #figure(
   image("./images/model/vibration.drawio.png", width: 40%),
   caption: [弹簧阻尼系统],
-  supplement: [图]
+  supplement: "图"
 )
 
 有
@@ -134,7 +134,7 @@ $ G(s) = frac(N(s), D(s)) $
 #figure(
   image("./images/block/closed-2.drawio.png", width: 40%),
   caption: [闭环系统],
-  supplement: [图]
+  supplement: "图"
 )
 
 - 极点：$p_1 = 0$和$p_2 = -2$
@@ -167,7 +167,7 @@ $ C(t) = C e^(-σ_a t) sin ω_n t $
 #figure(
   image("./images/block/compens-lead-1.drawio.png", width: 40%),
   caption: [PD 控制],
-  supplement: [图]
+  supplement: "图"
 )
 
 这就是比例微分控制（PD control），这种控制器有两个明显的缺点
@@ -208,7 +208,7 @@ $ e_(s s) &= lim_(t → ∞) e(t) = lim_(s → 0) s 𝔼[s]\
   caption: [
     closed-lag
   ],
-  supplement: [图]
+  supplement: "图"
 )
 
 加入滞后补偿器（lag compensator）后，$𝔼[s]$变为
@@ -281,7 +281,7 @@ $ U(s) = (k_p + k_I 1/s + k_D s) 𝔼[s] $
     [零点 + 极点], [$ϕ_1, ϕ_2$], [$ϕ_1 - ϕ_2$], [$v_1, v_2$], [$v_1/v_2$],
  ),
   caption: [幅角],
-  supplement: [表],
+  supplement: "表",
   kind: table
 )
 
@@ -303,7 +303,7 @@ $ U(s) = (k_p + k_I 1/s + k_D s) 𝔼[s] $
 #figure(
   image("images/block/sensor.drawio.png", width: 40%),
   caption: "传感器",
-  supplement: [图]
+  supplement: "图"
 )
 
 - 开环传递函数：$G(s)H(s)$

@@ -95,7 +95,7 @@ X(t) = ℒ^(-1)[X(s)] = C_1e^(p_1t) + C_2e^(p_2t) $
 #figure(
   image("images/model/signal-poles-zeros.png", width: 60%),
   caption: "复平面的极点",
-  supplement: [图]
+  supplement: "图"
 )
 
 == 抽样要求

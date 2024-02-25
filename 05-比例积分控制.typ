@@ -66,7 +66,7 @@ $ frac(M(s), U(s) + D(s)) = frac(1, 7000 s + 100) $
 #figure(
   image("./images/block/prop.drawio.png", width: 40%),
   caption: [比例控制],
-  supplement: [图]
+  supplement: "图"
 )
 
 对控制器
@@ -127,7 +127,7 @@ $ lim_(t → ∞) x(t) = lim_(s → 0) s X(s) $
 #figure(
   image("./images/model/vibration.drawio.png", width: 40%),
   caption: [弹簧阻尼系统],
-  supplement: [图]
+  supplement: "图"
 )
 
 对弹簧阻尼系统
@@ -173,7 +173,7 @@ $ lim_(t → ∞) x(t) = lim_(s → 0) c/s frac(s, m s^2 + B s + k) = c/k $
 #figure(
   image("./images/block/prop-simple.drawio.png", width: 40%),
   caption: [弹簧阻尼系统框图],
-  supplement: [图]
+  supplement: "图"
 )
 
 对上图系统，有
