@@ -290,18 +290,26 @@ $ e^′ = L i^″ + R i^′ + 1/C i $
 
 #h(2em) 令初始条件为$0$，等式两边进行导数的 Laplace 变换，得
 
-$ s 𝔼[s] = L s^2 I_(s) + s R I_(s) + 1/C I_(s) $
+$ s E[s] = L s^2 I_(s) + s R I_(s) + 1/C I_(s) $
 
 #h(2em) 从而有
 
-$ I(s) = frac(s, L s^2 + R s + 1/C) 𝔼[s] $
+$ I(s) = frac(s, L s^2 + R s + 1/C) E[s] $
 
 #h(2em) 转换为框图形式，即有
 
 #figure(
-  image("./images/block/unit.drawio.png", width: 40%),
-  caption: [框图],
-  supplement: "图"
+   diagram(
+   spacing: (2em, 2em),
+   node-stroke: 1pt,
+   mark-scale: 80%,
+   let (M,A,B)=((4,1),(2,1),(6,+1)),
+   node(M, text($frac(s, L s^2 + R s + 1\/C)$, size: 1.2em), height: 2.5em,corner-radius: 3pt),
+   edge(A, M, $E(s)$, "-|>"),
+   edge(M, B, $I(s)$, "-|>")
+  ),
+  caption: "",
+  supplement: "\n图"
 )
 
 #h(2em) 中间的函数即输出函数与输入函数的比值，称为#strong[传递函数（transfer function）]。
@@ -342,7 +350,7 @@ $ lim_(t → ∞) h = C R/g $
 
 #h(2em) 对闭环系统，此时引入参考值$V(s)$，输入值变成了$X(s) H(s)$
 
-#align(center,
+#figure(
   diagram(
      spacing: (2em, 2em),
      node-stroke: 1pt,
@@ -358,7 +366,9 @@ $ lim_(t → ∞) h = C R/g $
      edge(T, A, text($X(s)$, size: 0.6em), "-", corner: right, label-pos: 0.4),
      edge(A, H, "-", corner: right),
      edge(H, O, text($X(s)H(s)$, size: 0.6em), "-|>"),
-    )
+    ),
+  caption: "",
+  supplement: "\n图"
 )
 
 #h(2em) 由
@@ -371,7 +381,7 @@ $ X = V frac(D G, 1 + H D G) $
 
 #h(2em) 于是可知
 
-#align(center,
+#figure(
    diagram(
    spacing: (2em, 2em),
    node-stroke: 1pt,
@@ -380,7 +390,9 @@ $ X = V frac(D G, 1 + H D G) $
    node(M, $frac(D G, 1 + H D G)$, height: 2em,corner-radius: 3pt),
    edge(A, M, $V$, "-|>"),
    edge(M, B, $X$, "-|>")
-  )
+  ),
+  caption: "",
+  supplement: "\n图"
 )
 
 == 非零初始条件
