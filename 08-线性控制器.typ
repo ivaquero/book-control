@@ -92,7 +92,11 @@ X(t) = ℒ^(-1)[X(s)] = C_1e^(p_1t) + C_2e^(p_2t) $
 
 对极点在复平面绘图，有如下结论
 
-![poles-zeros](./images/ch06/signal-poles-zeros.png)
+#figure(
+  image("images/model/signal-poles-zeros.png", width: 60%),
+  caption: "复平面的极点",
+  supplement: [图]
+)
 
 == 抽样要求
 

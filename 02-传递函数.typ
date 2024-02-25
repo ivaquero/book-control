@@ -343,7 +343,7 @@ $ lim_(t → ∞) h = C R/g $
 #h(2em) 对闭环系统，此时引入参考值$V(s)$，输入值变成了$X(s) H(s)$
 
 #figure(
-  image("./images/model/liquid-feedback.drawio.png", width: 40%),
+  image("./images/block/liquid.drawio.png", width: 40%),
   caption: [闭环反馈],
   supplement: [图]
 )

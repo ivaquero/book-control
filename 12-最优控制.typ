@@ -18,7 +18,7 @@
 对独轮车模型
 
 #figure(
-  image("./images/vehicle/unicycle.drawio.png", width: 40%),
+  image("./images/model/unicycle.drawio.png", width: 40%),
   caption:[独轮车],
   supplement: [图]
 )
@@ -132,7 +132,7 @@ $ 𝒖^* ∈ Ω $
 对无人机模型，现需要求解，从地面升高至 10m 的最短时间
 
 #figure(
-  image("./images/vehicle/drone.drawio.png", width: 40%),
+  image("./images/model/drone.drawio.png", width: 40%),
   caption:[无人机],
   supplement: [图]
 )
