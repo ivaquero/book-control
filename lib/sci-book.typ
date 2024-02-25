@@ -123,7 +123,7 @@
 #import "@preview/tablex:0.0.8": *
 
 // theorems
-#import "@preview/ctheorems:1.1.0": *
+#import "@preview/ctheorems:1.1.1": *
 
 #let terms = (
   "def": "定义",

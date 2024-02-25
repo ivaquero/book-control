@@ -16,9 +16,10 @@
 ### 依赖包
 
 - Typst
-  - [ctheorems](https://github.com/sahasatvik/typst-theorems): v1.1.0
+  - [ctheorems](https://github.com/sahasatvik/typst-theorems): v1.1.1
   - [tablex](https://github.com/PgBiel/typst-tablex): v0.0.8
   - [phyisca](https://github.com/leedehai/typst-physics): v0.9.2
+  - [fletcher](https://github.com/Jollywatt/typst-fletcher): v0.9.2
 
 为保证正常编译，请参考 [typst-packages](https://github.com/typst/packages) 上的说明，在如下路径下克隆 `https://github.com/typst/packages` 仓库
 
@@ -27,6 +28,10 @@
   - `~/.local/share/typst`
 - macOS：`~/Library/Application Support/typst`
 - Windows：`%APPDATA%/typst`
+
+### 图表
+
+目前大部分图表采用 [drawio](https://github.com/jgraph/drawio) 制作，后面会逐步使用 `fletcher` 替换，尤其是控制框图。
 
 ## 一些说明
 
