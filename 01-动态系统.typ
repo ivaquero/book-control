@@ -73,19 +73,11 @@ $ dot(x) = f(t, x) $
 == 电学单元
 
 #figure(
-  tablex(
+  table(
     columns: 4,
     align: center + horizon,
     inset: 4pt,
-    map-hlines: v => (
-      if v.y > 1 and v.y < 7 {
-        return (..v, stroke: color.rgb("#CCC"))
-      }
-      else {
-        return (..v, stroke: color.rgb("#000"))
-      }
-    ),
-    auto-vlines: false,
+    stroke: frame(rgb("000")),
     [], [单位], [符号], [定义公式],
     [电量], [库仑（C）], [$Q$], [],
     [电流], [安培（A）], [$I$], [$dv(s:\/, Q, t)$],
@@ -182,19 +174,11 @@ $ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
 == 电磁学单位
 
 #figure(
-  tablex(
+  table(
     columns: 3,
     align: center + horizon,
     inset: 4pt,
-    map-hlines: v => (
-      if v.y > 1 and v.y < 3 {
-        return (..v, stroke: color.rgb("#CCC"))
-      }
-      else {
-        return (..v, stroke: color.rgb("#000"))
-      }
-    ),
-    auto-vlines: false,
+    stroke: frame(rgb("000")),
     [], [单位], [符号],
     [磁感应强度], [特斯拉（T）], [$B$],
     [磁通量], [韦伯（Wb）],[$ϕ$]

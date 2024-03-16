@@ -177,19 +177,11 @@ mat(delim: "[", z(t)_1; z(t)_2) $
 - 实数根
 
 #figure(
-  tablex(
+  table(
     columns: 4,
     align: center + horizon,
     inset: 4pt,
-    map-hlines: v => (
-      if v.y > 1 and v.y < 4 {
-        return (..v, stroke: color.rgb("#CCC"))
-      }
-      else {
-        return (..v, stroke: color.rgb("#000"))
-      }
-    ),
-    auto-vlines: false,
+    stroke: frame(rgb("000")),
     [$λ_1 λ_2$], [$λ_1 + λ_2$], [点类型], [稳定性],
     [$> 0$], [$< 0$], [node], [✓],
     [$> 0$], [$> 0$], [node], [×],
@@ -203,19 +195,11 @@ mat(delim: "[", z(t)_1; z(t)_2) $
 - 复数根
 
 #figure(
-  tablex(
+  table(
     columns: 3,
     align: center + horizon,
     inset: 4pt,
-    map-hlines: v => (
-      if v.y > 1 and v.y < 4 {
-        return (..v, stroke: color.rgb("#CCC"))
-      }
-      else {
-        return (..v, stroke: color.rgb("#000"))
-      }
-    ),
-    auto-vlines: false,
+    stroke: frame(rgb("000")),
     [$λ_(1, 2)$], [点类型], [稳定性],
     [$a > 0$], [focus], [×],
     [$a < 0$], [focus], [✓],
@@ -229,4 +213,3 @@ mat(delim: "[", z(t)_1; z(t)_2) $
 #tip[
   ✓⁻：Lyapunov 稳定，见后续章节。
 ]
-

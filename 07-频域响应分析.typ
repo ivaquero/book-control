@@ -279,19 +279,11 @@ $ "dB" = 10 lg P_M/P_R = 10 lg (M_0/M_i)^2 = 20 lg M $
   - $|G(j ω_i)| = sqrt(frac(1, 1 + (ω/a)^2))$
 
 #figure(
-  tablex(
+  table(
     columns: 5,
     align: center + horizon,
     inset: 4pt,
-    map-hlines: v => (
-      if v.y > 1 and v.y < 4 {
-        return (..v, stroke: color.rgb("#CCC"))
-      }
-      else {
-        return (..v, stroke: color.rgb("#000"))
-      }
-    ),
-    auto-vlines: false,
+    stroke: frame(rgb("000")),
     [], [$ω?a$], [$|G(j ω_i)|$], [$20|G(j ω_i)|$], [$∠G(j ω_i)$],
     [低频], [≪], [$1$], [$0$], [$0$],
     [截止频率],

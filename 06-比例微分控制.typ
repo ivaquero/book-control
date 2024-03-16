@@ -262,19 +262,11 @@ $ U(s) = (k_p + k_I 1/s + k_D s) 𝔼[s] $
 假设两个复数分别位于的平面称为平面$A$和平面$B$，则映射$F(s)$将平面$A$中的零点/极点平移至平面$B$的原点，此时
 
 #figure(
-  tablex(
+  table(
     columns: 5,
     align: center + horizon,
     inset: 4pt,
-    map-hlines: v => (
-      if v.y > 1 and v.y < 4 {
-        return (..v, stroke: color.rgb("#CCC"))
-      }
-      else {
-        return (..v, stroke: color.rgb("#000"))
-      }
-    ),
-    auto-vlines: false,
+    stroke: frame(rgb("000")),
     [], [幅角], [新幅角], [模], [新模],
     [零点], [$ϕ_1$], [$ϕ_1$], [$v_1$], [$v_1$],
     [极点], [$ϕ_2$], [$-ϕ_2$], [$v_2$], [$1/v_2$],

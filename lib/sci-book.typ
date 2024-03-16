@@ -106,6 +106,12 @@
   doc
 }
 
+// tables
+#let frame(stroke) = (x, y) => (
+  top: if y < 2 { stroke } else { 0pt },
+  bottom: stroke,
+)
+
 // functions
 #let code(text, lang:"python", breakable: false, width: 100%) = block(
   fill: rgb("#f3f3f3"),
@@ -119,11 +125,8 @@
       lang: lang,
       align: left))
 
-// tables
-#import "@preview/tablex:0.0.8": *
-
 // theorems
-#import "@preview/ctheorems:1.1.1": *
+#import "@preview/ctheorems:1.1.2": *
 
 #let terms = (
   "def": "定义",

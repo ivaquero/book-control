@@ -18,19 +18,11 @@
 已知
 
 #figure(
-  tablex(
+  table(
     columns: 4,
     align: center + horizon,
     inset: 4pt,
-    map-hlines: v => (
-      if v.y > 1 and v.y < 5 {
-        return (..v, stroke: color.rgb("#CCC"))
-      }
-      else {
-        return (..v, stroke: color.rgb("#000"))
-      }
-    ),
-    auto-vlines: false,
+    stroke: frame(rgb("000")),
     [∀x ∈ D - {0}], [Abbr.], [V(0)], [V(x)],
     [正定], [PD], [0], [$>$],
     [半正定], [PSD], [0], [$≥$],

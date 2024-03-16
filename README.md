@@ -11,13 +11,12 @@
 
 ## 依赖软件
 
-- [Typst](https://github.com/typst/typst): v0.9.0
+- [Typst](https://github.com/typst/typst): v0.11.0
 
 ### 依赖包
 
 - Typst
-  - [ctheorems](https://github.com/sahasatvik/typst-theorems): v1.1.1
-  - [tablex](https://github.com/PgBiel/typst-tablex): v0.0.8
+  - [ctheorems](https://github.com/sahasatvik/typst-theorems): v1.1.2
   - [phyisca](https://github.com/leedehai/typst-physics): v0.9.2
   - [fletcher](https://github.com/Jollywatt/typst-fletcher): v0.4.2
 
