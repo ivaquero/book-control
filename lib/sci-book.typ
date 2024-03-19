@@ -131,7 +131,8 @@
   "lem": "引理",
   "coro": "推论",
   "algo": "算法",
-  "alert": "！注意："
+  "tip": "提示",
+  "alert": "注意"
 )
 
 #let definition = thmbox(
@@ -191,15 +192,22 @@
  // stroke: rgb("#000000")
 )
 
-#let alert = thmbox(
- "",
- terms.alert,
- fill: rgb("#fbf2f2"),
- radius: 0em,
- padding: (top: 0em, bottom: 0em),
- separator: [],
- // stroke: rgb("#000000")
-).with(numbering: none)
+// banners
+#import "@preview/gentle-clues:0.6.0": *
+
+#let tip(title: terms.tip, icon: emoji.bubble, ..args) = clue(
+  _color: yellow,
+  title: title,
+  icon: icon,
+  ..args
+)
+
+#let alert(title: terms.alert, icon: emoji.excl, ..args) = clue(
+  _color: red,
+  title: title,
+  icon: icon,
+  ..args
+)
 
 // physics
 #import "@preview/physica:0.9.2": *
