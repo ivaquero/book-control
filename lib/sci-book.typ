@@ -29,10 +29,7 @@
     }),
   )
 
-  set heading(
-    level: 2,
-    numbering: "1.",
-  )
+  set heading(numbering: "1.")
   set par(
       first-line-indent: 2em,
       justify: true,

@@ -1,6 +1,6 @@
 #import "lib/sci-book.typ": *
 #show: doc => conf(
-  title: "进阶控制器",
+  title: "比例微分控制",
   header: "现代控制理论",
   author: ("ivaquero"),
   header-cap: "github@ivaquero",
@@ -286,52 +286,4 @@ $ U(s) = (k_p + k_I 1/s + k_D s) 𝔼[s] $
 
   - 曲线$A$每包含1个$F(s)$的零点，曲线$B$就绕原点顺时针一圈
   - 曲线$A$每包含1个$F(s)$的极点，曲线$B$就绕原点逆时针一圈
-]
-
-== Nyquist 稳定性
-
-对如下系统
-
-#figure(
-  image("images/block/sensor.drawio.png", width: 40%),
-  caption: "传感器",
-  supplement: "图"
-)
-
-- 开环传递函数：$G(s)H(s)$
-- 闭环传递函数：$G(s)/(1+G(s)H(s))$
-
-令
-
-- $G(s) = N_G(s)/D_G(s)$
-- $H(s) = N_H(s)/D_H(s)$
-
-可得
-
-$
-G(s)H(s) = frac(N_G N_H, D_G D_H) \
-1 + G(s)H(s) = frac(D_G D_H + N_G N_H, D_G D_H)\
-frac(G(s), 1 + G(s)H(s)) = frac(N_G D_H, D_G D_H + N_G N_H) $
-
-不难得到
-
-- 开环传递函数的极点 = 媒介函数的极点
-- 闭环传递函数的极点 = 媒介函数的零点
-
-若有映射$F(s) = 1 + G(s)H(s)$，将平面$A$中的闭合曲线，映射到平面$B$中，则对新的闭合曲线逆时针绕原点的圈数$N$有
-
-$ N = P - Z
-$
-其中
-
-- $P$为 Nyquist 闭合区内，$F(s)$的极点（开环传递函数的极点）个数
-- $Z$为 Nyquist 闭合区内，$F(s)$的零点（闭环传递函数的极点）个数
-
-> Nyquist 闭合区：复平面的右半平面
-
-变换映射函数为$F(s) - 1 = G(s)H(s)$，闭合曲线$B$将整体左移，中心点变为$(-1, 0)$，绘制出的图形称为 Nyquist Plot。
-
-#theorem("Nyquist 稳定性")[
-  若系统稳定，则其闭环传递函数在 Nyquist 闭合区没有极点，即
-  $ P = N $
 ]
