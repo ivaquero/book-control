@@ -98,7 +98,7 @@
         indent: auto,
         depth: 2
      )
-    #pagebreak(weak: true)
+    #pagebreak()
   ]
   doc
 }

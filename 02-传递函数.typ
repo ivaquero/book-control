@@ -125,7 +125,7 @@ $
   $ ℒ (dv(y(t), t, n)) = s^n ℒ[y(t)] = s^n Y(s) $
 ]
 
-#pagebreak(weak: true)
+#pagebreak()
 
 == 时域与频域
 
@@ -188,7 +188,7 @@ $ ℒ[e^(-a t)] &= ∫_0^∞ e^(-a t) e^(-s t) dd(t)
 
 $ ℒ[1] = 1/s $
 
-#pagebreak(weak: true)
+#pagebreak()
 
 == 三角函数
 
@@ -278,7 +278,7 @@ cos 2 t &= frac(e^(-2 i t) + e^(2 i t), 2) $
 
 $ e^′ = L i^″ + R i^′ + 1/C i $
 
-#pagebreak(weak: true)
+#pagebreak()
 
 #h(2em) 令初始条件为$0$，等式两边进行导数的 Laplace 变换，得
 
