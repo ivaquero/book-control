@@ -52,10 +52,10 @@ $ dot(x) = f(t, x) $
    mark-scale: 80%,
 
    let (R,O,T,H,A)=((1,1),(2,2),(4,1),(4,2),(5.5,1.5)),
-   node(R, text($V(s)$, size: 0.9em), height: 2em,corner-radius: 3pt),
+   node(R, text($V(s)$, size: 0.9em), height: 2em, corner-radius: 3pt),
    node(O, text("误差表", size: 0.5em), inset: 1em,radius: 1em),
-   node(T, text("控制器", size: 0.8em), height: 2em, width:6em, corner-radius: 3pt),
-   node(H, text("传感器", size: 0.8em), height: 2em, width:6em, corner-radius: 3pt),
+   node(T, text("控制器", size: 0.8em), height: 2em, width: 6em, corner-radius: 3pt),
+   node(H, text("传感器", size: 0.8em), height: 2em, width: 6em, corner-radius: 3pt),
    node(A, text("设备", size: 0.8em), height: 2em, width: 4em, corner-radius: 3pt),
    edge(R, O, "-|>", corner: left),
    edge(O, T, text("输入", size: 0.7em), "-|>", corner: right, label-pos: 0.7),
