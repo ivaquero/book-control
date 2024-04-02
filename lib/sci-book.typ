@@ -213,4 +213,4 @@
 #import "@preview/physica:0.9.3": *
 
 // diagram
-#import "@preview/fletcher:0.4.2": diagram, edge, node
+#import "@preview/fletcher:0.4.3": diagram, edge, node
