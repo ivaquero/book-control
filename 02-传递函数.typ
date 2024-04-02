@@ -4,7 +4,7 @@
   header: "现代控制理论",
   author: ("ivaquero"),
   header-cap: "github@ivaquero",
-  outline-on: true,
+  outline-on: false,
   doc,
 )
 #show: thmrules
