@@ -1,9 +1,9 @@
 #import "lib/sci-book.typ": *
 #show: doc => conf(
   title: "频域响应分析",
-  header: "现代控制理论",
   author: ("ivaquero"),
-  header-cap: "github@ivaquero",
+  header-cap: "现代控制理论",
+  footer-cap: "github@ivaquero",
   outline-on: false,
   doc,
 )

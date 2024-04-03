@@ -1,9 +1,9 @@
 #import "lib/sci-book.typ": *
 #show: doc => conf(
   title: "非线性控制器",
-  header: "现代控制理论",
   author: ("ivaquero"),
-  header-cap: "github@ivaquero",
+  header-cap: "现代控制理论",
+  footer-cap: "github@ivaquero",
   outline-on: false,
   doc,
 )

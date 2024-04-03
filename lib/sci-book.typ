@@ -1,8 +1,11 @@
+// header-footer
+#import "@preview/hydra:0.4.0": *
+
 #let conf(
     title: none,
     author: (),
     header-cap: [],
-    header: [],
+    footer-cap: [],
     outline-on: true,
     eqnumstyle: "1",
     eqnumsep: ".",
@@ -13,21 +16,27 @@
 ) = {
   set page(
     paper: "a4",
-    header: [
-      #set text(6pt)
-      #emph[#header-cap]-#datetime.today().display("[year]-[month]-[day]")
-      #h(6fr) #emph[#header]
-    ],
-    footer: locate(loc => {
-      let x = counter(page).at(loc).first()
-      let total = counter(page).final(loc).first()
-      if calc.odd(x) {
-        align(right)[#counter(page).display()/#total]
+    numbering: "1",
+    header: context {
+      set text(size: 8pt)
+      if calc.odd(here().page()) {
+        align(right, [#header-cap #h(6fr) #emph(hydra(1))])
       } else {
-        align(left)[#counter(page).display()/#total]
+        align(left, [#emph(hydra(1)) #h(6fr) #header-cap] )
       }
-    }),
+      line(length: 100%)
+    },
+    footer: context {
+      set text(size: 8pt)
+      let page_num = here().page()
+      if calc.odd(page_num) {
+        align(right, [#footer-cap #datetime.today().display("[year]-[month]-[day]") #h(6fr) #page_num] )
+      } else {
+        align(left, [#page_num #h(6fr) #footer-cap #datetime.today().display("[year]-[month]-[day]")])
+      }
+    },
   )
+  set heading(numbering: "1.1")
 
   set heading(numbering: "1.")
   set par(
