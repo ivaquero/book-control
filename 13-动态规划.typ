@@ -165,6 +165,10 @@ $ u = 1/m (f(t)) - m g = a $
 - $t = dd(x)/1/2 (v_k + v_(k + 1))$
 - $a = (v_k + v_(k + 1))/t$
 
+\
+#let code1 = read("matlab/dynamic_prog.m")
+#code(code1, lang: "matlab", breakable: true)
+
 == 策略
 <策略>
 
