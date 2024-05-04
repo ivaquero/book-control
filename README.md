@@ -20,6 +20,7 @@
   - [phyisca](https://github.com/leedehai/typst-physics): v0.9.3
   - [fletcher](https://github.com/Jollywatt/typst-fletcher): v0.4.3
   - [hydra](https://github.com/tingerrr/hydra): v0.4.0
+  - [gentle-clues](https://github.com/jomaway/typst-gentle-clues): v0.8.0
 
 为保证正常编译，请参考 [typst-packages](https://github.com/typst/packages) 上的说明，在如下路径下克隆 `https://github.com/typst/packages` 仓库
 

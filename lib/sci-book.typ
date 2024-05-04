@@ -1,5 +1,13 @@
 // header-footer
 #import "@preview/hydra:0.4.0": *
+// physics
+#import "@preview/physica:0.9.2": *
+// diagram
+#import "@preview/fletcher:0.4.3": diagram, node, edge
+// theorems
+#import "@preview/ctheorems:1.1.2": *
+// banners
+#import "@preview/gentle-clues:0.8.0": *
 
 #let conf(
     title: none,
@@ -132,8 +140,6 @@
       align: left))
 
 // theorems
-#import "@preview/ctheorems:1.1.2": *
-
 #let terms = (
   "def": "定义",
   "theo": "定理",
@@ -202,8 +208,6 @@
 )
 
 // banners
-#import "@preview/gentle-clues:0.6.0": *
-
 #let tip(title: terms.tip, icon: emoji.bubble, ..args) = clue(
   _color: yellow,
   title: title,
@@ -217,9 +221,3 @@
   icon: icon,
   ..args
 )
-
-// physics
-#import "@preview/physica:0.9.3": *
-
-// diagram
-#import "@preview/fletcher:0.4.3": diagram, edge, node
