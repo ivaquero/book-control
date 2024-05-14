@@ -209,14 +209,14 @@
 
 // banners
 #let tip(title: terms.tip, icon: emoji.bubble, ..args) = clue(
-  _color: yellow,
+  accent-color: yellow,
   title: title,
   icon: icon,
   ..args
 )
 
 #let alert(title: terms.alert, icon: emoji.excl, ..args) = clue(
-  _color: red,
+  accent-color: red,
   title: title,
   icon: icon,
   ..args
