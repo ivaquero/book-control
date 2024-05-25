@@ -7,7 +7,6 @@
   outline-on: false,
   doc,
 )
-#show: thmrules
 
 = 传递函数
 <传递函数>

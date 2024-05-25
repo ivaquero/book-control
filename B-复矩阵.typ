@@ -7,7 +7,6 @@
   outline-on: false,
   doc,
 )
-#show: thmrules
 
 = 复数
 <复数>

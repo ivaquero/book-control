@@ -7,7 +7,6 @@
   outline-on: false,
   doc,
 )
-#show: thmrules
 
 = 基本要求
 <基本要求>

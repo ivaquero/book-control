@@ -7,7 +7,6 @@
   outline-on: false,
   doc,
 )
-#show: thmrules
 
 = 状态空间
 <状态空间>

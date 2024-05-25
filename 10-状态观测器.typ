@@ -7,7 +7,6 @@
   outline-on: false,
   doc,
 )
-#show: thmrules
 
 = Luenberger 观测器
 <Luenberger-观测器>

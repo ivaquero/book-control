@@ -8,6 +8,8 @@
 #import "@preview/ctheorems:1.1.2": *
 // banners
 #import "@preview/gentle-clues:0.8.0": *
+// indent
+#import "@preview/indenta:0.0.1": fix-indent
 
 #let conf(
     title: none,
@@ -44,9 +46,8 @@
       }
     },
   )
-  set heading(numbering: "1.1")
-
   set heading(numbering: "1.")
+
   set par(
       first-line-indent: 2em,
       justify: true,
@@ -117,6 +118,9 @@
      )
     #pagebreak()
   ]
+
+  show: thmrules
+  show: fix-indent()
   doc
 }
 

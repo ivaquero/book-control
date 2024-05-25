@@ -7,7 +7,6 @@
   outline-on: false,
   doc,
 )
-#show: thmrules
 
 = 非线性系统稳定性
 <非线性系统稳定性>
