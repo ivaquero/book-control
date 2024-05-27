@@ -296,8 +296,7 @@ $ "dB" = 10 lg P_M/P_R = 10 lg (M_0/M_i)^2 = 20 lg M $
 
 == 绘制
 <绘制>
-
-#h(2em) Euler 公式，有
+Euler 公式，有
 
 $ G(j ω_i) = r e^(j θ) $
 

@@ -10,8 +10,7 @@
 
 = 控制系统组成
 <控制系统组成>
-
-#h(2em) 控制系统由动态系统（dynamical system）和控制器（controller）组成。
+控制系统由动态系统（dynamical system）和控制器（controller）组成。
 
 == 线性时不变系统
 
@@ -23,23 +22,19 @@
 
   自变量和自变量的导数均为线性的系统，称为线性系统。
 ]
-
-#h(2em) 不显含时间$t$的线性系统，称线性自治系统（linear autonomous system），也称为线性时不变系统（linear time invariant system），如
+不显含时间$t$的线性系统，称线性自治系统（linear autonomous system），也称为线性时不变系统（linear time invariant system），如
 
 $ dot(x) = f(x) $
-
-#h(2em) LTI 是最常用的动态系统，其在具有线性性质的同时，还服从自治（时不变）原理，即
+LTI 是最常用的动态系统，其在具有线性性质的同时，还服从自治（时不变）原理，即
 
 $ O{f(t)} = x(t) ⇒ O{f(t - τ)} = x(t - τ) $
 
-
-#h(2em) LTI 还被称为线性常系数系统。与之相对，显含时间$t$的系统，称线性非自治系统（non-autonomous system）或线性时变系统（time varying system），即
+LTI 还被称为线性常系数系统。与之相对，显含时间$t$的系统，称线性非自治系统（non-autonomous system）或线性时变系统（time varying system），即
 
 $ dot(x) = f(t, x) $
 
 == 控制器
-
-#h(2em) 从控制模式上，控制器分为开环控制和闭环控制
+从控制模式上，控制器分为开环控制和闭环控制
 
 - 开环控制：根据参考值（reference）决定控制量，即系统输入
 - 闭环控制：通过测量系统输出与参考值之间的误差，反馈（feedback）至输入端，决定控制量
@@ -113,8 +108,7 @@ e_L = L dv(I, t) = L I^′ $
 ]
 
 == RLC 电路
-
-#h(2em) RLC 电路是一种由电阻 R、电感 L、电容 C 组成的电路结构。
+RLC 电路是一种由电阻 R、电感 L、电容 C 组成的电路结构。
 
 #figure(
   image("./images/model/circuit-rlc.drawio.png", width: 40%),
@@ -138,15 +132,13 @@ $ e_L + e_(R_1) + e_(R_2) - e_i = 0 $
 即，整体电路的闭环的电压代数和为$0$。
 
 #pagebreak()
-
-#h(2em) 分别计算各项，有
+分别计算各项，有
 
 - $e_(R_1) = I_2 R_1 = I_2$
 - $e_(R_2) = I_2 R_2 = 3 I_2$
 - $e_L = L I_1^′ = 2 I_1^′$
 - $e_C = 1/C ∫_0^t (I_1 - I_2) dd(t) = 4 ∫_0^t (I_1 - I_2) dd(t)$
-
-#h(2em) 回代入第一个方程组，得
+回代入第一个方程组，得
 
 $ 2 I_1^′ + 4 I_2 = e_i\
 I_2 = ∫_0^t (I_1 - I_2) dd(t) $
@@ -292,15 +284,13 @@ $ dv(h, t) = q_("in")/A - frac(g h, A R) $
 = 辅助知识
 
 == 自动化系统
-
-#h(2em) 一个典型的自动化系统由 4 部分构成
+一个典型的自动化系统由 4 部分构成
 
 + Sense (collect data)
 + Perceive (interpret data)
 + Plan (find path)
 + Act (follow path)
-
-#h(2em) 其中，前 2 步的工作并称为传感融合（sensor fusion）。其作用有 3 个
+其中，前 2 步的工作并称为传感融合（sensor fusion）。其作用有 3 个
 
 + 提高数据质量（降低噪声）
 + 估计未量测状态
