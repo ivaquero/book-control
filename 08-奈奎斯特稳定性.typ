@@ -17,7 +17,7 @@
 #figure(
   image("images/block/sensor.drawio.png", width: 40%),
   caption: "传感器",
-  supplement: "图"
+  supplement: "图",
 )
 
 - 开环传递函数：$G(s)H(s)$
@@ -25,15 +25,16 @@
 
 令
 
-- $G(s) = N_G(s)/D_G(s)$
-- $H(s) = N_H(s)/D_H(s)$
+- $G(s) = N_G(s) / D_G(s)$
+- $H(s) = N_H(s) / D_H(s)$
 
 可得
 
 $
-G(s)H(s) = frac(N_G N_H, D_G D_H) \
-1 + G(s)H(s) = frac(D_G D_H + N_G N_H, D_G D_H)\
-frac(G(s), 1 + G(s)H(s)) = frac(N_G D_H, D_G D_H + N_G N_H) $
+  G(s)H(s) = frac(N_G N_H, D_G D_H) \
+  1 + G(s)H(s) = frac(D_G D_H + N_G N_H, D_G D_H)\
+  frac(G(s), 1 + G(s)H(s)) = frac(N_G D_H, D_G D_H + N_G N_H)
+$
 
 不难得到
 
@@ -42,8 +43,7 @@ frac(G(s), 1 + G(s)H(s)) = frac(N_G D_H, D_G D_H + N_G N_H) $
 
 若有映射$F(s) = 1 + G(s)H(s)$，将平面$A$中的闭合曲线，映射到平面$B$中，则对新的闭合曲线逆时针绕原点的圈数$N$有
 
-$ N = P - Z
-$
+$ N = P - Z $
 其中
 
 - $P$为 Nyquist 闭合区内，$F(s)$的极点（开环传递函数的极点）个数

@@ -10,6 +10,7 @@
 
 = 控制系统组成
 <控制系统组成>
+
 控制系统由动态系统（dynamical system）和控制器（controller）组成。
 
 == 线性时不变系统
@@ -40,22 +41,46 @@ $ dot(x) = f(t, x) $
 - 闭环控制：通过测量系统输出与参考值之间的误差，反馈（feedback）至输入端，决定控制量
 
 #figure(
- diagram(
-   spacing: (2em, 2em),
-   node-stroke: 1pt,
-   mark-scale: 80%,
-
-   let (R,O,T,H,A)=((1,1),(2,2),(4,1),(4,2),(5.5,1.5)),
-   node(R, text($V(s)$, size: 0.9em), height: 2em, corner-radius: 3pt),
-   node(O, text("误差表", size: 0.5em), inset: 1em,radius: 1em),
-   node(T, text("控制器", size: 0.8em), height: 2em, width: 6em, corner-radius: 3pt),
-   node(H, text("传感器", size: 0.8em), height: 2em, width: 6em, corner-radius: 3pt),
-   node(A, text("设备", size: 0.8em), height: 2em, width: 4em, corner-radius: 3pt),
-   edge(R, O, "-|>", corner: left),
-   edge(O, T, text("输入", size: 0.7em), "-|>", corner: right, label-pos: 0.7),
-   edge(T, A, text("输出", size: 0.7em), "-|>", corner: right, label-pos: 0.25),
-   edge(A, H, "-|>", corner: right),
-   edge(H, O, "-|>"),
+  diagram(
+    spacing: (2em, 2em),
+    node-stroke: 1pt,
+    mark-scale: 80%,
+    let (R, O, T, H, A) = ((1, 1), (2, 2), (4, 1), (4, 2), (5.5, 1.5)),
+    node(R, text($V(s)$, size: 0.9em), height: 2em, corner-radius: 3pt),
+    node(O, text("误差表", size: 0.5em), inset: 1em, radius: 1em),
+    node(
+      T,
+      text("控制器", size: 0.8em),
+      height: 2em,
+      width: 6em,
+      corner-radius: 3pt,
+    ),
+    node(
+      H,
+      text("传感器", size: 0.8em),
+      height: 2em,
+      width: 6em,
+      corner-radius: 3pt,
+    ),
+    node(
+      A,
+      text("设备", size: 0.8em),
+      height: 2em,
+      width: 4em,
+      corner-radius: 3pt,
+    ),
+    edge(R, O, "-|>", corner: left),
+    edge(O, T, text("输入", size: 0.7em), "-|>", corner: right, label-pos: 0.7),
+    edge(
+      T,
+      A,
+      text("输出", size: 0.7em),
+      "-|>",
+      corner: right,
+      label-pos: 0.25,
+    ),
+    edge(A, H, "-|>", corner: right),
+    edge(H, O, "-|>"),
   ),
   caption: "闭环控制器",
   supplement: "\n图",
@@ -75,28 +100,30 @@ $ dot(x) = f(t, x) $
     [], [单位], [符号], [定义公式],
     [电量], [库仑（C）], [$Q$], [],
     [电流], [安培（A）], [$I$], [$dv(s:\/, Q, t)$],
-    [电压], [伏特（V）], [$U/e$], [],
+    [电压], [伏特（V）], [$U / e$], [],
     [电阻], [欧姆（Ω）], [$R$], [$U\/I$],
     [电容], [法拉（F）], [$C$], [$Q\/U$],
     [电感], [亨利（H）], [$L$], [$U\/I^′$],
- ),
+  ),
   caption: [电学单元],
   supplement: "表",
-  kind: table
+  kind: table,
 )
 
 #pagebreak()
 
 - 电压
 
-$ e_R = I R\
-e_C = Q/C = 1/C ∫_0^t I dd(t)\
-e_L = L dv(I, t) = L I^′ $
+$
+  e_R = I R\
+  e_C = Q / C = 1 / C ∫_0^t I dd(t)\
+  e_L = L dv(I, t) = L I^′
+$
 
 == 电学定律
 
 #theorem("Ohm 定律")[
-  $ I = e_R/R $
+  $ I = e_R / R $
 ]
 
 #theorem("Kirchhoff 电流定律（KCL）")[
@@ -113,7 +140,7 @@ RLC 电路是一种由电阻 R、电感 L、电容 C 组成的电路结构。
 #figure(
   image("./images/model/circuit-rlc.drawio.png", width: 40%),
   caption: [ RLC],
-  supplement: "图"
+  supplement: "图",
 )
 
 定义上图区域 1 和区域 2 的电流方向均为顺时针，则
@@ -122,8 +149,10 @@ RLC 电路是一种由电阻 R、电感 L、电容 C 组成的电路结构。
 
 由 KVL
 
-$ e_L + e_C - e_i = 0\
-e_(R_1) + e_(R_2) - e_C = 0 $
+$
+  e_L + e_C - e_i = 0\
+  e_(R_1) + e_(R_2) - e_C = 0
+$
 
 两式相加，得
 
@@ -137,11 +166,13 @@ $ e_L + e_(R_1) + e_(R_2) - e_i = 0 $
 - $e_(R_1) = I_2 R_1 = I_2$
 - $e_(R_2) = I_2 R_2 = 3 I_2$
 - $e_L = L I_1^′ = 2 I_1^′$
-- $e_C = 1/C ∫_0^t (I_1 - I_2) dd(t) = 4 ∫_0^t (I_1 - I_2) dd(t)$
+- $e_C = 1 / C ∫_0^t (I_1 - I_2) dd(t) = 4 ∫_0^t (I_1 - I_2) dd(t)$
 回代入第一个方程组，得
 
-$ 2 I_1^′ + 4 I_2 = e_i\
-I_2 = ∫_0^t (I_1 - I_2) dd(t) $
+$
+  2 I_1^′ + 4 I_2 = e_i\
+  I_2 = ∫_0^t (I_1 - I_2) dd(t)
+$
 
 对第二个子式连续求导，得
 
@@ -154,7 +185,7 @@ $ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
 #figure(
   image("./images/model/circuit-rlc.png", width: 60%),
   caption: [RLC],
-  supplement: "图"
+  supplement: "图",
 )
 
 #pagebreak()
@@ -172,11 +203,11 @@ $ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
     stroke: frame(rgb("000")),
     [], [单位], [符号],
     [磁感应强度], [特斯拉（T）], [$B$],
-    [磁通量], [韦伯（Wb）],[$ϕ$]
- ),
+    [磁通量], [韦伯（Wb）], [$ϕ$],
+  ),
   caption: [电磁学基础],
   supplement: "表",
-  kind: table
+  kind: table,
 )
 
 $ ϕ = B S $
@@ -223,7 +254,7 @@ $ P_("gauge") = P_("abs") - P_a = ρ g h $
 #figure(
   image("./images/model/liquid.drawio.png", width: 40%),
   caption: [流体系统],
-  supplement: "图"
+  supplement: "图",
 )
 
 == 阻力
@@ -248,10 +279,12 @@ $ P_1 - P_a = ρ q_("out") R $
 
 即
 
-$ q_("out")
-&= frac(P_1 - P_a, ρ R)\
-&= frac(P_a + ρ g h - P_a, ρ R)\
-&= frac(g h, R) $
+$
+  q_("out")
+  &= frac(P_1 - P_a, ρ R)\
+  &= frac(P_a + ρ g h - P_a, ρ R)\
+  &= frac(g h, R)
+$
 
 == 守恒
 
@@ -265,7 +298,7 @@ $ dv(V, t) = q_("in") - q_("out") $
 
 两端除以$A$，从而有
 
-$ dv(h, t) = 1/A (q_("in") - q_("out")) $
+$ dv(h, t) = 1 / A (q_("in") - q_("out")) $
 
 - 压力守恒
 
@@ -277,7 +310,7 @@ $ dv(P, t) = ρ g dv(h, t) = frac(ρ g, A)(q_("in") - q_("out")) $
 
 由上，可得
 
-$ dv(h, t) = q_("in")/A - frac(g h, A R) $
+$ dv(h, t) = q_("in") / A - frac(g h, A R) $
 
 #pagebreak()
 

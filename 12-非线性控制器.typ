@@ -24,7 +24,7 @@ $ dot(e) = dot(x)_d - dot(x) = dot(x)_d - a x^2 - u $
 当$a$已知，可采用反馈线性化，求得 Lyapunov
 函数$V(x)$；当$a$未知，则有
 
-$ V(e, tilde(a)) = 1/2 e^2 + 1/2 a ̃^2 $
+$ V(e, tilde(a)) = 1 / 2 e^2 + 1 / 2 a ̃^2 $
 
 其中，
 
@@ -33,8 +33,12 @@ $ V(e, tilde(a)) = 1/2 e^2 + 1/2 a ̃^2 $
 
 求导，得
 
-$ dot(V)(e, tilde(a)) = e dot(e) + tilde(a)tilde(dot(a)) &= e (x_d - a x^2 - u) - tilde(a)hat(dot(a))\
- &= -k e^2 - tilde(a)(e x^2 + hat(dot(a))) $
+$
+  dot(V)(e, tilde(a)) = e dot(e) + tilde(a)tilde(dot(a)) &= e (
+    x_d - a x^2 - u
+  ) - tilde(a)hat(dot(a))\
+  &= -k e^2 - tilde(a)(e x^2 + hat(dot(a)))
+$
 
 #tip[
   不难得出，$tilde(dot(a)) = dot(a) - hat(dot(a)) = -hat(dot(a))$
@@ -80,11 +84,11 @@ $ dot(e) = dot(x)_d - dot(x) = dot(x)_d - f(x) - u $
 
 令
 
-$ u = dot(x)_d + k e + u_(a u x) = dot(x)_d + k e + ρ|e|/e $
+$ u = dot(x)_d + k e + u_(a u x) = dot(x)_d + k e + ρ|e| / e $
 
 其中，
 
-$ |e|/e = "sign"(e) cases(delim: "{", 1 & e > 0, 0 & e = 0, - 1 & e < 0) $
+$ |e| / e = "sign"(e) cases(delim: "{", 1 & e > 0, 0 & e = 0, - 1 & e < 0) $
 
 #tip[
   $e = x_d - x$，则$lim_(t → ∞) e = 0$
@@ -92,7 +96,7 @@ $ |e|/e = "sign"(e) cases(delim: "{", 1 & e > 0, 0 & e = 0, - 1 & e < 0) $
 
 于是
 
-$ dot(e) = -k e - f(x) - ρ(x) e/|e| $
+$ dot(e) = -k e - f(x) - ρ(x) e / |e| $
 
 其中，
 
@@ -114,7 +118,7 @@ $ dot(x) = a x^2 + u $
 
 于是，可以设计
 
-$ u = k e + dot(x)_d + |a ̄|(x^2 + 0.1) |e|/e $
+$ u = k e + dot(x)_d + |a ̄|(x^2 + 0.1) |e| / e $
 
 === 高增益鲁棒控制
 <高增益鲁棒控制>
@@ -123,17 +127,19 @@ $ u = k e + dot(x)_d + |a ̄|(x^2 + 0.1) |e|/e $
 
 令
 
-- $u_(a u x 2) = 1/ɛ⋅ρ^2 e$
-- $V = 1/2 e^2$
+- $u_(a u x 2) = 1 / ɛ⋅ρ^2 e$
+- $V = 1 / 2 e^2$
 
 则
 
-$ dot(V)= e dot(e) &= e (dot(x)_d - f(x)) - k e - dot(x)_d - 1/ɛ p^2 e\
- &= -e f(x) - k e^2 - 1/ɛ ρ^2 e^2 $
+$
+  dot(V)= e dot(e) &= e (dot(x)_d - f(x)) - k e - dot(x)_d - 1 / ɛ p^2 e\
+  &= -e f(x) - k e^2 - 1 / ɛ ρ^2 e^2
+$
 
 于是有
 
-$ dot(V)≤ - k e^2 + p|e|(1 - 1/ɛ ρ|e|) $
+$ dot(V)≤ - k e^2 + p|e|(1 - 1 / ɛ ρ|e|) $
 
 - 当$ρ|e| > ɛ$，$dot(V)≤ - k e^2$
 - 当$ρ|e| ≤ ɛ$，$dot(V)≤ 2 k V + ɛ$
@@ -150,9 +156,13 @@ $ lim_(t → ∞) e ≤ sqrt(ɛ/k) $
 令
 
 - $u_(a u x 3) = frac(ρ^2 e, ρ|e| + ɛ)$
-- $V = 1/2 e^2$
+- $V = 1 / 2 e^2$
 
-$ dot(V)= e dot(e) ≤ - k e^2 + ρ|e| - e frac(ρ^2 e, ρ|e| + ɛ) = -k e^2 + ɛ (frac(ρ|e|, p|e| + ɛ)) $
+$
+  dot(V)= e dot(e) ≤ - k e^2 + ρ|e| - e frac(ρ^2 e, ρ|e| + ɛ) = -k e^2 + ɛ (
+    frac(ρ|e|, p|e| + ɛ)
+  )
+$
 
 其中，$0 ≤ frac(ρ|e|, p|e| + ɛ) ≤ 1$，即
 
@@ -168,15 +178,21 @@ $ lim_(t → ∞) e ≤ sqrt(ɛ/k) $
     align: center + horizon,
     inset: 4pt,
     stroke: frame(rgb("000")),
-    [Name], [$u_(a u x)$], [$ɛ$], [稳态误差], [收敛速度],
-    [瞬态输入], [稳态输入],
+    [Name],
+    [$u_(a u x)$],
+    [$ɛ$],
+    [稳态误差],
+    [收敛速度],
+    [瞬态输入],
+    [稳态输入],
+
     [Sliding Mode], [$ρ e\/norm(e)$], [N/A], [5], [4], [2], [1],
     [High Gain], [$1\/ɛ ρ^2 e$], [0.1], [4], [5], [1], [2],
     [High Gain], [$1\/ɛ ρ^2 e$], [1], [2], [3], [3], [4],
     [High Freq], [$(ρ^2 e)\/(ρ norm(e) + ɛ)$], [0.1], [3], [2], [4], [3],
     [High Freq], [$(ρ^2 e)\/(ρ norm(e) + ɛ)$], [1], [1], [1], [5], [5],
- ),
+  ),
   caption: [高频鲁棒控制],
   supplement: "表",
-  kind: table
+  kind: table,
 )

@@ -18,15 +18,19 @@
 
 对系统
 
-$ dot(x) = 𝑨 x + 𝑩 u\
-y = 𝑪 x + 𝑫 u $
+$
+  dot(x) = 𝑨 x + 𝑩 u\
+  y = 𝑪 x + 𝑫 u
+$
 
 其中，$u$为输入，$y$为输出。
 
 引入 Luenberger 观测器，有
 
-$ hat(dot(x)) = 𝑨 hat(x) + 𝑩 u + 𝑳 (y - hat(y))\
-hat(y) = 𝑪 hat(x) + 𝑫 u $
+$
+  hat(dot(x)) = 𝑨 hat(x) + 𝑩 u + 𝑳 (y - hat(y))\
+  hat(y) = 𝑪 hat(x) + 𝑫 u
+$
 
 $(3), (4)$两式联立，得
 
@@ -66,7 +70,7 @@ $ "Re"["Eig"(𝑨 - 𝑳 𝑪)] < 0 $
 #figure(
   image("./images/model/vibration.drawio.png", width: 40%),
   caption: [弹簧阻尼系统],
-  supplement: "图"
+  supplement: "图",
 )
 
 令
@@ -77,10 +81,12 @@ $ "Re"["Eig"(𝑨 - 𝑳 𝑪)] < 0 $
 
 则
 
-$ mat(delim: "[", dot(z)_1; dot(z)_2) =
-mat(delim: "[", 0, 1; - 1, - 0.5)
-mat(delim: "[", z_1; z_2) +
-mat(delim: "[", 0; 1) u $
+$
+  mat(delim: "[", dot(z)_1; dot(z)_2) =
+  mat(delim: "[", 0, 1; - 1, - 0.5)
+  mat(delim: "[", z_1; z_2) +
+  mat(delim: "[", 0; 1) u
+$
 
 同时
 
@@ -88,11 +94,13 @@ $ y = mat(delim: "[", 1, 0) mat(delim: "[", z_1; z_2) $
 
 引入观测器，有
 
-$ mat(delim: "[", hat(dot(z))_1; hat(dot(z))_2) =
-mat(delim: "[", - 2.5, 1; 0.25, - 0.5)
-mat(delim: "[", hat(z)_1; hat(z)_2) +
-mat(delim: "[", 0; 1) u +
-mat(delim: "[", 2.5; - 1.25) y $
+$
+  mat(delim: "[", hat(dot(z))_1; hat(dot(z))_2) =
+  mat(delim: "[", - 2.5, 1; 0.25, - 0.5)
+  mat(delim: "[", hat(z)_1; hat(z)_2) +
+  mat(delim: "[", 0; 1) u +
+  mat(delim: "[", 2.5; - 1.25) y
+$
 
 = 可观测性
 <可观测性>
@@ -102,8 +110,10 @@ mat(delim: "[", 2.5; - 1.25) y $
 
 对系统
 
-$ dot(x) &= 𝑨 x + 𝑩 u\
-y &= 𝑪 x $
+$
+  dot(x) &= 𝑨 x + 𝑩 u\
+  y &= 𝑪 x
+$
 
 引入观测器
 
@@ -111,12 +121,16 @@ $ dot(e)_x = (𝑨 - 𝑳 𝑪) e_x $
 
 引入控制器
 
-$ u &= -k hat(x) \
-dot(x) &= 𝑨 x - 𝑩 k hat(x) = (𝑨 - 𝑩 k) x + 𝑩 k e $
+$
+  u &= -k hat(x) \
+  dot(x) &= 𝑨 x - 𝑩 k hat(x) = (𝑨 - 𝑩 k) x + 𝑩 k e
+$
 
 联立，得
 
-$ mat(delim: "[", dot(e_λ); x ̇) = mat(delim: "[", 𝑨 - 𝑳 𝑪, 0; 𝑩 k, 𝑨 - 𝑩 k) mat(delim: "[", e_x; x ̇) = 𝑴 mat(delim: "[", e_x; x ̇) $
+$
+  mat(delim: "[", dot(e_λ); x ̇) = mat(delim: "[", 𝑨 - 𝑳 𝑪, 0; 𝑩 k, 𝑨 - 𝑩 k) mat(delim: "[", e_x; x ̇) = 𝑴 mat(delim: "[", e_x; x ̇)
+$
 
 为使$e_x → 0$，则需
 

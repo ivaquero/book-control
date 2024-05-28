@@ -16,8 +16,10 @@
 
 对 LTI 系统，已知输入和输出
 
-$ & M_i sin(ω_i t + ϕ_i)\
- & M_o sin(ω_i t + ϕ_o) $
+$
+  & M_i sin(ω_i t + ϕ_i)\
+  & M_o sin(ω_i t + ϕ_o)
+$
 
 其中，$M_i$和$M_o$为输入和输出振福，$ϕ_i$和$ϕ_o$为输入和输出相位。
 
@@ -37,13 +39,19 @@ $ ϕ = ϕ_0 - ϕ_i $
 
 对一个正弦波
 
-$ u(t) &= A sin(ω_i t) + B cos(ω_i t) \
-&= sqrt(A^2 + B^2)(frac(A, sqrt(A^2 + B^2)) sin(ω_i t) + frac(B, sqrt(A^2 + B^2)) cos(ω_i t)) $
+$
+  u(t) &= A sin(ω_i t) + B cos(ω_i t) \
+  &= sqrt(A^2 + B^2)(
+    frac(A, sqrt(A^2 + B^2)) sin(ω_i t) + frac(B, sqrt(A^2 + B^2)) cos(ω_i t)
+  )
+$
 
 令$cos(ϕ_i) = frac(A, sqrt(A^2 + B^2))$，$sin(ϕ_i) = frac(B, sqrt(A^2 + B^2))$，得
 
-$ u(t) &= sqrt(A^2 + B^2)(cos(ϕ_i) sin(ω_i t) + sin(ϕ_i) cos(ω_i t)) \
-&= M_i sin(ω_i t + ϕ_i) $
+$
+  u(t) &= sqrt(A^2 + B^2)(cos(ϕ_i) sin(ω_i t) + sin(ϕ_i) cos(ω_i t)) \
+  &= M_i sin(ω_i t + ϕ_i)
+$
 
 对系统
 
@@ -51,8 +59,10 @@ $ X(s) = U(s)G(s) $
 
 有
 
-$ U(s) = ℒ[μ(t)] &= frac(A ω_i, s^2  + ω^2) + frac(B s, s^2  + ω^2) \
-&= frac(A ω_i + B s, (s + j ω_i)(s - j ω_i)) $
+$
+  U(s) = ℒ[μ(t)] &= frac(A ω_i, s^2  + ω^2) + frac(B s, s^2  + ω^2) \
+  &= frac(A ω_i + B s, (s + j ω_i)(s - j ω_i))
+$
 
 且
 
@@ -63,14 +73,17 @@ $ G(s) = frac(D(s), N(s)) = frac(D(s), ∏_(i=1)^n (s - p_i)) $
 于是
 
 $
-X(s) = U(s)G(s)
-&= frac(k_1, s + j ω) + frac(k_2, s - j ω) + ∑_(i=1)^n frac(c_i, s - p_i) \
-&= frac((A ω_i + B s)D(s), (s + j ω_i)(s - j ω_i) ∏_(i=1)^n (s - p_i))
-
+  X(s) = U(s)G(s)
+  &= frac(k_1, s + j ω) + frac(k_2, s - j ω) + ∑_(i=1)^n frac(c_i, s - p_i) \
+  &= frac((A ω_i + B s)D(s), (s + j ω_i)(s - j ω_i) ∏_(i=1)^n (s - p_i))
 $
 易得
 
-$ x(t) = ℒ^(-1)[X(s)] = k_1 e^(-j ω_i t) + k_2 e^(j ω_i t) + ∑_(i=1)^n c_i e^(p_i t) $
+$
+  x(t) = ℒ^(-1)[
+    X(s)
+  ] = k_1 e^(-j ω_i t) + k_2 e^(j ω_i t) + ∑_(i=1)^n c_i e^(p_i t)
+$
 
 对于稳定系统，$p_i$的实部小于 0，此时稳态
 
@@ -82,14 +95,23 @@ $ X_(s s)(t) = k_1 e^(-j ω_i t) + k_2 e^(j ω_i t) $
 
 由上面的式子
 
-$ k_1(s - j ω_i) N(s) + k_2(s + j ω_i) N(s) + ∑_(i=1)^n c_i(s + j ω_i) = (A ω_i + B s) D(s) $
+$
+  k_1(s - j ω_i) N(s) + k_2(s + j ω_i) N(s) + ∑_(i=1)^n c_i(s + j ω_i) = (
+    A ω_i + B s
+  ) D(s)
+$
 - 令$s = -j ω$，得
 
 $ k_1(-j ω - j ω_i) N(-j ω_i) + ∑_(i=1)^n 0 = (A ω_i - B j ω_i) D(-j ω_i) $
-$ k_1 = frac(A ω_i - B j ω_i,  - 2j ω) frac(D(-j ω_i), N(-j ω_i)) = frac(B + A j, 2) G(-j ω_i) $
+$
+  k_1 = frac(A ω_i - B j ω_i,  - 2j ω) frac(D(-j ω_i), N(-j ω_i)) = frac(B + A j, 2) G(
+    -j ω_i
+  )
+$
 - 令$s = j ω$，得
 
 $ k_2 = frac(B - A j, 2) G(j ω_i) $
+
 其中，$G(j ω_i) = |G(j ω_i)|e^(j∠G(j ω_i))$。
 
 #tip[
@@ -98,17 +120,27 @@ $ k_2 = frac(B - A j, 2) G(j ω_i) $
 
 使用复数的极坐标形式，可得
 
-$ X_(s s)(t)
-&= frac(B + A j, 2) |G(j ω_i)| e^(-j ϕ_G) e^(-j ω_i t) + frac(B - A j, 2) |G(j ω_i)| e^(j ϕ_G) e^(j ω_i t)\
-&= 1/2 |G(j ω_i)| [(B + A j) e^(-(ϕ_G + ω_i t)) j + (B - A j) e^((ϕ_G + ω_i t)) j] $
+$
+  X_(s s)(t)
+  &= frac(B + A j, 2) |G(j ω_i)| e^(-j ϕ_G) e^(-j ω_i t) + frac(B - A j, 2) |G(
+    j ω_i
+  )| e^(j ϕ_G) e^(j ω_i t)\
+  &= 1 / 2 |G(j ω_i)| [
+    (B + A j) e^(-(ϕ_G + ω_i t)) j + (B - A j) e^((ϕ_G + ω_i t)) j
+  ]
+$
 
 通过 Euler 公式，化简得
 
-$ X_(s s)(t)
-&= 1/2 |G(j ω_i)| (2 B cos(ϕ_G + ω_i t)) + 2 A sin(ϕ_G + ω_i t)\
-&= |G(j ω_i)| sqrt(A^2 + B^2)(B/sqrt(A^2 + B^2) cos(ϕ_G + ω_i t)) + A/sqrt(A^2 + B^2) sin(ϕ_G + ω_i t)\
-&= |G(j ω_i)| M_i sin(ω_i t + ϕ_i + ϕ_G)\
-&= M_G M_i sin(ω_i t + ϕ_i + ϕ_G) $
+$
+  X_(s s)(t)
+  &= 1 / 2 |G(j ω_i)| (2 B cos(ϕ_G + ω_i t)) + 2 A sin(ϕ_G + ω_i t)\
+  &= |G(j ω_i)| sqrt(A^2 + B^2)(
+    B / sqrt(A^2 + B^2) cos(ϕ_G + ω_i t)
+  ) + A / sqrt(A^2 + B^2) sin(ϕ_G + ω_i t)\
+  &= |G(j ω_i)| M_i sin(ω_i t + ϕ_i + ϕ_G)\
+  &= M_G M_i sin(ω_i t + ϕ_i + ϕ_G)
+$
 
 = 低通滤波
 <低通滤波>
@@ -118,11 +150,11 @@ $ X_(s s)(t)
 
 积分的 Laplace 的变换为$G(s) = 1/s$，
 
-$ G(j ω_i) = frac(1, j ω_i) = -1/ω_i j $
+$ G(j ω_i) = frac(1, j ω_i) = -1 / ω_i j $
 
 其幅角为$pi/2$，其长度
 
-$ |G(j ω_i)| = 1/ω_i $
+$ |G(j ω_i)| = 1 / ω_i $
 
 显然，频率$ω$越高时，其振幅响应越低。即积分是一个低通滤波，高频信号通过它时，会大幅衰减。
 
@@ -139,16 +171,17 @@ $ G(s) = frac(a, s + a) $
 令$s = j ω$，得
 
 $
-G(j ω_i)
-&= frac(a, a + j ω) = frac(a(a - j ω_i), (a + j ω_i)(a - j ω_i)) \
-&= frac(a^2, a^2 + ω^2) + (-frac(a ω, a^2 + ω^2))j
+  G(j ω_i)
+  &= frac(a, a + j ω) = frac(a(a - j ω_i), (a + j ω_i)(a - j ω_i)) \
+  &= frac(a^2, a^2 + ω^2) + (-frac(a ω, a^2 + ω^2))j
 $
 
 $G(j ω_i)$的模为
 
 $
-|G(j ω_i)| &= sqrt((frac(a^2, a^2 + ω^2))^2 + (frac(a ω, a^2 + ω^2))^2) \
-&= sqrt(frac(1, 1 + (frac(w, a)^2))) $
+  |G(j ω_i)| &= sqrt((frac(a^2, a^2 + ω^2))^2 + (frac(a ω, a^2 + ω^2))^2) \
+  &= sqrt(frac(1, 1 + (frac(w, a)^2)))
+$
 
 于是
 
@@ -158,8 +191,10 @@ $
 
 $a$被称为截止频率。
 
-$ ϕ_G &= arctan (-frac(a ω, a^2)) \
-&= -arctan frac(ω, a) $
+$
+  ϕ_G &= arctan (-frac(a ω, a^2)) \
+  &= -arctan frac(ω, a)
+$
 
 #tip[
   显然，一阶系统
@@ -186,19 +221,25 @@ $ G(s) = frac(X(s), U(s)) = frac(ω_n^2, s^2 + 2 ζ ω_n s + ω_n^2) $
 
 令$s = j ω$，得
 
-$ G(j ω_i) &= frac(ω_n^2, - ω^2 + 2 ζ ω_n ω_j + ω_n^2)\
- &= frac(1, - ω^2/ω_n^2 + 2 ζ ω/ω_n j + 1) $
+$
+  G(j ω_i) &= frac(ω_n^2, - ω^2 + 2 ζ ω_n ω_j + ω_n^2)\
+  &= frac(1, - ω^2/ω_n^2 + 2 ζ ω/ω_n j + 1)
+$
 
 令输入频率$Ω = ω/ω_n$，则
 
-$ G(j ω_i) &= frac(1, -Ω^2 + 2 ζ Ω j + 1)\
- &= frac(1 - Ω^2 - 2 ζ Ω j, (1 - Ω^2 + 2 ζ Ω j))(1 - Ω^2 - 2 ζ Ω j)\
- &= frac(1 - Ω^2, (1 - Ω^2))^2 + 4 ζ^2 Ω^2 - frac(2 ζ Ω, (1 - Ω^2))^2 + 4 ζ^2 Ω^2 j $
+$
+  G(j ω_i) &= frac(1, -Ω^2 + 2 ζ Ω j + 1)\
+  &= frac(1 - Ω^2 - 2 ζ Ω j, (1 - Ω^2 + 2 ζ Ω j))(1 - Ω^2 - 2 ζ Ω j)\
+  &= frac(1 - Ω^2, (1 - Ω^2))^2 + 4 ζ^2 Ω^2 - frac(2 ζ Ω, (1 - Ω^2))^2 + 4 ζ^2 Ω^2 j
+$
 
 于是
 
-$ |G(j ω_i)| &= sqrt(("Re"(G(j ω_i))))^2 + "Im"(G(j ω_i))^2\
- &= sqrt(frac(1, (1 - Ω^2))^2 + 4 ζ^2 Ω^2) $
+$
+  |G(j ω_i)| &= sqrt(("Re"(G(j ω_i))))^2 + "Im"(G(j ω_i))^2\
+  &= sqrt(frac(1, (1 - Ω^2))^2 + 4 ζ^2 Ω^2)
+$
 
 - 当$Ω = 0$，则$ω = 0$，有$|G(j ω_i)| = 1$
 - 当$Ω → +∞$，则$ω ≫ ω_n$，有$|G(j ω_i)| → 0$
@@ -252,7 +293,7 @@ $ |G(j ω_i)|_(ω = ω_n sqrt(1 - 2 ζ^2)) = frac(1, 2 ζ sqrt(1 - ζ^2)) $
 
 #tip[
   分贝（decibel），意为十分之一贝尔（Alexander Bell），最初用于度量电话/电报的噪声损失，定义为
-  $ "dB" = 10 lg P_M/P_R $
+  $ "dB" = 10 lg P_M / P_R $
 
   其中，$P_M$为测量功率，$P_R$为参考功率。
 ]
@@ -263,7 +304,7 @@ $ P = f(M^2) $
 
 此时
 
-$ "dB" = 10 lg P_M/P_R = 10 lg (M_0/M_i)^2 = 20 lg M $
+$ "dB" = 10 lg P_M / P_R = 10 lg (M_0 / M_i)^2 = 20 lg M $
 
 这就是 Bode 图纵坐标的由来。
 
@@ -271,9 +312,9 @@ $ "dB" = 10 lg P_M/P_R = 10 lg (M_0/M_i)^2 = 20 lg M $
 <常见案例>
 
 - 对$G(s) = 1/s$
-  - $|G(j ω_i)| = 1/ω$
+  - $|G(j ω_i)| = 1 / ω$
   - $20 lg |G(j ω_i)| = -20 lg ω$
-  - $∠G(j ω_i) = π/2$
+  - $∠G(j ω_i) = π / 2$
 - 对$G(s) = a/(a + s)$
   - $|G(j ω_i)| = sqrt(frac(1, 1 + (ω/a)^2))$
 
@@ -285,17 +326,17 @@ $ "dB" = 10 lg P_M/P_R = 10 lg (M_0/M_i)^2 = 20 lg M $
     stroke: frame(rgb("000")),
     [], [$ω?a$], [$|G(j ω_i)|$], [$20|G(j ω_i)|$], [$∠G(j ω_i)$],
     [低频], [≪], [$1$], [$0$], [$0$],
-    [截止频率],
-    [=], [$sqrt(1\/2)$], [$-3$], [$-π\/4$],
+    [截止频率], [=], [$sqrt(1\/2)$], [$-3$], [$-π\/4$],
     [高频], [≫], [$1\/ω$], [$-20 lg ω$], [$-π\/2$],
- ),
+  ),
   caption: [],
   supplement: "表",
-  kind: table
+  kind: table,
 )
 
 == 绘制
 <绘制>
+
 Euler 公式，有
 
 $ G(j ω_i) = r e^(j θ) $
@@ -307,7 +348,11 @@ $ G(j ω_i) = r e^(j θ) $
 
 由
 
-$ G(j ω_i) = G_1(j ω_i)⋅G_2(j ω_i) = r_1 e^(j θ_1)⋅r_2 e^(j θ_2) = r_1 r_2 e^(j (θ_1 + θ_2)) $
+$
+  G(j ω_i) = G_1(j ω_i)⋅G_2(
+    j ω_i
+  ) = r_1 e^(j θ_1)⋅r_2 e^(j θ_2) = r_1 r_2 e^(j (θ_1 + θ_2))
+$
 
 可知 Bode 图纵坐标可以通过对数的性质，将复合函数的振幅响应和幅角响应拆分成多个常见函数叠加组合的形式，即
 

@@ -27,10 +27,10 @@
     [半正定], [PSD], [0], [$≥$],
     [负定], [ND], [0], [$<$],
     [半负定], [NSD], [0], [$≤$],
- ),
+  ),
   caption: [Lyapunov 稳定性],
   supplement: "表",
-  kind: table
+  kind: table,
 )
 
 #theorem("Lyapunov 第二方法")[
@@ -53,7 +53,7 @@ $ ∑F_x = m a_x = l dot.double(θ) $
 #figure(
   image("images/model/pendulum.drawio.png", width: 10%),
   caption: "钟摆",
-  supplement: "图"
+  supplement: "图",
 )
 
 即
@@ -77,19 +77,19 @@ $ E = K("kinetic") + P("potential") $
 于是令
 
 $
-V &= E = frac(1, 2) m v^2 + m g h \
-&= frac(1, 2)m(l x_2)^2 + m g l(1 - cos(x_1))
-
+  V &= E = frac(1, 2) m v^2 + m g h \
+  &= frac(1, 2)m(l x_2)^2 + m g l(1 - cos(x_1))
 $
 求导，可得
 
 $
-dot(V)(x) = grad V_f &=
-mat(delim: "[", pdv(V, x_1), pdv(V, x_2))
-mat(delim: "[", f_1; f_2) \ &=
-mat(delim: "[", m g l sin(x_1) & m l^2 x_2)
-mat(delim: "[", x_2 \ -frac(g, L) sin(x_1)) \
-&= 0 $
+  dot(V)(x) = grad V_f &=
+  mat(delim: "[", pdv(V, x_1), pdv(V, x_2))
+  mat(delim: "[", f_1; f_2) \ &=
+  mat(delim: "[", m g l sin(x_1) & m l^2 x_2)
+  mat(delim: "[", x_2 \ -frac(g, L) sin(x_1)) \
+  &= 0
+$
 
 又
 
@@ -115,12 +115,13 @@ $ dot.double(θ) + frac(g, L) sin θ + frac(k, m) dot(θ) = 0 $
 令$V = E = K("kinetic") + P("potential")$，求导，可得
 
 $
-dot(V)(x) = grad V_f &=
-mat(delim: "[", pdv(V, x_1) & pdv(V, x_2))
-mat(delim: "[", f_1; f_2) \ &=
-mat(delim: "[", m g l sin(x_1), m l^2 x_2)
-mat(delim: "[", x_2; -frac(g, L)sin(x_1) - frac(k, m)x_2) \
-&= k l^2 x_2^2 $
+  dot(V)(x) = grad V_f &=
+  mat(delim: "[", pdv(V, x_1) & pdv(V, x_2))
+  mat(delim: "[", f_1; f_2) \ &=
+  mat(delim: "[", m g l sin(x_1), m l^2 x_2)
+  mat(delim: "[", x_2; -frac(g, L)sin(x_1) - frac(k, m)x_2) \
+  &= k l^2 x_2^2
+$
 
 显然，$dot(V)(x)$半负定。
 
@@ -152,7 +153,7 @@ $ dot(x) = f(x, ϕ (x)) $
 #figure(
   image("./images/block/feedback.drawio.png", width: 40%),
   caption: [反馈],
-  supplement: "图"
+  supplement: "图",
 )
 
 考虑系统
@@ -199,7 +200,7 @@ $ m dot.double(x) + α x^3 = F $
 #figure(
   image("./images/model/vibration-nl.drawio.png", width: 40%),
   caption: [非线性弹簧系统],
-  supplement: "图"
+  supplement: "图",
 )
 
 令
@@ -211,8 +212,10 @@ $ m dot.double(x) + α x^3 = F $
 
 于是有
 
-$ dot(x)_1 = dot(x) = x_2\
-dot(x)_2 = dot.double(x) = -α/m x_1^3 + 1/m u $
+$
+  dot(x)_1 = dot(x) = x_2\
+  dot(x)_2 = dot.double(x) = -α / m x_1^3 + 1 / m u
+$
 
 显然，通过控制$u$，可以控制$x_2$，进而控制$x_1$，所以，这是一个链式系统。
 
@@ -237,37 +240,53 @@ $ δ = x_(2 d) - x_2 $
 
 于是
 
-$ dot(V)_1 &= e (dot(x)_(1 d) - (x_(2 d) - δ))\
- &= e (-k_1 e + δ) = -k_1 e^2 + δ e $
+$
+  dot(V)_1 &= e (dot(x)_(1 d) - (x_(2 d) - δ))\
+  &= e (-k_1 e + δ) = -k_1 e^2 + δ e
+$
 
 进而有
 
-$ dot(δ) &= dot(x)_(2 d) - dot(x)_2\
- &= dot.double(x)(1 d) + k_1 dot(e) - (- α/m x_1^3 + 1/m u)\
- &= dot.double(x)(1 d) + k_1 (dot(x)_(1 d) - x_2) + α/m x_1^3 - 1/m u $
+$
+  dot(δ) &= dot(x)_(2 d) - dot(x)_2\
+  &= dot.double(x)(1 d) + k_1 dot(e) - (- α / m x_1^3 + 1 / m u)\
+  &= dot.double(x)(1 d) + k_1 (dot(x)_(1 d) - x_2) + α / m x_1^3 - 1 / m u
+$
 
 又$V_1$正定，现令$V_2 = V_1 + 1/2 δ^2$，则
 
-$ dot(V)_2 &= dot(V)_1 + δ dot(δ)\
- &= -k_1 e^2 + e δ + δ dot(δ)\
- &= -k_1 e^2 + δ(e + dot(δ)) $
+$
+  dot(V)_2 &= dot(V)_1 + δ dot(δ)\
+  &= -k_1 e^2 + e δ + δ dot(δ)\
+  &= -k_1 e^2 + δ(e + dot(δ))
+$
 
 == 控制中间输入
 <控制中间输入>
 
 现在，需要设计输入$u$，使$x_2 → x_(2 d)$。可令$e + dot(δ) = -k_2 δ$，得
 
-$ e + dot.double(x)(1 d) + k_1 (dot(x)_(1 d) - x_2) + α/m x_1^3 - 1/m u = -k_2 δ $
+$
+  e + dot.double(x)(1 d) + k_1 (
+    dot(x)_(1 d) - x_2
+  ) + α / m x_1^3 - 1 / m u = -k_2 δ
+$
 
 最终，得
 
-$ u = m e + m dot.double(x)(1 d) + m k_1 (dot(x)_(1 d) - x_2)) + α x_1^3 + m k_2 δ $
+$
+  u = m e + m dot.double(x)(1 d) + m k_1 (
+    dot(x)_(1 d) - x_2
+  )) + α x_1^3 + m k_2 δ
+$
 
 $(6)$代入$(3)$，$(11)$代入$(10)$，得
 
-$ mat(delim: "[", delim: "[", e ̇; dot(δ)) =
-mat(delim: "[", delim: "[", - k_1, 1; - 1, - k_2)
-mat(delim: "[", delim: "[", e; δ) $
+$
+  mat(delim: "[", delim: "[", e ̇; dot(δ)) =
+  mat(delim: "[", delim: "[", - k_1, 1; - 1, - k_2)
+  mat(delim: "[", delim: "[", e; δ)
+$
 
 不难得出
 

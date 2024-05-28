@@ -23,12 +23,14 @@ $ u(t) = cases(delim: "{", 0 & t = 0, 1 & t > 0) $
 
 则
 
-$ ℒ[u(t)] &= ∫_0^(+∞) 1⋅e^(-s t) dd(t)\
- &= -1/s e^(-s t) bar.v_0^∞ = 1/s $
+$
+  ℒ[u(t)] &= ∫_0^(+∞) 1⋅e^(-s t) dd(t)\
+  &= -1 / s e^(-s t) bar.v_0^∞ = 1 / s
+$
 
 于是
 
-$ X(s) = U(s) G(s) = 1/s frac(a, s + a) = 1/s - frac(1, s + a) $
+$ X(s) = U(s) G(s) = 1 / s frac(a, s + a) = 1 / s - frac(1, s + a) $
 
 对等式两端同时进行 Laplace 逆变换，得
 
@@ -36,24 +38,24 @@ $ x(t) = 1 - e^(-a t) $
 
 当$t = τ = 1/a$
 
-$ x(τ) = x(1/a) = 1 - e^(-1) = 0.63 $
+$ x(τ) = x(1 / a) = 1 - e^(-1) = 0.63 $
 
 此处
 
 - $τ$：#strong[时间常数（time constant）]，反映系统响应速度。
 - $T_("ss")$：#strong[稳定时间（settlingtime）]，通常定义为$4 τ$，即
 
-$ x(t_(s s)) = x(4/a) = 1 - e^(-4) = 0.98 $
+$ x(t_(s s)) = x(4 / a) = 1 - e^(-4) = 0.98 $
 
 对于如下系统
 
 #figure(
   image("./images/model/liquid.drawio.png", width: 40%),
   caption: [liquid],
-  supplement: "图"
+  supplement: "图",
 )
 
-$ x(t) = frac(C R, g)(1 - e^(-g/R t)) $
+$ x(t) = frac(C R, g)(1 - e^(-g / R t)) $
 
 则其传递函数
 
@@ -61,7 +63,7 @@ $ G(s) = frac(1, s + g/R) $
 
 可得
 
-$ τ = frac(1, g/R) = R/g $
+$ τ = frac(1, g/R) = R / g $
 
 #tip[
   上述流体系统的传递函数$frac(a, s + a)$是一个典型的低通滤波，其特点之一是数值积累，又如积分运算。
@@ -69,19 +71,23 @@ $ τ = frac(1, g/R) = R/g $
 
 又
 
-$ ℒ[u(t)] = ℒ[C e^0] = C frac(1, s + 0) = C 1/s $
+$ ℒ[u(t)] = ℒ[C e^0] = C frac(1, s + 0) = C 1 / s $
 
 从而有
 
-$ X(s) &= U(s) G(s)\
- &= C 1/s frac(1, s + g/R)\
- &= frac(C R, g)(frac(1, s - 0) - frac(1, s + g/R)) $
+$
+  X(s) &= U(s) G(s)\
+  &= C 1 / s frac(1, s + g/R)\
+  &= frac(C R, g)(frac(1, s - 0) - frac(1, s + g/R))
+$
 
 最终得
 
-$ x(t) = ℒ^(-1)(X(s))
-&= frac(C R, g)(e^(o t) - e^(-g/R t))\
-&= frac(C R, g)(1 - e^(-g/R t)) $
+$
+  x(t) = ℒ^(-1)(X(s))
+  &= frac(C R, g)(e^(o t) - e^(-g / R t))\
+  &= frac(C R, g)(1 - e^(-g / R t))
+$
 
 即得到极点。
 
@@ -107,16 +113,16 @@ $ dot(x) = a(1 - x) $
 #figure(
   image("./images/model/vibration.drawio.png", width: 40%),
   caption: [vibration],
-  supplement: "图"
+  supplement: "图",
 )
 
 对弹簧阻尼系统
 
-$ m dot.double(x) = F - k x - B dot(x)$
+$m dot.double(x) = F - k x - B dot(x)$
 
 整理得
 
-$ dot.double(x) + B/m dot(x) + k/m x = F $
+$ dot.double(x) + B / m dot(x) + k / m x = F $
 
 这里定义
 
@@ -153,8 +159,10 @@ $ λ^2 + 2 ζ ω_n λ + ω_n^2 = 0 $
 
 解之，得
 
-$ λ_1 &= -ξ ω_n + w_n sqrt(xi^2 - 1)\
-λ_2 &= -ξ ω_n - ω_n sqrt(xi^2 - 1) $
+$
+  λ_1 &= -ξ ω_n + w_n sqrt(xi^2 - 1)\
+  λ_2 &= -ξ ω_n - ω_n sqrt(xi^2 - 1)
+$
 
 == 动态响应
 <动态响应>
@@ -199,8 +207,10 @@ $ x(t) = e^(-ζ ω_n t) sqrt(c_1 + c_2)(sin(ω_dd(t) + ϕ)) $
 
 此时有解，图像为正弦函数，周期为$2π/ω_n$
 
-$ x_((t)) &= e^0 (c_1 cos ω_n t + c_2 sin ω_n t)\
- &= sqrt(c_1 + c_2) sin(ω_n t + ϕ) $
+$
+  x_((t)) &= e^0 (c_1 cos ω_n t + c_2 sin ω_n t)\
+  &= sqrt(c_1 + c_2) sin(ω_n t + ϕ)
+$
 
 - 当$-1 < ζ < 0$或$ζ < - 1$，得到的解是发散的，图像与各自取符号后的图像趋势相反。
 
@@ -209,7 +219,7 @@ $ x_((t)) &= e^0 (c_1 cos ω_n t + c_2 sin ω_n t)\
 
 对上述弹簧阻尼系统，定义输入为
 
-$ u(t) = F/ω_n^2 $
+$ u(t) = F / ω_n^2 $
 
 #tip[
   即单位化的外力
@@ -225,7 +235,7 @@ $ H(s) = frac(X(s), U(s)) = frac(ω_n^2, s^2 + 2 ζ ω_n s + ω_n^2) $
 
 从而有
 
-$ X(s) = 1/s frac(ω_n^2, s^2 + 2 ζ ω_n s + ω_n^2) $
+$ X(s) = 1 / s frac(ω_n^2, s^2 + 2 ζ ω_n s + ω_n^2) $
 
 因子之一即特征方程
 
@@ -239,9 +249,11 @@ $ s^2 + 2 ζ ω_n s + ω_n^2 = 0 $
 
 于是
 
-$ X(s)
-&= frac(A, s - p_1) + frac(B, s - p_2) + frac(C, s - p_3)\
-&= frac(A (s - p_2)(s - p_3) + B (s - p_1)(s - p_3) + C (s - p_1)(s - p_2), (s - p_1)(s - p_2)(s - p_s)) $
+$
+  X(s)
+  &= frac(A, s - p_1) + frac(B, s - p_2) + frac(C, s - p_3)\
+  &= frac(A (s - p_2)(s - p_3) + B (s - p_1)(s - p_3) + C (s - p_1)(s - p_2), (s - p_1)(s - p_2)(s - p_s))
+$
 
 已知
 
@@ -250,11 +262,11 @@ $ A (s - p_2)(s - p_3) + B (s - p_1)(s - p_3) + C (s - p_1)(s - p_2) = ω_n^2 $
 - 令$s = P_1$，得$A = 1$
 - 令$s = P_2$，得
 
-$ B = -1/2 (1 - ζ/sqrt(1 - ζ^2) i) $
+$ B = -1 / 2 (1 - ζ / sqrt(1 - ζ^2) i) $
 
 - 令$s = P_3$，得
 
-$ C = -1/2 (1 + ζ/sqrt(1 - ζ^2) i) $
+$ C = -1 / 2 (1 + ζ / sqrt(1 - ζ^2) i) $
 
 代回原方程
 
@@ -278,7 +290,7 @@ $ T_r = frac(π - ϕ, ω_d) $
 
 - $M_p$：最大超调量（max overshot），峰值与稳态值的差值与稳定值的百分比，即
 
-$ M_p = e^(-ζ π/sqrt(1 - ζ^2)) × 100% $
+$ M_p = e^(-ζ π / sqrt(1 - ζ^2)) × 100% $
 
 - $T_(s s)$：调节时间（settling time）：系统进入稳态范围内的时间，稳态范围通常选择稳定值的$±2%$或$±5%$，即
 

@@ -12,17 +12,17 @@
 #import "@preview/indenta:0.0.1": fix-indent
 
 #let conf(
-    title: none,
-    author: (),
-    header-cap: [],
-    footer-cap: [],
-    outline-on: true,
-    eqnumstyle: "1",
-    eqnumsep: ".",
-    eqnumlevel: 1,
-    citestyle: none,
-    figure-break: false,
-    doc,
+  title: none,
+  author: (),
+  header-cap: [],
+  footer-cap: [],
+  outline-on: true,
+  eqnumstyle: "1",
+  eqnumsep: ".",
+  eqnumlevel: 1,
+  citestyle: none,
+  figure-break: false,
+  doc,
 ) = {
   set page(
     paper: "a4",
@@ -32,7 +32,7 @@
       if calc.odd(here().page()) {
         align(right, [#header-cap #h(6fr) #emph(hydra(1))])
       } else {
-        align(left, [#emph(hydra(1)) #h(6fr) #header-cap] )
+        align(left, [#emph(hydra(1)) #h(6fr) #header-cap])
       }
       line(length: 100%)
     },
@@ -40,27 +40,33 @@
       set text(size: 8pt)
       let page_num = here().page()
       if calc.odd(page_num) {
-        align(right, [#footer-cap #datetime.today().display("[year]-[month]-[day]") #h(6fr) #page_num] )
+        align(
+          right,
+          [#footer-cap #datetime.today().display("[year]-[month]-[day]") #h(6fr) #page_num],
+        )
       } else {
-        align(left, [#page_num #h(6fr) #footer-cap #datetime.today().display("[year]-[month]-[day]")])
+        align(
+          left,
+          [#page_num #h(6fr) #footer-cap #datetime.today().display("[year]-[month]-[day]")],
+        )
       }
     },
   )
   set heading(numbering: "1.")
 
   set par(
-      first-line-indent: 2em,
-      justify: true,
-      leading: 1em,
-      linebreaks: "optimized"
+    first-line-indent: 2em,
+    justify: true,
+    leading: 1em,
+    linebreaks: "optimized",
   )
   set block(above: 1em, below: 0.5em)
   set list(indent: 1.2em)
   set enum(indent: 1.2em)
 
   set text(
-      font: "Songti SC",
-      size: 10.5pt,
+    font: "Songti SC",
+    size: 10.5pt,
   )
 
   if citestyle != none {
@@ -73,7 +79,10 @@
     let headingNumbering = numbering("1", chapter)
     if eqnumlevel == 2 and hCounter.len() > 1 {
       let subchapter = hCounter.at(1)
-      headingNumbering += [#eqnumsep#numbering("1", subchapter)#eqnumsep#numbering(eqnumstyle, equation)]
+      headingNumbering += [#eqnumsep#numbering(
+          "1",
+          subchapter,
+        )#eqnumsep#numbering(eqnumstyle, equation)]
     }
     let equationNumbering = numbering("1", n)
     [(#headingNumbering#eqnumsep#equationNumbering)]
@@ -85,7 +94,7 @@
     }),
     supplement: [
       #h(-.25em) 式#h(-.5em)
-    ]
+    ],
   )
 
   // equation numbering
@@ -102,20 +111,26 @@
 
   set figure.caption(separator: none)
 
-  show figure: it => align(center, block(breakable: figure-break)[
-    #it.body#h(0.35em)#it.caption
-  ])
+  show figure: it => align(
+    center,
+    block(breakable: figure-break)[
+      #it.body#h(0.35em)#it.caption
+    ],
+  )
 
-  align(center, text(18pt)[
+  align(
+    center,
+    text(18pt)[
       *#title*
-   ])
+    ],
+  )
 
   if outline-on == true [
     #outline(
-        title: "主要内容",
-        indent: auto,
-        depth: 2
-     )
+      title: "主要内容",
+      indent: auto,
+      depth: 2,
+    )
     #pagebreak()
   ]
 
@@ -126,12 +141,16 @@
 
 // tables
 #let frame(stroke) = (x, y) => (
-  top: if y < 2 { stroke } else { 0pt },
+  top: if y < 2 {
+    stroke
+  } else {
+    0pt
+  },
   bottom: stroke,
 )
 
 // functions
-#let code(text, lang:"python", breakable: false, width: 100%) = block(
+#let code(text, lang: "python", breakable: false, width: 100%) = block(
   fill: rgb("#f3f3f3"),
   stroke: rgb("#dbdbdb"),
   inset: (x: .8em, y: .6em),
@@ -139,9 +158,12 @@
   spacing: 2em,
   breakable: breakable,
   width: width,
-  raw(text,
-      lang: lang,
-      align: left))
+  raw(
+    text,
+    lang: lang,
+    align: left,
+  ),
+)
 
 // theorems
 #let terms = (
@@ -151,7 +173,7 @@
   "coro": "推论",
   "algo": "算法",
   "tip": "提示",
-  "alert": "注意"
+  "alert": "注意",
 )
 
 #let definition = thmbox(
@@ -180,7 +202,7 @@
   terms.lem,
   separator: [#h(0.5em)],
   fill: rgb("#efe6ff"),
-  titlefmt: strong
+  titlefmt: strong,
 )
 
 #let corollary = thmplain(
@@ -188,7 +210,7 @@
   terms.coro,
   base: "theorem",
   separator: [#h(0.5em)],
-  titlefmt: strong
+  titlefmt: strong,
 )
 
 #let tip = thmbox(
@@ -216,12 +238,12 @@
   accent-color: yellow,
   title: title,
   icon: icon,
-  ..args
+  ..args,
 )
 
 #let alert(title: terms.alert, icon: emoji.excl, ..args) = clue(
   accent-color: red,
   title: title,
   icon: icon,
-  ..args
+  ..args,
 )

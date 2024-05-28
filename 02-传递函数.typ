@@ -15,6 +15,7 @@
 范式
 
 $ F(s) H(s) = X(s) $
+
 其中，
 
 - $F(s)$：输入的 Laplace 变换- $H(s)$：传递函数- $X(s)$：输出的 Laplace 变换
@@ -53,24 +54,23 @@ $ frac(1, Δ T) Δ T = 1 $
     inset: 6pt,
     stroke: frame(rgb("000")),
     [$f(t)$], [$x(t)$],
-    [$δ(t)_Δ$],
-    [$h_Δ(t)$],
-    [$δ(t - i Δ T)_Δ$],
-    [$h_Δ(t - i Δ T)$],
-    [$A δ(t - i Δ T)_Δ$],
-    [$A h_Δ(t - i Δ T)$],
- ),
+    [$δ(t)_Δ$], [$h_Δ(t)$],
+    [$δ(t - i Δ T)_Δ$], [$h_Δ(t - i Δ T)$],
+    [$A δ(t - i Δ T)_Δ$], [$A h_Δ(t - i Δ T)$],
+  ),
   caption: [输入与输出],
   supplement: "表",
-  kind: table
+  kind: table,
 )
 表格中，$A = Δ T f(i Δ T)$，在$t = i Δ T$时刻，有
 
 $ x(t) = ∑_(i = 0)^i Δ T f(i Δ T) h_Δ(t - i Δ T) $
 令$lim_(Δ T → 0)$，则$Δ T = dd(τ)$，$i Δ T = τ$，从而有
 
-$ x(t) &= ∫_0^t f(τ) h(t - τ) dd(τ)\
- &= f(t) ∗ h(t) $
+$
+  x(t) &= ∫_0^t f(τ) h(t - τ) dd(τ)\
+  &= f(t) ∗ h(t)
+$
 这就是#strong[卷积的定义]，$∗$即为卷积运算（不是$*$）。
 
 #tip[
@@ -97,11 +97,12 @@ $ ℒ[f(t) ∗ h(t)] = ∫_0^(∞)∫_τ^(∞) f(τ)h(t - τ) e^(-s t) dd(t, τ)
 令$u = t - τ ∈ [0, ∞)$，则$t = u + τ$，$dd(t) = dd(u)$，从而有
 
 $
-ℒ[f(t) ∗ h(t)]
-&= ∫_0^(∞)∫_0^(∞) f(τ)h(u) e^(-s(u + τ)) dd(u, τ) \
-&= ∫_0^(∞) f(τ)e^(-s τ) dd(τ) ∫_0^(∞) h(u) e^(-s u) dd(u) \
-&= ℒ[f(s)] ℒ[h(s)] \
-&= F(s)H(s) $
+  ℒ[f(t) ∗ h(t)]
+  &= ∫_0^(∞)∫_0^(∞) f(τ)h(u) e^(-s(u + τ)) dd(u, τ) \
+  &= ∫_0^(∞) f(τ)e^(-s τ) dd(τ) ∫_0^(∞) h(u) e^(-s u) dd(u) \
+  &= ℒ[f(s)] ℒ[h(s)] \
+  &= F(s)H(s)
+$
 
 #tip[
   上面这个性质非常重要，它将复杂的卷积运算转化成了简单的乘积运算。
@@ -140,12 +141,20 @@ Laplace 变换后，要保证
 - 分子 > $0$- 分子的每一部分都 > $0$
 所以，还要加上关于$s$的收敛域（region of convergence，ROC）。如
 
-$ ℒ[e^(-a t)] = ∫_0^∞ e^(-a t) e^(-s t) dd(t) = underbrace(∫_0^(+∞) e^(-(s + a))t) dd(t), 可 积 $
+$
+  ℒ[
+    e^(-a t)
+  ] = ∫_0^∞ e^(-a t) e^(-s t) dd(t) = underbrace(∫_0^(+∞) e^(-(s + a))t) dd(t), 可 积
+$
 
 $e^(-a t)$的 Laplace 变换存在的条件是上式的积分可积
 令$s = σ + j ω$
 
-$ ℒ[e^(-a t)] = ∫_0^(+∞) e^(-a t) e^(-(σ + j ω)t) dd(t) = ∫_0^(+∞) e^(-(a + σ))t e^(-j ω t) dd(t) $
+$
+  ℒ[e^(-a t)] = ∫_0^(+∞) e^(-a t) e^(-(σ + j ω)t) dd(t) = ∫_0^(+∞) e^(-(
+    a + σ
+  ))t e^(-j ω t) dd(t)
+$
 由 Euler 公式
 
 $ e^(-j ω t) = cos ω t - i sin ω t $
@@ -160,13 +169,15 @@ $ σ > - a $
 
 对函数$f(t) = e^(-a t)$
 
-$ ℒ[e^(-a t)] &= ∫_0^∞ e^(-a t) e^(-s t) dd(t)
- = ∫_0^∞ e^(-(a + s))t dd(t)
- = frac(1, a + s) $
+$
+  ℒ[e^(-a t)] &= ∫_0^∞ e^(-a t) e^(-s t) dd(t)
+  = ∫_0^∞ e^(-(a + s))t dd(t)
+  = frac(1, a + s)
+$
 
 显然，θ
 
-$ ℒ[1] = 1/s $
+$ ℒ[1] = 1 / s $
 
 #pagebreak()
 
@@ -176,22 +187,28 @@ Laplace 变换是一种线性变换。对线性系统
 $ ℒ[a f(t) + b g(t)] = a F(s) + b G(s) $
 由 Euler 公式
 
-$ e^(i θ) &= cos θ + i sin θ\
-e^(i (-θ)) &= cos θ - i sin θ $
+$
+  e^(i θ) &= cos θ + i sin θ\
+  e^(i (-θ)) &= cos θ - i sin θ
+$
 得
 
 $ sin θ = frac(e^(i θ) - e^(-i θ), 2 i) $
 于是
 
-$ ℒ[sin(a t)] &= ℒ (frac(e^(i a t), 2 i)) - ℒ (frac(e^(-i a t), 2 i))\
- &= 1/2i (ℒ[e^(i a t)]) - ℒ[e^(-i a t)] (\
- &= 1/2i (frac(1, s - a i) - frac(1, s + a i))\
- &= frac(a, s^2 + a^2) $
+$
+  ℒ[sin(a t)] &= ℒ (frac(e^(i a t), 2 i)) - ℒ (frac(e^(-i a t), 2 i))\
+  &= 1 / 2i (ℒ[e^(i a t)]) - ℒ[e^(-i a t)] (\
+  &= 1 / 2i (frac(1, s - a i) - frac(1, s + a i))\
+  &= frac(a, s^2 + a^2)
+$
 同理
 
-$ ℒ[cos(a t)] = frac(s, s^2 + a^2)\
-ℒ[sinh(a t)] = frac(a, s^2 - a^2)\
-ℒ[cosh(a t)] = frac(s, s^2 - a^2) $
+$
+  ℒ[cos(a t)] = frac(s, s^2 + a^2)\
+  ℒ[sinh(a t)] = frac(a, s^2 - a^2)\
+  ℒ[cosh(a t)] = frac(s, s^2 - a^2)
+$
 
 == 导数
 分部积分
@@ -199,10 +216,12 @@ $ ℒ[cos(a t)] = frac(s, s^2 + a^2)\
 $ ∫f^′(t) g(t) dd(t) = f(t) g(t) - ∫f(t) g^′(t) dd(t) $
 有
 
-$ ℒ[f^′(t)] &= ∫_0^(+∞) f^′(t) e^(-s t) dd(t)\
- &= f(t) e^(-s t) bar.v_0^∞ - ∫_0^(+∞) f(t)(-s e^(-s t))) dd(t)\
- &= lim_(t → ∞) f(∞) e^(-s t) - f(0) + s ∫_0^(+∞) f(t) e^(-s t) dd(t)\
- &= s F(s) - f(0) $
+$
+  ℒ[f^′(t)] &= ∫_0^(+∞) f^′(t) e^(-s t) dd(t)\
+  &= f(t) e^(-s t) bar.v_0^∞ - ∫_0^(+∞) f(t)(-s e^(-s t))) dd(t)\
+  &= lim_(t → ∞) f(∞) e^(-s t) - f(0) + s ∫_0^(+∞) f(t) e^(-s t) dd(t)\
+  &= s F(s) - f(0)
+$
 
 #tip[
   因为初始条件$f(0)$往往被选定为$0$，所以
@@ -213,7 +232,7 @@ $ ℒ[f^′(t)] &= ∫_0^(+∞) f^′(t) e^(-s t) dd(t)\
 $ ℒ[f^″(t)] = s^2 F(s) - s f(0) - f^′(0) $
 以及
 
-$ ℒ[∫_0^t f(τ) dd(t)] = 1/s F(s) $
+$ ℒ[∫_0^t f(τ) dd(t)] = 1 / s F(s) $
 
 == 逆变换
 通过 Laplace 变换求解微分方程主要有 3 步
@@ -226,8 +245,10 @@ $ ℒ[∫_0^t f(τ) dd(t)] = 1/s F(s) $
 $ ℒ (- frac(1, s + a)) = e^(-a t) $
 三角函数
 
-$ sin 2 t &= frac(e^(-2 i t) - e^(2 i t), 2 i)\
-cos 2 t &= frac(e^(-2 i t) + e^(2 i t), 2) $
+$
+  sin 2 t &= frac(e^(-2 i t) - e^(2 i t), 2 i)\
+  cos 2 t &= frac(e^(-2 i t) + e^(2 i t), 2)
+$
 
 = 系统设计
 <系统设计>
@@ -239,33 +260,38 @@ cos 2 t &= frac(e^(-2 i t) + e^(2 i t), 2) $
   caption: [
     circuit
   ],
-  supplement: "图"
+  supplement: "图",
 )
 由 KCL 有
 
-$ e^′ = L i^″ + R i^′ + 1/C i $
+$ e^′ = L i^″ + R i^′ + 1 / C i $
 
 #pagebreak()
 令初始条件为$0$，等式两边进行导数的 Laplace 变换，得
 
-$ s E[s] = L s^2 I_(s) + s R I_(s) + 1/C I_(s) $
+$ s E[s] = L s^2 I_(s) + s R I_(s) + 1 / C I_(s) $
 从而有
 
 $ I(s) = frac(s, L s^2 + R s + 1/C) E[s] $
 转换为框图形式，即有
 
 #figure(
-   diagram(
-   spacing: (2em, 2em),
-   node-stroke: 1pt,
-   mark-scale: 80%,
-   let (M,A,B)=((4,1),(2,1),(6,+1)),
-   node(M, text($frac(s, L s^2 + R s + 1\/C)$, size: 1.2em), height: 2.5em,corner-radius: 3pt),
-   edge(A, M, $E(s)$, "-|>"),
-   edge(M, B, $I(s)$, "-|>")
+  diagram(
+    spacing: (2em, 2em),
+    node-stroke: 1pt,
+    mark-scale: 80%,
+    let (M, A, B) = ((4, 1), (2, 1), (6, +1)),
+    node(
+      M,
+      text($frac(s, L s^2 + R s + 1\/C)$, size: 1.2em),
+      height: 2.5em,
+      corner-radius: 3pt,
+    ),
+    edge(A, M, $E(s)$, "-|>"),
+    edge(M, B, $I(s)$, "-|>"),
   ),
   caption: "",
-  supplement: "\n图"
+  supplement: "\n图",
 )
 中间的函数即输出函数与输入函数的比值，称为#strong[传递函数（transfer function）]。
 
@@ -274,11 +300,11 @@ $ I(s) = frac(s, L s^2 + R s + 1/C) E[s] $
 #figure(
   image("./images/model/liquid.drawio.png", width: 40%),
   caption: [流体系统],
-  supplement: "图"
+  supplement: "图",
 )
 由上图
 
-$ dv(h, t) + frac(g, R A) h = q_(i n)/A $
+$ dv(h, t) + frac(g, R A) h = q_(i n) / A $
 令
 
 - $A = 1$
@@ -286,38 +312,44 @@ $ dv(h, t) + frac(g, R A) h = q_(i n)/A $
 - $u = q_(i n)$
 得
 
-$ x ̇(t) + g/R x(t) = u(t) $
+$ x ̇(t) + g / R x(t) = u(t) $
 两端做 Laplace 变换，得
 
-$ s X(s) + g/R X(s) = U(s), med x(0) = 0 $
+$ s X(s) + g / R X(s) = U(s), med x(0) = 0 $
 从而有，开环传递函数$G(s)$
 
 $ G(s) = frac(X(s), U(s)) = frac(1, s + g/R) $
 
 当$u(t) = C$，则
 
-$ lim_(t → ∞) h = C R/g $
+$ lim_(t → ∞) h = C R / g $
 对闭环系统，此时引入参考值$V(s)$，输入值变成了$X(s) H(s)$
 
 #figure(
   diagram(
-     spacing: (2em, 2em),
-     node-stroke: 1pt,
-     mark-scale: 80%,
-
-     let (R,O,T,H,A)=((1,1),(2,2),(4,1),(4,2),(5,1.5)),
-     node(R, $V(s)$, height: 2em,corner-radius: 3pt),
-     node(O, text($+ quad -$, size: 0.6em), inset: 1em,radius: 1em),
-     node(T, $D(s)G(s)$, height: 2em, width: 6em, corner-radius: 3pt),
-     node(H, $H(s)$, height: 2em, width: 6em, corner-radius: 3pt),
-     edge(R, O, "-|>", corner: left),
-     edge(O, T, text($V(s)-X(s)H(s)$, size: 0.6em), "-|>", corner: right, label-pos: 0.7),
-     edge(T, A, text($X(s)$, size: 0.6em), "-", corner: right, label-pos: 0.4),
-     edge(A, H, "-", corner: right),
-     edge(H, O, text($X(s)H(s)$, size: 0.6em), "-|>"),
+    spacing: (2em, 2em),
+    node-stroke: 1pt,
+    mark-scale: 80%,
+    let (R, O, T, H, A) = ((1, 1), (2, 2), (4, 1), (4, 2), (5, 1.5)),
+    node(R, $V(s)$, height: 2em, corner-radius: 3pt),
+    node(O, text($+ quad -$, size: 0.6em), inset: 1em, radius: 1em),
+    node(T, $D(s)G(s)$, height: 2em, width: 6em, corner-radius: 3pt),
+    node(H, $H(s)$, height: 2em, width: 6em, corner-radius: 3pt),
+    edge(R, O, "-|>", corner: left),
+    edge(
+      O,
+      T,
+      text($V(s)-X(s)H(s)$, size: 0.6em),
+      "-|>",
+      corner: right,
+      label-pos: 0.7,
     ),
+    edge(T, A, text($X(s)$, size: 0.6em), "-", corner: right, label-pos: 0.4),
+    edge(A, H, "-", corner: right),
+    edge(H, O, text($X(s)H(s)$, size: 0.6em), "-|>"),
+  ),
   caption: "",
-  supplement: "\n图"
+  supplement: "\n图",
 )
 由
 
@@ -328,17 +360,17 @@ $ X = V frac(D G, 1 + H D G) $
 于是可知
 
 #figure(
-   diagram(
-   spacing: (2em, 2em),
-   node-stroke: 1pt,
-   mark-scale: 80%,
-   let (M,A,B)=((4,1),(2,1),(6,+1)),
-   node(M, $frac(D G, 1 + H D G)$, height: 2em,corner-radius: 3pt),
-   edge(A, M, $V$, "-|>"),
-   edge(M, B, $X$, "-|>")
+  diagram(
+    spacing: (2em, 2em),
+    node-stroke: 1pt,
+    mark-scale: 80%,
+    let (M, A, B) = ((4, 1), (2, 1), (6, +1)),
+    node(M, $frac(D G, 1 + H D G)$, height: 2em, corner-radius: 3pt),
+    edge(A, M, $V$, "-|>"),
+    edge(M, B, $X$, "-|>"),
   ),
   caption: "",
-  supplement: "\n图"
+  supplement: "\n图",
 )
 
 == 非零初始条件
@@ -357,4 +389,5 @@ $ ℒ^(-1)[U_2(s)] = ℒ^(-1)[x(0)] $
 即
 
 $ U_2(t) = x(0) δ(t) $
+
 其中，$δ(t)$为单位冲击，$x(0)$为冲击幅度。

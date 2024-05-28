@@ -40,10 +40,13 @@ $ P = 10 m + 6.25 h - 5 a + s $
 
 == 控制器与稳定性
 <控制器与稳定性>
+
 上，不难得出
 
-$ dot(m) &= frac(E_i - E_a - α (10 m + 6.25 h - 5 a + s), 7000)\
- &= frac(E_i - E_a - 10 α m - α C, 7000) $
+$
+  dot(m) &= frac(E_i - E_a - α (10 m + 6.25 h - 5 a + s), 7000)\
+  &= frac(E_i - E_a - 10 α m - α C, 7000)
+$
 
 其中，$C = 6.25 h - 5 a + s$
 
@@ -64,7 +67,7 @@ $ frac(M(s), U(s) + D(s)) = frac(1, 7000 s + 100) $
 #figure(
   image("./images/block/prop.drawio.png", width: 40%),
   caption: [比例控制],
-  supplement: "图"
+  supplement: "图",
 )
 
 对控制器
@@ -86,8 +89,8 @@ $ M = frac(k_p R + D, 7000 s + 10 α + k_p) $
 
 当$M$的极点小于$0$，系统稳定。一种常见情况是，$R$和$D$是稳定的，即
 
-- $R = ℒ[r] = r/s$
-- $D = ℒ[d] = d/s$
+- $R = ℒ[r] = r / s$
+- $D = ℒ[d] = d / s$
 
 此时
 
@@ -125,7 +128,7 @@ $ lim_(t → ∞) x(t) = lim_(s → 0) s X(s) $
 #figure(
   image("./images/model/vibration.drawio.png", width: 40%),
   caption: [弹簧阻尼系统],
-  supplement: "图"
+  supplement: "图",
 )
 
 对弹簧阻尼系统
@@ -152,11 +155,11 @@ $ lim_(t → ∞) x(t) = lim_(s → 0) frac(s, m s^2 + B s + k) = 0 $
 
 $u(s) = ℒ[c] = c/s$，于是
 
-$ X(s) = c/s frac(1, m s^2 + B s + k) $
+$ X(s) = c / s frac(1, m s^2 + B s + k) $
 
 使用 FVT，有
 
-$ lim_(t → ∞) x(t) = lim_(s → 0) c/s frac(s, m s^2 + B s + k) = c/k $
+$ lim_(t → ∞) x(t) = lim_(s → 0) c / s frac(s, m s^2 + B s + k) = c / k $
 
 #tip[
   无阻尼状态，即$B = 0$时，$lim_(t → ∞) x(t)$ 不存在，无法使用 FVT。
@@ -171,7 +174,7 @@ $ lim_(t → ∞) x(t) = lim_(s → 0) c/s frac(s, m s^2 + B s + k) = c/k $
 #figure(
   image("./images/block/prop-simple.drawio.png", width: 40%),
   caption: [弹簧阻尼系统框图],
-  supplement: "图"
+  supplement: "图",
 )
 
 对上图系统，有
@@ -194,7 +197,11 @@ $ X(s) = frac(k_p r/s, "as" + 1 + k_p) $
 
 使用 FVT，有
 
-$ lim_(t → ∞) x(t) = lim_(s → 0) s frac(k_p r/s, "as" + 1 + k_p) = frac(k_p, 1 + k_p) r $
+$
+  lim_(t → ∞) x(
+    t
+  ) = lim_(s → 0) s frac(k_p r/s, "as" + 1 + k_p) = frac(k_p, 1 + k_p) r
+$
 
 此时
 
@@ -213,7 +220,7 @@ $ lim_(s → 0) c(s) → ∞ $
 
 令$c(s) = k_I/s$，有
 
-$ X(s) = frac(r/s⋅k_I/s, "as" + 1 + k_I/s) = r/s frac(k_I, a s^2 + s + k_I) $
+$ X(s) = frac(r/s⋅k_I/s, "as" + 1 + k_I/s) = r / s frac(k_I, a s^2 + s + k_I) $
 
 整理并进行 Laplace 逆变换，得
 
