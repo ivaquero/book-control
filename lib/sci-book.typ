@@ -149,6 +149,14 @@
   bottom: stroke,
 )
 
+#let ktable(data, k, inset: 0.3em) = table(
+  columns: k,
+  inset: inset,
+  align: center + horizon,
+  stroke: frame(rgb("000")),
+  ..data.flatten(),
+)
+
 // functions
 #let code(text, lang: "python", breakable: false, width: 100%) = block(
   fill: rgb("#f3f3f3"),
