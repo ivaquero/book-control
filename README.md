@@ -5,7 +5,7 @@
 
 本仓库文本是 DR_CAN（王天威）一系列 [哔站课程](https://space.bilibili.com/230105574/channel/series) 的学习笔记，同时结合其专著 [控制之美：卷 1](https://book.douban.com/subject/35934779/) 进行了修正。相应的 Simulink 代码也包含在内。
 
-笔记原采用 Markdown 格式，但因该格式输出的 PDF 不够稳定，且样式单一，后转向现代文本工具 [Typst](https://github.com/typst/typst)（相信大家会喜欢上 Typst 这个软件）。
+笔记原采用 Markdown 格式，但因该格式输出的 PDF 不够稳定，且样式单一，后转向现代文本工具 [Typst](https://github.com/typst/typst)，其安装及使用方法可参考[知乎帖子](https://zhuanlan.zhihu.com/p/642509853)。相信大家会喜欢上 Typst 这个软件。
 
 希望对控制理论感兴趣的朋友，以及 Dr_CAN 的粉丝们，能在这里一起完善和讨论。
 
@@ -21,6 +21,7 @@
   - [fletcher](https://github.com/Jollywatt/typst-fletcher): v0.4.3
   - [hydra](https://github.com/tingerrr/hydra): v0.4.0
   - [gentle-clues](https://github.com/jomaway/typst-gentle-clues): v0.8.0
+  - [indenta](https://github.com/flaribbit/indenta): v0.0.2
 
 为保证正常编译，请参考 [typst-packages](https://github.com/typst/packages) 上的说明，在如下路径下克隆 `https://github.com/typst/packages` 仓库
 
