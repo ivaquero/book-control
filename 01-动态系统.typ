@@ -23,9 +23,11 @@
 
   自变量和自变量的导数均为线性的系统，称为线性系统。
 ]
+
 不显含时间$t$的线性系统，称线性自治系统（linear autonomous system），也称为线性时不变系统（linear time invariant system），如
 
 $ dot(x) = f(x) $
+
 LTI 是最常用的动态系统，其在具有线性性质的同时，还服从自治（时不变）原理，即
 
 $ O{f(t)} = x(t) ⇒ O{f(t - τ)} = x(t - τ) $
@@ -35,6 +37,7 @@ LTI 还被称为线性常系数系统。与之相对，显含时间$t$的系统�
 $ dot(x) = f(t, x) $
 
 == 控制器
+
 从控制模式上，控制器分为开环控制和闭环控制
 
 - 开环控制：根据参考值（reference）决定控制量，即系统输入
@@ -124,6 +127,7 @@ $
 
 #theorem("Ohm 定律")[
   $ I = e_R / R $
+
 ]
 
 #theorem("Kirchhoff 电流定律（KCL）")[
@@ -317,6 +321,7 @@ $ dv(h, t) = q_("in") / A - frac(g h, A R) $
 = 辅助知识
 
 == 自动化系统
+
 一个典型的自动化系统由 4 部分构成
 
 + Sense (collect data)

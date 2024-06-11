@@ -44,6 +44,7 @@ $ δ(t) = cases(∞ & t = 0, 0 & t ≠ 0) $
 根据$δ$函数定义，构建离散型冲激函数
 
 $ δ(t)_Δ = cases(frac(1, Δ T) & 0 < t < Δ T, 0 & "else") $
+
 显然，$Δ T$内的冲激为
 
 $ frac(1, Δ T) Δ T = 1 $
@@ -65,15 +66,18 @@ $ frac(1, Δ T) Δ T = 1 $
   supplement: "表",
   kind: table,
 )
+
 表格中，$A = Δ T f(i Δ T)$，在$t = i Δ T$时刻，有
 
 $ x(t) = ∑_(i = 0)^i Δ T f(i Δ T) h_Δ(t - i Δ T) $
+
 令$lim_(Δ T → 0)$，则$Δ T = dd(τ)$，$i Δ T = τ$，从而有
 
 $
   x(t) &= ∫_0^t f(τ) h(t - τ) dd(τ)\
   &= f(t) ∗ h(t)
 $
+
 这就是#strong[卷积的定义]，$∗$即为卷积运算（不是$*$）。
 
 #tip[
@@ -126,17 +130,21 @@ $
 通过 Laplace 变换，将函数从时域转化至频域
 
 $ f(t) F(s) $
+
 即
 
 $ ℒ[f(t)] = F(s) = ∫_0^∞ f(t) e^(-s t) dd(t) $
+
 得到复数
 
 $ s = σ + ω i $
+
 此时，函数的图像就从二维转换成了三维。
 
 当$σ = 0$时
 
 $ F(s) = F(ω) = ∫_0^∞ f(t) e^(-j ω t) dd(t) $
+
 $F(j ω)$-$j ω$的图像即为$f(t)$的 Fourier 变换。
 
 == 收敛域
@@ -156,9 +164,11 @@ $e^(-a t)$的 Laplace 变换存在的条件是上式的积分可积
 $
   ℒ[e^(-a t)] = ∫_0^(+∞) e^(-a t) e^(-(σ + j ω)t) dd(t) = ∫_0^(+∞) e^(-(a + σ))t e^(-j ω t) dd(t)
 $
+
 由 Euler 公式
 
 $ e^(-j ω t) = cos ω t - i sin ω t $
+
 则$|e^(-j ω t)| = 1$，故可积取决于$e^(-(a + σ))t$，即
 
 $ σ > - a $
@@ -187,15 +197,18 @@ $ ℒ[1] = 1 / s $
 Laplace 变换是一种线性变换。对线性系统
 
 $ ℒ[a f(t) + b g(t)] = a F(s) + b G(s) $
+
 由 Euler 公式
 
 $
   e^(i θ) &= cos θ + i sin θ\
   e^(i (-θ)) &= cos θ - i sin θ
 $
+
 得
 
 $ sin θ = frac(e^(i θ) - e^(-i θ), 2 i) $
+
 于是
 
 $
@@ -204,6 +217,7 @@ $
   &= 1 / 2i (frac(1, s - a i) - frac(1, s + a i))\
   &= frac(a, s^2 + a^2)
 $
+
 同理
 
 $
@@ -217,6 +231,7 @@ $
 分部积分
 
 $ ∫f^′(t) g(t) dd(t) = f(t) g(t) - ∫f(t) g^′(t) dd(t) $
+
 有
 
 $
@@ -229,10 +244,12 @@ $
 #tip[
   因为初始条件$f(0)$往往被选定为$0$，所以
   $ ℒ[f^′(t)] = s F(s) $
+
 ]
 进而有
 
 $ ℒ[f^″(t)] = s^2 F(s) - s f(0) - f^′(0) $
+
 以及
 
 $ ℒ[∫_0^t f(τ) dd(t)] = 1 / s F(s) $
@@ -247,6 +264,7 @@ $ ℒ[∫_0^t f(τ) dd(t)] = 1 / s F(s) $
 指数
 
 $ ℒ (- frac(1, s + a)) = e^(-a t) $
+
 三角函数
 
 $
@@ -266,17 +284,21 @@ $
   ],
   supplement: "图",
 )
+
 由 KCL 有
 
 $ e^′ = L i^″ + R i^′ + 1 / C i $
 
 #pagebreak()
+
 令初始条件为$0$，等式两边进行导数的 Laplace 变换，得
 
 $ s E[s] = L s^2 I_(s) + s R I_(s) + 1 / C I_(s) $
+
 从而有
 
 $ I(s) = frac(s, L s^2 + R s + 1/C) E[s] $
+
 转换为框图形式，即有
 
 #figure(
@@ -297,6 +319,7 @@ $ I(s) = frac(s, L s^2 + R s + 1/C) E[s] $
   caption: "",
   supplement: "\n图",
 )
+
 中间的函数即输出函数与输入函数的比值，称为#strong[传递函数（transfer function）]。
 
 == 流体系统
@@ -306,9 +329,11 @@ $ I(s) = frac(s, L s^2 + R s + 1/C) E[s] $
   caption: [流体系统],
   supplement: "图",
 )
+
 由上图
 
 $ dv(h, t) + frac(g, R A) h = q_(i n) / A $
+
 令
 
 - $A = 1$
@@ -317,9 +342,11 @@ $ dv(h, t) + frac(g, R A) h = q_(i n) / A $
 得
 
 $ x ̇(t) + g / R x(t) = u(t) $
+
 两端做 Laplace 变换，得
 
 $ s X(s) + g / R X(s) = U(s), med x(0) = 0 $
+
 从而有，开环传递函数$G(s)$
 
 $ G(s) = frac(X(s), U(s)) = frac(1, s + g/R) $
@@ -327,6 +354,7 @@ $ G(s) = frac(X(s), U(s)) = frac(1, s + g/R) $
 当$u(t) = C$，则
 
 $ lim_(t → ∞) h = C R / g $
+
 对闭环系统，此时引入参考值$V(s)$，输入值变成了$X(s) H(s)$
 
 #figure(
@@ -355,12 +383,15 @@ $ lim_(t → ∞) h = C R / g $
   caption: "",
   supplement: "\n图",
 )
+
 由
 
 $ (V - X H)(D G) = X $
+
 得，闭环传递函数
 
 $ X = V frac(D G, 1 + H D G) $
+
 于是可知
 
 #figure(
@@ -382,15 +413,19 @@ $ X = V frac(D G, 1 + H D G) $
 对一阶方程
 
 $ x ̇(t) + a x(t) = u(t) $
+
 当$x(0) = 0$时，有
 
 $ G(s) = frac(X(s), U(s)) = frac(1, s + a) $
+
 当$x(0) ≠ 0$时，有
 
 $ G(s) = frac(X(s), U(s) + x(0)) = frac(1, s + a) $
+
 对 LTI 系统，根据叠加原理，$x(0)$为另一输入，令其为$U_2(s)$，有
 
 $ ℒ^(-1)[U_2(s)] = ℒ^(-1)[x(0)] $
+
 即
 
 $ U_2(t) = x(0) δ(t) $

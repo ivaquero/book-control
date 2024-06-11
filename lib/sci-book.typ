@@ -3,13 +3,13 @@
 // physics
 #import "@preview/physica:0.9.2": *
 // diagram
-#import "@preview/fletcher:0.4.3": diagram, node, edge
+#import "@preview/fletcher:0.4.5": diagram, node, edge
 // theorems
 #import "@preview/ctheorems:1.1.2": *
 // banners
 #import "@preview/gentle-clues:0.8.0": *
 // indent
-#import "@preview/indenta:0.0.1": fix-indent
+#import "@preview/indenta:0.0.3": fix-indent
 
 #let conf(
   title: none,

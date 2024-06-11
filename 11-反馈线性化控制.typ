@@ -267,17 +267,13 @@ $
 现在，需要设计输入$u$，使$x_2 → x_(2 d)$。可令$e + dot(δ) = -k_2 δ$，得
 
 $
-  e + dot.double(x)(1 d) + k_1 (
-    dot(x)_(1 d) - x_2
-  ) + α / m x_1^3 - 1 / m u = -k_2 δ
+  e + dot.double(x)(1 d) + k_1 (dot(x)_(1 d) - x_2) + α / m x_1^3 - 1 / m u = -k_2 δ
 $
 
 最终，得
 
 $
-  u = m e + m dot.double(x)(1 d) + m k_1 (
-    dot(x)_(1 d) - x_2
-  )) + α x_1^3 + m k_2 δ
+  u = m e + m dot.double(x)(1 d) + m k_1 (dot(x)_(1 d) - x_2)) + α x_1^3 + m k_2 δ
 $
 
 $(6)$代入$(3)$，$(11)$代入$(10)$，得
