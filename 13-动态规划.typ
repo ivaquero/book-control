@@ -186,11 +186,11 @@ $ m dot.double(h)(t) = f(t) - m g $
 
 $ u = 1 / m (f(t)) - m g = a $
 
-其中，$f(t) = F(v_("motor")$
+其中，$f(t) = F(v_("motor"))$
 
 于是有
 
-- $macron(v) = 1 / 2 (v (k)) + v (k + 1))$
+- $macron(v) = 1 / 2 (v(k)) + v(k + 1)$
 - $t = dd(x) / 1 / 2 (v_k + v_(k + 1))$
 - $a = (v_k + v_(k + 1)) / t$
 
