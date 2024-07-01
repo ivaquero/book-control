@@ -82,7 +82,7 @@
       headingNumbering += [#eqnumsep#numbering(
           "1",
           subchapter,
-        )#eqnumsep#numbering(eqnumstyle, equation)]
+        )#eqnumsep#numbering(eqnumstyle, n)]
     }
     let equationNumbering = numbering("1", n)
     [(#headingNumbering#eqnumsep#equationNumbering)]
