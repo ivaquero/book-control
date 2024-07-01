@@ -1,4 +1,4 @@
-clc; clear; close all;
+clear; close all;clc;
 % Define, h: height, v: velocity
 h_init = 0; v_init = 0;
 % Final state

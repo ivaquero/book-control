@@ -1,9 +1,6 @@
 %% 程序初始化，清空工作空间，缓存
-clear;
-close all;
-clc;
+clear;close all;clc;
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %% 定义系统参数
 % 定义无人机质量
 m = 1;
@@ -18,9 +15,9 @@ n = size (A, 1);
 % 构建输入矩阵B，n x p
 B = [0; 1 / m; 0];
 % 构建输出矩阵C，p x n
-C = [0 0; 0 0];
+C = [0 0 0];
 % 构建输入矩阵D，p x p
-D = [0; 0];
+D = [0];
 % 计算输入矩阵维度
 p = size(B, 2);
 
@@ -65,10 +62,10 @@ x_history = zeros(n, k_steps);
 u_history = zeros(p, k_steps);
 
 % 调用模块[F2]，计算系统增广矩阵Aa，Ba，Qa，Sa，R以及目标输入ud
-[Aa, Ba, Qa, Sa, R, ud] = F2_InputAugmentMatrix_SS_U(A, B, Q, R, S, xd);
+[Aa, Ba, Qa, Sa, R, ud] = lqr_input_augment_matrix(A, B, Q, R, S, xd);
 
 % 调用模块[F1]，计算系统反馈增益，F
-[F] = F1_LQR_Gain(Aa, Ba, Qa, R, Sa);
+[F] = lqr_gain(Aa, Ba, Qa, R, Sa);
 
 % 仿真开始，建立for循环
 for k = 1:k_steps
@@ -85,7 +82,7 @@ for k = 1:k_steps
 end
 
 %%%%%%%%%%%%%%%%%结果%%%%%%%%%%%%%%%%%%%%%%%%%%%
-figure(1, 'position', [150 150 500 500]);
+figure('position', [150 150 500 500]);
 % 状态变量结果图
 subplot (2, 1, 1);
 hold;
