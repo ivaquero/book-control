@@ -1,5 +1,5 @@
 // header-footer
-#import "@preview/hydra:0.4.0": *
+#import "@preview/hydra:0.5.0": *
 // physics
 #import "@preview/physica:0.9.2": *
 // diagram
@@ -7,7 +7,7 @@
 // theorems
 #import "@preview/ctheorems:1.1.2": *
 // banners
-#import "@preview/gentle-clues:0.8.0": *
+#import "@preview/gentle-clues:0.9.0": *
 // indent
 #import "@preview/indenta:0.0.3": fix-indent
 
