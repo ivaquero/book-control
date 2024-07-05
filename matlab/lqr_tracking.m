@@ -76,7 +76,7 @@ Sa = transpose(Ca) * S * Ca;
 Qa = transpose(Ca) * Q * Ca;
 
 % 读取模块[F1]，计算系统反馈增益，F
-[F] = lqr_gain(Aa, Ba, Qa, R, Sa);
+[F] = f1_lqr_gain(Aa, Ba, Qa, R, Sa);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % 仿真开始，建立for循环

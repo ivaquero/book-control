@@ -1,6 +1,6 @@
 %% 输入：系统矩阵 A，B； 权重矩阵 Q，R，S
 %% 输出：反馈增益矩阵F
-function [F] = lqr_gain(A, B, Q, R, S)
+function [F] = f1_lqr_gain(A, B, Q, R, S)
 
     % 计算系统矩阵维度，n
     n = size(A, 1);

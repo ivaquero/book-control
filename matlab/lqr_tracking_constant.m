@@ -17,7 +17,7 @@ B = [0; 1 / m; 0];
 % 构建输出矩阵C，p x n
 C = [0 0 0];
 % 构建输入矩阵D，p x p
-D = [0];
+D = 0;
 % 计算输入矩阵维度
 p = size(B, 2);
 
@@ -62,10 +62,10 @@ x_history = zeros(n, k_steps);
 u_history = zeros(p, k_steps);
 
 % 调用模块[F2]，计算系统增广矩阵Aa，Ba，Qa，Sa，R以及目标输入ud
-[Aa, Ba, Qa, Sa, R, ud] = lqr_input_augment_matrix(A, B, Q, R, S, xd);
+[Aa, Ba, Qa, Sa, R, ud] = f2_lqr_input_augment_matrix(A, B, Q, R, S, xd);
 
 % 调用模块[F1]，计算系统反馈增益，F
-[F] = lqr_gain(Aa, Ba, Qa, R, Sa);
+[F] = f1_lqr_gain(Aa, Ba, Qa, R, Sa);
 
 % 系统输入限制
 u_max = 12; %上限
