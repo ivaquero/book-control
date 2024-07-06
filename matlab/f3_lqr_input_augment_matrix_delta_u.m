@@ -1,5 +1,6 @@
 %% 输入：系统矩阵 A，B； 权重矩阵： Q，R，S；  目标转移矩阵： AD
 %% 输出：增广矩阵Aa，Ba，Sa，Qa，权重矩阵R
+
 function [Aa, Ba, Qa, Sa, R] = f3_lqr_input_augment_matrix_delta_u(A, B, Q, R, S, AD)
 
     % 计算系统矩阵维度，n

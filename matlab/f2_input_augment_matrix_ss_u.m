@@ -1,5 +1,6 @@
 %% 输入：系统矩阵 A，B； 权重矩阵： Q，R，S；  稳态目标状态： xd
 %% 输出：增广矩阵Aa，Ba，Sa，Qa，权重矩阵R，稳态控制输入ud
+
 function [Aa, Ba, Qa, Sa, R, ud] = f2_input_augment_matrix_ss_u(A, B, Q, R, S, xd)
 
     % 计算系统矩阵维度，n

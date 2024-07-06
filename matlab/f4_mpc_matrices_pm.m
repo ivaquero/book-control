@@ -1,5 +1,6 @@
 %% 输入：系统矩阵 A，B； 权重矩阵 Q，R，S； 预测区间：N_P
 %% 输出：二次规划矩阵F，H 中间过程矩阵Phi，Gamma，Omega，Psi
+
 function [Phi, Gamma, Omega, Psi, F, H] = f4_mpc_matrices_pm(A, B, Q, R, S, N_P)
 
     % 计算系统矩阵维度，n
