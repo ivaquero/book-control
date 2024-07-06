@@ -6,15 +6,15 @@ function [Aa, Ba, Qa, Sa, R, ud] = f2_lqr_input_augment_matrix(A, B, Q, R, S, xd
     n = size(A, 1);
     % 计算输入矩阵维度，p
     p = size(B, 2);
-    % 构建增广矩阵Ca，参考式（4.5.17）
+    % 构建增广矩阵Ca
     Ca = [eye(n) -eye(n)];
-    % 构建增广矩阵Aa，参考式（4.5.16b）
+    % 构建增广矩阵Aa
     Aa = [A eye(n) - A; zeros(n) eye(n)];
-    % 构建增广矩阵Ba，参考式（4.5.16b）
+    % 构建增广矩阵Ba
     Ba = [B; zeros(n, p)];
-    % 构建增广矩阵Qa，参考式（4.5.18）
+    % 构建增广矩阵Qa
     Qa = transpose(Ca) * Q * Ca;
-    % 构建增广矩阵Sa，参考式（4.5.18）
+    % 构建增广矩阵Sa
     Sa = transpose(Ca) * S * Ca;
     % 设计权重矩阵R（这里R不变）
     % R = R;
