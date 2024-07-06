@@ -1,7 +1,6 @@
 %% 程序初始化，清空工作空间，缓存
 clear;close all;clc;
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 定义系统参数
+%%%%%%%%%%%%%%%%定义系统参数%%%%%%%%%%%%%%%%%%%
 % 定义无人机质量
 m = 1;
 % 定义重力加速度常数
@@ -62,7 +61,7 @@ x_history = zeros(n, k_steps);
 u_history = zeros(p, k_steps);
 
 % 调用模块[F2]，计算系统增广矩阵Aa，Ba，Qa，Sa，R以及目标输入ud
-[Aa, Ba, Qa, Sa, R, ud] = f2_lqr_input_augment_matrix(A, B, Q, R, S, xd);
+[Aa, Ba, Qa, Sa, R, ud] = f2_input_augment_matrix_ss_u(A, B, Q, R, S, xd);
 
 % 调用模块[F1]，计算系统反馈增益，F
 [F] = f1_lqr_gain(Aa, Ba, Qa, R, Sa);

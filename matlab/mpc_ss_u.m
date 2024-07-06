@@ -1,7 +1,6 @@
 %% 程序初始化，清空工作空间，缓存
 clear;close all;clc;
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 定义系统参数
+%%%%%%%%%%%%%%%%定义系统参数%%%%%%%%%%%%%%%%%%%
 % 定义质量块质量
 m_sys = 1;
 % 定义阻尼系数
@@ -71,7 +70,7 @@ delta_u = 0;
 N_P = 20;
 
 % 调用模块[F2]，计算增广矩阵以及ud
-[Aa, Ba, Qa, Sa, R, ud] = f2_lqr_input_augment_matrix(A, B, Q, R, S, xd);
+[Aa, Ba, Qa, Sa, R, ud] = f2_input_augment_matrix_ss_u(A, B, Q, R, S, xd);
 
 % 调用模块[F4]计算二次规划需用到的矩阵
 [Phi, Gamma, Omega, Psi, F, H] = f4_mpc_matrices_pm(Aa, Ba, Qa, R, Sa, N_P);
