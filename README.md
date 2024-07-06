@@ -31,6 +31,7 @@
   - [hydra](https://github.com/tingerrr/hydra)
   - [gentle-clues](https://github.com/jomaway/typst-gentle-clues)
   - [indenta](https://github.com/flaribbit/indenta)
+  - [i-figured](https://github.com/RubixDev/typst-i-figured)
 
 为保证正常编译，请参考 [typst-packages](https://github.com/typst/packages) 上的说明，在如下路径下克隆 `https://github.com/typst/packages` 仓库
 

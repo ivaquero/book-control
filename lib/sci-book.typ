@@ -1,15 +1,17 @@
+// indent
+#import "@preview/indenta:0.0.3": fix-indent
 // header-footer
 #import "@preview/hydra:0.5.0": *
 // physics
 #import "@preview/physica:0.9.2": *
-// diagram
-#import "@preview/fletcher:0.5.0": diagram, node, edge
 // theorems
 #import "@preview/ctheorems:1.1.2": *
 // banners
 #import "@preview/gentle-clues:0.9.0": *
-// indent
-#import "@preview/indenta:0.0.3": fix-indent
+// diagram
+#import "@preview/fletcher:0.5.0": diagram, node, edge
+// numbering
+#import "@preview/i-figured:0.2.4"
 
 #let conf(
   title: none,
@@ -73,41 +75,8 @@
     set cite(style: citestyle)
   }
 
-  let eqNumbering(n, loc) = {
-    let hCounter = counter(heading).at(loc)
-    let chapter = hCounter.at(0)
-    let headingNumbering = numbering("1", chapter)
-    if eqnumlevel == 2 and hCounter.len() > 1 {
-      let subchapter = hCounter.at(1)
-      headingNumbering += [#eqnumsep#numbering(
-          "1",
-          subchapter,
-        )#eqnumsep#numbering(eqnumstyle, n)]
-    }
-    let equationNumbering = numbering("1", n)
-    [(#headingNumbering#eqnumsep#equationNumbering)]
-  }
-
-  set math.equation(
-    numbering: n => locate(loc => {
-      eqNumbering(n, loc)
-    }),
-    supplement: [
-      #h(-.25em) 式#h(-.5em)
-    ],
-  )
-
-  // equation numbering
-  show ref: it => {
-    let element = it.element
-    if element != none and element.func() == math.equation {
-      let loc = element.location()
-      let n = counter(math.equation).at(loc).first()
-      eqNumbering(n, loc)
-    } else {
-      it
-    }
-  }
+  show heading: i-figured.reset-counters.with(level: 2)
+  show math.equation: i-figured.show-equation
 
   set figure.caption(separator: none)
 
