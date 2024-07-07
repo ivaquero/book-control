@@ -279,9 +279,7 @@ $
 
 #figure(
   image("./images/model/circuit.drawio.png", width: 40%),
-  caption: [
-    circuit
-  ],
+  caption: [circuit],
   supplement: "图",
 )
 

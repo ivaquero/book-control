@@ -210,9 +210,7 @@ $
 
 #figure(
   image("./images/block/compens-lag.drawio.png", width: 40%),
-  caption: [
-    closed-lag
-  ],
+  caption: [closed-lag],
   supplement: "图",
 )
 

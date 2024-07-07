@@ -79,6 +79,8 @@
   ],
 )
 
+#pagebreak()
+
 = 数据操作
 <数据操作>
 
@@ -101,7 +103,7 @@
 == 特征提取
 
 #block(
-  height: 7em,
+  height: 8em,
   columns()[
     - `[C,X] = getComponents(C2,looptype)`
     - `H = getIOTransfer(T,in,out)`
@@ -185,6 +187,8 @@
   ],
 )
 
+#pagebreak()
+
 = 线性分析
 <线性分析>
 
@@ -267,13 +271,15 @@
   ],
 )
 
+#pagebreak()
+
 = 模型设计
 <模型设计>
 
 === 子模块
 
 #block(
-  height: 5em,
+  height: 4.5em,
   columns()[
     - `blk = tunablePID(name,type)`
     - `blk = tunablePID2(name,type)`
@@ -286,7 +292,7 @@
 === 仿真设计
 
 #block(
-  height: 5em,
+  height: 4.5em,
   columns()[
     - `io = getlinio(mdl)`
     - `linsys = linearize(mdl,io)`
@@ -300,15 +306,13 @@
 === 其他
 
 #block(
-  height: 4em,
+  height: 3.5em,
   columns()[
     - `init_config = sisoinit(config)`
     - `Msamp = sampleBlock(M,name,vals)`
     - `h = rlocusplot(sys)`
   ],
 )
-
-#pagebreak(weak: true)
 
 = 模型调参
 <模型调参>
@@ -317,7 +321,7 @@
 <常规调参>
 
 #block(
-  height: 3em,
+  height: 2.5em,
   columns()[
     - `[CL,fSoft] = systune(CL0,SoftReqs)`
       - `options = systuneOptions`
@@ -328,7 +332,7 @@
 === 仿真设计
 
 #block(
-  height: 8em,
+  height: 7.5em,
   columns()[
     - `addPoint(s,pt)`
     - `addBlock(st,blk)`
@@ -344,7 +348,7 @@
 === 需求
 
 #block(
-  height: 8em,
+  height: 7.5em,
   columns()[
     - `TuningGoal.LQG`
     - `TuningGoal.Tracking`
@@ -360,7 +364,7 @@
 === 约束
 
 #block(
-  height: 9em,
+  height: 8.5em,
   columns()[
     - `TuningGoal.Gain`
       - `TuningGoal.WeightedGain`
