@@ -80,6 +80,7 @@ $
   V &= E = frac(1, 2) m v^2 + m g h \
   &= frac(1, 2)m(l x_2)^2 + m g l(1 - cos(x_1))
 $
+
 求导，可得
 
 $

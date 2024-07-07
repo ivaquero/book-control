@@ -213,7 +213,7 @@ $ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
 
 $ ϕ = B S $
 
-其中，$B$为匀强磁场的磁感应强度，$S$是正对磁场的面积（$m^2$）
+其中，$B$为匀强磁场的磁感应强度，$S$是正对磁场的面积（$m^2$）。
 
 == 电磁学定律
 
@@ -226,7 +226,7 @@ $ ϕ = B S $
 ]
 
 #tip[
-  Lenz 定律（电磁学）和 Newton 第一定律（力学）、Le Chatelier 原理（化学）本质相同，同属惯性定律
+  Lenz 定律（电磁学）和 Newton 第一定律（力学）、Le Chatelier 原理（化学）本质相同，同属惯性定律。
 ]
 
 = 流体力学基础
@@ -325,6 +325,7 @@ $ dv(h, t) = q_("in") / A - frac(g h, A R) $
 + Perceive (interpret data)
 + Plan (find path)
 + Act (follow path)
+
 其中，前 2 步的工作并称为传感融合（sensor fusion）。其作用有 3 个
 
 + 提高数据质量（降低噪声）

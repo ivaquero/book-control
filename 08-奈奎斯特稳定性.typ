@@ -1,6 +1,6 @@
 #import "lib/sci-book.typ": *
 #show: doc => conf(
-  title: "奈奎斯特稳定性",
+  title: "Nyquist 稳定性",
   author: ("ivaquero"),
   header-cap: "现代控制理论",
   footer-cap: "github@ivaquero",

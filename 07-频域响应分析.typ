@@ -41,9 +41,7 @@ $ ϕ = ϕ_0 - ϕ_i $
 
 $
   u(t) &= A sin(ω_i t) + B cos(ω_i t) \
-  &= sqrt(A^2 + B^2)(
-    frac(A, sqrt(A^2 + B^2)) sin(ω_i t) + frac(B, sqrt(A^2 + B^2)) cos(ω_i t)
-  )
+  &= sqrt(A^2 + B^2)(frac(A, sqrt(A^2 + B^2)) sin(ω_i t) + frac(B, sqrt(A^2 + B^2)) cos(ω_i t))
 $
 
 令$cos(ϕ_i) = frac(A, sqrt(A^2 + B^2))$，$sin(ϕ_i) = frac(B, sqrt(A^2 + B^2))$，得
@@ -77,12 +75,11 @@ $
   &= frac(k_1, s + j ω) + frac(k_2, s - j ω) + ∑_(i=1)^n frac(c_i, s - p_i) \
   &= frac((A ω_i + B s)D(s), (s + j ω_i)(s - j ω_i) ∏_(i=1)^n (s - p_i))
 $
+
 易得
 
 $
-  x(t) = ℒ^(-1)[
-    X(s)
-  ] = k_1 e^(-j ω_i t) + k_2 e^(j ω_i t) + ∑_(i=1)^n c_i e^(p_i t)
+  x(t) = ℒ^(-1)[X(s)] = k_1 e^(-j ω_i t) + k_2 e^(j ω_i t) + ∑_(i=1)^n c_i e^(p_i t)
 $
 
 对于稳定系统，$p_i$的实部小于 0，此时稳态
@@ -96,17 +93,13 @@ $ X_(s s)(t) = k_1 e^(-j ω_i t) + k_2 e^(j ω_i t) $
 由上面的式子
 
 $
-  k_1(s - j ω_i) N(s) + k_2(s + j ω_i) N(s) + ∑_(i=1)^n c_i(s + j ω_i) = (
-    A ω_i + B s
-  ) D(s)
+  k_1(s - j ω_i) N(s) + k_2(s + j ω_i) N(s) + ∑_(i=1)^n c_i(s + j ω_i) = (A ω_i + B s) D(s)
 $
 - 令$s = -j ω$，得
 
 $ k_1(-j ω - j ω_i) N(-j ω_i) + ∑_(i=1)^n 0 = (A ω_i - B j ω_i) D(-j ω_i) $
 $
-  k_1 = frac(A ω_i - B j ω_i,  - 2j ω) frac(D(-j ω_i), N(-j ω_i)) = frac(B + A j, 2) G(
-    -j ω_i
-  )
+  k_1 = frac(A ω_i - B j ω_i,  - 2j ω) frac(D(-j ω_i), N(-j ω_i)) = frac(B + A j, 2) G(-j ω_i)
 $
 - 令$s = j ω$，得
 
@@ -122,12 +115,8 @@ $ k_2 = frac(B - A j, 2) G(j ω_i) $
 
 $
   X_(s s)(t)
-  &= frac(B + A j, 2) |G(j ω_i)| e^(-j ϕ_G) e^(-j ω_i t) + frac(B - A j, 2) |G(
-    j ω_i
-  )| e^(j ϕ_G) e^(j ω_i t)\
-  &= 1 / 2 |G(j ω_i)| [
-    (B + A j) e^(-(ϕ_G + ω_i t)) j + (B - A j) e^((ϕ_G + ω_i t)) j
-  ]
+  &= frac(B + A j, 2) |G(j ω_i)| e^(-j ϕ_G) e^(-j ω_i t) + frac(B - A j, 2) |G(j ω_i)| e^(j ϕ_G) e^(j ω_i t)\
+  &= 1 / 2 |G(j ω_i)| [(B + A j) e^(-(ϕ_G + ω_i t)) j + (B - A j) e^((ϕ_G + ω_i t)) j]
 $
 
 通过 Euler 公式，化简得
@@ -135,9 +124,7 @@ $
 $
   X_(s s)(t)
   &= 1 / 2 |G(j ω_i)| (2 B cos(ϕ_G + ω_i t)) + 2 A sin(ϕ_G + ω_i t)\
-  &= |G(j ω_i)| sqrt(A^2 + B^2)(
-    B / sqrt(A^2 + B^2) cos(ϕ_G + ω_i t)
-  ) + A / sqrt(A^2 + B^2) sin(ϕ_G + ω_i t)\
+  &= |G(j ω_i)| sqrt(A^2 + B^2)(B / sqrt(A^2 + B^2) cos(ϕ_G + ω_i t)) + A / sqrt(A^2 + B^2) sin(ϕ_G + ω_i t)\
   &= |G(j ω_i)| M_i sin(ω_i t + ϕ_i + ϕ_G)\
   &= M_G M_i sin(ω_i t + ϕ_i + ϕ_G)
 $
@@ -349,9 +336,7 @@ $ G(j ω_i) = r e^(j θ) $
 由
 
 $
-  G(j ω_i) = G_1(j ω_i)⋅G_2(
-    j ω_i
-  ) = r_1 e^(j θ_1)⋅r_2 e^(j θ_2) = r_1 r_2 e^(j (θ_1 + θ_2))
+  G(j ω_i) = G_1(j ω_i)⋅G_2(j ω_i) = r_1 e^(j θ_1)⋅r_2 e^(j θ_2) = r_1 r_2 e^(j (θ_1 + θ_2))
 $
 
 可知 Bode 图纵坐标可以通过对数的性质，将复合函数的振幅响应和幅角响应拆分成多个常见函数叠加组合的形式，即
