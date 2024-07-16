@@ -8,10 +8,14 @@
 #import "@preview/ctheorems:1.1.2": *
 // banners
 #import "@preview/gentle-clues:0.9.0": *
+// figures
+#import "@preview/subpar:0.1.1": grid as sgrid
 // diagram
 #import "@preview/fletcher:0.5.0": diagram, node, edge
 // numbering
 #import "@preview/i-figured:0.2.4"
+// index
+#import "@preview/in-dexter:0.4.2": *
 
 #let conf(
   title: none,
@@ -109,13 +113,15 @@
 }
 
 // tables
-#let frame(stroke) = (x, y) => (
-  top: if y < 2 {
-    stroke
-  } else {
-    0pt
-  },
-  bottom: stroke,
+#let frame(stroke) = (
+  (x, y) => (
+    top: if y < 2 {
+      stroke
+    } else {
+      0pt
+    },
+    bottom: stroke,
+  )
 )
 
 #let ktable(data, k, inset: 0.3em) = table(
@@ -128,8 +134,8 @@
 
 // functions
 #let code(text, lang: "python", breakable: false, width: 100%) = block(
-  fill: rgb("#f3f3f3"),
-  stroke: rgb("#dbdbdb"),
+  fill: rgb("#F3F3F3"),
+  stroke: rgb("#DBDBDB"),
   inset: (x: .8em, y: .6em),
   radius: 5pt,
   spacing: 2em,
@@ -148,6 +154,7 @@
   "theo": "定理",
   "lem": "引理",
   "coro": "推论",
+  "rule": "法则",
   "algo": "算法",
   "tip": "提示",
   "alert": "注意",
@@ -159,7 +166,7 @@
   base_level: 1,
   separator: [#h(0.5em)],
   padding: (top: 0em, bottom: 0em),
-  fill: rgb("#ffffff"),
+  fill: rgb("#FFFFFF"),
   // stroke: rgb("#000000"),
   inset: (left: 0em, right: 0.5em, top: 0.2em, bottom: 0.2em)
 )
@@ -170,7 +177,7 @@
   base_level: 1,
   separator: [#h(0.5em)],
   padding: (top: 0em, bottom: 0.2em),
-  fill: rgb("#e5eefc"),
+  fill: rgb("#E5EEFC"),
   // stroke: rgb("#000000")
 )
 
@@ -178,11 +185,11 @@
   "theorem",
   terms.lem,
   separator: [#h(0.5em)],
-  fill: rgb("#efe6ff"),
+  fill: rgb("#EFE6FF"),
   titlefmt: strong,
 )
 
-#let corollary = thmplain(
+#let corollary = thmbox(
   "corollary",
   terms.coro,
   base: "theorem",
@@ -190,10 +197,18 @@
   titlefmt: strong,
 )
 
+#let rule = thmbox(
+  "",
+  terms.rule,
+  separator: [#h(0.5em)],
+  fill: rgb("#EEFFF1"),
+  titlefmt: strong,
+)
+
 #let tip = thmbox(
  "",
  none,
- fill: rgb("#fffee6"),
+ fill: rgb("#FFFEE6"),
  radius: 0.5em,
  padding: (top: 0em, bottom: 0em),
  separator: [],
@@ -203,7 +218,7 @@
 #let algo = thmbox(
  "",
  terms.algo,
- fill: rgb("#faf2fb"),
+ fill: rgb("#FAF2FB"),
  radius: 0em,
  padding: (top: 0em, bottom: 0em),
  separator: [],

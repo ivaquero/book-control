@@ -198,9 +198,7 @@ $ X(s) = frac(k_p r/s, "as" + 1 + k_p) $
 使用 FVT，有
 
 $
-  lim_(t → ∞) x(
-    t
-  ) = lim_(s → 0) s frac(k_p r/s, "as" + 1 + k_p) = frac(k_p, 1 + k_p) r
+  lim_(t → ∞) x(t) = lim_(s → 0) s frac(k_p r/s, "as" + 1 + k_p) = frac(k_p, 1 + k_p) r
 $
 
 此时
