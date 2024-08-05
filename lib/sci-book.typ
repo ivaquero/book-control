@@ -1,7 +1,7 @@
 // indent
 #import "@preview/indenta:0.0.3": fix-indent
 // header-footer
-#import "@preview/hydra:0.5.0": *
+#import "@preview/hydra:0.5.1": *
 // physics
 #import "@preview/physica:0.9.2": *
 // theorems
@@ -82,13 +82,20 @@
   show heading: i-figured.reset-counters.with(level: 2)
   show math.equation: i-figured.show-equation
 
-  set figure.caption(separator: none)
+  set figure.caption(separator: "  ")
 
   show figure: it => align(
     center,
     block(breakable: figure-break)[
       #it.body#h(0.35em)#it.caption
     ],
+  )
+
+  show raw.where(block: true): block.with(
+    fill: luma(240),
+    inset: .8em,
+    radius: 5pt,
+    width: 100%,
   )
 
   align(
@@ -107,6 +114,7 @@
     #pagebreak()
   ]
 
+  show link: underline
   show: thmrules
   show: fix-indent()
   doc
@@ -200,6 +208,7 @@
 #let rule = thmbox(
   "",
   terms.rule,
+  base_level: 1,
   separator: [#h(0.5em)],
   fill: rgb("#EEFFF1"),
   titlefmt: strong,

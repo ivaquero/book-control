@@ -51,7 +51,7 @@ $ x(t_(s s)) = x(4 / a) = 1 - e^(-4) = 0.98 $
 
 #figure(
   image("./images/model/liquid.drawio.png", width: 40%),
-  caption: [liquid],
+  caption: [流体系统],
   supplement: "图",
 )
 
@@ -114,13 +114,13 @@ $ dot(x) = a(1 - x) $
 
 #figure(
   image("./images/model/vibration.drawio.png", width: 40%),
-  caption: [vibration],
+  caption: [振动阻尼系统],
   supplement: "图",
 )
 
 对弹簧阻尼系统
 
-$m dot.double(x) = F - k x - B dot(x)$
+$ m dot.double(x) = F - k x - B dot(x) $
 
 整理得
 
@@ -197,9 +197,9 @@ $ x(t) = e^(-ζ ω_n t)(C_1 cos ω_n sqrt(1 - ζ^2)t + C_2 sin ω_n sqrt(1 - ζ^
 
 $ x(t) = e^(-ζ ω_n t) sqrt(c_1 + c_2)(sin(ω_dd(t) + ϕ)) $
 
-其中，$ϕ = arctan c_1/c_2$。
+其中，$ϕ = arctan c_1\/c_2$。
 
-此时，系统振幅在震动中衰减，且震动周期为$2π/ω_d$。
+此时，系统振幅在震动中衰减，且震动周期为$2π\/ω_d$。
 
 #tip[
   欠阻尼是日常生活中最常见的状态
@@ -207,7 +207,7 @@ $ x(t) = e^(-ζ ω_n t) sqrt(c_1 + c_2)(sin(ω_dd(t) + ϕ)) $
 
 - 当$ζ = 0$，此时系统处于无阻尼状态，该极点为#strong[中心点]。
 
-此时有解，图像为正弦函数，周期为$2π/ω_n$
+此时有解，图像为正弦函数，周期为$2π\/ω_n$
 
 $
   x_((t)) &= e^0 (c_1 cos ω_n t + c_2 sin ω_n t)\
@@ -279,6 +279,8 @@ $ x(t) = 1 - e^(-ζ ω_n t) sqrt(frac(1, 1 - ζ^2)) sin(ω_dd(t) + ϕ) $
 - 正弦函数$sin(ω_dd(t) + ϕ)$的频率为$w_d$（周期为$2π/w_d$）
 - $e^(-ζ ω_n t)$是一个衰减（单调递减）函数
 
+#pagebreak()
+
 = 性能分析
 <性能分析>
 
@@ -296,9 +298,8 @@ $ M_p = e^(-ζ π / sqrt(1 - ζ^2)) × 100% $
 
 - $T_(s s)$：调节时间（settling time）：系统进入稳态范围内的时间，稳态范围通常选择稳定值的$±2%$或$±5%$，即
 
-- $2%$：$T_(s s) = frac(4, ζ ω_n)$
-
-- $5%$：$T_(s s) = frac(3, ζ ω_n)$
+- $2%$：$T_(s s) = 4\/ζ ω_n$
+- $5%$：$T_(s s) = 3\/ζ ω_n$
 
 == 比较
 <比较>

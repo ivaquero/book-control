@@ -19,7 +19,10 @@ $ F(s) H(s) = X(s) $
 
 其中，
 
-- $F(s)$：输入的 Laplace 变换- $H(s)$：传递函数- $X(s)$：输出的 Laplace 变换
+- $F(s)$：输入的 Laplace 变换
+- $H(s)$：传递函数
+- $X(s)$：输出的 Laplace 变换
+
 对等号两边做 Laplace 逆变换，可得
 
 == 冲激函数
@@ -28,7 +31,7 @@ $ F(s) H(s) = X(s) $
 
 连续型冲激函数定义为
 
-$ δ(t) = cases(∞ & t = 0, 0 & t ≠ 0) $
+$ δ(t) = cases(∞ quad & t = 0, 0 & t ≠ 0) $
 
 单位冲激函数，又称为 Dirac $δ$函数，满足
 
@@ -43,7 +46,7 @@ $ δ(t) = cases(∞ & t = 0, 0 & t ≠ 0) $
 
 根据$δ$函数定义，构建离散型冲激函数
 
-$ δ(t)_Δ = cases(frac(1, Δ T) & 0 < t < Δ T, 0 & "else") $
+$ δ(t)_Δ = cases(frac(1, Δ T) quad & 0 < t < Δ T, 0 & "else") $
 
 显然，$Δ T$内的冲激为
 
@@ -55,12 +58,13 @@ $ frac(1, Δ T) Δ T = 1 $
   table(
     columns: 2,
     align: center + horizon,
-    inset: 6pt,
+    inset: 4pt,
     stroke: frame(rgb("000")),
     [$f(t)$], [$x(t)$],
     [$δ(t)_Δ$], [$h_Δ(t)$],
     [$δ(t - i Δ T)_Δ$], [$h_Δ(t - i Δ T)$],
     [$A δ(t - i Δ T)_Δ$], [$A h_Δ(t - i Δ T)$],
+    [], [],
   ),
   caption: [输入与输出],
   supplement: "表",
@@ -78,7 +82,7 @@ $
   &= f(t) ∗ h(t)
 $
 
-这就是#strong[卷积的定义]，$∗$即为卷积运算（不是$*$）。
+这就是#strong[卷积的定义]，$∗$即为卷积运算（米字号，不是$*$）。
 
 #tip[
   $x(t)$是系统对$t$时刻前所有响应的和，而冲激响应$h(t)$可以完全定义 LTI 系统
@@ -122,8 +126,6 @@ $
   则
   $ ℒ (dv(y(t), t, n)) = s^n ℒ[y(t)] = s^n Y(s) $
 ]
-
-#pagebreak()
 
 == 时域与频域
 
@@ -173,6 +175,8 @@ $ e^(-j ω t) = cos ω t - i sin ω t $
 
 $ σ > - a $
 
+#pagebreak()
+
 = 常用 Laplace 变换
 <常用-Laplace-变换>
 
@@ -189,8 +193,6 @@ $
 显然，θ
 
 $ ℒ[1] = 1 / s $
-
-#pagebreak()
 
 == 三角函数
 
@@ -272,22 +274,22 @@ $
   cos 2 t &= frac(e^(-2 i t) + e^(2 i t), 2)
 $
 
+#pagebreak()
+
 = 系统设计
 <系统设计>
 
 == 电路系统
 
 #figure(
-  image("./images/model/circuit.drawio.png", width: 40%),
-  caption: [circuit],
+  image("./images/model/circuit.drawio.png", width: 25%),
+  caption: [电路],
   supplement: "图",
 )
 
 由 KCL 有
 
 $ e^′ = L i^″ + R i^′ + 1 / C i $
-
-#pagebreak()
 
 令初始条件为$0$，等式两边进行导数的 Laplace 变换，得
 
@@ -378,7 +380,7 @@ $ lim_(t → ∞) h = C R / g $
     edge(A, H, "-", corner: right),
     edge(H, O, text($X(s)H(s)$, size: 0.6em), "-|>"),
   ),
-  caption: "",
+  caption: "闭环系统",
   supplement: "\n图",
 )
 
