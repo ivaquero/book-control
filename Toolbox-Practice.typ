@@ -1,9 +1,9 @@
 #import "lib/sci-book.typ": *
 #show: doc => conf(
   title: "MATLAB 工具箱最佳实践",
-  author: ("数字技术研发中心"),
-  footer-cap: "数字技术研发中心",
-  header-cap: "技术文档",
+  author: ("ivaquero"),
+  header-cap: "现代控制理论",
+  footer-cap: "github@ivaquero",
   outline-on: false,
   doc,
 )
