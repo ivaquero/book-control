@@ -297,7 +297,7 @@ $ U(s) = (k_p + k_I 1 / s + k_D s) 𝔼[s] $
 
 令$k_I/k_p = 1/τ_I$，$k_D/k_p = τ_D$，则@eqt:pid 变为
 
-$ u(t) = k_p (e(t) + 1 / τ_I ∫e(t) dd(t) + τ_D dot(e)(t) $ <pidstd>
+$ u(t) = k_p e(t) + 1 / τ_I ∫e(t) dd(t) + τ_D dot(e)(t) $ <pidstd>
 
 其中
 
