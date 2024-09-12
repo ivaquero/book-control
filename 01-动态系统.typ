@@ -43,48 +43,7 @@ $ dot(x) = f(t, x) $
 - 开环控制：根据参考值（reference）决定控制量，即系统输入
 - 闭环控制：通过测量系统输出与参考值之间的误差，反馈（feedback）至输入端，决定控制量
 
-#figure(
-  diagram(
-    spacing: (2em, 2em),
-    node-stroke: 1pt,
-    mark-scale: 80%,
-    let (R, O, T, H, A) = ((1, 1), (2, 2), (4, 1), (4, 2), (5.5, 1.5)),
-    node(R, [$V(s)$], shape: rect, corner-radius: 3pt),
-    node(O, text("误差表", size: 0.3em), shape: circle, radius: 10pt),
-    node(
-      T,
-      [控制器],
-      shape: rect,
-      corner-radius: 3pt,
-    ),
-    node(
-      H,
-      [传感器],
-      shape: rect,
-      corner-radius: 3pt,
-    ),
-    node(
-      A,
-      [设备],
-      shape: rect,
-      corner-radius: 3pt,
-    ),
-    edge(R, O, "-|>", corner: left),
-    edge(O, T, text("输入", size: 0.7em), "-|>", corner: right, label-pos: 0.7),
-    edge(
-      T,
-      A,
-      text("输出", size: 0.7em),
-      "-|>",
-      corner: right,
-      label-pos: 0.25,
-    ),
-    edge(A, H, "-|>", corner: right),
-    edge(H, O, "-|>"),
-  ),
-  caption: "闭环控制器",
-  supplement: "\n图",
-)
+#include "images/intro-closed.typ"
 
 = 电学基础
 <电学基础>

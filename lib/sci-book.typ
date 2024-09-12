@@ -7,7 +7,7 @@
 // theorems
 #import "@preview/ctheorems:1.1.2": *
 // banners
-#import "@preview/gentle-clues:0.9.0": *
+#import "@preview/gentle-clues:1.0.0": *
 // figures
 #import "@preview/subpar:0.1.1": grid as sgrid
 // diagram
