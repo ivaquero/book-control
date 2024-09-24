@@ -168,7 +168,7 @@ $ C(t) = C e^(-σ_a t) sin ω_n t $
 - $8$为比例（proportion）
 
 #figure(
-  image("./images/block/compens-lead-1.drawio.png", width: 40%),
+  image("./images/block/compens-lead.drawio.png", width: 40%),
   caption: [PD 控制],
   supplement: "图",
 )

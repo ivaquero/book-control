@@ -122,3 +122,37 @@ $
 - 零阶保持：使输入在一个周期内不变
 
 = 基于频率响应
+
+如下闭环控制系统，其中
+
+#block(
+  height: 3em,
+  columns(3)[
+    - $R(s)$：参考信号
+    - $C(s)$：控制器
+    - $G(s)$：系统传递函数
+    - $D(s)$：扰动函数
+    - $N(s)$：噪声函数
+    - $X(s)$：输出
+  ],
+)
+
+#figure(
+  image("images/block/design-freq.drawio.png", width: 40%),
+  caption: "带有扰动和噪声的闭环控制系统",
+  supplement: [图],
+)
+
+可得
+
+$
+  [R(s) -(X(s) + N(s))] C(s) G(s) + D(s) &= X(s)
+$
+
+整理得
+
+$
+  underbrace(frac(C(s) G(s), 1 + C(s) G(s)), T(s)) (R(s) - N(s)) + underbrace(frac(1, 1 + C(s) G(s)), S(s)) D(s) = X(s)
+$
+
+这里，$S(s)$称灵敏度传递函数，$T(s)$称补偿灵敏度传递函数。

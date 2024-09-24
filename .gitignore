@@ -73,5 +73,9 @@ octave-workspace
 
 ##########
 # extra
+articles/0*.pdf
+articles/1*.pdf
+articles/A*.pdf
+articles/B*.pdf
 lib/*.pdf
 *.pdf
