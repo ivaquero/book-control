@@ -43,7 +43,7 @@
 
 ## 约定规范
 
-## 公式
+### 公式
 
 - 矩阵
   - `[]` 括号
@@ -56,7 +56,7 @@
 
 目前大部分图表采用 [drawio](https://github.com/jgraph/drawio) 制作，后面会逐步使用 [fletcher](https://github.com/Jollywatt/typst-fletcher) 替换，尤其是控制框图。
 
-## 一些说明
+## 说明
 
 目前存在的样式问题
 
