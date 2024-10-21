@@ -1,4 +1,4 @@
-#import "../lib/plot-control.typ": *
+#import "@local/cetz-control:0.1.0": *
 
 // 闭环控制器
 #figure(
@@ -15,11 +15,11 @@
     rnode(T, ctext("控制器")),
     rnode(H, ctext("传感器")),
     rnode(A, ctext("设备")),
-    aedge(R, O, "", 0, left, 0pt),
-    aedge(O, T, ctext("输入"), .7, right, 0pt),
-    aedge(T, A, ctext("输出"), .25, right, 0pt),
-    aedge(A, H, "", 0, right, 0pt),
-    aedge(H, O, "", 0, none, 0pt),
+    arredge(R, O, "", 0, left, 0pt),
+    arredge(O, T, ctext("输入"), .7, right, 0pt),
+    arredge(T, A, ctext("输出"), .25, right, 0pt),
+    arredge(A, H, "", 0, right, 0pt),
+    arredge(H, O, "", 0, none, 0pt),
   ),
   caption: "闭环控制器",
   supplement: "\n图",

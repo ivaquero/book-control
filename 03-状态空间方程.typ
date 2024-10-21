@@ -1,4 +1,4 @@
-#import "lib/sci-book.typ": *
+#import "@local/scibook:0.1.0": *
 #show: doc => conf(
   title: "状态空间方程",
   author: ("ivaquero"),

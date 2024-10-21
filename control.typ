@@ -1,6 +1,3 @@
-// numbering
-#import "@preview/i-figured:0.2.4"
-
 #let chapter(filename) = {
   include filename
   context counter(heading).update(0)

@@ -20,26 +20,26 @@
 
 ### 依赖软件
 
-- [Typst](https://github.com/typst/typst): v0.11.1
+- [Typst](https://github.com/typst/typst)
 
-### 依赖包
+### 克隆官方仓库
 
-- Typst
-  - [ctheorems](https://github.com/sahasatvik/typst-theorems)
-  - [phyisca](https://github.com/leedehai/typst-physics)
-  - [fletcher](https://github.com/Jollywatt/typst-fletcher)
-  - [hydra](https://github.com/tingerrr/hydra)
-  - [gentle-clues](https://github.com/jomaway/typst-gentle-clues)
-  - [indenta](https://github.com/flaribbit/indenta)
-  - [i-figured](https://github.com/RubixDev/typst-i-figured)
-
-为保证正常编译，请参考 [typst-packages](https://github.com/typst/packages) 上的说明，在如下路径下克隆 `https://github.com/typst/packages` 仓库
+为保证正常编译，请参考 [typst-packages](https://github.com/typst/packages) 上的说明，在如下路径下克隆 `typst-packages` 仓库
 
 - Linux：
   - `$XDG_DATA_HOME/typst`
   - `~/.local/share/typst`
 - macOS：`~/Library/Application Support/typst`
 - Windows：`%APPDATA%/typst`
+
+### 使用模版
+
+在上述路径下克隆 [scibook](https://github.com/ivaquero/scibook) 和 [cetz-control](https://github.com/ivaquero/cetz-control)，然后在文档中引用
+
+```typst
+#import "@local/scibook:0.1.0": *
+#import "@local/cetz-control:0.1.0": *
+```
 
 ## 约定规范
 
