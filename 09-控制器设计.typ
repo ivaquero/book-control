@@ -140,7 +140,7 @@ $
 #figure(
   image("images/block/design-freq.drawio.png", width: 40%),
   caption: "带有扰动和噪声的闭环控制系统",
-  supplement: [图],
+  supplement: "图",
 )
 
 可得

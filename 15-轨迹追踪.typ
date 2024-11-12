@@ -102,7 +102,7 @@ $ u = -x_d + (1 + g / L) x_1 + 2 x_2 $
 #figure(
   image("images/model/vibration.drawio.png", width: 40%),
   caption: "弹簧振动阻尼系统",
-  supplement: [图],
+  supplement: "图",
 )
 
 - 当目标$𝒙_d = vec(delim: "[", 0, 0)$，为经典 LQR 问题
@@ -200,7 +200,7 @@ $ <cost-spring2>
 #figure(
   image("images/block/lqr-trk-const.drawio.png", width: 40%),
   caption: "轨迹追踪 LQR 系统",
-  supplement: [图],
+  supplement: "图",
 )
 
 == 稳态非零矩阵输入
@@ -240,7 +240,7 @@ $
 #figure(
   image("images/block/lqr-trk-var.drawio.png", width: 40%),
   caption: "稳态非零矩阵输入",
-  supplement: [图],
+  supplement: "图",
 )
 
 这里，我们通过矩阵变换将追踪（tracking）转换为了调控（regulation）。
