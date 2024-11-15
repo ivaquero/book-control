@@ -152,7 +152,7 @@ $ dot(x) = f(x, u) $
 $ dot(x) = f(x, ϕ (x)) $
 
 #figure(
-  image("./images/block/feedback.drawio.png", width: 40%),
+  image("images/block/feedback.drawio.png", width: 40%),
   caption: [反馈],
   supplement: "图",
 )
@@ -199,7 +199,7 @@ $ dot(V)= pdv(V, x) dv(x, t) = x dot(x) = x(x^2 - x^3 + u) = x^3 - x^4 + x u $
 $ m dot.double(x) + α x^3 = F $
 
 #figure(
-  image("./images/model/vibration-nl.drawio.png", width: 40%),
+  image("images/model/vibration-nl.drawio.png", width: 40%),
   caption: [非线性弹簧系统],
   supplement: "图",
 )

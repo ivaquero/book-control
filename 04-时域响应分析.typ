@@ -50,7 +50,7 @@ $ x(t_(s s)) = x(4 / a) = 1 - e^(-4) = 0.98 $
 对于如下系统
 
 #figure(
-  image("./images/model/liquid.drawio.png", width: 40%),
+  image("images/model/liquid.drawio.png", width: 40%),
   caption: [流体系统],
   supplement: "图",
 )
@@ -113,7 +113,7 @@ $ dot(x) = a(1 - x) $
 <弹簧阻尼系统>
 
 #figure(
-  image("./images/model/vibration.drawio.png", width: 40%),
+  image("images/model/vibration.drawio.png", width: 40%),
   caption: [振动阻尼系统],
   supplement: "图",
 )

@@ -282,7 +282,7 @@ $
 == 电路系统
 
 #figure(
-  image("./images/model/circuit.drawio.png", width: 25%),
+  image("images/model/circuit.drawio.png", width: 25%),
   caption: [电路],
   supplement: "图",
 )
@@ -325,7 +325,7 @@ $ I(s) = frac(s, L s^2 + R s + 1/C) E[s] $
 == 流体系统
 
 #figure(
-  image("./images/model/liquid.drawio.png", width: 40%),
+  image("images/model/liquid.drawio.png", width: 40%),
   caption: [流体系统],
   supplement: "图",
 )

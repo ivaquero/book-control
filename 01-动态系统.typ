@@ -98,7 +98,7 @@ $
 RLC 电路是一种由电阻 R、电感 L、电容 C 组成的电路结构。
 
 #figure(
-  image("./images/model/circuit-rlc.drawio.png", width: 40%),
+  image("images/model/circuit-rlc.drawio.png", width: 40%),
   caption: [ RLC],
   supplement: "图",
 )
@@ -143,7 +143,7 @@ $ I_1^′ = I_2^″ + I_2^′ $
 $ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
 
 #figure(
-  image("./images/model/circuit-rlc.png", width: 60%),
+  image("images/model/circuit-rlc.png", width: 60%),
   caption: [RLC],
   supplement: "图",
 )
@@ -212,7 +212,7 @@ $ P_("abs") = P_a + P_("static") $
 $ P_("gauge") = P_("abs") - P_a = ρ g h $
 
 #figure(
-  image("./images/model/liquid.drawio.png", width: 40%),
+  image("images/model/liquid.drawio.png", width: 40%),
   caption: [流体系统],
   supplement: "图",
 )
