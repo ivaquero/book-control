@@ -1,7 +1,7 @@
 #import "@local/scibook:0.1.0": *
 #show: doc => conf(
   title: "传递函数",
-  author: ("ivaquero"),
+  author: "ivaquero",
   header-cap: "现代控制理论",
   footer-cap: "github@ivaquero",
   outline-on: false,
@@ -82,7 +82,7 @@ $
   &= f(t) ∗ h(t)
 $
 
-这就是#strong[卷积的定义]，$∗$即为卷积运算（米字号，不是$*$）。
+这就是#strong[卷积的定义]，$∗$即为卷积运算（米字号，不是星号）。
 
 #tip[
   $x(t)$是系统对$t$时刻前所有响应的和，而冲激响应$h(t)$可以完全定义 LTI 系统

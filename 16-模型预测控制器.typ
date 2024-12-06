@@ -1,7 +1,7 @@
 #import "@local/scibook:0.1.0": *
 #show: doc => conf(
   title: "模型预测控制器",
-  author: ("ivaquero"),
+  author: ivaquero,
   header-cap: "现代控制理论",
   footer-cap: "github@ivaquero",
   outline-on: false,
@@ -88,9 +88,7 @@ $
 于是，@eqt:cost-mpc 变为条件式
 
 $
-  min J = ∑_(i=k)^(N-1) (
-    underbrace(𝒙^(⊤)_(k+i|k) 𝑸 𝒙_(k+i|k), "误差的加权和") + underbrace(𝒖^(⊤)_(k+i|k) 𝑹 𝒖_(k+i|k), "输入的加权和")
-  ) + underbrace(𝒙^(⊤)_(k+N) 𝑭 𝒙_(k+N), "终端误差")
+  min J = ∑_(i=k)^(N-1) ( underbrace(𝒙^(⊤)_(k+i|k) 𝑸 𝒙_(k+i|k), "误差的加权和") + underbrace(𝒖^(⊤)_(k+i|k) 𝑹 𝒖_(k+i|k), "输入的加权和") ) + underbrace(𝒙^(⊤)_(k+N) 𝑭 𝒙_(k+N), "终端误差")
 $ <cost-mpc2>
 
 为将@eqt:cost-mpc2 化为@eqt:cost-quad 形式，即只有一个变量的形式，做如下代换
@@ -128,8 +126,6 @@ $ macron(𝑸) = dmat(delim: "[", Q, Q, ⋱, F), space macron(𝑹) = dmat(delim
 代入@eqt:mc，得
 
 $
-  J &= 𝒙_k^(⊤) underbrace(𝑴^(⊤) macron(𝑸) 𝑴, "𝑮") 𝒙_K + 𝒙_k^(⊤) underbrace(𝑴^(⊤) macron(𝑸) 𝑪, "𝑬") 𝑼_k + 𝑼_k^(⊤) underbrace(𝑪^(⊤) macron(𝑸) 𝑴, "𝑬") 𝒙_k + 𝑼_k^(⊤) (
-    underbrace(𝑪^(⊤) macron(𝑸) 𝑪 + macron(𝑹), "𝑯")
-  ) 𝑼_k \
+  J &= 𝒙_k^(⊤) underbrace(𝑴^(⊤) macron(𝑸) 𝑴, "𝑮") 𝒙_K + 𝒙_k^(⊤) underbrace(𝑴^(⊤) macron(𝑸) 𝑪, "𝑬") 𝑼_k + 𝑼_k^(⊤) underbrace(𝑪^(⊤) macron(𝑸) 𝑴, "𝑬") 𝒙_k + 𝑼_k^(⊤) ( underbrace(𝑪^(⊤) macron(𝑸) 𝑪 + macron(𝑹), "𝑯") ) 𝑼_k \
   &= 𝒙_k^(⊤) 𝑮 𝒙_k + 2 𝒙_k^(⊤) 𝑬 𝑼_k + 𝑼_k^(⊤) 𝑯 𝑼_k
 $

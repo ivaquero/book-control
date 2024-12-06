@@ -1,7 +1,7 @@
 #import "@local/scibook:0.1.0": *
 #show: doc => conf(
   title: "线性二次型调节器",
-  author: ("ivaquero"),
+  author: ivaquero,
   header-cap: "现代控制理论",
   footer-cap: "github@ivaquero",
   outline-on: false,
@@ -25,9 +25,7 @@ $ x_([k+1]) = x_([k]) + u_([k]) $
 于是，其代价函数可定义为
 
 $
-  J = 1 / 2 underbrace(x^2[w], "末端代价") + 1 / 2 ∑_(k=0)^(N-1)(
-    underbrace(x^2_([k]),"运行代价") + underbrace(u^2_([k]), "输入代价")
-  )
+  J = 1 / 2 underbrace(x^2[w], "末端代价") + 1 / 2 ∑_(k=0)^(N-1)( underbrace(x^2_([k]),"运行代价") + underbrace(u^2_([k]), "输入代价") )
 $
 
 == 极端策略
@@ -183,9 +181,7 @@ $ pdv(J_(N-1→N), 𝒖_([N-1])) = 0 $
 得
 
 $
-  𝒖^*_([N-1]) = -(𝑩^⊤ P_([0])𝑩 + 𝑹)^(-1) 𝑩^⊤ P_([0]) 𝑨 𝒙_([
-    N-1
-  ]) = -underbrace(F_([N-1]), "feedback")underbrace(𝒙_([N-1]),"Gain")
+  𝒖^*_([N-1]) = -(𝑩^⊤ P_([0])𝑩 + 𝑹)^(-1) 𝑩^⊤ P_([0]) 𝑨 𝒙_([ N-1 ]) = -underbrace(F_([N-1]), "feedback")underbrace(𝒙_([N-1]),"Gain")
 $
 
 #pagebreak()

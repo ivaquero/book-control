@@ -1,7 +1,7 @@
 #import "@local/scibook:0.1.0": *
 #show: doc => conf(
   title: "附录A：Fourier 变换",
-  author: ("ivaquero"),
+  author: ivaquero,
   header-cap: "现代控制理论",
   footer-cap: "github@ivaquero",
   outline-on: false,
@@ -77,9 +77,7 @@ $
 <a_0>
 
 $
-  ∫_(-π)^π f(
-    x
-  ) dd(x) &= ∫_(-π)^π a_0 dd(x) + ∫_(-π)^π ∑_(n=1)^∞ a_n cos n x dd(x) + ∫_(-π)^π ∑_(n=1)^∞ b_n sin n x dd(x)\
+  ∫_(-π)^π f( x ) dd(x) &= ∫_(-π)^π a_0 dd(x) + ∫_(-π)^π ∑_(n=1)^∞ a_n cos n x dd(x) + ∫_(-π)^π ∑_(n=1)^∞ b_n sin n x dd(x)\
   &= a_0 ∫_(-π)^π dd(x)\
   &= 2π a_0 → π a_0
 $
@@ -205,10 +203,8 @@ $
 
 $
   f(t)
-  &= a_0 / 2 + ∑_(n=1)^∞ (
-    a_n cos frac(n π, L) t +
-    b_n sin frac(n π, L) t
-  )\
+  &= a_0 / 2 + ∑_(n=1)^∞ ( a_n cos frac(n π, L) t +
+    b_n sin frac(n π, L) t )\
   &= a_0 / 2 +
   ∑_(n=1)^∞ (a_n 1 / 2(e^(i n ω t) + e^(-i n ω t))) -
   1 / 2 i b_n (e^(i n ω t) - e^(-i n ω t))\
@@ -258,10 +254,8 @@ $
 可得
 
 $
-  f(x) = a_0 / 2 + ∑_(n=1)^∞ (
-    a_n cos (frac(2π n, T) x) +
-    b_n sin (frac(2π n, T) x)
-  ), C ∈ ℝ
+  f(x) = a_0 / 2 + ∑_(n=1)^∞ ( a_n cos (frac(2π n, T) x) +
+    b_n sin (frac(2π n, T) x) ), C ∈ ℝ
 $
 
 其中
