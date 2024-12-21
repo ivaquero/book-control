@@ -1,7 +1,7 @@
 #import "@local/scibook:0.1.0": *
 #show: doc => conf(
   title: "Nyquist 稳定性",
-  author: ivaquero,
+  author: "ivaquero",
   header-cap: "现代控制理论",
   footer-cap: "github@ivaquero",
   outline-on: false,

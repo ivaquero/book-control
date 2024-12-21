@@ -1,7 +1,7 @@
 #import "@local/scibook:0.1.0": *
 #show: doc => conf(
   title: "非线性控制器",
-  author: ivaquero,
+  author: "ivaquero",
   header-cap: "现代控制理论",
   footer-cap: "github@ivaquero",
   outline-on: false,
