@@ -42,8 +42,8 @@ $ x(τ) = x(1 / a) = 1 - e^(-1) = 0.63 $
 
 此处
 
-- $τ$：#strong[时间常数（time constant）]，反映系统响应速度。
-- $T_("ss")$：#strong[稳定时间（settlingtime）]，通常定义为$4τ$，即
+- $τ$：时间常数（time constant），反映系统响应速度。
+- $T_("ss")$：稳定时间（settlingtime），通常定义为$4τ$，即
 
 $ x(t_(s s)) = x(4 / a) = 1 - e^(-4) = 0.98 $
 

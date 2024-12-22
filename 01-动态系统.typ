@@ -20,11 +20,9 @@
 
   - 可加性：$f(x_1 + x_2) = f(x_1) + f(x_2)$
   - 齐次性：$f(a x) = a f(x)$
-
-  自变量和自变量的导数均为线性的系统，称为线性系统。
 ]
 
-不显含时间$t$的线性系统，称线性自治系统（linear autonomous system），也称为线性时不变系统（linear time invariant system），如
+自变量和自变量的导数均为线性的系统，称为线性系统。其中，不显含时间$t$的线性系统，称线性自治（linear autonomous）系统，也称为线性时不变（linear time invariant，LTI）系统，其系数不随时间变化，即
 
 $ dot(x) = f(x) $
 
@@ -32,7 +30,7 @@ LTI 是最常用的动态系统，其在具有线性性质的同时，还服从�
 
 $ O{f(t)} = x(t) ⇒ O{f(t - τ)} = x(t - τ) $
 
-LTI 还被称为线性常系数系统。与之相对，显含时间$t$的系统，称线性非自治系统（non-autonomous system）或线性时变系统（time varying system），即
+与之相对，显含时间$t$的系统，称线性非自治（non-autonomous）系统或线性时变（time varying）系统，其系数不随时间变化，即
 
 $ dot(x) = f(t, x) $
 
@@ -83,7 +81,6 @@ $
 
 #theorem("Ohm 定律")[
   $ I = e_R / R $
-
 ]
 
 #theorem("Kirchhoff 电流定律（KCL）")[
@@ -127,6 +124,7 @@ $ e_L + e_(R_1) + e_(R_2) - e_i = 0 $
 - $e_(R_2) = I_2 R_2 = 3 I_2$
 - $e_L = L I_1^′ = 2 I_1^′$
 - $e_C = 1 / C ∫_0^t (I_1 - I_2) dd(t) = 4 ∫_0^t (I_1 - I_2) dd(t)$
+
 回代入第一个方程组，得
 
 $

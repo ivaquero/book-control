@@ -21,8 +21,7 @@ $ dot(x) = a x^2 + u $
 
 $ dot(e) = dot(x)_d - dot(x) = dot(x)_d - a x^2 - u $
 
-当$a$已知，可采用反馈线性化，求得 Lyapunov
-函数$V(x)$；当$a$未知，则有
+当$a$已知，可采用反馈线性化，求得 Lyapunov 函数$V(x)$；当$a$未知，则有
 
 $ V(e, tilde(a)) = 1 / 2 e^2 + 1 / 2 a ̃^2 $
 

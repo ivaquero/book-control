@@ -62,7 +62,7 @@ $ 7000 dot(m) + 10 m = u + d $
 
 等号两边同时进行 Laplace 变换，得
 
-$ frac(M(s), U(s) + D(s)) = frac(1, 7000 s + 100) $
+$ frac(M(s), U(s) + D(s)) = frac(1, 7000s + 100) $
 
 #figure(
   image("images/block/prop.drawio.png", width: 40%),
@@ -81,11 +81,11 @@ $ u = k_p e $
 
 这里，有
 
-$ [k_p(R - M) + D] frac(1, 7000 s + 10 α) = M $
+$ [k_p(R - M) + D] frac(1, 7000s + 10 α) = M $
 
 整理，得
 
-$ M = frac(k_p R + D, 7000 s + 10 α + k_p) $
+$ M = frac(k_p R + D, 7000s + 10 α + k_p) $
 
 当$M$的极点小于$0$，系统稳定。一种常见情况是，$R$和$D$是稳定的，即
 
@@ -94,7 +94,7 @@ $ M = frac(k_p R + D, 7000 s + 10 α + k_p) $
 
 此时
 
-$ M = frac(k_p r/s + d/s, 7000 s + 10 α + k_p) $
+$ M = frac(k_p r/s + d/s, 7000s + 10 α + k_p) $
 
 令分子为$0$，求出$P_1$和$P_2$
 

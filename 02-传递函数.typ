@@ -263,13 +263,13 @@ $ ℒ[∫_0^t f(τ) dd(t)] = 1 / s F(s) $
 + Laplace 逆变换：$ℒ^(-1)[f(x)], med s → t$
 指数
 
-$ ℒ (- frac(1, s + a)) = e^(-a t) $
+$ ℒ(-frac(1, s + a)) = e^(-a t) $
 
 三角函数
 
 $
-  sin 2 t &= frac(e^(-2 i t) - e^(2 i t), 2 i)\
-  cos 2 t &= frac(e^(-2 i t) + e^(2 i t), 2)
+  sin(2t) &= frac(e^(-2 i t) - e^(2 i t), 2 i)\
+  cos(2t) &= frac(e^(-2 i t) + e^(2 i t), 2)
 $
 
 #pagebreak()
