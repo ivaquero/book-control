@@ -1,6 +1,6 @@
 #import "@local/scibook:0.1.0": *
 #show: doc => conf(
-  title: "附录B：复矩阵",
+  title: "附录A：复矩阵",
   author: "ivaquero",
   header-cap: "现代控制理论",
   footer-cap: "github@ivaquero",
@@ -36,7 +36,7 @@ $ arrow(z) = (a, b) $
   $ z_1⋅z_2 = (a_1 a_2 - b_1 b_2) + (a_2 b_1 + a_1 b_2) i $
 
   - 复数的减法
-  $ z_1 - z_2 = z_1 + (- z_2) $
+  $ z_1 - z_2 = z_1 + (-z_2) $
 
   - 复数的除法
   $ z_2 \ z_1 = z_2(1 \ z_1), ∀z_1 ≠ 0 $

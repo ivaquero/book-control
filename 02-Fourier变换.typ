@@ -1,6 +1,6 @@
 #import "@local/scibook:0.1.0": *
 #show: doc => conf(
-  title: "附录A：Fourier 变换",
+  title: "Fourier 变换",
   author: "ivaquero",
   header-cap: "现代控制理论",
   footer-cap: "github@ivaquero",
@@ -145,14 +145,14 @@ $
 
 由
 
-$ ∫_(-π)^π dd(x) = ∫_(- L)^L d π / L t $
+$ ∫_(-π)^π dd(x) = ∫_(-L)^L d π / L t $
 
 得
 
 $
   1 / π ∫_(-π)^π dd(x)
-  &= 1 / π π / L ∫_(- L)^L dd(t)\
-  &= 1 / L ∫_(- L)^L dd(t)
+  &= 1 / π π / L ∫_(-L)^L dd(t)\
+  &= 1 / L ∫_(-L)^L dd(t)
 $
 
 最终有
@@ -162,9 +162,9 @@ $ f(t) = a_0 / 2 + ∑_(n=1)^∞ (a_n cos frac(n π, L) t + b_n sin frac(n π, L
 其中，
 
 $
-  a_0 &= 1 / L ∫_(- L)^L f(t) dd(t)\
-  a_n &= 1 / L ∫_(- L)^L f(t) cos frac(n π, L) t dd(t)\
-  b_n &= 1 / L ∫_(- L)^L f(t) sin frac(n π, L) t dd(t)
+  a_0 &= 1 / L ∫_(-L)^L f(t) dd(t)\
+  a_n &= 1 / L ∫_(-L)^L f(t) cos frac(n π, L) t dd(t)\
+  b_n &= 1 / L ∫_(-L)^L f(t) sin frac(n π, L) t dd(t)
 $
 
 == 工程调整
@@ -176,7 +176,7 @@ $ ω = π / L = frac(2π, T) $
 
 同时
 
-$ ∫_(- L)^L dd(t) → ∫_0^(2L) dd(t) → ∫_0^T dd(t) $
+$ ∫_(-L)^L dd(t) → ∫_0^(2L) dd(t) → ∫_0^T dd(t) $
 
 此时，有
 
@@ -187,7 +187,7 @@ $
 $
 
 = Fourier 级数
-<fourier-级数>
+<Fourier-级数>
 
 == 复数形式
 <复数形式>
@@ -195,8 +195,8 @@ $
 由 Euler 公式，可知
 
 $
-  cos θ &= 1 / 2(e^(i θ) + e^(- j θ))\
-  sin θ &= -1 / 2(e^(i θ) - e^(- i θ))
+  cos θ &= 1 / 2(e^(i θ) + e^(-j θ))\
+  sin θ &= -1 / 2(e^(i θ) - e^(-i θ))
 $
 
 回代入之前的周期函数公式，得
@@ -219,8 +219,8 @@ $
   f(t)
   &= ∑_(n = 0)^0 a_0 / 2 e^(i n ω t) +
   ∑_(n=1)^∞ frac(a_n - i b_n, 2) e^(i n ω t) +
-  ∑_(n = -∞)^(-1) frac(a_(- n) +
-  i b_(- n), 2) e^(i n ω t)\
+  ∑_(n = -∞)^(-1) frac(a_(-n) +
+  i b_(-n), 2) e^(i n ω t)\
   &= ∑_(-∞)^∞ C_n e^(i n ω t)
 $
 
@@ -230,7 +230,7 @@ $
   C_n = cases(delim: "{",
   a_0/2 & n = 0,
   frac(a_n - i b_n, 2) & n = 1\, 2\, 3\, 4\, …,
-  frac(a_(- n) + i b_(- n), 2) quad & n = -1\, -2\, -3\, -4\, …)
+  frac(a_(-n) + i b_(-n), 2) quad & n = -1\, -2\, -3\, -4\, …)
 $
 
 分别展开，整理得
@@ -261,8 +261,8 @@ $
 其中
 
 $
-  a_n = 2 / T ∫_(- T \ 2)^(T \ 2) f(x) cos frac(2 n π, T) x dd(x)\
-  b_n = 2 / T ∫_(- T \ 2)^(T \ 2) f(x) sin frac(2 n π, T) x dd(x)
+  a_n = 2 / T ∫_(-T \ 2)^(T \ 2) f(x) cos frac(2 n π, T) x dd(x)\
+  b_n = 2 / T ∫_(-T \ 2)^(T \ 2) f(x) sin frac(2 n π, T) x dd(x)
 $
 
 = 常用变换
@@ -277,7 +277,7 @@ $ f_T(t) = ∑_(n = -∞)^∞ C_n e^(i n ω_0 t) $
 
 其中，
 
-$ C_n = 1 / T ∫_(- T / 2)^(T / 2) f_T(t) e^(- i n ω_0 t) dd(t) $
+$ C_n = 1 / T ∫_(-T / 2)^(T / 2) f_T(t) e^(-i n ω_0 t) dd(t) $
 
 此处，称$ω_0 = frac(2π, T)$为基频率。
 
@@ -291,13 +291,13 @@ $T$增大，则$Δ ω$减小。此处，令$1/T = frac(Δ ω, 2π)$，并将$C_n
 Fourier 级数的复数表达式，得
 
 $
-  f_T(t) = ∑_(n = -∞)^∞ frac(Δ ω, 2π) ∫_(- T / 2)^(T / 2) f_T(t) e^(- i n ω_0 t) dd(t) e^(i n ω_0 t)
+  f_T(t) = ∑_(n = -∞)^∞ frac(Δ ω, 2π) ∫_(-T / 2)^(T / 2) f_T(t) e^(-i n ω_0 t) dd(t) e^(i n ω_0 t)
 $
 
 当$T → ∞$，有
 
 $
-  ∫_(- T / 2)^(T / 2) dd(t) & → ∫_(-∞)^(+∞) dd(t)\
+  ∫_(-T / 2)^(T / 2) dd(t) & → ∫_(-∞)^(+∞) dd(t)\
   n ω_0 & → ω\
   ∑_(n = -∞)^∞ Δ ω & → ∫_(-∞)^(+∞) d ω
 $
@@ -309,22 +309,13 @@ $
 于是，有
 
 $
-  f(t) = frac(1, 2π) ∫_(-∞)^(+∞) ∫_(-∞)^(+∞) f(t) e^(- i ω t) dd(t) e^(i ω t) d ω
+  f(t) = frac(1, 2π) ∫_(-∞)^(+∞) ∫_(-∞)^(+∞) f(t) e^(-i ω t) dd(t) e^(i ω t) d ω
 $
 
 其中，将如下积分称为 Fourier 变换
 
-$ F(ω) = ∫_(-∞)^(+∞) f(t) e^(- i ω t) dd(t) $
+$ F(ω) = ∫_(-∞)^(+∞) f(t) e^(-i ω t) dd(t) $
 
 而将如下公式，称为 Fourier 逆变换
 
 $ f(t) = frac(1, 2π) ∫_(-∞)^(+∞) F(ω) e^(i ω t) d ω $
-
-== 与 Laplace 变换
-<与-Laplace-变换>
-
-令$s = i ω$，即可得 Laplace 变换
-
-$ F(s) = ∫_(-∞)^(+∞) f(t) e^(- s t) dd(t) $
-
-由此，Fourier 变换为 Laplace 变换的一个特例，具有 Laplace 变换的所有性质。

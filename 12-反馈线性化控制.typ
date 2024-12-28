@@ -250,7 +250,7 @@ $
 
 $
   dot(δ) &= dot(x)_(2 d) - dot(x)_2\
-  &= dot.double(x)(1 d) + k_1 dot(e) - (- α / m x_1^3 + 1 / m u)\
+  &= dot.double(x)(1 d) + k_1 dot(e) - (-α / m x_1^3 + 1 / m u)\
   &= dot.double(x)(1 d) + k_1 (dot(x)_(1 d) - x_2) + α / m x_1^3 - 1 / m u
 $
 
