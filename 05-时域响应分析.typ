@@ -32,7 +32,7 @@ $
 
 $ X(s) = U(s) G(s) = 1 / s frac(a, s + a) = 1 / s - frac(1, s + a) $
 
-对等式两端同时进行 Laplace 逆变换，得
+对等式两端同时进行 逆 Laplace 变换，得
 
 $ x(t) = 1 - e^(-a t) $
 

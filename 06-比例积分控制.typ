@@ -119,7 +119,7 @@ $ e_(s s) = r - lim_(t → ∞) x(t) $
 $ lim_(t → ∞) x(t) = lim_(s → 0) s X(s) $
 
 #tip[
-  终值定理可以省去 Laplace 逆变换，得到时域上的最终结果，常用于系统稳态判断。
+  终值定理可以省去 逆 Laplace 变换，得到时域上的最终结果，常用于系统稳态判断。
 ]
 
 == 弹簧阻尼系统
@@ -220,7 +220,7 @@ $ lim_(s → 0) c(s) → ∞ $
 
 $ X(s) = frac(r/s⋅k_I/s, "as" + 1 + k_I/s) = r / s frac(k_I, a s^2 + s + k_I) $
 
-整理并进行 Laplace 逆变换，得
+整理并进行 逆 Laplace 变换，得
 
 $ a x ̈(t) + x ̇(t) + k_I = r k_I $
 
