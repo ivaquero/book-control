@@ -3,7 +3,7 @@
 ![code size](https://img.shields.io/github/languages/code-size/ivaquero/book-control.svg)
 ![repo size](https://img.shields.io/github/repo-size/ivaquero/book-control.svg)
 
-本仓库文本是 DR_CAN（王天威）一系列 [哔站课程](https://space.bilibili.com/230105574/channel/series) 的学习笔记。同时，结合其著作 [控制之美：卷 1](https://book.douban.com/subject/35934779/) 及[控制之美：卷 2](https://book.douban.com/subject/36556895/) （未包含 Kalman 滤波部分），统一规范了公式和代码。
+本仓库文本基于是 DR_CAN [哔站课程](https://space.bilibili.com/230105574/channel/series) 的学习笔记。结合了其著作 [控制之美：卷 1](https://book.douban.com/subject/35934779/) 及[控制之美：卷 2](https://book.douban.com/subject/36556895/) （未包含 Kalman 滤波部分），同时使用其他教材和教程对诸多内容进行了细化，统一规范了公式和代码。
 
 共包括
 
