@@ -1,6 +1,6 @@
 #import "@local/scibook:0.1.0": *
 #show: doc => conf(
-  title: "附录B：控制工具箱 API",
+  title: "控制工具箱 API",
   author: "ivaquero",
   header-cap: "现代控制理论",
   footer-cap: "github@ivaquero",
