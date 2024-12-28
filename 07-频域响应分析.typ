@@ -272,19 +272,28 @@ $ |G(j ω_i)|_(ω = ω_n sqrt(1 - 2 ζ^2)) = frac(1, 2 ζ sqrt(1 - ζ^2)) $
 == 由来
 <由来>
 
-对 LTI 系统的振幅响应和幅角响应绘图，得到
+20 世纪 30 年代，Hendrik Wade Bode 决定将增益绘制在双对数图上。这样做，$ω$轴的低频部分会被拉伸，从而提供系统频率行为的更清晰视图。
 
-- $20 lg M$-$ω$图，单位$"dB"$-$r a d/s$
-- $ϕ$-$ω$图，单位$deg$-$r a d/s$
+#figure(
+  table(
+    columns: (auto,) * 3,
+    inset: 0.4em,
+    align: center + horizon,
+    stroke: frame(rgb("000")),
+    [目标响应], [坐标], [坐标单位],
+    [振幅响应], [$20 lg M$～$ω$], [$"dB"$～$"rad"\/s$],
+    [幅角响应], [$ϕ$～$ω$], [$deg$～$"rad"\/s$],
+  ),
+  caption: "Bode 图构成",
+  supplement: [表],
+  kind: table,
+)
 
-#tip[
-  分贝（decibel），意为十分之一贝尔（Alexander Bell），最初用于度量电话/电报的噪声损失，定义为
-  $ "dB" = 10 lg P_M / P_R $
+分贝（decibel），意为十分之一贝尔（Alexander Bell），最初用于度量电话/电报的噪声损失，定义为
 
-  其中，$P_M$为测量功率，$P_R$为参考功率。
-]
+$ "dB" = 10 lg P_M / P_R $
 
-已知，功率是振幅平方的函数，即
+其中，$P_M$为测量功率，$P_R$为参考功率。又功率是振幅平方的函数，即
 
 $ P = f(M^2) $
 
