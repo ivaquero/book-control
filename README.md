@@ -1,4 +1,4 @@
-# 《控制之美》笔记
+# 简明控制理论
 
 ![code size](https://img.shields.io/github/languages/code-size/ivaquero/book-control.svg)
 ![repo size](https://img.shields.io/github/repo-size/ivaquero/book-control.svg)
