@@ -198,6 +198,7 @@ $ <inv>
 
 @eqt:inv 表示$x(t)$由无数个无穷小的小波相加而成，而 $X(s)$则表示$s$平面上每个点需要多少个小波。该加权因子由变换给出（@eqt:laplace）。分解出的每个小波都由复数$X(s)$ 加权。​​然后，它们通过传递函数$G$，该函数现在不再是$G(j ω)$（仅针对正弦波定义），而是针对整个复平面定义的$G(s)$。$X(s)G(s)$的结果表示输出中包含的$s$平面上每个点的$e^(s t)$量。$X(s)G(s)$上使用@eqt:inv，可让我们回到时间域并得到输出。
 
+
 == 收敛域
 
 Laplace 变换后，要保证
@@ -308,6 +309,21 @@ $ ℒ[∫_0^t f(τ) dd(t)] = 1 / s F(s) $
 
 == 解方程
 
+
+Laplace 变换的一个非常重要的方面是
+
+$
+  frac(d x(t), d t) ⟶^"Laplace Transforms" ⋅ X(s) - x(0)
+$
+
+数学表示为
+
+$
+  cal(L) [ frac(dd(x(t)), dd(t)) ] = s cal(L) [ x(t) ] - x(0)
+$
+
+其中，$cal(L)$表示 Laplace 变换。该方程表明， Laplace 变换将微分方程（作为时间函数）转换为代数方程（作为频率函数），从而使我们能够轻松地在频域中求解微分方程。
+
 通过 Laplace 变换求解微分方程主要有 3 步
 
 + Laplace 变换：$ℒ[f(x)], med t → s$
@@ -329,7 +345,9 @@ $
 = 系统设计
 <系统设计>
 
-== 电路系统
+== 系统构型
+
+== 并行系统
 
 #figure(
   image("images/model/circuit.drawio.png", width: 25%),
@@ -372,7 +390,7 @@ $ I(s) = frac(s, L s^2 + R s + 1/C) E[s] $
 
 中间的函数即为传递函数。
 
-== 流体系统
+== 串行系统
 
 #figure(
   image("images/model/liquid.drawio.png", width: 40%),
@@ -384,12 +402,7 @@ $ I(s) = frac(s, L s^2 + R s + 1/C) E[s] $
 
 $ dv(h, t) + frac(g, R A) h = q_(i n) / A $
 
-令
-
-- $A = 1$
-- $x = h$
-- $u = q_(i n)$
-得
+令$A = 1$，$x = h$，$u = q_(i n)$，得
 
 $ x ̇(t) + g / R x(t) = u(t) $
 
@@ -434,9 +447,17 @@ $ lim_(t → ∞) h = C R / g $
   supplement: "\n图",
 )
 
-由
+如果两个传递函数$D(s)$和$G(s)$级联，则组合的传递函数就是它们的乘法，即$D(s)G(s)$，则
 
 $ (V - X H)(D G) = X $
+
+#tip[
+  对线性系统，序列可以颠倒，即，$D(s)G(s) = G(s)D(s)$，从而有
+
+  $
+    log(D ∗ G) = log(D) + log(G)
+  $
+]
 
 得，闭环传递函数
 
