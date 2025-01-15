@@ -18,7 +18,7 @@
 
 #figure(
   image("images/block/closed-1.drawio.png", width: 40%),
-  caption: [闭环控制],
+  caption: "闭环控制",
   supplement: "图",
 )
 
@@ -59,7 +59,7 @@ $ G(s) = frac(N(s), D(s)) = frac(∑_(i=1)^m (s - z_i), ∑_(j=1)^n (s - p_j)) $
 
 #figure(
   image("images/model/vibration.drawio.png", width: 40%),
-  caption: [弹簧阻尼系统],
+  caption: "弹簧阻尼系统",
   supplement: "图",
 )
 
@@ -136,7 +136,7 @@ $ G(s) = frac(N(s), D(s)) $
 
 #figure(
   image("images/block/closed-2.drawio.png", width: 40%),
-  caption: [闭环系统],
+  caption: "闭环系统",
   supplement: "图",
 )
 
@@ -169,7 +169,7 @@ $ C(t) = C e^(-σ_a t) sin ω_n t $
 
 #figure(
   image("images/block/compens-lead.drawio.png", width: 40%),
-  caption: [PD 控制],
+  caption: "PD 控制",
   supplement: "图",
 )
 
@@ -210,7 +210,7 @@ $
 
 #figure(
   image("images/block/compens-lag.drawio.png", width: 40%),
-  caption: [closed-lag],
+  caption: "closed-lag",
   supplement: "图",
 )
 
@@ -277,7 +277,7 @@ $ U(s) = (k_p + k_I 1 / s + k_D s) 𝔼[s] $
     [极点], [$ϕ_2$], [$-ϕ_2$], [$v_2$], [$1 \/ v_2$],
     [零点 + 极点], [$ϕ_1, ϕ_2$], [$ϕ_1 - ϕ_2$], [$v_1, v_2$], [$v_1 \/ v_2$],
   ),
-  caption: [幅角],
+  caption: "幅角",
   supplement: "表",
   kind: table,
 )

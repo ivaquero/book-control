@@ -62,7 +62,7 @@ $ dot(x) = f(t, x) $
     [电容], [法拉（F）], [$C$], [$Q\/U$],
     [电感], [亨利（H）], [$L$], [$U\/I^′$],
   ),
-  caption: [电学单元],
+  caption: "电学单元",
   supplement: "表",
   kind: table,
 )
@@ -96,7 +96,7 @@ RLC 电路是一种由电阻 R、电感 L、电容 C 组成的电路结构。
 
 #figure(
   image("images/model/circuit-rlc.drawio.png", width: 40%),
-  caption: [ RLC],
+  caption: " RLC",
   supplement: "图",
 )
 
@@ -142,7 +142,7 @@ $ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
 
 #figure(
   image("images/model/circuit-rlc.png", width: 60%),
-  caption: [RLC],
+  caption: "RLC",
   supplement: "图",
 )
 
@@ -163,7 +163,7 @@ $ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
     [磁感应强度], [特斯拉（T）], [$B$],
     [磁通量], [韦伯（Wb）], [$ϕ$],
   ),
-  caption: [电磁学基础],
+  caption: "电磁学基础",
   supplement: "表",
   kind: table,
 )
@@ -211,7 +211,7 @@ $ P_("gauge") = P_("abs") - P_a = ρ g h $
 
 #figure(
   image("images/model/liquid.drawio.png", width: 40%),
-  caption: [流体系统],
+  caption: "流体系统",
   supplement: "图",
 )
 

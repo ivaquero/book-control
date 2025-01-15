@@ -20,7 +20,7 @@
 
 #figure(
   image("images/model/unicycle.drawio.png", width: 40%),
-  caption: [独轮车],
+  caption: "独轮车",
   supplement: "图",
 )
 
@@ -160,7 +160,7 @@ $ 𝒖^* ∈ Ω $
     edge((2, 0), "l", "-"),
     edge((1.5, 0), "u", "->"),
   ),
-  caption: [无人机模型],
+  caption: "无人机模型",
   supplement: "\n图",
 )
 

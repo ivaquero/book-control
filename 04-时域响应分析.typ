@@ -126,7 +126,7 @@ $
     [$> 0$], [$> 0$], [node], [×],
     [$< 0$], [], [saddle], [×],
   ),
-  caption: [实数根],
+  caption: "实数根",
   supplement: "表",
   kind: table,
 )
@@ -144,7 +144,7 @@ $
     [$a < 0$], [focus], [✓],
     [$a = 0$], [center], [✓⁻],
   ),
-  caption: [复数根],
+  caption: "复数根",
   supplement: "表",
   kind: table,
 )
@@ -198,7 +198,7 @@ $ x(t_(s s)) = x(4 / a) = 1 - e^(-4) = 0.98 $
 
 #figure(
   image("images/model/liquid.drawio.png", width: 40%),
-  caption: [流体系统],
+  caption: "流体系统",
   supplement: "图",
 )
 
@@ -260,7 +260,7 @@ $ dot(x) = a(1 - x) $
 
 #figure(
   image("images/model/vibration.drawio.png", width: 40%),
-  caption: [振动阻尼系统],
+  caption: "振动阻尼系统",
   supplement: "图",
 )
 

@@ -28,7 +28,7 @@
     [负定], [ND], [0], [$<$],
     [半负定], [NSD], [0], [$≤$],
   ),
-  caption: [Lyapunov 稳定性],
+  caption: "Lyapunov 稳定性",
   supplement: "表",
   kind: table,
 )
@@ -153,7 +153,7 @@ $ dot(x) = f(x, ϕ (x)) $
 
 #figure(
   image("images/block/feedback.drawio.png", width: 40%),
-  caption: [反馈],
+  caption: "反馈",
   supplement: "图",
 )
 
@@ -200,7 +200,7 @@ $ m dot.double(x) + α x^3 = F $
 
 #figure(
   image("images/model/vibration-nl.drawio.png", width: 40%),
-  caption: [非线性弹簧系统],
+  caption: "非线性弹簧系统",
   supplement: "图",
 )
 
