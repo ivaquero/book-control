@@ -3,7 +3,7 @@
   title: "比例微分控制",
   author: "ivaquero",
   header-cap: "现代控制理论",
-  footer-cap: "github@eqt:ivaquero",
+  footer-cap: "github@ivaquero",
   outline-on: false,
   doc,
 )
@@ -295,7 +295,7 @@ $ U(s) = (k_p + k_I 1 / s + k_D s) 𝔼[s] $
 
 == 标准型
 
-令$k_I/k_p = 1/τ_I$，$k_D/k_p = τ_D$，则@eqt:pid 变为
+令$k_I/k_p = 1/τ_I$，$k_D/k_p = τ_D$，则@pid 变为
 
 $ u(t) = k_p e(t) + 1 / τ_I ∫e(t) dd(t) + τ_D dot(e)(t) $ <pidstd>
 
@@ -308,7 +308,7 @@ $ u(t) = k_p e(t) + 1 / τ_I ∫e(t) dd(t) + τ_D dot(e)(t) $ <pidstd>
   积分项是历史误差的积累，比例相是对当前误差的响应，微分相是对未来误差的判断。
 ]
 
-对@eqt:pidstd 两端进行 Laplace 变换，得
+对@pidstd 两端进行 Laplace 变换，得
 
 $ u(s) = k_p (E(s) + E(s) / τ_I + τ_D E(s)) = underbrace(k_p (1 + 1 / τ_I + τ_D), "C(s)") E(s) $
 

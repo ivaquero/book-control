@@ -70,7 +70,7 @@ $ 𝒙_(k+1) = 𝑨 𝒙_k + 𝑩 𝒖_k $
 其计算$𝒙_(k+1)$的大致步骤为
 
 1. 估计/测量$k$时刻系统状态；
-2. 基于代价函数进行最优化控制。离散化@eqt:cost-quad2，得
+2. 基于代价函数进行最优化控制。离散化@cost-quad2，得
 
 $ J = ∑_k^(N-1) (𝒆^(⊤)_k 𝑸 𝒆_k + 𝒖^(⊤)_k 𝑹 𝒖_k) + 𝒆^(⊤)_N 𝑭 𝒆_N $ <cost-mpc>
 
@@ -78,20 +78,20 @@ $ J = ∑_k^(N-1) (𝒆^(⊤)_k 𝑸 𝒆_k + 𝒖^(⊤)_k 𝑹 𝒖_k) + 𝒆^(
 
 == 代价函数推导
 
-MPC 问题的一个难点就是最小化代价函数的计算。目前的思路是将@eqt:cost-mpc 转化为二次型，这里令
+MPC 问题的一个难点就是最小化代价函数的计算。目前的思路是将@cost-mpc 转化为二次型，这里令
 
 $
   𝑿_k = [𝒙_((k|k)), 𝒙_((k+1|k)), …, 𝒙_((k+N|k))]^(⊤) \
   𝑼_k = [𝒖_((k|k)), 𝒖_((k+1|k)), …, 𝒖_((k+N-1|k))]^(⊤)
 $
 
-于是，@eqt:cost-mpc 变为条件式
+于是，@cost-mpc 变为条件式
 
 $
   min J = ∑_(i=k)^(N-1) ( underbrace(𝒙^(⊤)_(k+i|k) 𝑸 𝒙_(k+i|k), "误差的加权和") + underbrace(𝒖^(⊤)_(k+i|k) 𝑹 𝒖_(k+i|k), "输入的加权和") ) + underbrace(𝒙^(⊤)_(k+N) 𝑭 𝒙_(k+N), "终端误差")
 $ <cost-mpc2>
 
-为将@eqt:cost-mpc2 化为@eqt:cost-quad 形式，即只有一个变量的形式，做如下代换
+为将@cost-mpc2 化为@cost-quad 形式，即只有一个变量的形式，做如下代换
 
 $
   cases(
@@ -115,7 +115,7 @@ $
   mat(delim: "[", 0, 0, …, 0; ⋮, ⋮, ⋮, ⋮; 0, 0, …, 0; 𝑩, 0, ⋯, ⋮; 𝑨 𝑩, 𝑩, ⋯, ⋮; ⋮, ⋮, ⋮, ⋮; 𝑨^(N-1) 𝑩, 𝑨^(N-2) 𝑩, ⋯, 𝑩)
 $
 
-将@eqt:cost-mpc2 展开，得
+将@cost-mpc2 展开，得
 
 $ J = 𝒙_k^(⊤) macron(𝑸) 𝒙_k + 𝑼_k^(⊤) macron(𝑹) 𝑼_k $
 
@@ -123,7 +123,7 @@ $ J = 𝒙_k^(⊤) macron(𝑸) 𝒙_k + 𝑼_k^(⊤) macron(𝑹) 𝑼_k $
 
 $ macron(𝑸) = dmat(delim: "[", Q, Q, ⋱, F), space macron(𝑹) = dmat(delim: "[", R, R, ⋱, R) $
 
-代入@eqt:mc，得
+代入@mc，得
 
 $
   J &= 𝒙_k^(⊤) underbrace(𝑴^(⊤) macron(𝑸) 𝑴, "𝑮") 𝒙_K + 𝒙_k^(⊤) underbrace(𝑴^(⊤) macron(𝑸) 𝑪, "𝑬") 𝑼_k + 𝑼_k^(⊤) underbrace(𝑪^(⊤) macron(𝑸) 𝑴, "𝑬") 𝒙_k + 𝑼_k^(⊤) ( underbrace(𝑪^(⊤) macron(𝑸) 𝑪 + macron(𝑹), "𝑯") ) 𝑼_k \
