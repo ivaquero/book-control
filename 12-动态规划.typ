@@ -161,7 +161,7 @@ $ 𝒖^* ∈ Ω $
     edge((1.5, 0), "u", "->"),
   ),
   caption: "无人机模型",
-  supplement: "\n图",
+  supplement: "图",
 )
 
 #block(

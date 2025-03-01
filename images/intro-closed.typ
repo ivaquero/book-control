@@ -22,5 +22,5 @@
     arredge(H, O, "", 0, none, 0pt),
   ),
   caption: "闭环控制器",
-  supplement: "\n图",
+  supplement: "图",
 )
