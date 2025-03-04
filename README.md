@@ -34,11 +34,11 @@
 
 ### 使用模版
 
-在上述路径下克隆 [scibook](https://github.com/ivaquero/scibook) 和 [cetz-control](https://github.com/ivaquero/cetz-control)，然后在文档中引用
+在`typst/packages/local` 文件夹下克隆 [scibook](https://github.com/ivaquero/scibook) 和 [control-block](https://github.com/ivaquero/typst-control-block)，然后在文档中引用
 
 ```typst
 #import "@local/scibook:0.1.0": *
-#import "@local/cetz-control:0.1.0": *
+#import "@local/control-block:0.1.0": *
 ```
 
 ## 约定规范
