@@ -1,4 +1,4 @@
-#import "@local/cetz-control:0.1.0": *
+#import "@local/control-block:0.1.0": *
 
 // 闭环控制器
 #figure(
