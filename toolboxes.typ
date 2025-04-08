@@ -114,8 +114,8 @@ quickerSimCFD/
 
 #figure(
   image("images/matlab-toolbox.png", width: 45%),
-  // caption: "",
-  // supplement: "图"
+  caption: none,
+  supplement: "图",
 )
 
 == 打包文件
