@@ -27,10 +27,10 @@
 为保证正常编译，请参考 [typst-packages](https://github.com/typst/packages) 上的说明，在如下路径下克隆 `typst-packages` 仓库
 
 - Linux：
-  - `$XDG_DATA_HOME/typst`
-  - `~/.local/share/typst`
-- macOS：`~/Library/Application Support/typst`
-- Windows：`%APPDATA%/typst`
+  - `$XDG_DATA_HOME`
+  - `~/.local/share`
+- macOS：`~/Library/Application Support`
+- Windows：`%APPDATA%`
 
 ```bash
 cd [above-path]
