@@ -32,6 +32,11 @@
 - macOS：`~/Library/Application Support/typst`
 - Windows：`%APPDATA%/typst`
 
+```bash
+cd [above-path]
+git clone --depth 1 --branch main https://github.com/typst/packages typst
+```
+
 ### 使用模版
 
 ```typst
