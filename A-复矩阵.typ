@@ -1,4 +1,4 @@
-#import "@local/scibook:0.1.0": *
+#import "@local/qooklet:0.1.0": *
 #show: doc => conf(
   title: "附录A：复矩阵",
   author: "ivaquero",
@@ -194,7 +194,8 @@ $ 𝑸^H 𝑸 = i $
     - 复共轭的绝对值：$|macron(z)| = |z|$
     - 绝对值的倍增性：$|w z| = |w||z|$
     - 三角形不平等：$|w + z| ≤ |w| +|z|$
-    - 实部和虚部的边界为$|z|$：$|"Re" z| ≤ |z|$且$|"Im" z| ≤ |z|$],
+    - 实部和虚部的边界为$|z|$：$|"Re" z| ≤ |z|$且$|"Im" z| ≤ |z|$
+  ],
 )
 
 

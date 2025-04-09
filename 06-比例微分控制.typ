@@ -1,4 +1,4 @@
-#import "@local/scibook:0.1.0": *
+#import "@local/qooklet:0.1.0": *
 #show: doc => conf(
   title: "比例微分控制",
   author: "ivaquero",
