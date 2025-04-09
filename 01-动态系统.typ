@@ -1,4 +1,4 @@
-#import "@local/qooklet:0.1.0": *
+#import "@preview/qooklet:0.1.0": *
 #show: doc => conf(
   title: "动态系统",
   author: "ivaquero",

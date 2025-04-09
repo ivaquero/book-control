@@ -1,4 +1,4 @@
-#import "@local/qooklet:0.1.0": *
+#import "@preview/qooklet:0.1.0": *
 #show: doc => conf(
   title: "MATLAB 工具箱最佳实践",
   author: "ivaquero",
