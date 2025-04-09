@@ -34,11 +34,8 @@
 
 ### 使用模版
 
- [control-block](https://github.com/ivaquero/typst-control-block)，然后在文档中引用
-
 ```typst
 #import "@preview/qooklet:0.1.0": *
-#import "@local/control-block:0.1.0": *
 ```
 
 ## 约定规范
