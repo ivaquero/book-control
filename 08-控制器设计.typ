@@ -4,6 +4,7 @@
   author: "ivaquero",
   header-cap: "现代控制理论",
   footer-cap: "github@ivaquero",
+  lang: "zh",
   doc,
 )
 
