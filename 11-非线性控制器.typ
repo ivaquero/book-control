@@ -37,7 +37,7 @@ $
   &= -k e^2 - tilde(a)(e x^2 + hat(dot(a)))
 $
 
-#info[
+#tip[
   不难得出，$tilde(dot(a)) = dot(a) - hat(dot(a)) = -hat(dot(a))$
 ]
 
@@ -89,7 +89,7 @@ $ u = dot(x)_d + k e + u_(a u x) = dot(x)_d + k e + ρ|e| / e $
 
 $ |e| / e = "sign"(e) cases(delim: "{", 1 & e > 0, 0 & e = 0, - 1 & e < 0) $
 
-#info[
+#tip[
   $e = x_d - x$，则$lim_(t → ∞) e = 0$
 ]
 
