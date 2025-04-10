@@ -3,7 +3,7 @@
 ![code size](https://img.shields.io/github/languages/code-size/ivaquero/book-control.svg)
 ![repo size](https://img.shields.io/github/repo-size/ivaquero/book-control.svg)
 
-本仓库文本基于是 DR_CAN [哔站课程](https://space.bilibili.com/230105574/channel/series)的简明控制理论教程。内容上结合了 DR_CAN 的著作作 [控制之美：卷 1](https://book.douban.com/subject/35934779/) 及[控制之美：卷 2](https://book.douban.com/subject/36556895/) （未包含 Kalman 滤波部分），同时使用其他教材和教程对诸多内容进行了细化，统一规范了公式和代码。
+本仓库致力于编写一部易于上手的简明控制理论教程，内容上参考了 DR_CAN [哔站课程](https://space.bilibili.com/230105574/channel/series)，及其著作 [控制之美：卷 1](https://book.douban.com/subject/35934779/) 及[控制之美：卷 2](https://book.douban.com/subject/36556895/) （未包含 Kalman 滤波部分），同时使用其他教材和教程对诸多内容进行了细化，统一规范了公式和代码。
 
 共包括
 
@@ -12,9 +12,7 @@
 - Simulink 程序
 - 福利：控制工具箱 API 梳理
 
-笔记原采用 Markdown 格式，但因该格式输出的 PDF 不够稳定，且样式单一，后转向现代文本工具 [Typst](https://github.com/typst/typst)，其安装及使用方法可参考[知乎帖子](https://zhuanlan.zhihu.com/p/642509853)。相信大家会喜欢上 Typst 这个软件。
-
-希望对控制理论感兴趣的朋友，以及 Dr_CAN 的粉丝们，能在这里一起完善和讨论。
+笔记原采用 Markdown 格式，但因该格式输出的 PDF 不够稳定，且样式单一，后转向现代排版软件[Typst](https://github.com/typst/typst)，其安装可参考[知乎帖子](https://zhuanlan.zhihu.com/p/642509853)。相信大家会喜欢上 Typst 这个软件。
 
 ## 构建
 
