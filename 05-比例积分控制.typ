@@ -118,7 +118,7 @@ $ e_(s s) = r - lim_(t → ∞) x(t) $
 
 $ lim_(t → ∞) x(t) = lim_(s → 0) s X(s) $
 
-#tip[
+#info[
   终值定理可以省去 逆 Laplace 变换，得到时域上的最终结果，常用于系统稳态判断。
 ]
 
@@ -161,7 +161,7 @@ $ X(s) = c / s frac(1, m s^2 + B s + k) $
 
 $ lim_(t → ∞) x(t) = lim_(s → 0) c / s frac(s, m s^2 + B s + k) = c / k $
 
-#tip[
+#info[
   无阻尼状态，即$B = 0$时，$lim_(t → ∞) x(t)$ 不存在，无法使用 FVT。
 ]
 
