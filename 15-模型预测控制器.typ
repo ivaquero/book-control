@@ -1,4 +1,4 @@
-#import "@preview/qooklet:0.1.0": *
+#import "@preview/qooklet:0.1.1": *
 #show: doc => conf(
   title: "模型预测控制器",
   author: "ivaquero",

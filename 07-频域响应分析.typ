@@ -1,4 +1,4 @@
-#import "@preview/qooklet:0.1.0": *
+#import "@preview/qooklet:0.1.1": *
 #show: doc => conf(
   title: "频域响应分析",
   author: "ivaquero",
