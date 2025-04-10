@@ -271,7 +271,7 @@ $ U(s) = (k_p + k_I 1 / s + k_D s) 𝔼[s] $
     columns: 5,
     align: center + horizon,
     inset: 4pt,
-    stroke: frame(rgb("000")),
+    stroke: three-line(rgb("000")),
     [], [幅角], [新幅角], [模], [新模],
     [零点], [$ϕ_1$], [$ϕ_1$], [$v_1$], [$v_1$],
     [极点], [$ϕ_2$], [$-ϕ_2$], [$v_2$], [$1 \/ v_2$],

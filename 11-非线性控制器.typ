@@ -174,7 +174,7 @@ $ lim_(t → ∞) e ≤ sqrt(ɛ/k) $
     columns: 7,
     align: center + horizon,
     inset: 4pt,
-    stroke: frame(rgb("000")),
+    stroke: three-line(rgb("000")),
     [Name], [$u_(a u x)$], [$ɛ$], [稳态误差], [收敛速度], [瞬态输入], [稳态输入],
     [Sliding Mode], [$ρ e\/norm(e)$], [N/A], [5], [4], [2], [1],
     [High Gain], [$1\/ɛ ρ^2 e$], [0.1], [4], [5], [1], [2],

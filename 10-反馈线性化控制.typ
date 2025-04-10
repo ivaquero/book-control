@@ -21,7 +21,7 @@
     columns: 4,
     align: center + horizon,
     inset: 4pt,
-    stroke: frame(rgb("000")),
+    stroke: three-line(rgb("000")),
     [∀x ∈ D - {0}], [Abbr.], [V(0)], [V(x)],
     [正定], [PD], [0], [$>$],
     [半正定], [PSD], [0], [$≥$],

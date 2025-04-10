@@ -44,7 +44,7 @@ $ frac(1, Δ T) Δ T = 1 $
     columns: 2,
     align: center + horizon,
     inset: 4pt,
-    stroke: frame(rgb("000")),
+    stroke: three-line(rgb("000")),
     [$f(t)$], [$x(t)$],
     [$δ(t)_Δ$], [$h_Δ(t)$],
     [$δ(t - i Δ T)_Δ$], [$h_Δ(t - i Δ T)$],
