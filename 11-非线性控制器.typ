@@ -1,11 +1,10 @@
-#import "@preview/qooklet:0.1.1": *
-#show: doc => conf(
+#import "@preview/qooklet:0.2.0": *
+#show: qooklet.with(
   title: "非线性控制器",
   author: "ivaquero",
   header-cap: "现代控制理论",
   footer-cap: "github@ivaquero",
   lang: "zh",
-  doc,
 )
 
 = 自适应控制器

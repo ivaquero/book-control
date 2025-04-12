@@ -38,7 +38,7 @@ git clone --depth 1 --branch main https://github.com/typst/packages typst
 ### 使用模版
 
 ```typst
-#import "@preview/qooklet:0.1.1": *
+#import "@preview/qooklet:0.2.0": *
 ```
 
 ## 约定规范

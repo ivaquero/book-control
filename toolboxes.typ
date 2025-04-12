@@ -1,11 +1,10 @@
-#import "@preview/qooklet:0.1.1": *
-#show: doc => conf(
+#import "@preview/qooklet:0.2.0": *
+#show: qooklet.with(
   title: "MATLAB 工具箱最佳实践",
   author: "ivaquero",
   header-cap: "现代控制理论",
   footer-cap: "github@ivaquero",
   lang: "zh",
-  doc,
 )
 
 = 工程结构
