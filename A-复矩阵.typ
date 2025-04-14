@@ -79,7 +79,7 @@ $ z = "Re"^(i θ) $
 
 其中，$r = sqrt(𝑨^2 + b^2)$，$θ = arctan b/a$
 
-#theorem("Euler 恒等式")[
+#theorem(title: "Euler 恒等式")[
   当$r = 1, θ = π$，得
   $ z = e^(i π) = -1 $
 

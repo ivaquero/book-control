@@ -24,7 +24,7 @@ $
   mat(delim: "[", u_(n-1); u_(n - 2); ⋮; u_0) = 𝑪 𝒐⋅𝒖
 $
 
-#theorem("可控性（controbility）")[
+#theorem(title: "可控性（controbility）")[
   可控的充要条件是，控制矩阵$𝑪 𝒐$满秩。
 ]
 
@@ -50,12 +50,12 @@ $ dot(𝒙) = 𝑨 𝒙 $
   简单说，$λ$决定收敛速度，若$∃ λ > 0$，则系统不稳定。
 ]
 
-#theorem("Lyapunov 稳定性")[
+#theorem(title: "Lyapunov 稳定性")[
   原点（起始点）稳定，当且仅当
   $ ∀t_0, ∀ɛ > 0, ∃δ(t_0, ɛ): |x(t_0)| < δ(t_0, ɛ) ⇒ ∀t ≥ t_0 med |x(t)| < ɛ $
 ]
 
-#theorem("渐近稳定性")[
+#theorem(title: "渐近稳定性")[
   原点（起始点）渐近稳定，当且仅当其是一个稳定平衡点，同时
   $ ∃ δ(t_0) > 0: quad norm(x(t_0)) < δ(t_0) ⇒ lim_(t → ∞) norm(x(t)) = 0 $
 ]
@@ -107,7 +107,7 @@ $
 - 服从 Nyquist-Shannon 抽样定理
 - (读取 + 计算 + 输出) 的总耗时 < 1 个周期
 
-#theorem("Nyquist-Shannon 抽样定理")[
+#theorem(title: "Nyquist-Shannon 抽样定理")[
   抽样有效性（重建原信号）需满足
   抽样频率 ≥ 被采信号最高频率 × 2
 ]
