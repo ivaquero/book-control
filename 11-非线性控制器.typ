@@ -64,8 +64,6 @@ $ u = dot(x)_d + x^2 ∫_0^t e x^2 dd(t) + k e $
   $ lim_(t → ∞) g(t) = 0 $
 ]
 
-#pagebreak()
-
 = 鲁棒控制
 <鲁棒控制>
 

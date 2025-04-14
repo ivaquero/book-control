@@ -66,8 +66,6 @@ $ dot(x) = f(t, x) $
   kind: table,
 )
 
-#pagebreak()
-
 - 电压
 
 $
@@ -116,7 +114,6 @@ $ e_L + e_(R_1) + e_(R_2) - e_i = 0 $
 
 即，整体电路的闭环的电压代数和为$0$。
 
-#pagebreak()
 分别计算各项，有
 
 - $e_(R_1) = I_2 R_1 = I_2$
@@ -144,8 +141,6 @@ $ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
   caption: "RLC",
   supplement: "图",
 )
-
-#pagebreak()
 
 = 电磁学基础
 <电磁学基础>
@@ -268,8 +263,6 @@ $ dv(P, t) = ρ g dv(h, t) = frac(ρ g, A)(q_("in") - q_("out")) $
 由上，可得
 
 $ dv(h, t) = q_("in") / A - frac(g h, A R) $
-
-#pagebreak()
 
 = 辅助知识
 
