@@ -19,6 +19,7 @@
 ### 依赖软件
 
 - [Typst](https://github.com/typst/typst)
+- [drawio](https://github.com/jgraph/drawio)
 
 ### 克隆官方仓库
 
@@ -54,7 +55,7 @@ git clone --depth 1 --branch main https://github.com/typst/packages typst
 
 ### 图表
 
-目前大部分图表采用 [drawio](https://github.com/jgraph/drawio) 制作，后面会逐步使用 [fletcher](https://github.com/Jollywatt/typst-fletcher) 替换，尤其是控制框图。
+目前大部分图表采用 drawio 制作，后面会逐步使用 [fletcher](https://github.com/Jollywatt/typst-fletcher) 替换，尤其是控制框图。
 
 ## 说明
 
