@@ -10,7 +10,7 @@
 // circle node
 #let onode(sym, label) = node(sym, label, shape: circle, radius: 10pt)
 // label node
-#let label(sym, label) = node(sym, label, stroke: white)
+#let label(sym, label) = node(sym, label, stroke: none)
 
 // edge style
 #let arrow(n1, n2, label, label-pos: 0.5, label-side: left, corner: none, corner-radius: none) = edge(
@@ -28,6 +28,17 @@
   n1,
   n2,
   marks: "-",
+  label: label,
+  label-pos: label-pos,
+  label-side: label-side,
+  corner: corner,
+  corner-radius: 0pt,
+)
+
+#let dash(n1, n2, label, label-pos: 0.5, label-side: left, corner: none, corner-radius: none) = edge(
+  n1,
+  n2,
+  marks: "--",
   label: label,
   label-pos: label-pos,
   label-side: label-side,
