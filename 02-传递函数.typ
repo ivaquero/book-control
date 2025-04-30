@@ -6,6 +6,7 @@
   footer-cap: "github@ivaquero",
   lang: "zh",
 )
+#import "images/control-blocks.typ": *
 
 = 求解运动方程
 
@@ -15,7 +16,9 @@
 
 连续型冲激函数定义为
 
-$ δ(t) = cases(∞ quad & t = 0, 0 & t ≠ 0) $
+$
+  δ(t) = cases(∞ quad & t = 0, 0 & t ≠ 0)
+$
 
 单位冲激函数，又称为 Dirac $δ$函数，满足
 
@@ -30,7 +33,9 @@ $ δ(t) = cases(∞ quad & t = 0, 0 & t ≠ 0) $
 
 根据$δ$函数定义，构建离散型冲激函数
 
-$ δ(t)_Δ = cases(frac(1, Δ T) quad & 0 < t < Δ T, 0 & "else") $
+$
+  δ(t)_Δ = cases(frac(1, Δ T) quad & 0 < t < Δ T, 0 & "else")
+$
 
 显然，$Δ T$内的冲激为
 
@@ -56,7 +61,9 @@ $ frac(1, Δ T) Δ T = 1 $
 
 表格中，$A = Δ T f(i Δ T)$，在$t = i Δ T$时刻，有
 
-$ x(t) = ∑_(i = 0)^i Δ T f(i Δ T) h_Δ(t - i Δ T) $
+$
+  x(t) = ∑_(i = 0)^i Δ T f(i Δ T) h_Δ(t - i Δ T)
+$
 
 令$lim_(Δ T → 0)$，则$Δ T = dd(τ)$，$i Δ T = τ$，从而有
 
@@ -383,20 +390,7 @@ $ I(s) = frac(s, L s^2 + R s + 1/C) E[s] $
 转换为框图形式，即有
 
 #figure(
-  diagram(
-    spacing: (1.5em, 1.5em),
-    node-stroke: 1pt,
-    mark-scale: 60%,
-    let (M, A, B) = ((4, 1), (2, 1), (6, +1)),
-    node(
-      M,
-      text($frac(s, L s^2 + R s + 1\/C)$, size: 1.2em),
-      height: 2.5em,
-      corner-radius: 3pt,
-    ),
-    edge(A, M, $E(s)$, "-|>"),
-    edge(M, B, $I(s)$, "-|>"),
-  ),
+  sys_block(text($frac(s, L s^2 + R s + 1\/C)$, size: 1.2em), input: $E(s)$, output: $I(s)$, height: 2.5em),
   caption: "框图",
   supplement: "图",
 )
@@ -479,15 +473,7 @@ $ X = V frac(D G, 1 + H D G) $
 于是可知
 
 #figure(
-  diagram(
-    spacing: (2em, 2em),
-    node-stroke: 1pt,
-    mark-scale: 80%,
-    let (M, A, B) = ((4, 1), (2, 1), (6, +1)),
-    node(M, $frac(D G, 1 + H D G)$, height: 2em, corner-radius: 3pt),
-    edge(A, M, $V$, "-|>"),
-    edge(M, B, $X$, "-|>"),
-  ),
+  sys_block($frac(D G, 1 + H D G)$, input: $V$, output: $X$),
   caption: "框图",
   supplement: "图",
 )

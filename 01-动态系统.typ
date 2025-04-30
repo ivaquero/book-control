@@ -6,7 +6,7 @@
   footer-cap: "github@ivaquero",
   lang: "zh",
 )
-#import "images/intro-system.typ": *
+#import "images/control-blocks.typ": *
 
 = 系统建模
 
@@ -21,7 +21,7 @@
 通常，我们将以图形方式表示任何系统。进入框中的箭头表示作用于系统的外部输入。然后，系统会随着时间的推移响应这些输入以产生输出，也就是箭头离开框的箭头。
 
 #figure(
-  sys_block,
+  sys_block(ctext("系统"), input: ctext("输入"), output: ctext("输出")),
   caption: "系统框图",
   supplement: "图",
 )
@@ -118,7 +118,9 @@ $ P = frac(m g, A) $
 
 对均值且不可压缩流体
 
-$ P_("static") = frac(ρ A h g, A) = ρ g h $
+$
+  P_("static") = frac(ρ A h g, A) = ρ g h
+$
 
 - 绝对压强（absolute pressure）
 
