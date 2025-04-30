@@ -71,7 +71,7 @@
 )
 
 #let sys_block(
-  controler: "",
+  transfer: "",
   input: "",
   output: "",
   width: 2,
@@ -86,9 +86,42 @@
     (1 + width, line),
     (1 + 2 * width, line),
   ),
-  rnode(O2, controler, height: height),
+  rnode(O2, transfer, height: height),
   arrow(O1, O2, input),
   arrow(O2, O3, output),
+)
+
+#let sys_block_2(
+  transfer: "",
+  transfer2: "",
+  input: "",
+  output: "",
+  output2: "",
+) = diagram(
+  spacing: (1.5em, 1.5em),
+  node-stroke: 1pt,
+  mark-scale: 80%,
+  let line = 0.5,
+  let start = 1,
+  let (I, R, C, O) = (
+    (start, line),
+    (start + 1.5, line),
+    (start + 4.5, line),
+    (start + 7.5, line + 0.5),
+  ),
+  let S = (5.5, line + 1.25),
+  rnode(I, $V(s)$),
+  onode(R, ""),
+  label((start + 1.5, line - 0.75), ctext("误差表")),
+  label((start + 1.1, line - 0.25), text("+", size: 0.8em)),
+  label((start + 1.3, line + 0.35), text("-", size: 1.2em)),
+  rnode(C, transfer),
+  rnode(S, transfer2),
+  arrow(I, R, ""),
+  arrow(R, C, input),
+  segment(C, O, output, label-pos: 0.25, corner: right),
+  arrow(O, S, "", corner: right),
+  arrow(S, R, output2, label-pos: 0.25, corner: right),
 )
 
 #let sys_open(
@@ -129,40 +162,7 @@
   label(B2, "工厂"),
 )
 
-#let sys_closed_2(
-  controler: "",
-  sensor: "",
-  input: "",
-  output: "",
-  output2: "",
-) = diagram(
-  spacing: (1.5em, 1.5em),
-  node-stroke: 1pt,
-  mark-scale: 80%,
-  let line = 0.5,
-  let start = 1,
-  let (I, R, C, O) = (
-    (start, line),
-    (start + 1.5, line),
-    (start + 4.5, line),
-    (start + 7.5, line + 0.5),
-  ),
-  let S = (5.5, line + 1.25),
-  rnode(I, $V(s)$),
-  onode(R, ""),
-  label((start + 1.5, line - 0.75), ctext("误差表")),
-  label((start + 1.1, line - 0.25), text("+", size: 0.8em)),
-  label((start + 1.3, line + 0.35), text("-", size: 1.2em)),
-  rnode(C, controler),
-  rnode(S, sensor),
-  arrow(I, R, ""),
-  arrow(R, C, input),
-  segment(C, O, output, label-pos: 0.25, corner: right),
-  arrow(O, S, "", corner: right),
-  arrow(S, R, output2, label-pos: 0.25, corner: right),
-)
-
-#let sys_closed_3(
+#let sys_closed(
   controler: "",
   actuator: "",
   sensor: "",

@@ -22,7 +22,7 @@
 
 #figure(
   sys_block(
-    controler: ctext("系统"),
+    transfer: ctext("系统"),
     input: ctext("输入"),
     output: ctext("输出"),
   ),
@@ -109,7 +109,7 @@ $ dot(x) = f(t, x) $
 - 闭环控制：通过测量系统输出与参考值之间的误差，反馈至输入端，决定控制量
 
 #figure(
-  sys_closed_3(
+  sys_closed(
     controler: ctext("控制器"),
     actuator: ctext("执行器"),
     sensor: ctext("传感器"),

@@ -391,7 +391,7 @@ $ I(s) = frac(s, L s^2 + R s + 1/C) E[s] $
 
 #figure(
   sys_block(
-    controler: text($frac(s, L s^2 + R s + 1\/C)$, size: 1.2em),
+    transfer: text($frac(s, L s^2 + R s + 1\/C)$, size: 1.2em),
     input: $E(s)$,
     output: $I(s)$,
     height: 2.5em,
@@ -420,11 +420,15 @@ $ x ̇(t) + g / R x(t) = u(t) $
 
 两端做 Laplace 变换，得
 
-$ s X(s) + g / R X(s) = U(s), med x(0) = 0 $
+$
+  s X(s) + g / R X(s) = U(s), med x(0) = 0
+$
 
 从而有，开环传递函数$G(s)$
 
-$ G(s) = frac(X(s), U(s)) = frac(1, s + g/R) $
+$
+  G(s) = frac(X(s), U(s)) = frac(1, s + g/R)
+$
 
 当$u(t) = C$，则
 
@@ -433,9 +437,9 @@ $ lim_(t → ∞) h = C R / g $
 对闭环系统，此时引入参考值$V(s)$，输入值变成了$X(s) H(s)$
 
 #figure(
-  sys_closed_2(
-    controler: $D(s)G(s)$,
-    sensor: $H(s)$,
+  sys_block_2(
+    transfer: $D(s)G(s)$,
+    transfer2: $H(s)$,
     input: text($V(s)-X(s)H(s)$, size: 0.6em),
     output: text($X(s)$, size: 0.6em),
     output2: text($X(s)H(s)$, size: 0.6em),
@@ -464,7 +468,7 @@ $ X = V frac(D G, 1 + H D G) $
 
 #figure(
   sys_block(
-    controler: $frac(D G, 1 + H D G)$,
+    transfer: $frac(D G, 1 + H D G)$,
     input: $V$,
     output: $X$,
   ),
