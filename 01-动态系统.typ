@@ -21,7 +21,11 @@
 通常，我们将以图形方式表示任何系统。进入框中的箭头表示作用于系统的外部输入。然后，系统会随着时间的推移响应这些输入以产生输出，也就是箭头离开框的箭头。
 
 #figure(
-  sys_block(ctext("系统"), input: ctext("输入"), output: ctext("输出")),
+  sys_block(
+    controler: ctext("系统"),
+    input: ctext("输入"),
+    output: ctext("输出"),
+  ),
   caption: "系统框图",
   supplement: "图",
 )
@@ -63,7 +67,15 @@
 控制系统由受控系统（controlled system）、执行器（actuator）和控制器（controller）组成，其中，受控系统在建模通常被抽象为某一过程（process），执行器通常指负责控制系统的设备或电机，其与过程的集合被称为动态系统（dynamical system），有时也被称为工厂（plant）。
 
 #figure(
-  sys_simple,
+  sys_open(
+    controler: ctext("控制器"),
+    actuator: ctext("执行器"),
+    process: ctext("过程"),
+    input: ctext("指令变量"),
+    output: ctext("执行信号"),
+    output2: ctext("受操纵变量"),
+    output3: ctext("受控信号"),
+  ),
   caption: "简单控制系统",
   supplement: "图",
 )
@@ -97,7 +109,14 @@ $ dot(x) = f(t, x) $
 - 闭环控制：通过测量系统输出与参考值之间的误差，反馈至输入端，决定控制量
 
 #figure(
-  sys_closed,
+  sys_closed_3(
+    controler: ctext("控制器"),
+    actuator: ctext("执行器"),
+    sensor: ctext("传感器"),
+    input: ctext("指令信号"),
+    output: ctext("执行信号"),
+    output2: ctext("传感信号"),
+  ),
   caption: "闭环控制器",
   supplement: "图",
 )

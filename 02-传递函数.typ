@@ -390,7 +390,12 @@ $ I(s) = frac(s, L s^2 + R s + 1/C) E[s] $
 转换为框图形式，即有
 
 #figure(
-  sys_block(text($frac(s, L s^2 + R s + 1\/C)$, size: 1.2em), input: $E(s)$, output: $I(s)$, height: 2.5em),
+  sys_block(
+    controler: text($frac(s, L s^2 + R s + 1\/C)$, size: 1.2em),
+    input: $E(s)$,
+    output: $I(s)$,
+    height: 2.5em,
+  ),
   caption: "框图",
   supplement: "图",
 )
@@ -428,27 +433,12 @@ $ lim_(t → ∞) h = C R / g $
 对闭环系统，此时引入参考值$V(s)$，输入值变成了$X(s) H(s)$
 
 #figure(
-  diagram(
-    spacing: (2em, 2em),
-    node-stroke: 1pt,
-    mark-scale: 80%,
-    let (R, O, T, H, A) = ((1, 1), (2, 2), (4, 1), (4, 2), (5, 1.5)),
-    node(R, $V(s)$, height: 2em, corner-radius: 3pt),
-    node(O, text($+ quad -$, size: 0.6em), inset: 1em, radius: 1em),
-    node(T, $D(s)G(s)$, height: 2em, width: 6em, corner-radius: 3pt),
-    node(H, $H(s)$, height: 2em, width: 6em, corner-radius: 3pt),
-    edge(R, O, "-|>", corner: left),
-    edge(
-      O,
-      T,
-      text($V(s)-X(s)H(s)$, size: 0.6em),
-      "-|>",
-      corner: right,
-      label-pos: 0.7,
-    ),
-    edge(T, A, text($X(s)$, size: 0.6em), "-", corner: right, label-pos: 0.4),
-    edge(A, H, "-", corner: right),
-    edge(H, O, text($X(s)H(s)$, size: 0.6em), "-|>"),
+  sys_closed_2(
+    controler: $D(s)G(s)$,
+    sensor: $H(s)$,
+    input: text($V(s)-X(s)H(s)$, size: 0.6em),
+    output: text($X(s)$, size: 0.6em),
+    output2: text($X(s)H(s)$, size: 0.6em),
   ),
   caption: "闭环系统",
   supplement: "图",
@@ -473,7 +463,11 @@ $ X = V frac(D G, 1 + H D G) $
 于是可知
 
 #figure(
-  sys_block($frac(D G, 1 + H D G)$, input: $V$, output: $X$),
+  sys_block(
+    controler: $frac(D G, 1 + H D G)$,
+    input: $V$,
+    output: $X$,
+  ),
   caption: "框图",
   supplement: "图",
 )
