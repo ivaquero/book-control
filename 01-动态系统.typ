@@ -75,6 +75,7 @@
     output: ctext("执行信号"),
     output2: ctext("受操纵变量"),
     output3: ctext("受控信号"),
+    subunit: ctext("工厂"),
   ),
   caption: "简单控制系统",
   supplement: "图",

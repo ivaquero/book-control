@@ -1,8 +1,16 @@
-#import "@preview/fletcher:0.5.3": diagram, node, edge
+#import "@preview/fletcher:0.5.6": diagram, node, edge
 
 // font style
 // chinese text
-#let ctext(label, size: .8em, font: "Songti SC") = text(label, size: size, font: font)
+#let ctext(
+  label,
+  size: .8em,
+  font: "Songti SC",
+) = text(
+  label,
+  size: size,
+  font: font,
+)
 
 // node style
 // rectangle node
@@ -50,12 +58,13 @@
   label,
   label-pos: 0.5,
   label-side: left,
+  marks: "-",
   corner: none,
   corner-radius: none,
 ) = edge(
   n1,
   n2,
-  marks: "-",
+  marks: marks,
   label: label,
   label-pos: label-pos,
   label-side: label-side,
@@ -63,15 +72,7 @@
   corner-radius: 4pt,
 )
 
-#let dash(
-  n1,
-  n2,
-  label,
-  label-pos: 0.5,
-  label-side: left,
-  corner: none,
-  corner-radius: none,
-) = edge(
+#let poly(line, start, end, goto, height: 1) = edge(
   n1,
   n2,
   marks: "--",
@@ -80,6 +81,7 @@
   label-side: label-side,
   corner: corner,
   corner-radius: 4pt,
+  kind: "poly",
 )
 
 #let sys-block(
@@ -172,8 +174,8 @@
   arrow(C, A, output),
   arrow(A, P, output2),
   arrow(P, O2, output3),
-  dash(B1, B2, "", corner: left),
-  dash(B2, B3, "", corner: left),
+  segment(B1, B2, "", marks: "--", corner: left),
+  segment(B2, B3, "", marks: "--", corner: left),
   label(B2, subunit),
 )
 
