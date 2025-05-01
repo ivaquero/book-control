@@ -442,13 +442,14 @@ $ lim_(t → ∞) h = C R / g $
 对闭环系统，此时引入参考值$V(s)$，输入值变成了$X(s) H(s)$
 
 #figure(
-  sys-block_2(
+  sys-block2(
     transfer: $D(s)G(s)$,
     transfer2: $H(s)$,
     input: $V(s)-X(s)H(s)$,
     output: $X(s)$,
     output2: $X(s)H(s)$,
-    refer: ctext("误差表"),
+    error: "Error",
+    reference: $V(s)$,
   ),
   caption: "闭环系统",
   supplement: "图",

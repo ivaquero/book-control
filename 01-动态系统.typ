@@ -116,7 +116,8 @@ $ dot(x) = f(t, x) $
     input: ctext("指令信号"),
     output: ctext("执行信号"),
     output2: ctext("传感信号"),
-    refer: ctext("误差表"),
+    error: ctext("误差表"),
+    reference: ctext("参考函数"),
   ),
   caption: "闭环控制器",
   supplement: "图",
@@ -273,9 +274,7 @@ $
 
 $ e_L + e_(R_1) + e_(R_2) - e_i = 0 $
 
-即，整体电路的闭环的电压代数和为$0$。
-
-分别计算各项，有
+即，整体电路的闭环的电压代数和为$0$。分别计算各项，有
 
 - $e_(R_1) = I_2 R_1 = I_2$
 - $e_(R_2) = I_2 R_2 = 3 I_2$

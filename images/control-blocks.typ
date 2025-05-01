@@ -103,13 +103,14 @@
   arrow(O2, O3, output),
 )
 
-#let sys-block_2(
+#let sys-block2(
   transfer: "",
   transfer2: "",
   input: "",
   output: "",
   output2: "",
-  refer: "",
+  error: "",
+  reference: "",
 ) = diagram(
   spacing: (1.5em, 1.5em),
   node-stroke: 1pt,
@@ -123,9 +124,9 @@
     (start + 7.5, line + 0.5),
   ),
   let S = (5.5, line + 1.25),
-  rnode(I, $V(s)$),
+  rnode(I, reference),
   onode(R, ""),
-  label((start + 1.5, line - 0.75), refer),
+  label((start + 1.5, line - 0.75), error),
   label((start + 1.1, line - 0.25), text("+", size: 0.8em)),
   label((start + 1.3, line + 0.35), text("-", size: 1.2em)),
   rnode(C, transfer),
@@ -183,7 +184,8 @@
   input: "",
   output: "",
   output2: "",
-  refer: "",
+  error: "",
+  reference: "",
 ) = diagram(
   spacing: (1.5em, 1.5em),
   node-stroke: 1pt,
@@ -197,9 +199,9 @@
     (start + 8, line),
   ),
   let S = (5.5, line + 1),
-  rnode(R, $V(s)$),
+  rnode(R, reference),
   onode(O, ""),
-  label((start + 2, line - 0.75), refer),
+  label((start + 2, line - 0.75), error),
   label((start + 1.6, line - 0.25), text("+", size: 0.8em)),
   label((start + 1.8, line + 0.35), text("-", size: 1.2em)),
   rnode(T, controler),
