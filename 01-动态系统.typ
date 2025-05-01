@@ -21,7 +21,7 @@
 通常，我们将以图形方式表示任何系统。进入框中的箭头表示作用于系统的外部输入。然后，系统会随着时间的推移响应这些输入以产生输出，也就是箭头离开框的箭头。
 
 #figure(
-  sys_block(
+  sys-block(
     transfer: ctext("系统"),
     input: ctext("输入"),
     output: ctext("输出"),
@@ -67,7 +67,7 @@
 控制系统由受控系统（controlled system）、执行器（actuator）和控制器（controller）组成，其中，受控系统在建模通常被抽象为某一过程（process），执行器通常指负责控制系统的设备或电机，其与过程的集合被称为动态系统（dynamical system），有时也被称为工厂（plant）。
 
 #figure(
-  sys_open(
+  sys-open(
     controler: ctext("控制器"),
     actuator: ctext("执行器"),
     process: ctext("过程"),
@@ -109,13 +109,14 @@ $ dot(x) = f(t, x) $
 - 闭环控制：通过测量系统输出与参考值之间的误差，反馈至输入端，决定控制量
 
 #figure(
-  sys_closed(
+  sys-closed(
     controler: ctext("控制器"),
     actuator: ctext("执行器"),
     sensor: ctext("传感器"),
     input: ctext("指令信号"),
     output: ctext("执行信号"),
     output2: ctext("传感信号"),
+    refer: ctext("误差表"),
   ),
   caption: "闭环控制器",
   supplement: "图",
@@ -213,23 +214,12 @@ $ dv(h, t) = q_("in") / A - frac(g h, A R) $
 = 电学基础
 <电学基础>
 
-== 电学单元
+== 电学单位
 
+#let data = csv("data/electrics.csv")
 #figure(
-  table(
-    columns: 4,
-    align: center + horizon,
-    inset: 4pt,
-    stroke: three-line(rgb("000")),
-    [], [单位], [符号], [定义公式],
-    [电量], [库仑（C）], [$Q$], [],
-    [电流], [安培（A）], [$I$], [$dv(s:\/, Q, t)$],
-    [电压], [伏特（V）], [$U \/ e$], [],
-    [电阻], [欧姆（Ω）], [$R$], [$U\/I$],
-    [电容], [法拉（F）], [$C$], [$Q\/U$],
-    [电感], [亨利（H）], [$L$], [$U\/I^′$],
-  ),
-  caption: "电学单元",
+  ktable(data, 5),
+  caption: "电学单位",
   supplement: "表",
   kind: table,
 )
@@ -249,10 +239,12 @@ $
 ]
 
 #law("Kirchhoff 电流定律（KCL）")[
+
   所有进入某节点的电流的总和等于所有离开这节点的电流的总和。
 ]
 
 #law("Kirchhoff 电压定律（KVL）")[
+
   沿着闭合回路所有元件两端的电压的代数和等于零。
 ]
 
@@ -316,17 +308,10 @@ $ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
 
 == 电磁学单位
 
+#let data = csv("data/magnetics.csv")
 #figure(
-  table(
-    columns: 3,
-    align: center + horizon,
-    inset: 4pt,
-    stroke: three-line(rgb("000")),
-    [], [单位], [符号],
-    [磁感应强度], [特斯拉（T）], [$B$],
-    [磁通量], [韦伯（Wb）], [$ϕ$],
-  ),
-  caption: "电磁学基础",
+  ktable(data, 3),
+  caption: "电磁学单位",
   supplement: "表",
   kind: table,
 )

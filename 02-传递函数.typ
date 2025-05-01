@@ -381,17 +381,22 @@ $ e^′ = L i^″ + R i^′ + 1 / C i $
 
 令初始条件为$0$，等式两边进行导数的 Laplace 变换，得
 
-$ s E[s] = L s^2 I_(s) + s R I_(s) + 1 / C I_(s) $
+$
+  s E[s] = L s^2 I_(s) + s R I_(s) + 1 / C I_(s)
+$
 
 从而有
 
-$ I(s) = frac(s, L s^2 + R s + 1/C) E[s] $
+$ I(s) = frac(s, L s^2 + R s + 1 / C) E[s] $
 
 转换为框图形式，即有
 
 #figure(
-  sys_block(
-    transfer: text($frac(s, L s^2 + R s + 1\/C)$, size: 1.2em),
+  sys-block(
+    transfer: text(
+      $frac(s, L s^2 + R s + 1\/C)$,
+      size: 1.2em,
+    ),
     input: $E(s)$,
     output: $I(s)$,
     height: 2.5em,
@@ -427,7 +432,7 @@ $
 从而有，开环传递函数$G(s)$
 
 $
-  G(s) = frac(X(s), U(s)) = frac(1, s + g/R)
+  G(s) = frac(X(s), U(s)) = frac(1, s + g / R)
 $
 
 当$u(t) = C$，则
@@ -437,12 +442,13 @@ $ lim_(t → ∞) h = C R / g $
 对闭环系统，此时引入参考值$V(s)$，输入值变成了$X(s) H(s)$
 
 #figure(
-  sys_block_2(
+  sys-block_2(
     transfer: $D(s)G(s)$,
     transfer2: $H(s)$,
-    input: text($V(s)-X(s)H(s)$, size: 0.6em),
-    output: text($X(s)$, size: 0.6em),
-    output2: text($X(s)H(s)$, size: 0.6em),
+    input: $V(s)-X(s)H(s)$,
+    output: $X(s)$,
+    output2: $X(s)H(s)$,
+    refer: ctext("误差表"),
   ),
   caption: "闭环系统",
   supplement: "图",
@@ -467,7 +473,7 @@ $ X = V frac(D G, 1 + H D G) $
 于是可知
 
 #figure(
-  sys_block(
+  sys-block(
     transfer: $frac(D G, 1 + H D G)$,
     input: $V$,
     output: $X$,
@@ -488,7 +494,9 @@ $ G(s) = frac(X(s), U(s)) = frac(1, s + a) $
 
 当$x(0) ≠ 0$时，有
 
-$ G(s) = frac(X(s), U(s) + x(0)) = frac(1, s + a) $
+$
+  G(s) = frac(X(s), U(s) + x(0)) = frac(1, s + a)
+$
 
 对 LTI 系统，根据叠加原理，$x(0)$为另一输入，令其为$U_2(s)$，有
 

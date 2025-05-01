@@ -1,4 +1,4 @@
-#import "@preview/fletcher:0.5.2": diagram, node, edge
+#import "@preview/fletcher:0.5.3": diagram, node, edge
 
 // font style
 // chinese text
@@ -6,9 +6,21 @@
 
 // node style
 // rectangle node
-#let rnode(sym, label, height: 2em) = node(sym, label, shape: rect, corner-radius: 4pt, height: height)
+#let rnode(sym, label, height: 2em) = node(
+  sym,
+  label,
+  shape: rect,
+  corner-radius: 4pt,
+  height: height,
+)
 // circle node
-#let onode(sym, label, height: 1em) = node(sym, label, shape: circle, radius: 10pt, height: height)
+#let onode(sym, label, height: 1em) = node(
+  sym,
+  label,
+  shape: circle,
+  radius: 10pt,
+  height: height,
+)
 // label node
 #let label(sym, label) = node(sym, label, stroke: none)
 
@@ -70,7 +82,7 @@
   corner-radius: 4pt,
 )
 
-#let sys_block(
+#let sys-block(
   transfer: "",
   input: "",
   output: "",
@@ -91,12 +103,13 @@
   arrow(O2, O3, output),
 )
 
-#let sys_block_2(
+#let sys-block_2(
   transfer: "",
   transfer2: "",
   input: "",
   output: "",
   output2: "",
+  refer: "",
 ) = diagram(
   spacing: (1.5em, 1.5em),
   node-stroke: 1pt,
@@ -112,19 +125,19 @@
   let S = (5.5, line + 1.25),
   rnode(I, $V(s)$),
   onode(R, ""),
-  label((start + 1.5, line - 0.75), ctext("误差表")),
+  label((start + 1.5, line - 0.75), refer),
   label((start + 1.1, line - 0.25), text("+", size: 0.8em)),
   label((start + 1.3, line + 0.35), text("-", size: 1.2em)),
   rnode(C, transfer),
   rnode(S, transfer2),
   arrow(I, R, ""),
-  arrow(R, C, input),
-  segment(C, O, output, label-pos: 0.25, corner: right),
+  arrow(R, C, text(input, size: 0.6em)),
+  segment(C, O, text(output, size: 0.6em), label-pos: 0.25, corner: right),
   arrow(O, S, "", corner: right),
-  arrow(S, R, output2, label-pos: 0.25, corner: right),
+  arrow(S, R, text(output2, size: 0.6em), label-pos: 0.25, corner: right),
 )
 
-#let sys_open(
+#let sys-open(
   controler: "",
   actuator: "",
   process: "",
@@ -132,6 +145,7 @@
   output: "",
   output2: "",
   output3: "",
+  subunit: "",
 ) = diagram(
   spacing: (1.5em, 1.5em),
   node-stroke: 1pt,
@@ -159,16 +173,17 @@
   arrow(P, O2, output3),
   dash(B1, B2, "", corner: left),
   dash(B2, B3, "", corner: left),
-  label(B2, "工厂"),
+  label(B2, subunit),
 )
 
-#let sys_closed(
+#let sys-closed(
   controler: "",
   actuator: "",
   sensor: "",
   input: "",
   output: "",
   output2: "",
+  refer: "",
 ) = diagram(
   spacing: (1.5em, 1.5em),
   node-stroke: 1pt,
@@ -184,7 +199,7 @@
   let S = (5.5, line + 1),
   rnode(R, $V(s)$),
   onode(O, ""),
-  label((start + 2, line - 0.75), ctext("误差表")),
+  label((start + 2, line - 0.75), refer),
   label((start + 1.6, line - 0.25), text("+", size: 0.8em)),
   label((start + 1.8, line + 0.35), text("-", size: 1.2em)),
   rnode(T, controler),
