@@ -1,4 +1,4 @@
-#import "@preview/qooklet:0.2.0": *
+#import "lib/lib.typ": *
 #show: qooklet.with(
   title: "轨迹追踪",
   author: "ivaquero",
@@ -21,7 +21,7 @@ $ dot.double(ϕ) - g / L ϕ + 1 / L dot(δ) = 0 $
 可得
 
 $
-  mat(delim: "[", dot(x)_1; dot(x)_2) = mat(delim: "[", 0, 1; g/L, 0) mat(delim: "[", x_1; x_2) + mat(delim: "[", 0; - 1) u
+  mat(delim: "[", dot(x)_1; dot(x)_2) = mat(delim: "[", 0, 1; g / L, 0) mat(delim: "[", x_1; x_2) + mat(delim: "[", 0; - 1) u
 $
 
 又令
@@ -51,10 +51,10 @@ $ dot(x)_2 = g / L x_1 - u = g / L (x_(1 d) - e) - u $
 
 $
   mat(delim: "[", e ̇; dot(x)_2) =
-  mat(delim: "[", 0, - 1; - g/L, 0)
+  mat(delim: "[", 0, - 1; - g / L, 0)
   mat(delim: "[", e; x_2) +
   mat(delim: "[", 0; - 1) u +
-  mat(delim: "[", 0; g/L x_(1 d))
+  mat(delim: "[", 0; g / L x_(1 d))
 $
 
 其开环平衡点
@@ -67,7 +67,7 @@ $
 为改变平衡点，令$u = -mat(delim: "[", k_1, k_2) mat(delim: "[", e_(x_2); x_2) + e_f$，代入，得
 
 $
-  mat(delim: "[", e ̇; dot(x)_2) = mat(delim: "[", 0, - 1; - g/L + k_1, k_2) mat(delim: "[", e; x_2)
+  mat(delim: "[", e ̇; dot(x)_2) = mat(delim: "[", 0, - 1; - g / L + k_1, k_2) mat(delim: "[", e; x_2)
 $
 
 此时
@@ -78,7 +78,7 @@ $
 设计$k_1, k_2$，令$"Re"("eig"(A_("cl"))) < 0$，于是由特征行列式为$0$，得
 
 $
-  mat(delim: "[", λ, 1; g/L - k_1, λ - k_2)
+  mat(delim: "[", λ, 1; g / L - k_1, λ - k_2)
   &= λ^2 - k_2 λ - g / L + k_1\
   &= λ^2 + 2 λ + 1
 $

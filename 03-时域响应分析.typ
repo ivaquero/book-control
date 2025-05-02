@@ -1,4 +1,4 @@
-#import "@preview/qooklet:0.2.0": *
+#import "lib/lib.typ": *
 #show: qooklet.with(
   title: "时域响应分析",
   author: "ivaquero",
@@ -181,7 +181,7 @@ $ X(s) = U(s) G(s) = 1 / s frac(a, s + a) = 1 / s - frac(1, s + a) $
 
 $ x(t) = 1 - e^(-a t) $
 
-当$t = τ = 1/a$
+当$t = τ = 1 / a$
 
 $ x(τ) = x(1 / a) = 1 - e^(-1) = 0.63 $
 
@@ -204,11 +204,11 @@ $ x(t) = frac(C R, g)(1 - e^(-g / R t)) $
 
 则其传递函数
 
-$ G(s) = frac(1, s + g/R) $
+$ G(s) = frac(1, s + g / R) $
 
 可得
 
-$ τ = frac(1, g/R) = R / g $
+$ τ = frac(1, g / R) = R / g $
 
 #tip[
   上述流体系统的传递函数$frac(a, s + a)$是一个典型的低通滤波，其特点之一是数值积累，又如积分运算。
@@ -222,8 +222,8 @@ $ ℒ[u(t)] = ℒ[C e^0] = C frac(1, s + 0) = C 1 / s $
 
 $
   X(s) &= U(s) G(s)\
-  &= C 1 / s frac(1, s + g/R)\
-  &= frac(C R, g)(frac(1, s - 0) - frac(1, s + g/R))
+  &= C 1 / s frac(1, s + g / R)\
+  &= frac(C R, g)(frac(1, s - 0) - frac(1, s + g / R))
 $
 
 最终得
@@ -407,7 +407,7 @@ $ x(t) = 1 - e^(-ζ ω_n t) sqrt(frac(1, 1 - ζ^2)) sin(ω_dd(t) + ϕ) $
 
 其中
 
-- 正弦函数$sin(ω_dd(t) + ϕ)$的频率为$w_d$（周期为$2π/w_d$）
+- 正弦函数$sin(ω_dd(t) + ϕ)$的频率为$w_d$（周期为$2π / w_d$）
 - $e^(-ζ ω_n t)$是一个衰减（单调递减）函数
 
 == 一般形式
@@ -465,15 +465,15 @@ $ G(s) = frac(Y(s), U(s)) = C (s 𝑰 - 𝑨)^(-1) B + D $
 又
 
 $
-  s 𝑰 - 𝑨 = mat(delim: "[", s, 0; 0, s) - mat(delim: "[", 0, 1; - k/m, - B/m) = mat(delim: "[", s, - 1; k/m, s + B/m)
+  s 𝑰 - 𝑨 = mat(delim: "[", s, 0; 0, s) - mat(delim: "[", 0, 1; - k / m, - B / m) = mat(delim: "[", s, - 1; k / m, s + B / m)
 $
 
 则
 
 $
   (s 𝑰 - 𝑨)^(-1) = (s 𝑰 - 𝑨)^*|s 𝑰 - 𝑨| =
-  frac(mat(delim: "[", s + B/m, 1; - k/m, s), s (s + B/m)) - (-1) k / m =
-  frac(mat(delim: "[", s + B/m, 1; - k/m, s), s^2 + B/m s + k/m)
+  frac(mat(delim: "[", s + B / m, 1; - k / m, s), s (s + B / m)) - (-1) k / m =
+  frac(mat(delim: "[", s + B / m, 1; - k / m, s), s^2 + B / m s + k / m)
 $
 
 代入可知，空间状态方程和传递函数是统一的。其中，$G(s)$的极点，即是$G(s)$分母的根，其

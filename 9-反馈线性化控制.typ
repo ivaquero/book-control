@@ -1,4 +1,4 @@
-#import "@preview/qooklet:0.2.0": *
+#import "lib/lib.typ": *
 #show: qooklet.with(
   title: "反馈线性化控制",
   author: "ivaquero",
@@ -170,7 +170,7 @@ $ u = -a x^2 - x $
 
 $ dot(x) = x^2 - x^3 + u $
 
-令$V(x) = 1/2 x^2$，则易得
+令$V(x) = 1 / 2 x^2$，则易得
 
 - $V(0) = 0$
 - $V(x)$正定
@@ -223,7 +223,7 @@ $
 
 $ dot(e) = dot(x)_(1 d) - dot(x)_1 = dot(x)_(1 d) - x_2 $
 
-又令$V = 1/2 e^2$，则
+又令$V = 1 / 2 e^2$，则
 
 $ dot(V)_1 = pdv(V_1, e)⋅dv(e, t) = e dot(e) = e (dot(x)_(1 d) - x_2) $
 
@@ -253,7 +253,7 @@ $
   &= dot.double(x)(1 d) + k_1 (dot(x)_(1 d) - x_2) + α / m x_1^3 - 1 / m u
 $
 
-又$V_1$正定，现令$V_2 = V_1 + 1/2 δ^2$，则
+又$V_1$正定，现令$V_2 = V_1 + 1 / 2 δ^2$，则
 
 $
   dot(V)_2 &= dot(V)_1 + δ dot(δ)\

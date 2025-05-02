@@ -1,4 +1,4 @@
-#import "@preview/qooklet:0.2.0": *
+#import "lib/lib.typ": *
 #show: qooklet.with(
   title: "附录A：复矩阵",
   author: "ivaquero",
@@ -77,7 +77,7 @@ $ "Re"^(i θ) = r cos θ + r i sin θ $
 
 $ z = "Re"^(i θ) $
 
-其中，$r = sqrt(𝑨^2 + b^2)$，$θ = arctan b/a$
+其中，$r = sqrt(𝑨^2 + b^2)$，$θ = arctan b / a$
 
 #theorem("Euler 恒等式")[
   当$r = 1, θ = π$，得
@@ -206,10 +206,12 @@ $ 𝑸^H 𝑸 = i $
 $n$阶 Fourier 矩阵
 
 $
-  𝑭_n = mat(delim: "[",
-  1, 1, 1, ⋯, 1;
-  1, w, w^2, ⋯, w^(n - 1);
-  1, w^2, w^4, ⋯, w^(2(n - 1)));
+  𝑭_n = mat(
+    delim: "[",
+    1, 1, 1, ⋯, 1;
+    1, w, w^2, ⋯, w^(n - 1);
+    1, w^2, w^4, ⋯, w^(2(n - 1))
+  );
   ⋮, ⋮, ⋮, ⋱, ⋮;
   1, w^(n - 1), w^(2(n - 1)), ⋯, w^((n - 1))^2
 $
@@ -222,27 +224,33 @@ $
 
 $
   𝑭_4 =
-  mat(delim: "[",
-  1, 1, 1, 1;
-  1, i, i^2, i^3;
-  1, i^2, i^4, i^6;
-  1, i^3, i^6, i^9) =
-  mat(delim: "[",
-  1, 1, 1, 1;
-  1, i, -1, - i;
-  1, -1, 1, -1;
-  1, - i, -1, i)
+  mat(
+    delim: "[",
+    1, 1, 1, 1;
+    1, i, i^2, i^3;
+    1, i^2, i^4, i^6;
+    1, i^3, i^6, i^9
+  ) =
+  mat(
+    delim: "[",
+    1, 1, 1, 1;
+    1, i, -1, - i;
+    1, -1, 1, -1;
+    1, - i, -1, i
+  )
 $
 
-矩阵的四个列向量正交，验证一下第二列和第四列，$c macron(z)_x^⊤ c_4 = 1 - 0 + 1 - 0 = 0$，正交。不过我们应该注意到，$𝑭_4$的列向量并非标准的，我们可以给矩阵乘上系数$1/2$（除以列向量的长度）得到标准正交阵
+矩阵的四个列向量正交，验证一下第二列和第四列，$c macron(z)_x^⊤ c_4 = 1 - 0 + 1 - 0 = 0$，正交。不过我们应该注意到，$𝑭_4$的列向量并非标准的，我们可以给矩阵乘上系数$1 / 2$（除以列向量的长度）得到标准正交阵
 
 $
   𝑭_4 = 1 / 2
-  mat(delim: "[",
-  1, 1, 1, 1;
-  1, i, -1, - i;
-  1, -1, 1, -1;
-  1, - i, -1, i)
+  mat(
+    delim: "[",
+    1, 1, 1, 1;
+    1, i, -1, - i;
+    1, -1, 1, -1;
+    1, - i, -1, i
+  )
 $
 
 此时有$𝑭_4^H 𝑭_4 = 𝑰$，于是该矩阵的逆阵即其共轭转置$𝑭_4^H$。
@@ -257,15 +265,17 @@ $
 $
   𝑭_64 = mat(delim: "[", 𝑰, 𝑫; 𝑰, -𝑫)
   dmat(delim: "[", 𝑭_32, 𝑭_32)
-  mat(delim: "[",
-  1, med, ⋯, med, med, 0, med, ⋯, med, med;
-  0, med, ⋯, med, med, 1, med, ⋯, med, med;
-  med, 1, ⋯, med, med, med, 0, ⋯, med, med;
-  med, 0, ⋯, med, med, med, 1, ⋯, med, med;
-  med, med, med, ⋱, med, med, med, , ⋱, med, med;
-  med, med, med, ⋱, med, med, med, , ⋱, med, med;
-  med, med, med, ⋯, 1, med, med, med, ⋯, 0;
-  med, med, med, ⋯, 0, med, med, med, ⋯, 1)
+  mat(
+    delim: "[",
+    1, med, ⋯, med, med, 0, med, ⋯, med, med;
+    0, med, ⋯, med, med, 1, med, ⋯, med, med;
+    med, 1, ⋯, med, med, med, 0, ⋯, med, med;
+    med, 0, ⋯, med, med, med, 1, ⋯, med, med;
+    med, med, med, ⋱, med, med, med, , ⋱, med, med;
+    med, med, med, ⋱, med, med, med, , ⋱, med, med;
+    med, med, med, ⋯, 1, med, med, med, ⋯, 0;
+    med, med, med, ⋯, 0, med, med, med, ⋯, 1
+  )
 $
 
 我们分开来看等式右侧的这三个矩阵：
@@ -283,15 +293,19 @@ $ 𝑫 = dmat(delim: "[", 1, w, w^2, ⋱, w^(31)) $
 
 $
   mat(delim: "[", 𝑰_32, 𝑫_32; 𝑰_32, -𝑫_32)
-  mat(delim: "[", 𝑰_16, 𝑫_16, med, med;
-  𝑰_16, -𝑫_16, med, med;
-  med, med, 𝑰_16, 𝑫_16;
-  med, med, 𝑰_16, -𝑫_16)
-  dmat(delim: "[",
-    𝑭_16, 𝑭_16, 𝑭_16, 𝑭_16)
+  mat(
+    delim: "[", 𝑰_16, 𝑫_16, med, med;
+    𝑰_16, -𝑫_16, med, med;
+    med, med, 𝑰_16, 𝑫_16;
+    med, med, 𝑰_16, -𝑫_16
+  )
+  dmat(
+    delim: "[",
+    𝑭_16, 𝑭_16, 𝑭_16, 𝑭_16
+  )
   mat(delim: "[", P_16, med; med, P_16)[P_32]
 $
 
 而$32^2$的计算量进一步分解为$2 × 16^2 + 16$的计算量，如此递归下去我们最终得到含有一阶 Fourier 矩阵的式子。
 
-化简后计算量，$2(2(2(2(2(2(1))^2 + 1)) + 2)) + 4 + 8 + 16 + 32$，约为$6 × 32 = log_2 64 × 64/2$，算法复杂度为$n/2 log_2 n$。原来需要$n^2$的运算现在只需要$n/2 log_2 n$就可以实现了。
+化简后计算量，$2(2(2(2(2(2(1))^2 + 1)) + 2)) + 4 + 8 + 16 + 32$，约为$6 × 32 = log_2 64 × 64 / 2$，算法复杂度为$n / 2 log_2 n$。原来需要$n^2$的运算现在只需要$n / 2 log_2 n$就可以实现了。

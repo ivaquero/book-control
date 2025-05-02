@@ -1,4 +1,4 @@
-#import "@preview/qooklet:0.2.0": *
+#import "lib/lib.typ": *
 #show: qooklet.with(
   title: "模型预测控制器",
   author: "ivaquero",
@@ -43,8 +43,7 @@ $ 𝑹 = vec(delim: "[", r_1, r_2) = vec(delim: "[", 0, 0) $
 则系统误差为
 
 $
-  𝑬 = vec(delim: "[", e_1, e_2) = vec(delim: "[", y_1-r_1, y_2-r_2
-) = vec(delim: "[", 𝒙_1, 𝒙_2)
+  𝑬 = vec(delim: "[", e_1, e_2) = vec(delim: "[", y_1-r_1, y_2-r_2) = vec(delim: "[", 𝒙_1, 𝒙_2)
 $
 
 此时，有
@@ -94,10 +93,11 @@ $ <cost-mpc2>
 
 $
   cases(
-  𝒙_((k|k)) = 𝒙_k,
-  𝒙_((k+1|k)) = 𝑨 𝒙_k + 𝑩 𝒖_(k|k),
-  …,
-  𝒙_((k+N|k)) = 𝑨^N 𝒙_k + 𝑨^(N-1) 𝑩 𝒖_(k|k) + … + 𝑩 𝒖_(k+N-1|k))
+    𝒙_((k|k)) = 𝒙_k,
+    𝒙_((k+1|k)) = 𝑨 𝒙_k + 𝑩 𝒖_(k|k),
+    …,
+    𝒙_((k+N|k)) = 𝑨^N 𝒙_k + 𝑨^(N-1) 𝑩 𝒖_(k|k) + … + 𝑩 𝒖_(k+N-1|k)
+  )
 $
 
 其简写如下。其中，$𝑪$的零行向量个数为$n$，取决于初始状态。

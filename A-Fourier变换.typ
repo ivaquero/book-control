@@ -1,4 +1,4 @@
-#import "@preview/qooklet:0.2.0": *
+#import "lib/lib.typ": *
 #show: qooklet.with(
   title: "Fourier 变换",
   author: "ivaquero",
@@ -122,7 +122,7 @@ $ b_n = 1 / π ∫_(-π)^π f(n) sin n x dd(x) $
 
 $ f(t) = f(t + 2L) $
 
-令 $x = π/L t$，得
+令 $x = π / L t$，得
 
 $ f(t) = f(L / π x) ≡ g(x) $
 
@@ -220,18 +220,22 @@ $
   f(t)
   &= ∑_(n = 0)^0 a_0 / 2 e^(i n ω t) +
   ∑_(n=1)^∞ frac(a_n - i b_n, 2) e^(i n ω t) +
-  ∑_(n = -∞)^(-1) frac(a_(-n) +
-  i b_(-n), 2) e^(i n ω t)
+  ∑_(n = -∞)^(-1) frac(
+    a_(-n) +
+    i b_(-n), 2
+  ) e^(i n ω t)
   = ∑_(-∞)^∞ C_n e^(i n ω t)
 $
 
 对$C_n$，有
 
 $
-  C_n = cases(delim: "{",
-  a_0/2 & n = 0,
-  frac(a_n - i b_n, 2) & n = 1\, 2\, 3\, 4\, …,
-  frac(a_(-n) + i b_(-n), 2) quad & n = -1\, -2\, -3\, -4\, …)
+  C_n = cases(
+    delim: "{",
+    a_0 / 2 & n = 0,
+    frac(a_n - i b_n, 2) & n = 1\, 2\, 3\, 4\, …,
+    frac(a_(-n) + i b_(-n), 2) quad & n = -1\, -2\, -3\, -4\, …
+  )
 $
 
 分别展开，整理得
@@ -282,7 +286,7 @@ $ C_n = 1 / T ∫_(-T / 2)^(T / 2) f_T(t) e^(-i n ω_0 t) dd(t) $
 
 $ Δ ω = (n + 1) ω_0 - n ω_0 = ω_0 = frac(2π, T) $
 
-$T$增大，则$Δ ω$减小。此处，令$1/T = frac(Δ ω, 2π)$，并将$C_n$表达式代入
+$T$增大，则$Δ ω$减小。此处，令$1 / T = frac(Δ ω, 2π)$，并将$C_n$表达式代入
 Fourier 级数的复数表达式，得
 
 $

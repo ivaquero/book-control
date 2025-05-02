@@ -3,7 +3,7 @@
   context counter(heading).update(0)
 }
 
-#chapter("01-动态系统.typ")
+#chapter("01-控制问题.typ")
 #chapter("02-传递函数.typ")
 #chapter("03-时域响应分析.typ")
 #chapter("04-比例积分控制.typ")

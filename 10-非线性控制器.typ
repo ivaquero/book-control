@@ -1,4 +1,4 @@
-#import "@preview/qooklet:0.2.0": *
+#import "lib/lib.typ": *
 #show: qooklet.with(
   title: "非线性控制器",
   author: "ivaquero",
@@ -98,7 +98,7 @@ $ dot(e) = -k e - f(x) - ρ(x) e / |e| $
 
 - $-k e$为平衡项
 - $f(x)$为系统项
-- $ρ(x) e/|e|$为控制器项
+- $ρ(x) e / |e|$为控制器项
 - $|f(x)| < ρ(x)$
 
 后两项的作用是，使输出回归到第一项上。
@@ -142,7 +142,7 @@ $ dot(V)≤ - k e^2 + p|e|(1 - 1 / ɛ ρ|e|) $
 
 最终有
 
-$ lim_(t → ∞) e ≤ sqrt(ɛ/k) $
+$ lim_(t → ∞) e ≤ sqrt(ɛ / k) $
 
 === 高频鲁棒控制
 <高频鲁棒控制>
@@ -164,7 +164,7 @@ $ dot(V)≤ - k e^2 + ɛ $
 
 类似$u_(a u x 2)$，最终有
 
-$ lim_(t → ∞) e ≤ sqrt(ɛ/k) $
+$ lim_(t → ∞) e ≤ sqrt(ɛ / k) $
 
 #figure(
   table(

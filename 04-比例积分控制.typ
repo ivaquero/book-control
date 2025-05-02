@@ -1,4 +1,4 @@
-#import "@preview/qooklet:0.2.0": *
+#import "lib/lib.typ": *
 #show: qooklet.with(
   title: "比例积分控制",
   author: "ivaquero",
@@ -93,7 +93,7 @@ $ M = frac(k_p R + D, 7000s + 10 α + k_p) $
 
 此时
 
-$ M = frac(k_p r/s + d/s, 7000s + 10 α + k_p) $
+$ M = frac(k_p r / s + d / s, 7000s + 10 α + k_p) $
 
 令分子为$0$，求出$P_1$和$P_2$
 
@@ -152,7 +152,7 @@ $ lim_(t → ∞) x(t) = lim_(s → 0) frac(s, m s^2 + B s + k) = 0 $
 
 - 对阶跃响应$c$
 
-$u(s) = ℒ[c] = c/s$，于是
+$u(s) = ℒ[c] = c / s$，于是
 
 $ X(s) = c / s frac(1, m s^2 + B s + k) $
 
@@ -192,12 +192,12 @@ $ s = frac(-1 - k_p, a) < 0 $
 
 当$r(t) = r$，有
 
-$ X(s) = frac(k_p r/s, "as" + 1 + k_p) $
+$ X(s) = frac(k_p r / s, "as" + 1 + k_p) $
 
 使用 FVT，有
 
 $
-  lim_(t → ∞) x(t) = lim_(s → 0) s frac(k_p r/s, "as" + 1 + k_p) = frac(k_p, 1 + k_p) r
+  lim_(t → ∞) x(t) = lim_(s → 0) s frac(k_p r / s, "as" + 1 + k_p) = frac(k_p, 1 + k_p) r
 $
 
 此时
@@ -213,11 +213,11 @@ $ e_(s s) = r - frac(k_p, 1 + k_p) r = frac(1, 1 + k_p) r $
 
 $ lim_(s → 0) c(s) → ∞ $
 
-则可消除$e_(s s)$。由 Laplace 变换，只需要因子$1/s$即可达到目的，显然此处需要引入积分运算。
+则可消除$e_(s s)$。由 Laplace 变换，只需要因子$1 / s$即可达到目的，显然此处需要引入积分运算。
 
-令$c(s) = k_I/s$，有
+令$c(s) = k_I / s$，有
 
-$ X(s) = frac(r/s⋅k_I/s, "as" + 1 + k_I/s) = r / s frac(k_I, a s^2 + s + k_I) $
+$ X(s) = frac(r / s⋅k_I / s, "as" + 1 + k_I / s) = r / s frac(k_I, a s^2 + s + k_I) $
 
 整理并进行 逆 Laplace 变换，得
 

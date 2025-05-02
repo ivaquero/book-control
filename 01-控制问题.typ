@@ -1,12 +1,11 @@
-#import "@preview/qooklet:0.2.0": *
+#import "lib/lib.typ": *
 #show: qooklet.with(
-  title: "动态系统",
+  title: "控制问题",
   author: "ivaquero",
   header-cap: "现代控制理论",
   footer-cap: "github@ivaquero",
   lang: "zh",
 )
-#import "@preview/control-blocks:0.1.0": *
 
 = 系统建模
 
@@ -80,27 +79,6 @@
   caption: "简单控制系统",
   supplement: "图",
 )
-
-== 线性时不变系统
-
-#definition[
-  当函数$f(x)$满足以下条件时，称其是线性的：
-
-  - 可加性：$f(x_1 + x_2) = f(x_1) + f(x_2)$
-  - 齐次性：$f(a x) = a f(x)$
-]
-
-自变量和自变量的导数均为线性的系统，称为线性系统。其中，不显含时间$t$的线性系统，称线性自治（linear autonomous）系统，也称为线性时不变（linear time invariant，LTI）系统，其系数不随时间变化，即
-
-$ dot(x) = f(x) $
-
-LTI 是最常用的动态系统，其在具有线性性质的同时，还服从自治（时不变）原理，即
-
-$ O{f(t)} = x(t) ⇒ O{f(t - τ)} = x(t - τ) $
-
-与之相对，显含时间$t$的系统，称线性非自治（non-autonomous）系统或线性时变（time varying）系统，其系数不随时间变化，即
-
-$ dot(x) = f(t, x) $
 
 == 控制器
 
