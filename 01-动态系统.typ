@@ -6,7 +6,7 @@
   footer-cap: "github@ivaquero",
   lang: "zh",
 )
-#import "images/control-blocks.typ": *
+#import "@preview/control-blocks:0.1.0": *
 
 = 系统建模
 
@@ -117,7 +117,7 @@ $ dot(x) = f(t, x) $
     input: ctext("指令信号"),
     output: ctext("执行信号"),
     output2: ctext("传感信号"),
-    error: ctext("误差表"),
+    loss: ctext("损失函数"),
     reference: ctext("参考函数"),
   ),
   caption: "闭环控制器",

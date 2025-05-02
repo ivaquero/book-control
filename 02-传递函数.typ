@@ -6,7 +6,7 @@
   footer-cap: "github@ivaquero",
   lang: "zh",
 )
-#import "images/control-blocks.typ": *
+#import "@preview/control-blocks:0.1.0": *
 
 通常，我们用数学描述系统。我们通过以微分方程的形式编写运动方程来做到这一点。微分方程非常适合解决系统的响应，但它并不能很好地适合分析和操纵。重点是分析系统的自然行为，然后对其进行操作，以使其表现得以我们想要的方式。幸运的是，还有其他方法可以代表一种数学模型，这使控制工程师的工作更加容易。
 
@@ -450,7 +450,6 @@ $ lim_(t → ∞) h = C R / g $
     input: $V(s)-X(s)H(s)$,
     output: $X(s)$,
     output2: $X(s)H(s)$,
-    error: "Error",
     reference: $V(s)$,
   ),
   caption: "闭环系统",

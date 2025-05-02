@@ -42,6 +42,16 @@ git clone --depth 1 --branch main https://github.com/typst/packages typst
 #import "@preview/qooklet:0.2.0": *
 ```
 
+详情见 [qooklet](https://github.com/ivaquero/typst-qooklet)
+
+### 使用绘图包
+
+```typst
+#import "@preview/control-blocks:0.1.0": *
+```
+
+详情见 [control-blocks](https://github.com/ivaquero/typst-control-blocks)
+
 ## 约定规范
 
 ### 公式
