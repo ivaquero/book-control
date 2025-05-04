@@ -13,6 +13,40 @@
 
 通常，我们用微分方程组描述系统，它可以很好地解决系统的响应，但并不适合分析。在分析前，我们需要将微分方程组转化为适当的表示，其中两种最受欢迎的表示为传递函数（transfer function）和状态空间（state space），前者代表着经典控制理论时代，后者代表着现代控制理论时代。两者各有优缺，作为控制工程师，我们对两者都要熟悉，以最合适的方法解决问题。本章中，我们重点关注传递函数。
 
+== 线性时不变系统
+
+#definition[
+  当函数$f(x)$满足以下条件时，称其是线性的：
+
+  - 齐次性：$f(a x) = a f(x)$
+  - 叠加性：$f(x_1 + x_2) = f(x_1) + f(x_2)$
+]
+
+#let (x, y, y2) = lq.load-txt(read("data/homegeneity.csv"))
+#let new-y = lq.vec.multiply(y, 2)
+#let new-y2 = lq.vec.multiply(y2, 2)
+#trans-linear(x, y, y2, new-y)
+#trans-linear(x, new-y, new-y2, new-y, caption: "齐次性")
+
+自变量和自变量的导数均为线性的系统，称为线性系统。其中，不显含时间$t$的线性系统，称线性自治（linear autonomous）系统，也称为线性时不变（linear time invariant，LTI）系统，其系数不随时间变化，即
+
+$ dot(x) = f(x) $
+
+LTI 是最常用的动态系统，其在具有线性性质的同时，还服从自治（时不变）原理，即时滞仅使图像平移，但不改变图像形状
+
+$ O{f(t)} = x(t) ⇒ O{f(t - τ)} = x(t - τ) $
+
+与之相对，显含时间$t$的系统，称线性非自治（non-autonomous）系统或线性时变（time varying）系统，其系数不随时间变化，即
+
+$ dot(x) = f(t, x) $
+
+#let (x, y, y2) = lq.load-txt(read("data/superstition.csv"))
+#trans-linear(x, y, y2, new-y)
+#let (x, y, y2) = lq.load-txt(read("data/superstition2.csv"))
+#trans-linear(x, y, y2, new-y)
+#let (x, y, y2) = lq.load-txt(read("data/superstition3.csv"))
+#trans-linear(x, y, y2, new-y, caption: "叠加性")
+
 == 冲激函数
 
 === 连续型
@@ -80,27 +114,6 @@ $
 #tip[
   $x(t)$是系统对$t$时刻前所有响应的和，而冲激响应$h(t)$可以完全定义 LTI 系统
 ]
-
-== 线性时不变系统
-
-#definition[
-  当函数$f(x)$满足以下条件时，称其是线性的：
-
-  - 可加性：$f(x_1 + x_2) = f(x_1) + f(x_2)$
-  - 齐次性：$f(a x) = a f(x)$
-]
-
-自变量和自变量的导数均为线性的系统，称为线性系统。其中，不显含时间$t$的线性系统，称线性自治（linear autonomous）系统，也称为线性时不变（linear time invariant，LTI）系统，其系数不随时间变化，即
-
-$ dot(x) = f(x) $
-
-LTI 是最常用的动态系统，其在具有线性性质的同时，还服从自治（时不变）原理，即
-
-$ O{f(t)} = x(t) ⇒ O{f(t - τ)} = x(t - τ) $
-
-与之相对，显含时间$t$的系统，称线性非自治（non-autonomous）系统或线性时变（time varying）系统，其系数不随时间变化，即
-
-$ dot(x) = f(t, x) $
 
 == 传递函数
 <传递函数>
