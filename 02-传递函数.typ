@@ -23,10 +23,20 @@
 ]
 
 #let (x, y, y2) = lq.load-txt(read("data/homegeneity.csv"))
-#let new-y = lq.vec.multiply(y, 2)
-#let new-y2 = lq.vec.multiply(y2, 2)
-#trans-linear(x, y, y2, new-y)
-#trans-linear(x, new-y, new-y2, new-y, caption: "齐次性")
+
+#trans-linear(
+  x,
+  y,
+  y2,
+  lq.vec.multiply(y2, 2),
+)
+#trans-linear(
+  x,
+  lq.vec.multiply(y, 2),
+  lq.vec.multiply(y2, 2),
+  lq.vec.multiply(y2, 2),
+  caption: "齐次性",
+)
 
 自变量和自变量的导数均为线性的系统，称为线性系统。其中，不显含时间$t$的线性系统，称线性自治（linear autonomous）系统，也称为线性时不变（linear time invariant，LTI）系统，其系数不随时间变化，即
 
@@ -40,18 +50,41 @@ $ O{f(t)} = x(t) ⇒ O{f(t - τ)} = x(t - τ) $
 
 $ dot(x) = f(t, x) $
 
-#let (x, y, y2) = lq.load-txt(read("data/superstition.csv"))
-#trans-linear(x, y, y2, new-y)
-#let (x, y, y2) = lq.load-txt(read("data/superstition2.csv"))
-#trans-linear(x, y, y2, new-y)
-#let (x, y, y2) = lq.load-txt(read("data/superstition3.csv"))
-#trans-linear(x, y, y2, new-y, caption: "叠加性")
+#let (x1, y1, y12) = lq.load-txt(read("data/superstition.csv"))
+#trans-linear(
+  x1,
+  y1,
+  y12,
+  lq.vec.multiply(y2, 2),
+)
+#let (x2, y2, y22) = lq.load-txt(read("data/superstition2.csv"))
+#trans-linear(
+  x2,
+  y2,
+  y22,
+  lq.vec.multiply(y2, 2),
+)
+#trans-linear(
+  x1,
+  lq.vec.add(y1, y2),
+  lq.vec.add(y12, y22),
+  lq.vec.multiply(y12, 2),
+)
 
 == 冲激函数
 
-通过了解系统在冲激函数下的表现，可以充分表征LTI系统。系统受到脉冲函数作用后的输出称为系统的脉冲响应。
+通过了解系统在冲激函数下的表现，可以充分表征LTI系统。系统受到冲激函数作用后的输出称为系统的脉冲响应（impulse response）。
 
-=== 连续型
+#definition[
+  冲激函数是一种信号，其在短时间具有无限幅度，单位冲激函数，又称为 Dirac Delta 函数，以 Paul Dirac 命名，满足
+
+  - $t ≠ 0$时，$δ(t) = 0$
+  - $∫_(-∞)^∞ δ(t) dd(t) = 1$
+]
+
+#tip[
+  Dirac Delta 函数的宽度为 0，面积为 1，仅存在于数学中
+]
 
 连续型冲激函数定义为
 
@@ -62,18 +95,9 @@ $
   )
 $
 
-单位冲激函数，又称为 Dirac $δ$函数，满足
 
-- $t ≠ 0$时，$δ(t) = 0$
-- $∫_(-∞)^∞ δ(t) dd(t) = 1$
 
-#tip[
-  $δ$函数的宽度为 0，面积为 1，仅存在于数学中
-]
-
-=== 离散型
-
-根据$δ$函数定义，构建离散型冲激函数
+离散型冲激函数可由定义构建为
 
 $
   δ(t)_Δ = cases(frac(1, Δ T) quad & 0 < t < Δ T, 0 & "else")
@@ -82,8 +106,6 @@ $
 显然，$Δ T$内的冲激为
 
 $ frac(1, Δ T) Δ T = 1 $
-
-== 输入与输出
 
 #figure(
   table(
