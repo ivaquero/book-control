@@ -47,10 +47,10 @@ git clone --depth 1 --branch main https://github.com/typst/packages typst
 ### 使用绘图包
 
 ```typst
-#import "@preview/control-blocks:0.1.0": *
+#import "@preview/consketcher:0.1.0": *
 ```
 
-详情见 [control-blocks](https://github.com/ivaquero/typst-control-blocks)
+详情见 [consketcher](https://github.com/ivaquero/typst-consketcher)
 
 ## 约定规范
 

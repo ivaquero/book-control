@@ -1,5 +1,5 @@
 #import "@preview/qooklet:0.2.1": *
-#import "@local/control-blocks:0.1.0": *
+#import "@local/consketcher:0.1.0": *
 #import "@preview/lilaq:0.2.0" as lq
 #import "@preview/tiptoe:0.3.0"
 
