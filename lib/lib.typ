@@ -3,7 +3,7 @@
 #import "@preview/lilaq:0.2.0" as lq
 #import "@preview/tiptoe:0.3.0"
 
-#let peak(value, distance) = value > 0 and distance > 5pt
+#let peak(value, distance) = value > 0 and distance < 5pt
 
 #let trans-linear(
   x,
