@@ -1,6 +1,6 @@
 #import "lib/lib.typ": *
 #show: qooklet.with(
-  title: "物理应用I",
+  title: "物理应用一",
   author: "ivaquero",
   header-cap: "现代控制理论",
   footer-cap: "github@ivaquero",
