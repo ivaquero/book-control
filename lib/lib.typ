@@ -1,4 +1,7 @@
 #import "@preview/qooklet:0.2.1": *
+#import "@preview/subpar:0.2.2": grid as sgrid
+#import "@preview/rexllent:0.3.0": xlsx-parser
+// control sketch
 #import "@preview/consketcher:0.1.0": *
 #import "@preview/lilaq:0.2.0" as lq
 #import "@preview/tiptoe:0.3.0"
