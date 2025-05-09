@@ -2,7 +2,7 @@
 #show: qooklet.with(
   title: "MATLAB 工具箱最佳实践",
   author: "ivaquero",
-  header-cap: "现代控制理论",
+  header-cap: "简明现代控制理论",
   footer-cap: "github@ivaquero",
   lang: "zh",
 )

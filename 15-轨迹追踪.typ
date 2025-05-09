@@ -2,7 +2,7 @@
 #show: qooklet.with(
   title: "轨迹追踪",
   author: "ivaquero",
-  header-cap: "现代控制理论",
+  header-cap: "简明现代控制理论",
   footer-cap: "github@ivaquero",
   lang: "zh",
 )

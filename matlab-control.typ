@@ -2,7 +2,7 @@
 #show: qooklet.with(
   title: "控制工具箱 API",
   author: "ivaquero",
-  header-cap: "现代控制理论",
+  header-cap: "简明现代控制理论",
   footer-cap: "github@ivaquero",
   lang: "zh",
 )
