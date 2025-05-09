@@ -2,7 +2,7 @@
 #show: qooklet.with(
   title: "模型预测控制器",
   author: "ivaquero",
-  header-cap: "简明现代控制理论",
+  header-cap: "简明控制理论",
   footer-cap: "github@ivaquero",
   lang: "zh",
 )
