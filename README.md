@@ -39,7 +39,7 @@ git clone --depth 1 --branch main https://github.com/typst/packages typst
 ### 使用模版
 
 ```typst
-#import "@preview/qooklet:0.2.0": *
+#import "@preview/qooklet:0.2.1": *
 ```
 
 详情见 [qooklet](https://github.com/ivaquero/typst-qooklet)
