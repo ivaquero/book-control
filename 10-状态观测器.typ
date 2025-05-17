@@ -1,11 +1,7 @@
-#import "@local/scibook:0.1.0": *
-#show: doc => conf(
+#import "lib/lib.typ": *
+#show: chapter-style.with(
   title: "状态观测器",
-  author: "ivaquero",
-  header-cap: "现代控制理论",
-  footer-cap: "github@ivaquero",
-  outline-on: false,
-  doc,
+  info: info,
 )
 
 = Luenberger 观测器
@@ -69,8 +65,7 @@ $ "Re"["Eig"(𝑨 - 𝑳 𝑪)] < 0 $
 
 #figure(
   image("images/model/vibration.drawio.png", width: 40%),
-  caption: [弹簧阻尼系统],
-  supplement: "图",
+  caption: "弹簧阻尼系统",
 )
 
 令
@@ -145,7 +140,7 @@ $ "Re"["Eig"(𝑴)] < 0 $
   同一系统的观测器的收敛速度远大于控制器的。
 ]
 
-#theorem("可观测性")[
+#theorem(title: "可观测性")[
   若一个系统可观测，则其观测矩阵
   $ 𝑫 = mat(delim: "[", 𝑪; 𝑪 𝑨; ⋮; 𝑪 𝑨^(n-1)) $
   满秩。

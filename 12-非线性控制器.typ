@@ -1,11 +1,7 @@
-#import "@local/scibook:0.1.0": *
-#show: doc => conf(
+#import "lib/lib.typ": *
+#show: chapter-style.with(
   title: "非线性控制器",
-  author: "ivaquero",
-  header-cap: "现代控制理论",
-  footer-cap: "github@ivaquero",
-  outline-on: false,
-  doc,
+  info: info,
 )
 
 = 自适应控制器
@@ -55,7 +51,7 @@ $ lim_(t → ∞) k e^2 = 0 $
 
 $ u = dot(x)_d + x^2 ∫_0^t e x^2 dd(t) + k e $
 
-#theorem("Barbalat 引理")[
+#theorem(title: "Barbalat 引理")[
   若函数$V$和$g(t)$满足
   - $V ≥ 0$
   - $dot(V)≤ - g(t)$，其中，$g(t) ≥ 0$
@@ -64,8 +60,6 @@ $ u = dot(x)_d + x^2 ∫_0^t e x^2 dd(t) + k e $
   则
   $ lim_(t → ∞) g(t) = 0 $
 ]
-
-#pagebreak()
 
 = 鲁棒控制
 <鲁棒控制>
@@ -101,7 +95,7 @@ $ dot(e) = -k e - f(x) - ρ(x) e / |e| $
 
 - $-k e$为平衡项
 - $f(x)$为系统项
-- $ρ(x) e/|e|$为控制器项
+- $ρ(x) e / |e|$为控制器项
 - $|f(x)| < ρ(x)$
 
 后两项的作用是，使输出回归到第一项上。
@@ -145,7 +139,7 @@ $ dot(V)≤ - k e^2 + p|e|(1 - 1 / ɛ ρ|e|) $
 
 最终有
 
-$ lim_(t → ∞) e ≤ sqrt(ɛ/k) $
+$ lim_(t → ∞) e ≤ sqrt(ɛ / k) $
 
 === 高频鲁棒控制
 <高频鲁棒控制>
@@ -167,14 +161,14 @@ $ dot(V)≤ - k e^2 + ɛ $
 
 类似$u_(a u x 2)$，最终有
 
-$ lim_(t → ∞) e ≤ sqrt(ɛ/k) $
+$ lim_(t → ∞) e ≤ sqrt(ɛ / k) $
 
 #figure(
   table(
     columns: 7,
     align: center + horizon,
     inset: 4pt,
-    stroke: frame(rgb("000")),
+    stroke: table-three-line(rgb("000")),
     [Name], [$u_(a u x)$], [$ɛ$], [稳态误差], [收敛速度], [瞬态输入], [稳态输入],
     [Sliding Mode], [$ρ e\/norm(e)$], [N/A], [5], [4], [2], [1],
     [High Gain], [$1\/ɛ ρ^2 e$], [0.1], [4], [5], [1], [2],
@@ -182,7 +176,7 @@ $ lim_(t → ∞) e ≤ sqrt(ɛ/k) $
     [High Freq], [$(ρ^2 e)\/(ρ norm(e) + ɛ)$], [0.1], [3], [2], [4], [3],
     [High Freq], [$(ρ^2 e)\/(ρ norm(e) + ɛ)$], [1], [1], [1], [5], [5],
   ),
-  caption: [高频鲁棒控制],
+  caption: "高频鲁棒控制",
   supplement: "表",
   kind: table,
 )

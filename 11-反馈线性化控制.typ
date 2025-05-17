@@ -1,11 +1,7 @@
-#import "@local/scibook:0.1.0": *
-#show: doc => conf(
+#import "lib/lib.typ": *
+#show: chapter-style.with(
   title: "反馈线性化控制",
-  author: "ivaquero",
-  header-cap: "现代控制理论",
-  footer-cap: "github@ivaquero",
-  outline-on: false,
-  doc,
+  info: info,
 )
 
 = 非线性系统稳定性
@@ -21,19 +17,19 @@
     columns: 4,
     align: center + horizon,
     inset: 4pt,
-    stroke: frame(rgb("000")),
+    stroke: table-three-line(rgb("000")),
     [∀x ∈ D - {0}], [Abbr.], [V(0)], [V(x)],
     [正定], [PD], [0], [$>$],
     [半正定], [PSD], [0], [$≥$],
     [负定], [ND], [0], [$<$],
     [半负定], [NSD], [0], [$≤$],
   ),
-  caption: [Lyapunov 稳定性],
+  caption: "Lyapunov 稳定性",
   supplement: "表",
   kind: table,
 )
 
-#theorem("Lyapunov 第二方法")[
+#theorem(title: "Lyapunov 第二方法")[
   系统
   $ dot(𝒙) = f(x_0) $
 
@@ -53,7 +49,6 @@ $ ∑F_x = m a_x = l dot.double(θ) $
 #figure(
   image("images/model/pendulum.drawio.png", width: 10%),
   caption: "钟摆",
-  supplement: "图",
 )
 
 即
@@ -126,7 +121,7 @@ $
 
 显然，$dot(V)(x)$半负定。
 
-#theorem("LaSalle's 不变性原理")[
+#theorem(title: "LaSalle's 不变性原理")[
   系统
   $ dot(𝒙) = f(x_0) $
 
@@ -153,8 +148,7 @@ $ dot(x) = f(x, ϕ (x)) $
 
 #figure(
   image("images/block/feedback.drawio.png", width: 40%),
-  caption: [反馈],
-  supplement: "图",
+  caption: "反馈",
 )
 
 考虑系统
@@ -171,7 +165,7 @@ $ u = -a x^2 - x $
 
 $ dot(x) = x^2 - x^3 + u $
 
-令$V(x) = 1/2 x^2$，则易得
+令$V(x) = 1 / 2 x^2$，则易得
 
 - $V(0) = 0$
 - $V(x)$正定
@@ -200,8 +194,7 @@ $ m dot.double(x) + α x^3 = F $
 
 #figure(
   image("images/model/vibration-nl.drawio.png", width: 40%),
-  caption: [非线性弹簧系统],
-  supplement: "图",
+  caption: "非线性弹簧系统",
 )
 
 令
@@ -224,7 +217,7 @@ $
 
 $ dot(e) = dot(x)_(1 d) - dot(x)_1 = dot(x)_(1 d) - x_2 $
 
-又令$V = 1/2 e^2$，则
+又令$V = 1 / 2 e^2$，则
 
 $ dot(V)_1 = pdv(V_1, e)⋅dv(e, t) = e dot(e) = e (dot(x)_(1 d) - x_2) $
 
@@ -254,7 +247,7 @@ $
   &= dot.double(x)(1 d) + k_1 (dot(x)_(1 d) - x_2) + α / m x_1^3 - 1 / m u
 $
 
-又$V_1$正定，现令$V_2 = V_1 + 1/2 δ^2$，则
+又$V_1$正定，现令$V_2 = V_1 + 1 / 2 δ^2$，则
 
 $
   dot(V)_2 &= dot(V)_1 + δ dot(δ)\
@@ -280,9 +273,9 @@ $
 $(6)$代入$(3)$，$(11)$代入$(10)$，得
 
 $
-  mat(delim: "[", delim: "[", e ̇; dot(δ)) =
-  mat(delim: "[", delim: "[", - k_1, 1; - 1, - k_2)
-  mat(delim: "[", delim: "[", e; δ)
+  mat(delim: "[", e ̇; dot(δ)) =
+  mat(delim: "[", - k_1, 1; - 1, - k_2)
+  mat(delim: "[", e; δ)
 $
 
 不难得出
@@ -290,4 +283,4 @@ $
 - $λ_1 + λ_2 = -k_1 - k_2 < 0$
 - $λ_1 λ_2 = k_1 k_2 > 0$
 
-故，$∀λ < 0$。又$mat(delim: "[", delim: "[", e ̇; dot(δ)) = 0$，故，$mat(delim: "[", delim: "[", e; δ) = 0$，从而知，系统渐近稳定。
+故，$∀λ < 0$。又$mat(delim: "[", e ̇; dot(δ)) = 0$，故，$mat(delim: "[", e; δ) = 0$，从而知，系统渐近稳定。

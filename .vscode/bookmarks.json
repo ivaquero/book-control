@@ -1,0 +1,24 @@
+{
+	"files": [
+		{
+			"path": "control.typ",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 24,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "test.typ",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 36,
+					"label": ""
+				}
+			]
+		}
+	]
+}

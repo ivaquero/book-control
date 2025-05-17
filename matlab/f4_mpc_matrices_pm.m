@@ -12,7 +12,7 @@ function [Phi, Gamma, Omega, Psi, F, H] = f4_mpc_matrices_pm(A, B, Q, R, S, N_P)
     Phi = zeros(N_P * n, n);
     % 初始化Gamma矩阵并定义维度
     Gamma = zeros(N_P * n, N_P * p);
-    % 定义临时对角单位矩阵
+    % 定义临时对角单位阵
     tmp = eye(n); % Create a n x n "I" matrix
     % 定义for循环行向量
     rows = 1:n;

@@ -1,11 +1,7 @@
-#import "@local/scibook:0.1.0": *
-#show: doc => conf(
+#import "lib/lib.typ": *
+#show: chapter-style.with(
   title: "比例微分控制",
-  author: "ivaquero",
-  header-cap: "现代控制理论",
-  footer-cap: "github@eqt:ivaquero",
-  outline-on: false,
-  doc,
+  info: info,
 )
 
 = 根轨迹
@@ -18,8 +14,7 @@
 
 #figure(
   image("images/block/closed-1.drawio.png", width: 40%),
-  caption: [闭环控制],
-  supplement: "图",
+  caption: "闭环控制",
 )
 
 $ frac(Y(s), R(s)) = frac(K G(s), 1 + K G(s)) $
@@ -50,8 +45,6 @@ $ G(s) = frac(N(s), D(s)) = frac(∑_(i=1)^m (s - z_i), ∑_(j=1)^n (s - p_j)) $
   - 渐近线与实轴的夹角为$θ = frac(2 q + 1, n - m) π, q = 0, 1, …, |m - n| - 1$
 - 根轨迹上的点满足$∠K G(s) = -π$
 
-#pagebreak()
-
 == 汇合点 & 分离点
 <汇合点-分离点>
 
@@ -59,8 +52,7 @@ $ G(s) = frac(N(s), D(s)) = frac(∑_(i=1)^m (s - z_i), ∑_(j=1)^n (s - p_j)) $
 
 #figure(
   image("images/model/vibration.drawio.png", width: 40%),
-  caption: [弹簧阻尼系统],
-  supplement: "图",
+  caption: "弹簧阻尼系统",
 )
 
 有
@@ -136,14 +128,13 @@ $ G(s) = frac(N(s), D(s)) $
 
 #figure(
   image("images/block/closed-2.drawio.png", width: 40%),
-  caption: [闭环系统],
-  supplement: "图",
+  caption: "闭环系统",
 )
 
 - 极点：$p_1 = 0$和$p_2 = -2$
 - 零点：无
-- 渐近线：$σ_a = (-2 + 0 - 0)/(2 - 0) = -1$
-- 夹角：$θ_a = π/2$
+- 渐近线：$σ_a = (-2 + 0 - 0) / (2 - 0) = -1$
+- 夹角：$θ_a = π / 2$
 
 绘制出图像，对$K$分析
 
@@ -169,8 +160,7 @@ $ C(t) = C e^(-σ_a t) sin ω_n t $
 
 #figure(
   image("images/block/compens-lead.drawio.png", width: 40%),
-  caption: [PD 控制],
-  supplement: "图",
+  caption: "PD 控制",
 )
 
 这就是比例微分控制（PD control），这种控制器有两个明显的缺点
@@ -199,7 +189,7 @@ $ 𝔼[s] = R(s) - X(s) = R(s) - 𝔼[s] K G(s) $
 
 $ 𝔼[s] = R(s) frac(1, 1 + K G(s)) = R(s) frac(N(s), 1 + K N(s)) / D(s) $
 
-假设$R(s)$为单位阶跃函数$1/s$，此时的稳态误差为
+假设$R(s)$为单位阶跃函数$1 / s$，此时的稳态误差为
 
 $
   e_(s s) &= lim_(t → ∞) e(t) = lim_(s → 0) s 𝔼[s]\
@@ -210,8 +200,7 @@ $
 
 #figure(
   image("images/block/compens-lag.drawio.png", width: 40%),
-  caption: [closed-lag],
-  supplement: "图",
+  caption: "closed-lag",
 )
 
 加入滞后补偿器（lag compensator）后，$𝔼[s]$变为
@@ -228,10 +217,10 @@ $
 
 $ e_(s s) = frac(D(0), D(0)) + K N(0) * z / p $
 
-若$z > p$，则可减小$e_(s s)$，即通过调整$z/p$可以减少$e_(s s)$。
+若$z > p$，则可减小$e_(s s)$，即通过调整$z / p$可以减少$e_(s s)$。
 
 #tip[
-  当$p = 0$，$e_(s s) → 0$，$H(s) = 1 + z/s$，此为比例积分控制。
+  当$p = 0$，$e_(s s) → 0$，$H(s) = 1 + z / s$，此为比例积分控制。
 ]
 
 = PID 控制器
@@ -271,13 +260,13 @@ $ U(s) = (k_p + k_I 1 / s + k_D s) 𝔼[s] $
     columns: 5,
     align: center + horizon,
     inset: 4pt,
-    stroke: frame(rgb("000")),
+    stroke: table-three-line(rgb("000")),
     [], [幅角], [新幅角], [模], [新模],
     [零点], [$ϕ_1$], [$ϕ_1$], [$v_1$], [$v_1$],
     [极点], [$ϕ_2$], [$-ϕ_2$], [$v_2$], [$1 \/ v_2$],
     [零点 + 极点], [$ϕ_1, ϕ_2$], [$ϕ_1 - ϕ_2$], [$v_1, v_2$], [$v_1 \/ v_2$],
   ),
-  caption: [幅角],
+  caption: "幅角",
   supplement: "表",
   kind: table,
 )
@@ -286,7 +275,7 @@ $ U(s) = (k_p + k_I 1 / s + k_D s) 𝔼[s] $
   幅角：零点/极点与平面内的任一点连线与横轴的夹角
 ]
 
-#theorem("幅角原理（Argument Principle）")[
+#theorem(title: "幅角原理（Argument Principle）")[
   在$S$平面内画一条闭环曲线$A$，曲线$B$由曲线$A$通过映射$F(s)$得到，则
 
   - 曲线$A$每包含1个$F(s)$的零点，曲线$B$就绕原点顺时针一圈
@@ -295,7 +284,7 @@ $ U(s) = (k_p + k_I 1 / s + k_D s) 𝔼[s] $
 
 == 标准型
 
-令$k_I/k_p = 1/τ_I$，$k_D/k_p = τ_D$，则@eqt:pid 变为
+令$k_I / k_p = 1 / τ_I$，$k_D / k_p = τ_D$，则@pid 变为
 
 $ u(t) = k_p e(t) + 1 / τ_I ∫e(t) dd(t) + τ_D dot(e)(t) $ <pidstd>
 
@@ -308,7 +297,7 @@ $ u(t) = k_p e(t) + 1 / τ_I ∫e(t) dd(t) + τ_D dot(e)(t) $ <pidstd>
   积分项是历史误差的积累，比例相是对当前误差的响应，微分相是对未来误差的判断。
 ]
 
-对@eqt:pidstd 两端进行 Laplace 变换，得
+对@pidstd 两端进行 Laplace 变换，得
 
 $ u(s) = k_p (E(s) + E(s) / τ_I + τ_D E(s)) = underbrace(k_p (1 + 1 / τ_I + τ_D), "C(s)") E(s) $
 

@@ -1,11 +1,7 @@
-#import "@local/scibook:0.1.0": *
-#show: doc => conf(
+#import "lib/lib.typ": *
+#show: chapter-style.with(
   title: "控制工具箱 API",
-  author: "ivaquero",
-  header-cap: "现代控制理论",
-  footer-cap: "github@ivaquero",
-  outline-on: false,
-  doc,
+  info: info,
 )
 
 = 模型搭建
@@ -48,7 +44,6 @@
   ],
 )
 
-
 == 模型连接
 <模型连接>
 
@@ -78,8 +73,6 @@
     - `S = sumblk(formula)`
   ],
 )
-
-#pagebreak()
 
 = 数据操作
 <数据操作>
@@ -187,8 +180,6 @@
   ],
 )
 
-#pagebreak()
-
 = 线性分析
 <线性分析>
 
@@ -270,8 +261,6 @@
       - `sectorplot(H,Q)`
   ],
 )
-
-#pagebreak()
 
 = 模型设计
 <模型设计>
@@ -409,7 +398,6 @@
   ],
 )
 
-
 === 子模块
 
 #block(
@@ -419,7 +407,6 @@
     - `setBlockRateConversion(st,blk,method)`
   ],
 )
-
 
 
 == 调度
@@ -437,5 +424,4 @@
 - `Knew = setData(K,Kco)`
 - `GV = evalSurf(GS,X)`
 - `viewSurf(GS)`
-
 

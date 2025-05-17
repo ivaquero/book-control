@@ -1,11 +1,7 @@
-#import "@local/scibook:0.1.0": *
-#show: doc => conf(
+#import "lib/lib.typ": *
+#show: chapter-style.with(
   title: "MATLAB 工具箱最佳实践",
-  author: "ivaquero",
-  header-cap: "现代控制理论",
-  footer-cap: "github@ivaquero",
-  outline-on: false,
-  doc,
+  info: info,
 )
 
 = 工程结构
@@ -99,8 +95,6 @@ quickerSimCFD/
                 liveTasks.json
 ```
 
-#pagebreak()
-
 = 打包
 <packaging>
 
@@ -114,8 +108,7 @@ quickerSimCFD/
 
 #figure(
   image("images/matlab-toolbox.png", width: 45%),
-  // caption: "",
-  // supplement: "图"
+  caption: none,
 )
 
 == 打包文件
@@ -165,8 +158,6 @@ quickerSimCFD/
         add.m
         :
 ```
-
-#pagebreak()
 
 == 工程文件
 <project>

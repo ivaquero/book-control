@@ -1,11 +1,7 @@
-#import "@local/scibook:0.1.0": *
-#show: doc => conf(
+#import "lib/lib.typ": *
+#show: chapter-style.with(
   title: "频域响应分析",
-  author: "ivaquero",
-  header-cap: "现代控制理论",
-  footer-cap: "github@ivaquero",
-  outline-on: false,
-  doc,
+  info: info,
 )
 
 = 一阶系统
@@ -58,7 +54,7 @@ $ X(s) = U(s)G(s) $
 有
 
 $
-  U(s) = ℒ[μ(t)] &= frac(A ω_i, s^2  + ω^2) + frac(B s, s^2  + ω^2) \
+  U(s) = ℒ[μ(t)] &= frac(A ω_i, s^2 + ω^2) + frac(B s, s^2 + ω^2) \
   &= frac(A ω_i + B s, (s + j ω_i)(s - j ω_i))
 $
 
@@ -97,7 +93,7 @@ $
 
 $ k_1(-j ω - j ω_i) N(-j ω_i) + ∑_(i=1)^n 0 = (A ω_i - B j ω_i) D(-j ω_i) $
 $
-  k_1 = frac(A ω_i - B j ω_i,  - 2j ω) frac(D(-j ω_i), N(-j ω_i)) = frac(B + A j, 2) G(-j ω_i)
+  k_1 = frac(A ω_i - B j ω_i, - 2j ω) frac(D(-j ω_i), N(-j ω_i)) = frac(B + A j, 2) G(-j ω_i)
 $
 - 令$s = j ω$，得
 
@@ -133,11 +129,11 @@ $
 == 积分滤波
 <积分滤波>
 
-积分的 Laplace 的变换为$G(s) = 1/s$，
+积分的 Laplace 的变换为$G(s) = 1 / s$，
 
 $ G(j ω_i) = frac(1, j ω_i) = -1 / ω_i j $
 
-其幅角为$pi/2$，其长度
+其幅角为$pi / 2$，其长度
 
 $ |G(j ω_i)| = 1 / ω_i $
 
@@ -172,8 +168,7 @@ $
 
 - 当$ω ≪ a$，$|G(j ω_i)| → 1$
 - 当$ω ≫ a$，$|G(j ω_i)| → 0$
-- 当$ω = a$，$|G(j ω_i)| = sqrt(1/2) = 0.707$
-\
+- 当$ω = a$，$|G(j ω_i)| = sqrt(1 / 2) = 0.707$
 
 $a$被称为截止频率。
 
@@ -201,17 +196,17 @@ $ G(s) = frac(X(s), U(s)) = frac(ω_n^2, s^2 + 2 ζ ω_n s + ω_n^2) $
 
 其中
 
-- $ω_n = sqrt(k/m)$：固有频率
+- $ω_n = sqrt(k / m)$：固有频率
 - $ζ = frac(B, 2 sqrt(k m))$：阻尼比
 
 令$s = j ω$，得
 
 $
   G(j ω_i) &= frac(ω_n^2, - ω^2 + 2 ζ ω_n ω_j + ω_n^2)\
-  &= frac(1, - ω^2/ω_n^2 + 2 ζ ω/ω_n j + 1)
+  &= frac(1, - ω^2 / ω_n^2 + 2 ζ ω / ω_n j + 1)
 $
 
-令输入频率$Ω = ω/ω_n$，则
+令输入频率$Ω = ω / ω_n$，则
 
 $
   G(j ω_i) &= frac(1, -Ω^2 + 2 ζ Ω j + 1)\
@@ -228,10 +223,9 @@ $
 
 - 当$Ω = 0$，则$ω = 0$，有$|G(j ω_i)| = 1$
 - 当$Ω → +∞$，则$ω ≫ ω_n$，有$|G(j ω_i)| → 0$
-- 当$Ω = 1$，则$ω = ω_n$，有$|G(j ω_i)| = 1/2 ζ$
+- 当$Ω = 1$，则$ω = ω_n$，有$|G(j ω_i)| = 1 / 2 ζ$
   - 当$ζ < 0.5$，则$|G(j ω_i)| > 1$
   - 当$ζ > 0.5$，则$|G(j ω_i)| < 1$
-\
 
 由上面的讨论，在$0$和$+∞$之间，存在着一个极值点
 
@@ -259,8 +253,8 @@ $ ω_r = ω_n sqrt(1 - 2 ζ^2) $
 $ |G(j ω_i)|_(ω = ω_n sqrt(1 - 2 ζ^2)) = frac(1, 2 ζ sqrt(1 - ζ^2)) $
 
 - 当$ζ = 1$
-  - 若$ω = ω_n$，有$|G(j ω_i)| = 1/2$
-- 当$ζ = 1/2$
+  - 若$ω = ω_n$，有$|G(j ω_i)| = 1 / 2$
+- 当$ζ = 1 / 2$
   - 若$ω = ω_n$，有$|G(j ω_i)| = 1$
   - 若$ω = ω_r$，有$|G(j ω_i)| = 1.16$
 - 当$ζ = 0$
@@ -279,7 +273,7 @@ $ |G(j ω_i)|_(ω = ω_n sqrt(1 - 2 ζ^2)) = frac(1, 2 ζ sqrt(1 - ζ^2)) $
     columns: (auto,) * 3,
     inset: 0.4em,
     align: center + horizon,
-    stroke: frame(rgb("000")),
+    stroke: table-three-line(rgb("000")),
     [目标响应], [坐标], [坐标单位],
     [振幅响应], [$20 lg M$～$ω$], [$"dB"$～$"rad"\/s$],
     [幅角响应], [$ϕ$～$ω$], [$deg$～$"rad"\/s$],
@@ -309,27 +303,27 @@ $ "dB" = 10 lg P_M / P_R = 10 lg (M_0 / M_i)^2 = 20 lg M $
 #block(
   height: 6em,
   columns()[
-    - 对$G(s) = 1/s$
+    - 对$G(s) = 1 / s$
       - $|G(j ω_i)| = 1 / ω$
       - $20 lg |G(j ω_i)| = -20 lg ω$
       - $∠G(j ω_i) = π / 2$
-    - 对$G(s) = a/(a + s)$
-      - $|G(j ω_i)| = sqrt(frac(1, 1 + (ω/a)^2))$],
+    - 对$G(s) = a / (a + s)$
+      - $|G(j ω_i)| = sqrt(frac(1, 1 + (ω / a)^2))$
+  ],
 )
-
 
 #figure(
   table(
     columns: 5,
     align: center + horizon,
     inset: 4pt,
-    stroke: frame(rgb("000")),
+    stroke: table-three-line(rgb("000")),
     [], [$ω?a$], [$|G(j ω_i)|$], [$20|G(j ω_i)|$], [$∠G(j ω_i)$],
     [低频], [≪], [$1$], [$0$], [$0$],
     [截止频率], [=], [$sqrt(1\/2)$], [$-3$], [$-π\/4$],
     [高频], [≫], [$1\/ω$], [$-20 lg ω$], [$-π\/2$],
   ),
-  caption: [频域分析],
+  caption: "频域分析",
   supplement: "表",
   kind: table,
 )
@@ -351,7 +345,6 @@ $
 
 $ 20 lg |G(j ω_i)| = 20 lg |G_1(j ω_i)| + 20 lg |G_2(j ω_i)| $
 
-
 = Nyquist 稳定性
 
 == 定义
@@ -361,11 +354,10 @@ $ 20 lg |G(j ω_i)| = 20 lg |G_1(j ω_i)| + 20 lg |G_2(j ω_i)| $
 #figure(
   image("images/block/sensor.drawio.png", width: 40%),
   caption: "传感器",
-  supplement: "图",
 )
 
 - 开环传递函数：$G(s)H(s)$
-- 闭环传递函数：$G(s)/(1+G(s)H(s))$
+- 闭环传递函数：$G(s) / (1+G(s)H(s))$
 
 令
 
@@ -400,7 +392,7 @@ $ N = P - Z $
 
 变换映射函数为$F(s) - 1 = G(s)H(s)$，闭合曲线$B$将整体左移，中心点变为$(-1, 0)$，绘制出的图形称为 Nyquist Plot。
 
-#theorem("Nyquist 稳定性")[
+#theorem(title: "Nyquist 稳定性")[
   若系统稳定，则其闭环传递函数在 Nyquist 闭合区没有极点，即
   $ P = N $
 ]

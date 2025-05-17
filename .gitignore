@@ -1,3 +1,7 @@
+*
+!*.*
+!*/
+
 # General
 .DS_Store
 .AppleDouble
@@ -9,68 +13,6 @@ Icon
 # Thumbnails
 ._*
 
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
-# Windows default autosave extension
-*.asv
-
-# OSX / *nix default autosave extension
-*.m~
-
-# Compiled MEX binaries (all platforms)
-*.mex*
-
-# Packaged app and toolbox files
-*.mlappinstall
-*.mltbx
-
-# Generated helpsearch folders
-helpsearch*/
-
-# Simulink code generation folders
-slprj/
-sccprj/
-
-# Matlab code generation folders
-codegen/
-
-# Simulink autosave extension
-*.autosave
-
-# Simulink cache files
-*.slxc
-
-# Octave session info
-octave-workspace
-
-# VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
-
-# Local History for Visual Studio Code
-.history/
-
-# Built Visual Studio Code Extensions
-*.vsix
-
-##########
-# extra
-*.pdf
+# Extras
+articles
+test.*
