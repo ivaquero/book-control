@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "附录A：复矩阵",
-  info: info,
-)
+#show: appendix-style.with(title: "复矩阵", info: info)
 
 = 复数
 <复数>
@@ -95,7 +92,10 @@ $ z_1 z_2 = r_1 r_2 e^(i(θ_1 + θ_2)) $
 
 #definition[
   对两个复数$z_1$和$z_2$，若其实部相等，虚部互为相反数，则称其共轭，表示为
-  $z_2 = macron(z)_1 Im(z)$
+
+  $
+    z_2 = macron(z)_1 Im(z)
+  $
 
   共轭复数具有如下性质
   - 模相等，$|z_1| = |z_2|$

@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "控制工具箱 API",
-  info: info,
-)
+#show: appendix-style.with(title: "控制工具箱 API", info: info)
 
 = 模型搭建
 <模型搭建>

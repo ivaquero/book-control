@@ -58,8 +58,8 @@ git clone --depth 1 --branch main https://github.com/typst/packages typst
 [key-you-like]
     title = "your book name"
     author = "your name"
-    footer-cap = "something you like"
-    header-cap = "something you like"
+    footer = "something you like"
+    header = "something you like"
     lang = "zh"
 ```
 
