@@ -1,6 +1,6 @@
 [book]
     title = "简明控制理论"
-    author = "ivaquero"
-    footer-cap = "github@ivaquero"
-    header-cap = "简明控制理论"
+    author = "Yāng Xīnbīn"
+    footer = "github@ivaquero"
+    header = "简明控制理论"
     lang = "zh"

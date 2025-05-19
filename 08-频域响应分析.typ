@@ -66,14 +66,14 @@ $ G(s) = frac(D(s), N(s)) = frac(D(s), ∏_(i=1)^n (s - p_i)) $
 
 $
   X(s) = U(s)G(s)
-  &= frac(k_1, s + j ω) + frac(k_2, s - j ω) + ∑_(i=1)^n frac(c_i, s - p_i) \
+  &= frac(k_1, s + j ω) + frac(k_2, s - j ω) + sum_(i=1)^n frac(c_i, s - p_i) \
   &= frac((A ω_i + B s)D(s), (s + j ω_i)(s - j ω_i) ∏_(i=1)^n (s - p_i))
 $
 
 易得
 
 $
-  x(t) = ℒ^(-1)[X(s)] = k_1 e^(-j ω_i t) + k_2 e^(j ω_i t) + ∑_(i=1)^n c_i e^(p_i t)
+  x(t) = ℒ^(-1)[X(s)] = k_1 e^(-j ω_i t) + k_2 e^(j ω_i t) + sum_(i=1)^n c_i e^(p_i t)
 $
 
 对于稳定系统，$p_i$的实部小于 0，此时稳态
@@ -87,11 +87,11 @@ $ X_(s s)(t) = k_1 e^(-j ω_i t) + k_2 e^(j ω_i t) $
 由上面的式子
 
 $
-  k_1(s - j ω_i) N(s) + k_2(s + j ω_i) N(s) + ∑_(i=1)^n c_i(s + j ω_i) = (A ω_i + B s) D(s)
+  k_1(s - j ω_i) N(s) + k_2(s + j ω_i) N(s) + sum_(i=1)^n c_i(s + j ω_i) = (A ω_i + B s) D(s)
 $
 - 令$s = -j ω$，得
 
-$ k_1(-j ω - j ω_i) N(-j ω_i) + ∑_(i=1)^n 0 = (A ω_i - B j ω_i) D(-j ω_i) $
+$ k_1(-j ω - j ω_i) N(-j ω_i) + sum_(i=1)^n 0 = (A ω_i - B j ω_i) D(-j ω_i) $
 $
   k_1 = frac(A ω_i - B j ω_i, - 2j ω) frac(D(-j ω_i), N(-j ω_i)) = frac(B + A j, 2) G(-j ω_i)
 $

@@ -2,7 +2,7 @@
 
 #cover(info)
 #preface(info: info)[
-  This is an example to test the template
+  本文件作为 Qooklet 模版的一个测试案例。
 ]
 #contents(depth: 1, info: info)
 

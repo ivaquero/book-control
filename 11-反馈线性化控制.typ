@@ -44,7 +44,7 @@
 
 对如下单摆系统，有
 
-$ ∑F_x = m a_x = l dot.double(θ) $
+$ sum F_x = m a_x = l dot.double(θ) $
 
 #figure(
   image("images/model/pendulum.drawio.png", width: 10%),

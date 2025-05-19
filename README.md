@@ -43,7 +43,7 @@ git clone --depth 1 --branch main https://github.com/typst/packages typst
 使用如下语句导入模版
 
 ```typst
-#import "@preview/qooklet:0.4.0": *
+#import "@preview/qooklet:0.5.0": *
 #show: chapter-style.with(
   title: "Bellman Eqation",
   // the following are optional arguments
@@ -58,8 +58,8 @@ git clone --depth 1 --branch main https://github.com/typst/packages typst
 [key-you-like]
     title = "your book name"
     author = "your name"
-    footer-cap = "something you like"
-    header-cap = "something you like"
+    footer = "something you like"
+    header = "something you like"
     lang = "zh"
 ```
 
