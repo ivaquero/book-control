@@ -25,7 +25,6 @@
     [半负定], [NSD], [0], [$≤$],
   ),
   caption: "Lyapunov 稳定性",
-  supplement: "表",
   kind: table,
 )
 

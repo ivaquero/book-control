@@ -98,7 +98,6 @@ $ dv(h, t) = q_("in") / A - frac(g h, A R) $
 #figure(
   tableq(data, 5),
   caption: "电学单位",
-  supplement: "表",
   kind: table,
 )
 
@@ -186,7 +185,6 @@ $ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
 #figure(
   tableq(data, 3),
   caption: "电磁学单位",
-  supplement: "表",
   kind: table,
 )
 

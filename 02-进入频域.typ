@@ -123,7 +123,6 @@ $ frac(1, Δ T) Δ T = 1 $
     [$A δ(t - i Δ T)_Δ$], [$A h_Δ(t - i Δ T)$],
   ),
   caption: "输入与输出",
-  supplement: "表",
   kind: table,
 )
 

@@ -177,6 +177,5 @@ $ lim_(t → ∞) e ≤ sqrt(ɛ / k) $
     [High Freq], [$(ρ^2 e)\/(ρ norm(e) + ɛ)$], [1], [1], [1], [5], [5],
   ),
   caption: "高频鲁棒控制",
-  supplement: "表",
   kind: table,
 )

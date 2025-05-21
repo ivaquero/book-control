@@ -122,7 +122,6 @@ $
     [$< 0$], [], [saddle], [×],
   ),
   caption: "实数根",
-  supplement: "表",
   kind: table,
 )
 
@@ -140,7 +139,6 @@ $
     [$a = 0$], [center], [✓⁻],
   ),
   caption: "复数根",
-  supplement: "表",
   kind: table,
 )
 
