@@ -178,21 +178,18 @@ $ 𝑸^H 𝑸 = i $
 
 设$w, z in C$，则
 
-#block(
-  height: 9em,
-  columns()[
-    - $z$和$macron(z)$之和：$z + macron(z) = 2 "Re" z$
-    - $z$和$macron(z)$之差：$macron(z) macron(z) = 2 ("Im" z) i$
-    - $z$和$macron(z)$之积：$z macron(z) = |z|^2$
-    - 复共轭可加性：$macron(w + z) = macron(w) + macron(z)$
-    - 复共轭可乘性：$macron(w z) = macron(w) macron(z)$
-    - 共轭的共轭：$macron(macron(z)) = z$
-    - 复共轭的绝对值：$|macron(z)| = |z|$
-    - 绝对值的倍增性：$|w z| = |w||z|$
-    - 三角形不平等：$|w + z| ≤ |w| +|z|$
-    - 实部和虚部的边界为$|z|$：$|"Re" z| ≤ |z|$且$|"Im" z| ≤ |z|$
-  ],
-)
+#block(height: 9em, columns()[
+  - $z$和$macron(z)$之和：$z + macron(z) = 2 "Re" z$
+  - $z$和$macron(z)$之差：$macron(z) macron(z) = 2 ("Im" z) i$
+  - $z$和$macron(z)$之积：$z macron(z) = |z|^2$
+  - 复共轭可加性：$macron(w + z) = macron(w) + macron(z)$
+  - 复共轭可乘性：$macron(w z) = macron(w) macron(z)$
+  - 共轭的共轭：$macron(macron(z)) = z$
+  - 复共轭的绝对值：$|macron(z)| = |z|$
+  - 绝对值的倍增性：$|w z| = |w||z|$
+  - 三角形不平等：$|w + z| ≤ |w| +|z|$
+  - 实部和虚部的边界为$|z|$：$|"Re" z| ≤ |z|$且$|"Im" z| ≤ |z|$
+])
 
 = 复矩阵
 <复矩阵>

@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "模型预测控制器",
-  info: info,
-)
+#show: chapter-style.with(title: "模型预测控制器", info: info)
 
 = 二维动态系统
 
@@ -18,13 +15,15 @@ $ J = ∫_0^⊤ q e^2 + r u^2 dd(t) $
 拓展至 MIMO 情况，则有
 
 $
-  dv(𝒙, t) &= 𝑨 𝒙 + 𝑩 𝒖 \
-  𝒀 &= 𝑪 𝒙
+  dv(𝒙, t) & = 𝑨 𝒙 + 𝑩 𝒖 \
+         𝒀 & = 𝑪 𝒙
 $
 
 其代价函数中的变量，只有$𝒛$
 
-$ min J = underbrace(𝒛^⊤ 𝑸 𝒛, "二次型") + underbrace(𝑪^⊤ 𝒛, "线性") $ <cost-quad>
+$
+  min J = underbrace(𝒛^⊤ 𝑸 𝒛, "二次型") + underbrace(𝑪^⊤ 𝒛, "线性")
+$ <cost-quad>
 
 对某二维系统
 
@@ -46,8 +45,8 @@ $
 此时，有
 
 $
-  J &= ∫_0^x 𝑬^⊤ 𝑸 𝑬 + 𝒖^⊤ 𝑹 𝒖 dd(t) \
-  &= q_1 𝒙_1^2 + q_2 𝒙_2^2 + r_1 𝒖_1^2 + r_2 𝒖_2^2
+  J & = ∫_0^x 𝑬^⊤ 𝑸 𝑬 + 𝒖^⊤ 𝑹 𝒖 dd(t)                 \
+    & = q_1 𝒙_1^2 + q_2 𝒙_2^2 + r_1 𝒖_1^2 + r_2 𝒖_2^2
 $ <cost-quad2>
 
 其中，$q_i$和$r_i$为权重系数。
@@ -117,7 +116,9 @@ $ J = 𝒙_k^⊤ macron(𝑸) 𝒙_k + 𝑼_k^⊤ macron(𝑹) 𝑼_k $
 
 其中
 
-$ macron(𝑸) = dmat(delim: "[", Q, Q, ⋱, F), space macron(𝑹) = dmat(delim: "[", R, R, ⋱, R) $
+$
+  macron(𝑸) = dmat(delim: "[", Q, Q, ⋱, F), space macron(𝑹) = dmat(delim: "[", R, R, ⋱, R)
+$
 
 代入@mc，得
 

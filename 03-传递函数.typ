@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "传递函数",
-  info: info,
-)
+#show: chapter-style.with(title: "传递函数", info: info)
 
 = 传递函数
 <传递函数>
@@ -63,11 +60,10 @@ $
 令$u = t - τ ∈ [0, ∞)$，则$t = u + τ$，$dd(t) = dd(u)$，从而有
 
 $
-  ℒ[f(t) ∗ h(t)]
-  &= ∫_0^(∞)∫_0^(∞) f(τ)h(u) e^(-s(u + τ)) dd(u, τ) \
-  &= ∫_0^(∞) f(τ)e^(-s τ) dd(τ) ∫_0^(∞) h(u) e^(-s u) dd(u) \
-  &= ℒ[f(s)] ℒ[h(s)] \
-  &= F(s)H(s)
+  ℒ[f(t) ∗ h(t)] & = ∫_0^(∞)∫_0^(∞) f(τ)h(u) e^(-s(u + τ)) dd(u, τ)         \
+                 & = ∫_0^(∞) f(τ)e^(-s τ) dd(τ) ∫_0^(∞) h(u) e^(-s u) dd(u) \
+                 & = ℒ[f(s)] ℒ[h(s)]                                        \
+                 & = F(s)H(s)
 $
 
 #tip[
@@ -186,9 +182,9 @@ $ σ > - a $
 对函数$f(t) = e^(-a t)$
 
 $
-  ℒ[e^(-a t)] &= ∫_0^∞ e^(-a t) e^(-s t) dd(t)
-  = ∫_0^∞ e^(-(a + s))t dd(t)
-  = frac(1, a + s)
+  ℒ[e^(-a t)] & = ∫_0^∞ e^(-a t) e^(-s t) dd(t)
+                = ∫_0^∞ e^(-(a + s))t dd(t)
+                = frac(1, a + s)
 $
 
 显然，θ
@@ -204,8 +200,8 @@ $ ℒ[a f(t) + b g(t)] = a F(s) + b G(s) $
 由 Euler 公式
 
 $
-  e^(i θ) &= cos θ + i sin θ\
-  e^(i (-θ)) &= cos θ - i sin θ
+     e^(i θ) & = cos θ + i sin θ \
+  e^(i (-θ)) & = cos θ - i sin θ
 $
 
 得
@@ -238,10 +234,10 @@ $ ∫ f^′(t) g(t) dd(t) = f(t) g(t) - ∫ f(t) g^′(t) dd(t) $
 有
 
 $
-  ℒ[f^′(t)] &= ∫_0^(+∞) f^′(t) e^(-s t) dd(t)\
-  &= f(t) e^(-s t) bar.v_0^∞ - ∫_0^(+∞) f(t)(-s e^(-s t))) dd(t)\
-  &= lim_(t → ∞) f(∞) e^(-s t) - f(0) + s ∫_0^(+∞) f(t) e^(-s t) dd(t)\
-  &= s F(s) - f(0)
+  ℒ[f^′(t)] & = ∫_0^(+∞) f^′(t) e^(-s t) dd(t)                                    \
+            & = f(t) e^(-s t) bar.v_0^∞ - ∫_0^(+∞) f(t)(-s e^(-s t))) dd(t)       \
+            & = lim_(t → ∞) f(∞) e^(-s t) - f(0) + s ∫_0^(+∞) f(t) e^(-s t) dd(t) \
+            & = s F(s) - f(0)
 $
 
 #tip[
@@ -285,6 +281,6 @@ $ ℒ(-frac(1, s + a)) = e^(-a t) $
 三角函数
 
 $
-  sin(2t) &= frac(e^(-2 i t) - e^(2 i t), 2 i)\
-  cos(2t) &= frac(e^(-2 i t) + e^(2 i t), 2)
+  sin(2t) & = frac(e^(-2 i t) - e^(2 i t), 2 i) \
+  cos(2t) & = frac(e^(-2 i t) + e^(2 i t), 2)
 $

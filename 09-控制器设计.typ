@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "控制器设计",
-  info: info,
-)
+#show: chapter-style.with(title: "控制器设计", info: info)
 
 = 基本要求
 <基本要求>
@@ -120,17 +117,14 @@ $
 
 如下闭环控制系统，其中
 
-#block(
-  height: 3em,
-  columns(3)[
-    - $R(s)$：参考信号
-    - $C(s)$：控制器
-    - $G(s)$：系统传递函数
-    - $D(s)$：扰动函数
-    - $N(s)$：噪声函数
-    - $X(s)$：输出
-  ],
-)
+#block(height: 3em, columns(3)[
+  - $R(s)$：参考信号
+  - $C(s)$：控制器
+  - $G(s)$：系统传递函数
+  - $D(s)$：扰动函数
+  - $N(s)$：噪声函数
+  - $X(s)$：输出
+])
 
 #figure(
   image("images/block/design-freq.drawio.png", width: 40%),
@@ -140,7 +134,7 @@ $
 可得
 
 $
-  [R(s) -(X(s) + N(s))] C(s) G(s) + D(s) &= X(s)
+  [R(s) -(X(s) + N(s))] C(s) G(s) + D(s) & = X(s)
 $
 
 整理得

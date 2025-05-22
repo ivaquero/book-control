@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "反馈线性化控制",
-  info: info,
-)
+#show: chapter-style.with(title: "反馈线性化控制", info: info)
 
 = 非线性系统稳定性
 <非线性系统稳定性>
@@ -45,10 +42,7 @@
 
 $ sum F_x = m a_x = l dot.double(θ) $
 
-#figure(
-  image("images/model/pendulum.drawio.png", width: 10%),
-  caption: "钟摆",
-)
+#figure(image("images/model/pendulum.drawio.png", width: 10%), caption: "钟摆")
 
 即
 
@@ -71,19 +65,20 @@ $ E = K("kinetic") + P("potential") $
 于是令
 
 $
-  V &= E = frac(1, 2) m v^2 + m g h \
-  &= frac(1, 2)m(l x_2)^2 + m g l(1 - cos(x_1))
+  V & = E = frac(1, 2) m v^2 + m g h               \
+    & = frac(1, 2)m(l x_2)^2 + m g l(1 - cos(x_1))
 $
 
 求导，可得
 
 $
-  dot(V)(x) = grad V_f &=
-  mat(delim: "[", pdv(V, x_1), pdv(V, x_2))
-  mat(delim: "[", f_1; f_2) \ &=
-  mat(delim: "[", m g l sin(x_1) & m l^2 x_2)
-  mat(delim: "[", x_2 \ -frac(g, L) sin(x_1)) \
-  &= 0
+  dot(V)(x) = grad V_f & =
+                         mat(delim: "[", pdv(V, x_1), pdv(V, x_2))
+                         mat(delim: "[", f_1; f_2)                   \
+                       & =
+                         mat(delim: "[", m g l sin(x_1) & m l^2 x_2)
+                         mat(delim: "[", x_2 \ -frac(g, L) sin(x_1)) \
+                       & = 0
 $
 
 又
@@ -145,10 +140,7 @@ $ dot(x) = f(x, u) $
 
 $ dot(x) = f(x, ϕ (x)) $
 
-#figure(
-  image("images/block/feedback.drawio.png", width: 40%),
-  caption: "反馈",
-)
+#figure(image("images/block/feedback.drawio.png", width: 40%), caption: "反馈")
 
 考虑系统
 
@@ -234,8 +226,8 @@ $ δ = x_(2 d) - x_2 $
 于是
 
 $
-  dot(V)_1 &= e (dot(x)_(1 d) - (x_(2 d) - δ))\
-  &= e (-k_1 e + δ) = -k_1 e^2 + δ e
+  dot(V)_1 & = e (dot(x)_(1 d) - (x_(2 d) - δ)) \
+           & = e (-k_1 e + δ) = -k_1 e^2 + δ e
 $
 
 进而有
@@ -249,9 +241,9 @@ $
 又$V_1$正定，现令$V_2 = V_1 + 1 / 2 δ^2$，则
 
 $
-  dot(V)_2 &= dot(V)_1 + δ dot(δ)\
-  &= -k_1 e^2 + e δ + δ dot(δ)\
-  &= -k_1 e^2 + δ(e + dot(δ))
+  dot(V)_2 & = dot(V)_1 + δ dot(δ)       \
+           & = -k_1 e^2 + e δ + δ dot(δ) \
+           & = -k_1 e^2 + δ(e + dot(δ))
 $
 
 == 控制中间输入
