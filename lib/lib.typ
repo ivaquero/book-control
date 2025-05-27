@@ -6,6 +6,7 @@
 #import "@preview/consketcher:0.1.0": *
 #import "@preview/lilaq:0.3.0" as lq
 #import "@preview/tiptoe:0.3.1"
+#import "@preview/zap:0.2.0"
 
 #let info = toml("info.toml").book
 
