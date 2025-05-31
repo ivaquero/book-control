@@ -1,4 +1,4 @@
-#import "@preview/qooklet:0.5.1": *
+#import "@preview/qooklet:0.5.2": *
 #import "@local/qooklet:0.1.0": *
 #import "@preview/subpar:0.2.2": grid as sgrid
 #import "@preview/rexllent:0.3.3": xlsx-parser
@@ -7,6 +7,7 @@
 #import "@preview/lilaq:0.3.0" as lq
 #import "@preview/tiptoe:0.3.1"
 #import "@preview/zap:0.2.0"
+#import "@preview/fletcher:0.5.8": diagram, edge, node
 
 #let info = toml("info.toml").book
 

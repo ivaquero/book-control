@@ -16,9 +16,7 @@ $
   y = 𝑪 x + 𝑫 u
 $
 
-其中，$u$为输入，$y$为输出。
-
-引入 Luenberger 观测器，有
+其中，$u$为输入，$y$为输出。引入 Luenberger 观测器，有
 
 $
   hat(dot(x)) = 𝑨 hat(x) + 𝑩 u + 𝑳 (y - hat(y))\
@@ -104,7 +102,7 @@ $
 
 $
   dot(x) & = 𝑨 x + 𝑩 u \
-       y & = 𝑪 x
+  y & = 𝑪 x
 $
 
 引入观测器
@@ -114,7 +112,7 @@ $ dot(e)_x = (𝑨 - 𝑳 𝑪) e_x $
 引入控制器
 
 $
-       u & = -k hat(x)                              \
+  u & = -k hat(x) \
   dot(x) & = 𝑨 x - 𝑩 k hat(x) = (𝑨 - 𝑩 k) x + 𝑩 k e
 $
 

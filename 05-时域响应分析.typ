@@ -8,14 +8,14 @@
 对独立方程组
 
 $
-  dot(x)_1(t) & = x_1(t)    \
+  dot(x)_1(t) & = x_1(t) \
   dot(x)_2(t) & = -2 x_2(t)
 $
 
 即
 
 $
-  dot(x)_1(t) & = x_1 (0) e^t      \
+  dot(x)_1(t) & = x_1 (0) e^t \
   dot(x)_2(t) & = x_2 (0) e^(-2 t)
 $
 
@@ -28,13 +28,11 @@ $ dv(𝒙, t) = 𝑨 𝒙 $
 对耦合方程组
 
 $
-  dot(x)_1(t) & = x_1(t) + x_2(t)     \
+  dot(x)_1(t) & = x_1(t) + x_2(t) \
   dot(x)_2(t) & = 4 x_1(t) - 2 x_2(t)
 $
 
-矩阵形式中，$𝒙(t) = e^(𝑨 t) 𝒙(0)$。
-
-由 Taylor 级数
+矩阵形式中，$𝒙(t) = e^(𝑨 t) 𝒙(0)$。由 Taylor 级数
 
 $ e^(𝑨 t) = sum_(i = 0) frac(1, i!)(𝑨 t)^i $
 
@@ -87,9 +85,9 @@ $ 𝒙(t) = e^(𝑨 (t - t_0)) 𝒙(t_0) + ∫_(t_0)^t e^((t - τ)) 𝑩 𝒖(τ
 
 $
   𝑨 𝑷 & = mat(delim: "[", 𝑨 𝒗_1, 𝑨 𝒗_2)
-        = mat(delim: "[", 𝑨 mat(delim: "[", v_(11); v_(12)), 𝑨 mat(delim: "[", v_(12); v_(22))) = xmat(delim: "[", 2, 2, #mv)
-        dmat(delim: "[", λ_1, λ_2) = 𝑷
-        dmat(delim: "[", λ_1, λ_2)
+  = mat(delim: "[", 𝑨 mat(delim: "[", v_(11); v_(12)), 𝑨 mat(delim: "[", v_(12); v_(22))) = xmat(delim: "[", 2, 2, #mv)
+  dmat(delim: "[", λ_1, λ_2) = 𝑷
+  dmat(delim: "[", λ_1, λ_2)
 $
 
 == 二维相平面
@@ -212,16 +210,16 @@ $ ℒ[u(t)] = ℒ[C e^0] = C frac(1, s + 0) = C 1 / s $
 从而有
 
 $
-  X(s) & = U(s) G(s)                                         \
-       & = C 1 / s frac(1, s + g / R)                        \
-       & = frac(C R, g)(frac(1, s - 0) - frac(1, s + g / R))
+  X(s) & = U(s) G(s) \
+  & = C 1 / s frac(1, s + g / R) \
+  & = frac(C R, g)(frac(1, s - 0) - frac(1, s + g / R))
 $
 
 最终得
 
 $
   x(t) = ℒ^(-1)(X(s)) & = frac(C R, g)(e^(o t) - e^(-g / R t)) \
-                      & = frac(C R, g)(1 - e^(-g / R t))
+  & = frac(C R, g)(1 - e^(-g / R t))
 $
 
 即得到极点。
@@ -333,7 +331,7 @@ $ x(t) = e^(-ζ ω_n t) sqrt(c_1 + c_2)(sin(ω_dd(t) + ϕ)) $
 
 $
   x_((t)) & = e^0 (c_1 cos ω_n t + c_2 sin ω_n t) \
-          & = sqrt(c_1 + c_2) sin(ω_n t + ϕ)
+  & = sqrt(c_1 + c_2) sin(ω_n t + ϕ)
 $
 
 - 当$-1 < ζ < 0$或$ζ < - 1$，得到的解是发散的，图像与各自取符号后的图像趋势相反。
