@@ -115,17 +115,14 @@ $
 
 如下闭环控制系统，其中
 
-#block(
-  height: 3em,
-  columns(3)[
-    - $R(s)$：参考信号
-    - $C(s)$：控制器
-    - $G(s)$：系统传递函数
-    - $D(s)$：扰动函数
-    - $N(s)$：噪声函数
-    - $X(s)$：输出
-  ],
-)
+#block(height: 3em, columns(3)[
+  - $R(s)$：参考信号
+  - $C(s)$：控制器
+  - $G(s)$：系统传递函数
+  - $D(s)$：扰动函数
+  - $N(s)$：噪声函数
+  - $X(s)$：输出
+])
 
 #figure(
   image("images/block/design-freq.drawio.png", width: 40%),

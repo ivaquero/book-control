@@ -129,17 +129,14 @@ $
 
 #theorem(title: "FOILMM 法则")[
   对多项式$a_1 x^2 + b_1 x + c_1$和$a_2 x + b_2 x c_2$，分别计算
-  #block(
-    height: 3em,
-    columns(3)[
-      - First: $a_1 a_2 x^4$
-      - Middle First: $b_1 a_2 x^3$
-      - Outer: $a_1 c_2 x^2$
-      - Inner: $a_2 c_1 x^2$
-      - Last: $c_1 c_2$
-      - Middle Last: $b_1 c_2 x$
-    ],
-  )
+  #block(height: 3em, columns(3)[
+    - First: $a_1 a_2 x^4$
+    - Middle First: $b_1 a_2 x^3$
+    - Outer: $a_1 c_2 x^2$
+    - Inner: $a_2 c_1 x^2$
+    - Last: $c_1 c_2$
+    - Middle Last: $b_1 c_2 x$
+  ])
   从而有
   $
     (a_1 a_2)x^4 + b_1 a_2 x^3 + (a_1 c_2 + a_2 c_1)x^2 + b_1 c_2 x + c_1 c_2
@@ -171,8 +168,8 @@ $ x(t) = A cos(ω t +φ) $
 然后求解三个未知系数$A$（弹性幅度）、$ω$（弹性频率）和$φ$（初始起跳点）。 由于有三个未知数，我们需要三个方程来求解它们。对于第一个方程，我们可以计算$x(t)$的二阶导数，然后将$x(t)$插入运动方程中。
 
 $
-  x(t) & = & A ⋅ & cos(ω t + ϕ) \
-  dot(x)(t) & = - & A ω ⋅ & sin(ω t + ϕ) \
+              x(t) & =   &     A ⋅ & cos(ω t + ϕ) \
+         dot(x)(t) & = - &   A ω ⋅ & sin(ω t + ϕ) \
   dot.double(x)(t) & = - & A ω^2 ⋅ & cos(ω t + ϕ)
 $
 
@@ -184,24 +181,21 @@ $
 
 后两个方程来自两个已知的初始条件。我们知道初始位置为零，即$x(0) = 0$。 并且我们知道以前的瞬时力产生的结果是，瞬时速度等于物体质量的倒数，即$dot(x)(0) = −1 \/ m$。由于我们已经将输入力计为初始速度，因此我们在第一个方程中将力设为 0。于是有
 
-#block(
-  height: 6em,
-  columns(3, gutter: -80pt)[
-    $
-      -A w^2 ⋅ h(t) ⋅ m + A ⋅ h(t) ⋅ k & = 0 \
-      A ⋅ cos(ϕ) & = 0 quad ⇒ \
-      - A w ⋅ sin(ϕ) & = - 1 \/m
-    $
-    $
-      \ \ quad quad quad quad ⇒
-    $
-    $
-      ω & = sqrt(k \/ m) \
-      φ & = π \/ 2 \
-      A & = 1 \/ sqrt(k m)
-    $
-  ],
-)
+#block(height: 6em, columns(3, gutter: -80pt)[
+  $
+    -A w^2 ⋅ h(t) ⋅ m + A ⋅ h(t) ⋅ k & = 0        \
+                          A ⋅ cos(ϕ) & = 0 quad ⇒ \
+                      - A w ⋅ sin(ϕ) & = - 1 \/m
+  $
+  $
+    \ \ quad quad quad quad ⇒
+  $
+  $
+    ω & = sqrt(k \/ m)   \
+    φ & = π \/ 2         \
+    A & = 1 \/ sqrt(k m)
+  $
+])
 
 
 
@@ -263,8 +257,8 @@ $ f(x) = f(x + 2π) $
 利用三角函数构造函数
 
 $
-  f(x) & = sum_(n = 0)^∞ a_n cos n x + sum_(n = 0)^∞ b_n sin n x \
-  & = a_0 + sum_(n = 1)^∞ a_n cos n x + sum_(n = 1)^∞ b_n sin n x
+  f(x) & = sum_(n = 0)^∞ a_n cos n x + sum_(n = 0)^∞ b_n sin n x       \
+       & = a_0 + sum_(n = 1)^∞ a_n cos n x + sum_(n = 1)^∞ b_n sin n x
 $
 
 - $a_0$
@@ -316,7 +310,7 @@ $ g(x) = a_0 / 2 + sum_(n = 1)^n (a_n cos n x + b_n sin n x) $
 
 $
   cos n x & = cos frac(n π, L) t quad
-  sin n x & = sin frac(n π, L) t
+            sin n x & = sin frac(n π, L) t
 $
 
 由 $∫_(-π)^π dd(x) = ∫_(-L)^L d π / L t$
@@ -348,17 +342,21 @@ $
 于是，三个系数调整为
 
 #sgrid(
-  figure($
-    a_0 & = 1 / L ∫_(-L)^L f(t) dd(t) \
-    a_n & = 1 / L ∫_(-L)^L f(t) cos frac(n π, L) t dd(t) \
-    b_n & = 1 / L ∫_(-L)^L f(t) sin frac(n π, L) t dd(t)
-  $),
+  figure(
+    $
+      a_0 & = 1 / L ∫_(-L)^L f(t) dd(t)                    \
+      a_n & = 1 / L ∫_(-L)^L f(t) cos frac(n π, L) t dd(t) \
+      b_n & = 1 / L ∫_(-L)^L f(t) sin frac(n π, L) t dd(t)
+    $,
+  ),
   $=>\ \ \ \ \ \ $,
-  figure($
-    a_0 & = 2 / T ∫_0^T f(t) dd(t) \
-    a_n & = 2 / T ∫_0^T f(t) cos n ω t \
-    b_n & = 2 / T ∫_0^T f(t) sin n ω t
-  $),
+  figure(
+    $
+      a_0 & = 2 / T ∫_0^T f(t) dd(t)     \
+      a_n & = 2 / T ∫_0^T f(t) cos n ω t \
+      b_n & = 2 / T ∫_0^T f(t) sin n ω t
+    $,
+  ),
   kind: "skip",
   supplement: none,
   columns: (100pt,) * 3,
@@ -374,7 +372,7 @@ $
 由 Euler 公式，可知
 
 $
-  cos θ & = 1 / 2(e^(i θ) + e^(-j θ)) \
+  cos θ & = 1 / 2(e^(i θ) + e^(-j θ))  \
   sin θ & = -1 / 2(e^(i θ) - e^(-i θ))
 $
 
@@ -395,9 +393,9 @@ $
 
 $
   f(t) & = sum_(n = 0)^0 a_0 / 2 e^(i n ω t) +
-  sum_(n = 1)^∞ frac(a_n - i b_n, 2) e^(i n ω t) +
-  sum_(n = -∞)^(-1) frac(a_(-n) + i b_(-n), 2) e^(i n ω t) \
-  & = sum_(-∞)^∞ C_n e^(i n ω t)
+         sum_(n = 1)^∞ frac(a_n - i b_n, 2) e^(i n ω t) +
+         sum_(n = -∞)^(-1) frac(a_(-n) + i b_(-n), 2) e^(i n ω t) \
+       & = sum_(-∞)^∞ C_n e^(i n ω t)
 $
 
 对$C_n$，有
@@ -469,8 +467,8 @@ $
 
 $
   ∫_(-T / 2)^(T / 2) dd(t) & → ∫_(-∞)^(+∞) dd(t) \
-  n ω_0 & → ω \
-  sum_(n = -∞)^∞ Δ ω & → ∫_(-∞)^(+∞) d ω
+                     n ω_0 & → ω                 \
+        sum_(n = -∞)^∞ Δ ω & → ∫_(-∞)^(+∞) d ω
 $
 
 于是，有

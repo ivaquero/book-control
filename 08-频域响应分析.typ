@@ -41,7 +41,7 @@ $
 
 $
   u(t) & = sqrt(A^2 + B^2)(cos(ϕ_i) sin(ω_i t) + sin(ϕ_i) cos(ω_i t)) \
-  & = M_i sin(ω_i t + ϕ_i)
+       & = M_i sin(ω_i t + ϕ_i)
 $
 
 对系统
@@ -52,7 +52,7 @@ $ X(s) = U(s)G(s) $
 
 $
   U(s) = ℒ[μ(t)] & = frac(A ω_i, s^2 + ω^2) + frac(B s, s^2 + ω^2) \
-  & = frac(A ω_i + B s, (s + j ω_i)(s - j ω_i))
+                 & = frac(A ω_i + B s, (s + j ω_i)(s - j ω_i))
 $
 
 且
@@ -152,14 +152,14 @@ $ G(s) = frac(a, s + a) $
 
 $
   G(j ω_i) & = frac(a, a + j ω) = frac(a(a - j ω_i), (a + j ω_i)(a - j ω_i)) \
-  & = frac(a^2, a^2 + ω^2) + (-frac(a ω, a^2 + ω^2))j
+           & = frac(a^2, a^2 + ω^2) + (-frac(a ω, a^2 + ω^2))j
 $
 
 $G(j ω_i)$的模为
 
 $
   |G(j ω_i)| & = sqrt((frac(a^2, a^2 + ω^2))^2 + (frac(a ω, a^2 + ω^2))^2) \
-  & = sqrt(frac(1, 1 + (frac(w, a)^2)))
+             & = sqrt(frac(1, 1 + (frac(w, a)^2)))
 $
 
 于是
@@ -200,8 +200,8 @@ $ G(s) = frac(X(s), U(s)) = frac(ω_n^2, s^2 + 2 ζ ω_n s + ω_n^2) $
 令$s = j ω$，得
 
 $
-  G(j ω_i) & = frac(ω_n^2, - ω^2 + 2 ζ ω_n ω_j + ω_n^2) \
-  & = frac(1, - ω^2 / ω_n^2 + 2 ζ ω / ω_n j + 1)
+  G(j ω_i) & = frac(ω_n^2, - ω^2 + 2 ζ ω_n ω_j + ω_n^2)   \
+           & = frac(1, - ω^2 / ω_n^2 + 2 ζ ω / ω_n j + 1)
 $
 
 令输入频率$Ω = ω / ω_n$，则
@@ -216,7 +216,7 @@ $
 
 $
   |G(j ω_i)| & = sqrt(("Re"(G(j ω_i))))^2 + "Im"(G(j ω_i))^2 \
-  & = sqrt(frac(1, (1 - Ω^2))^2 + 4 ζ^2 Ω^2)
+             & = sqrt(frac(1, (1 - Ω^2))^2 + 4 ζ^2 Ω^2)
 $
 
 - 当$Ω = 0$，则$ω = 0$，有$|G(j ω_i)| = 1$
@@ -298,17 +298,14 @@ $ "dB" = 10 lg P_M / P_R = 10 lg (M_0 / M_i)^2 = 20 lg M $
 == 常见案例
 <常见案例>
 
-#block(
-  height: 6em,
-  columns()[
-    - 对$G(s) = 1 / s$
-      - $|G(j ω_i)| = 1 / ω$
-      - $20 lg |G(j ω_i)| = -20 lg ω$
-      - $∠G(j ω_i) = π / 2$
-    - 对$G(s) = a / (a + s)$
-      - $|G(j ω_i)| = sqrt(frac(1, 1 + (ω / a)^2))$
-  ],
-)
+#block(height: 6em, columns()[
+  - 对$G(s) = 1 / s$
+    - $|G(j ω_i)| = 1 / ω$
+    - $20 lg |G(j ω_i)| = -20 lg ω$
+    - $∠G(j ω_i) = π / 2$
+  - 对$G(s) = a / (a + s)$
+    - $|G(j ω_i)| = sqrt(frac(1, 1 + (ω / a)^2))$
+])
 
 #figure(
   table(
@@ -356,9 +353,9 @@ $ 20 lg |G(j ω_i)| = 20 lg |G_1(j ω_i)| + 20 lg |G_2(j ω_i)| $
 令 $G(s) = N_G(s) / D_G(s)$，$H(s) = N_H(s) / D_H(s)$，可得
 
 $
-  G(s)H(s) &= frac(N_G N_H, D_G D_H) \
-  1 + G(s)H(s) &= frac(D_G D_H + N_G N_H, D_G D_H)\
-  frac(G(s), 1 + G(s)H(s)) &= frac(N_G D_H, D_G D_H + N_G N_H)
+                  G(s)H(s) & = frac(N_G N_H, D_G D_H)           \
+              1 + G(s)H(s) & = frac(D_G D_H + N_G N_H, D_G D_H) \
+  frac(G(s), 1 + G(s)H(s)) & = frac(N_G D_H, D_G D_H + N_G N_H)
 $
 
 不难得到
