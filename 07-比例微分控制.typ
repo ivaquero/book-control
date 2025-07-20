@@ -189,10 +189,8 @@ $ 𝔼[s] = R(s) frac(1, 1 + K G(s)) = R(s) frac(N(s), 1 + K N(s)) / D(s) $
 假设$R(s)$为单位阶跃函数$1 / s$，此时的稳态误差为
 
 $
-  e_(s s) = lim_(t → ∞) e(t) &= lim_(s → 0) s 𝔼[s]
-  & = lim_(s → 0) s 1 / s frac(1, 1 + frac(N(s), D(s))) \
-  & = frac(1, 1 + K N(0)) / D(0)
-  & = frac(D(0), D(0)) + K N(0)
+  e_(s s) = lim_(t → ∞) e(t) & = lim_(s → 0) s 𝔼[s]         & = lim_(s → 0) s 1 / s frac(1, 1 + frac(N(s), D(s))) \
+                             & = frac(1, 1 + K N(0)) / D(0) &                         = frac(D(0), D(0)) + K N(0)
 $
 
 #figure(

@@ -379,14 +379,13 @@ $
 回代入@periode，得
 
 $
-  f(t)
-  &= a_0 / 2 + sum_(n = 1)^∞ (a_n cos frac(n π, L) t + b_n sin frac(n π, L) t)\
-  &= a_0 / 2 +
-  sum_(n = 1)^∞ (a_n 1 / 2(e^(i n ω t) + e^(-i n ω t))) -
-  1 / 2 i b_n (e^(i n ω t) - e^(-i n ω t))\
-  &= a_0 / 2 +
-  sum_(n = 1)^∞ frac(a_n - i b_n, 2) e^(i n ω t) +
-  sum_(n = 1)^∞ frac(a_n + i b_n, 2) e^(-i n ω t)
+  f(t) & = a_0 / 2 + sum_(n = 1)^∞ (a_n cos frac(n π, L) t + b_n sin frac(n π, L) t) \
+       & = a_0 / 2 +
+         sum_(n = 1)^∞ (a_n 1 / 2(e^(i n ω t) + e^(-i n ω t))) -
+         1 / 2 i b_n (e^(i n ω t) - e^(-i n ω t))                                    \
+       & = a_0 / 2 +
+         sum_(n = 1)^∞ frac(a_n - i b_n, 2) e^(i n ω t) +
+         sum_(n = 1)^∞ frac(a_n + i b_n, 2) e^(-i n ω t)
 $
 
 令第二项中的$n ≡ - n$，则

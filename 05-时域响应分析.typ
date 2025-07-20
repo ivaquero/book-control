@@ -370,9 +370,8 @@ $ s^2 + 2 ζ ω_n s + ω_n^2 = 0 $
 于是
 
 $
-  X(s)
-  &= frac(A, s - p_1) + frac(B, s - p_2) + frac(C, s - p_3)\
-  &= frac(A (s - p_2)(s - p_3) + B (s - p_1)(s - p_3) + C (s - p_1)(s - p_2), (s - p_1)(s - p_2)(s - p_s))
+  X(s) & = frac(A, s - p_1) + frac(B, s - p_2) + frac(C, s - p_3)                                                \
+       & = frac(A (s - p_2)(s - p_3) + B (s - p_1)(s - p_3) + C (s - p_1)(s - p_2), (s - p_1)(s - p_2)(s - p_s))
 $
 
 已知

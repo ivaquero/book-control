@@ -26,8 +26,8 @@ $ V(e, tilde(a)) = 1 / 2 e^2 + 1 / 2 a ̃^2 $
 求导，得
 
 $
-  dot(V)(e, tilde(a)) = e dot(e) + tilde(a)tilde(dot(a)) &= e (x_d - a x^2 - u) - tilde(a)hat(dot(a))\
-  &= -k e^2 - tilde(a)(e x^2 + hat(dot(a)))
+  dot(V)(e, tilde(a)) = e dot(e) + tilde(a)tilde(dot(a)) & = e (x_d - a x^2 - u) - tilde(a)hat(dot(a)) \
+                                                         & = -k e^2 - tilde(a)(e x^2 + hat(dot(a)))
 $
 
 #tip[
@@ -153,13 +153,7 @@ $ lim_(t → ∞) e ≤ sqrt(ɛ / k) $
     align: center + horizon,
     inset: 4pt,
     stroke: table-three-line(rgb("000")),
-    [Name],
-    [$u_(a u x)$],
-    [$ɛ$],
-    [稳态误差],
-    [收敛速度],
-    [瞬态输入],
-    [稳态输入],
+    [Name], [$u_(a u x)$], [$ɛ$], [稳态误差], [收敛速度], [瞬态输入], [稳态输入],
 
     [Sliding Mode], [$ρ e\/norm(e)$], [N/A], [5], [4], [2], [1],
     [High Gain], [$1\/ɛ ρ^2 e$], [0.1], [4], [5], [1], [2],

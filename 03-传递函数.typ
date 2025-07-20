@@ -211,10 +211,9 @@ $ sin θ = frac(e^(i θ) - e^(-i θ), 2 i) $
 于是
 
 $
-  ℒ[sin(a t)] &= ℒ (frac(e^(i a t), 2 i)) - ℒ (frac(e^(-i a t), 2 i))\
-  &= 1 / 2i (ℒ[e^(i a t)]) - ℒ[e^(-i a t)]
-  &= 1 / 2i (frac(1, s - a i) - frac(1, s + a i))\
-  &= frac(a, s^2 + a^2)
+  ℒ[sin(a t)] & = ℒ (frac(e^(i a t), 2 i)) - ℒ (frac(e^(-i a t), 2 i))                                                  \
+              & = 1 / 2i (ℒ[e^(i a t)]) - ℒ[e^(-i a t)]                & = 1 / 2i (frac(1, s - a i) - frac(1, s + a i)) \
+              & = frac(a, s^2 + a^2)
 $
 
 同理

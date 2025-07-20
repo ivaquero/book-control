@@ -105,12 +105,13 @@ $ dot.double(θ) + frac(g, L) sin θ + frac(k, m) dot(θ) = 0 $
 令$V = E = K("kinetic") + P("potential")$，求导，可得
 
 $
-  dot(V)(x) = grad V_f &=
-  mat(delim: "[", pdv(V, x_1) & pdv(V, x_2))
-  mat(delim: "[", f_1; f_2) \ &=
-  mat(delim: "[", m g l sin(x_1), m l^2 x_2)
-  mat(delim: "[", x_2; -frac(g, L)sin(x_1) - frac(k, m)x_2) \
-  &= k l^2 x_2^2
+  dot(V)(x) = grad V_f & =
+                         mat(delim: "[", pdv(V, x_1) & pdv(V, x_2))
+                         mat(delim: "[", f_1; f_2)                                 \
+                       & =
+                         mat(delim: "[", m g l sin(x_1), m l^2 x_2)
+                         mat(delim: "[", x_2; -frac(g, L)sin(x_1) - frac(k, m)x_2) \
+                       & = k l^2 x_2^2
 $
 
 显然，$dot(V)(x)$半负定。
@@ -233,9 +234,9 @@ $
 进而有
 
 $
-  dot(δ) &= dot(x)_(2 d) - dot(x)_2\
-  &= dot.double(x)(1 d) + k_1 dot(e) - (-α / m x_1^3 + 1 / m u)\
-  &= dot.double(x)(1 d) + k_1 (dot(x)_(1 d) - x_2) + α / m x_1^3 - 1 / m u
+  dot(δ) & = dot(x)_(2 d) - dot(x)_2                                               \
+         & = dot.double(x)(1 d) + k_1 dot(e) - (-α / m x_1^3 + 1 / m u)            \
+         & = dot.double(x)(1 d) + k_1 (dot(x)_(1 d) - x_2) + α / m x_1^3 - 1 / m u
 $
 
 又$V_1$正定，现令$V_2 = V_1 + 1 / 2 δ^2$，则

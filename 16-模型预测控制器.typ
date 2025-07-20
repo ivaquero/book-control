@@ -28,8 +28,8 @@ $ <cost-quad>
 对某二维系统
 
 $
-  dv(, t) vec(delim: "[", 𝒙_1, 𝒙_2) &= 𝑨 vec(delim: "[", 𝒙_1, 𝒙_2) + 𝑩 vec(delim: "[", 𝒖_1, 𝒖_2)\
-  vec(delim: "[", y_1, y_2) &= vec(delim: "[", 𝒙_1, 𝒙_2)
+  dv(, t) vec(delim: "[", 𝒙_1, 𝒙_2) & = 𝑨 vec(delim: "[", 𝒙_1, 𝒙_2) + 𝑩 vec(delim: "[", 𝒖_1, 𝒖_2) \
+          vec(delim: "[", y_1, y_2) & = vec(delim: "[", 𝒙_1, 𝒙_2)
 $
 
 又参考值
