@@ -43,7 +43,7 @@ git clone --depth 1 --branch main https://github.com/typst/packages typst
 使用如下语句导入模版
 
 ```typst
-#import "@preview/qooklet:0.5.0": *
+#import "@preview/qooklet:0.6.1": *
 #show: chapter-style.with(
   title: "Bellman Eqation",
   // the following are optional arguments

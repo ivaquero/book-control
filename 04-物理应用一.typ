@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "物理应用一",
-  info: info,
-)
+#show: chapter-style.with(title: "物理应用一", info: info)
 
 = 流体力学基础
 <流体力学基础>
@@ -57,10 +54,9 @@ $ P_1 - P_a = ρ q_("out") R $
 即
 
 $
-  q_("out")
-  &= frac(P_1 - P_a, ρ R)\
-  &= frac(P_a + ρ g h - P_a, ρ R)\
-  &= frac(g h, R)
+  q_("out") & = frac(P_1 - P_a, ρ R)         \
+            & = frac(P_a + ρ g h - P_a, ρ R) \
+            & = frac(g h, R)
 $
 
 == 守恒
@@ -95,12 +91,7 @@ $ dv(h, t) = q_("in") / A - frac(g h, A R) $
 == 电学单位
 
 #let data = csv("data/electrics.csv")
-#figure(
-  tableq(data, 5),
-  caption: "电学单位",
-  supplement: "表",
-  kind: table,
-)
+#figure(tableq(data, 5), caption: "电学单位", kind: table)
 
 === 电压
 
@@ -172,10 +163,7 @@ $ I_1^′ = I_2^″ + I_2^′ $
 
 $ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
 
-#figure(
-  image("images/model/circuit-rlc.png", width: 60%),
-  caption: "RLC",
-)
+#figure(image("images/model/circuit-rlc.png", width: 60%), caption: "RLC")
 
 = 电磁学基础
 <电磁学基础>
@@ -183,12 +171,7 @@ $ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
 == 电磁学单位
 
 #let data = csv("data/magnetics.csv")
-#figure(
-  tableq(data, 3),
-  caption: "电磁学单位",
-  supplement: "表",
-  kind: table,
-)
+#figure(tableq(data, 3), caption: "电磁学单位", kind: table)
 
 $ ϕ = B S $
 
@@ -231,10 +214,7 @@ $ ϕ = B S $
 
 == 并行系统
 
-#figure(
-  image("images/model/circuit.drawio.png", width: 25%),
-  caption: "电路",
-)
+#figure(image("images/model/circuit.drawio.png", width: 25%), caption: "电路")
 
 由 KCL 有
 
@@ -254,10 +234,7 @@ $ I(s) = frac(s, L s^2 + R s + 1 / C) E[s] $
 
 #figure(
   sys-block(
-    transfer: text(
-      $frac(s, L s^2 + R s + 1\/C)$,
-      size: 1.2em,
-    ),
+    transfer: text($frac(s, L s^2 + R s + 1\/C)$, size: 1.2em),
     input: $E(s)$,
     output: $I(s)$,
     height: 2.5em,
@@ -331,11 +308,7 @@ $ X = V frac(D G, 1 + H D G) $
 于是可知
 
 #figure(
-  sys-block(
-    transfer: $frac(D G, 1 + H D G)$,
-    input: $V$,
-    output: $X$,
-  ),
+  sys-block(transfer: $frac(D G, 1 + H D G)$, input: $V$, output: $X$),
   caption: "框图",
 )
 

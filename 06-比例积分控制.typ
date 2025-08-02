@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "比例积分控制",
-  info: info,
-)
+#show: chapter-style.with(title: "比例积分控制", info: info)
 
 = 比例控制
 <比例控制>
@@ -40,8 +37,8 @@ $ P = 10 m + 6.25 h - 5 a + s $
 上，不难得出
 
 $
-  dot(m) &= frac(E_i - E_a - α (10 m + 6.25 h - 5 a + s), 7000)\
-  &= frac(E_i - E_a - 10 α m - α C, 7000)
+  dot(m) & = frac(E_i - E_a - α (10 m + 6.25 h - 5 a + s), 7000) \
+         & = frac(E_i - E_a - 10 α m - α C, 7000)
 $
 
 其中，$C = 6.25 h - 5 a + s$
@@ -60,10 +57,7 @@ $ 7000 dot(m) + 10 m = u + d $
 
 $ frac(M(s), U(s) + D(s)) = frac(1, 7000s + 100) $
 
-#figure(
-  image("images/block/prop.drawio.png", width: 40%),
-  caption: "比例控制",
-)
+#figure(image("images/block/prop.drawio.png", width: 40%), caption: "比例控制")
 
 对控制器
 
@@ -211,7 +205,9 @@ $ lim_(s → 0) c(s) → ∞ $
 
 令$c(s) = k_I / s$，有
 
-$ X(s) = frac(r / s⋅k_I / s, "as" + 1 + k_I / s) = r / s frac(k_I, a s^2 + s + k_I) $
+$
+  X(s) = frac(r / s⋅k_I / s, "as" + 1 + k_I / s) = r / s frac(k_I, a s^2 + s + k_I)
+$
 
 整理并进行 逆 Laplace 变换，得
 

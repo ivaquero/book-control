@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "比例微分控制",
-  info: info,
-)
+#show: chapter-style.with(title: "比例微分控制", info: info)
 
 = 根轨迹
 <根轨迹>
@@ -192,10 +189,8 @@ $ 𝔼[s] = R(s) frac(1, 1 + K G(s)) = R(s) frac(N(s), 1 + K N(s)) / D(s) $
 假设$R(s)$为单位阶跃函数$1 / s$，此时的稳态误差为
 
 $
-  e_(s s) &= lim_(t → ∞) e(t) = lim_(s → 0) s 𝔼[s]\
-  &= lim_(s → 0) s 1 / s frac(1, 1 + frac(N(s), D(s)))\
-  &= frac(1, 1 + K N(0)) / D(0)\
-  &= frac(D(0), D(0)) + K N(0)
+  e_(s s) = lim_(t → ∞) e(t) & = lim_(s → 0) s 𝔼[s]         & = lim_(s → 0) s 1 / s frac(1, 1 + frac(N(s), D(s))) \
+                             & = frac(1, 1 + K N(0)) / D(0) &                         = frac(D(0), D(0)) + K N(0)
 $
 
 #figure(
@@ -267,7 +262,6 @@ $ U(s) = (k_p + k_I 1 / s + k_D s) 𝔼[s] $
     [零点 + 极点], [$ϕ_1, ϕ_2$], [$ϕ_1 - ϕ_2$], [$v_1, v_2$], [$v_1 \/ v_2$],
   ),
   caption: "幅角",
-  supplement: "表",
   kind: table,
 )
 
@@ -299,7 +293,9 @@ $ u(t) = k_p e(t) + 1 / τ_I ∫ e(t) dd(t) + τ_D dot(e)(t) $ <pidstd>
 
 对@pidstd 两端进行 Laplace 变换，得
 
-$ u(s) = k_p (E(s) + E(s) / τ_I + τ_D E(s)) = underbrace(k_p (1 + 1 / τ_I + τ_D), "C(s)") E(s) $
+$
+  u(s) = k_p (E(s) + E(s) / τ_I + τ_D E(s)) = underbrace(k_p (1 + 1 / τ_I + τ_D), "C(s)") E(s)
+$
 
 由于传感器的微分相往往不稳定，会放大高频噪声。引入一阶滤波器除数$N$，得
 

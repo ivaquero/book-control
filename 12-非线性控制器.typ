@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "非线性控制器",
-  info: info,
-)
+#show: chapter-style.with(title: "非线性控制器", info: info)
 
 = 自适应控制器
 <自适应控制器>
@@ -21,7 +18,7 @@ $ dot(e) = dot(x)_d - dot(x) = dot(x)_d - a x^2 - u $
 
 $ V(e, tilde(a)) = 1 / 2 e^2 + 1 / 2 a ̃^2 $
 
-其中，
+其中
 
 - 测量误差$e = x_d - x$
 - 估计误差$tilde(a)= a - a ̂$
@@ -29,8 +26,8 @@ $ V(e, tilde(a)) = 1 / 2 e^2 + 1 / 2 a ̃^2 $
 求导，得
 
 $
-  dot(V)(e, tilde(a)) = e dot(e) + tilde(a)tilde(dot(a)) &= e (x_d - a x^2 - u) - tilde(a)hat(dot(a))\
-  &= -k e^2 - tilde(a)(e x^2 + hat(dot(a)))
+  dot(V)(e, tilde(a)) = e dot(e) + tilde(a)tilde(dot(a)) & = e (x_d - a x^2 - u) - tilde(a)hat(dot(a)) \
+                                                         & = -k e^2 - tilde(a)(e x^2 + hat(dot(a)))
 $
 
 #tip[
@@ -64,7 +61,7 @@ $ u = dot(x)_d + x^2 ∫_0^t e x^2 dd(t) + k e $
 = 鲁棒控制
 <鲁棒控制>
 
-=== 滑模控制
+== 滑模控制
 <滑模控制>
 
 对系统
@@ -89,14 +86,9 @@ $ |e| / e = "sign"(e) cases(delim: "{", 1 & e > 0, 0 & e = 0, - 1 & e < 0) $
 
 于是
 
-$ dot(e) = -k e - f(x) - ρ(x) e / |e| $
+$ dot(e) = -k e - f(x) - ρ(x) e / (|e|) $
 
-其中，
-
-- $-k e$为平衡项
-- $f(x)$为系统项
-- $ρ(x) e / |e|$为控制器项
-- $|f(x)| < ρ(x)$
+其中，$-k e$为平衡项，$f(x)$为系统项，$ρ(x) e / |e|$为控制器项，且$|f(x)| < ρ(x)$。
 
 后两项的作用是，使输出回归到第一项上。
 
@@ -113,21 +105,18 @@ $ dot(x) = a x^2 + u $
 
 $ u = k e + dot(x)_d + |a ̄|(x^2 + 0.1) |e| / e $
 
-=== 高增益鲁棒控制
+== 高增益鲁棒控制
 <高增益鲁棒控制>
 
 对上述问题，采用高增益鲁棒控制，使用足够大的输入来抵消不确定性
 
-令
-
-- $u_(a u x 2) = 1 / ɛ⋅ρ^2 e$
-- $V = 1 / 2 e^2$
+令$u_(a u x 2) = 1 / ɛ⋅ρ^2 e$，且$V = 1 / 2 e^2$
 
 则
 
 $
-  dot(V)= e dot(e) &= e (dot(x)_d - f(x)) - k e - dot(x)_d - 1 / ɛ p^2 e\
-  &= -e f(x) - k e^2 - 1 / ɛ ρ^2 e^2
+  dot(V)= e dot(e) & = e (dot(x)_d - f(x)) - k e - dot(x)_d - 1 / ɛ p^2 e \
+                   & = -e f(x) - k e^2 - 1 / ɛ ρ^2 e^2
 $
 
 于是有
@@ -141,15 +130,10 @@ $ dot(V)≤ - k e^2 + p|e|(1 - 1 / ɛ ρ|e|) $
 
 $ lim_(t → ∞) e ≤ sqrt(ɛ / k) $
 
-=== 高频鲁棒控制
+== 高频鲁棒控制
 <高频鲁棒控制>
 
-对上述问题，采用高频鲁棒控制，平滑滑膜控制
-
-令
-
-- $u_(a u x 3) = frac(ρ^2 e, ρ|e| + ɛ)$
-- $V = 1 / 2 e^2$
+对上述问题，采用高频鲁棒控制，平滑滑膜控制。令$u_(a u x 3) = frac(ρ^2 e, ρ|e| + ɛ)$，且$V = 1 / 2 e^2$
 
 $
   dot(V)= e dot(e) ≤ - k e^2 + ρ|e| - e frac(ρ^2 e, ρ|e| + ɛ) = -k e^2 + ɛ (frac(ρ|e|, p|e| + ɛ))
@@ -170,6 +154,7 @@ $ lim_(t → ∞) e ≤ sqrt(ɛ / k) $
     inset: 4pt,
     stroke: table-three-line(rgb("000")),
     [Name], [$u_(a u x)$], [$ɛ$], [稳态误差], [收敛速度], [瞬态输入], [稳态输入],
+
     [Sliding Mode], [$ρ e\/norm(e)$], [N/A], [5], [4], [2], [1],
     [High Gain], [$1\/ɛ ρ^2 e$], [0.1], [4], [5], [1], [2],
     [High Gain], [$1\/ɛ ρ^2 e$], [1], [2], [3], [3], [4],
@@ -177,6 +162,5 @@ $ lim_(t → ∞) e ≤ sqrt(ɛ / k) $
     [High Freq], [$(ρ^2 e)\/(ρ norm(e) + ɛ)$], [1], [1], [1], [5], [5],
   ),
   caption: "高频鲁棒控制",
-  supplement: "表",
   kind: table,
 )
