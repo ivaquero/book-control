@@ -48,7 +48,7 @@ MATLAB 提供了各种功能，以使工具箱更直观，更方便使用。推�
 === [参数验证]
 
 为增强用户的使用功能时的经验，我们可以添加一个“arguments”块创建定制的选项卡完成建议（R2019a 引入）。此外，MATLAB 将验证类型，大小和值传递给我们的功能，使用户可以调用我们的功能正确。请参阅：#link("https://mathworks.com/help/matlab/matlab_prog/function-argument-validation-1.html")[Function-Argument-Validation]。
-若我们需要对选项卡完成的更多控制权，请创建一个`functionsignatures.json`，然后将其与相应的函数或类相同的目录中。请参阅：#link("https://mathworks.com/help/matlab/matlab_prog/customize-code-suggestions-and-completions.html")[Customize-Code-Suggestions-And-Completions]。
+若需要对选项卡完成的更多控制权，请创建一个`functionsignatures.json`，然后将其与相应的函数或类相同的目录中。请参阅：#link("https://mathworks.com/help/matlab/matlab_prog/customize-code-suggestions-and-completions.html")[Customize-Code-Suggestions-And-Completions]。
 
 === 命名空间
 
