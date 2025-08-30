@@ -33,8 +33,8 @@ $ ϕ = ϕ_0 - ϕ_i $
 对一个正弦波
 
 $
-  u(t) &= A sin(ω_i t) + B cos(ω_i t) \
-  &= sqrt(A^2 + B^2)(frac(A, sqrt(A^2 + B^2)) sin(ω_i t) + frac(B, sqrt(A^2 + B^2)) cos(ω_i t))
+  u(t) & = A sin(ω_i t) + B cos(ω_i t) \
+       & = sqrt(A^2 + B^2)(frac(A, sqrt(A^2 + B^2)) sin(ω_i t) + frac(B, sqrt(A^2 + B^2)) cos(ω_i t))
 $
 
 令$cos(ϕ_i) = frac(A, sqrt(A^2 + B^2))$，$sin(ϕ_i) = frac(B, sqrt(A^2 + B^2))$，得
@@ -62,9 +62,8 @@ $ G(s) = frac(D(s), N(s)) = frac(D(s), ∏_(i=1)^n (s - p_i)) $
 其中，$p_i$为$G(s)$的极值点。于是
 
 $
-  X(s) = U(s)G(s)
-  &= frac(k_1, s + j ω) + frac(k_2, s - j ω) + sum_(i=1)^n frac(c_i, s - p_i) \
-  &= frac((A ω_i + B s)D(s), (s + j ω_i)(s - j ω_i) ∏_(i=1)^n (s - p_i))
+  X(s) = U(s)G(s) & = frac(k_1, s + j ω) + frac(k_2, s - j ω) + sum_(i=1)^n frac(c_i, s - p_i) \
+                  & = frac((A ω_i + B s)D(s), (s + j ω_i)(s - j ω_i) ∏_(i=1)^n (s - p_i))
 $
 
 易得
@@ -107,19 +106,17 @@ $ k_2 = frac(B - A j, 2) G(j ω_i) $
 使用复数的极坐标形式，可得
 
 $
-  X_(s s)(t)
-  &= frac(B + A j, 2) |G(j ω_i)| e^(-j ϕ_G) e^(-j ω_i t) + frac(B - A j, 2) |G(j ω_i)| e^(j ϕ_G) e^(j ω_i t)\
-  &= 1 / 2 |G(j ω_i)| [(B + A j) e^(-(ϕ_G + ω_i t)) j + (B - A j) e^((ϕ_G + ω_i t)) j]
+  X_(s s)(t) & = frac(B + A j, 2) |G(j ω_i)| e^(-j ϕ_G) e^(-j ω_i t) + frac(B - A j, 2) |G(j ω_i)| e^(j ϕ_G) e^(j ω_i t) \
+             & = 1 / 2 |G(j ω_i)| [(B + A j) e^(-(ϕ_G + ω_i t)) j + (B - A j) e^((ϕ_G + ω_i t)) j]
 $
 
 通过 Euler 公式，化简得
 
 $
-  X_(s s)(t)
-  &= 1 / 2 |G(j ω_i)| (2 B cos(ϕ_G + ω_i t)) + 2 A sin(ϕ_G + ω_i t)\
-  &= |G(j ω_i)| sqrt(A^2 + B^2)(B / sqrt(A^2 + B^2) cos(ϕ_G + ω_i t)) + A / sqrt(A^2 + B^2) sin(ϕ_G + ω_i t)\
-  &= |G(j ω_i)| M_i sin(ω_i t + ϕ_i + ϕ_G)\
-  &= M_G M_i sin(ω_i t + ϕ_i + ϕ_G)
+  X_(s s)(t) & = 1 / 2 |G(j ω_i)| (2 B cos(ϕ_G + ω_i t)) + 2 A sin(ϕ_G + ω_i t) \
+             & = |G(j ω_i)| sqrt(A^2 + B^2)(B / sqrt(A^2 + B^2) cos(ϕ_G + ω_i t)) + A / sqrt(A^2 + B^2) sin(ϕ_G + ω_i t) \
+             & = |G(j ω_i)| M_i sin(ω_i t + ϕ_i + ϕ_G) \
+             & = M_G M_i sin(ω_i t + ϕ_i + ϕ_G)
 $
 
 = 低通滤波
@@ -200,16 +197,16 @@ $ G(s) = frac(X(s), U(s)) = frac(ω_n^2, s^2 + 2 ζ ω_n s + ω_n^2) $
 令$s = j ω$，得
 
 $
-  G(j ω_i) & = frac(ω_n^2, - ω^2 + 2 ζ ω_n ω_j + ω_n^2)   \
+  G(j ω_i) & = frac(ω_n^2, - ω^2 + 2 ζ ω_n ω_j + ω_n^2) \
            & = frac(1, - ω^2 / ω_n^2 + 2 ζ ω / ω_n j + 1)
 $
 
 令输入频率$Ω = ω / ω_n$，则
 
 $
-  G(j ω_i) &= frac(1, -Ω^2 + 2 ζ Ω j + 1)\
-  &= frac(1 - Ω^2 - 2 ζ Ω j, (1 - Ω^2 + 2 ζ Ω j))(1 - Ω^2 - 2 ζ Ω j)\
-  &= frac(1 - Ω^2, (1 - Ω^2))^2 + 4 ζ^2 Ω^2 - frac(2 ζ Ω, (1 - Ω^2))^2 + 4 ζ^2 Ω^2 j
+  G(j ω_i) & = frac(1, -Ω^2 + 2 ζ Ω j + 1) \
+           & = frac(1 - Ω^2 - 2 ζ Ω j, (1 - Ω^2 + 2 ζ Ω j))(1 - Ω^2 - 2 ζ Ω j) \
+           & = frac(1 - Ω^2, (1 - Ω^2))^2 + 4 ζ^2 Ω^2 - frac(2 ζ Ω, (1 - Ω^2))^2 + 4 ζ^2 Ω^2 j
 $
 
 于是
@@ -353,7 +350,7 @@ $ 20 lg |G(j ω_i)| = 20 lg |G_1(j ω_i)| + 20 lg |G_2(j ω_i)| $
 令 $G(s) = N_G(s) / D_G(s)$，$H(s) = N_H(s) / D_H(s)$，可得
 
 $
-                  G(s)H(s) & = frac(N_G N_H, D_G D_H)           \
+                  G(s)H(s) & = frac(N_G N_H, D_G D_H) \
               1 + G(s)H(s) & = frac(D_G D_H + N_G N_H, D_G D_H) \
   frac(G(s), 1 + G(s)H(s)) & = frac(N_G D_H, D_G D_H + N_G N_H)
 $

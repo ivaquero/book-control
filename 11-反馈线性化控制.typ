@@ -65,7 +65,7 @@ $ E = K("kinetic") + P("potential") $
 于是令
 
 $
-  V & = E = frac(1, 2) m v^2 + m g h               \
+  V & = E = frac(1, 2) m v^2 + m g h \
     & = frac(1, 2)m(l x_2)^2 + m g l(1 - cos(x_1))
 $
 
@@ -74,7 +74,7 @@ $
 $
   dot(V)(x) = grad V_f & =
                          mat(delim: "[", pdv(V, x_1), pdv(V, x_2))
-                         mat(delim: "[", f_1; f_2)                   \
+                         mat(delim: "[", f_1; f_2) \
                        & =
                          mat(delim: "[", m g l sin(x_1) & m l^2 x_2)
                          mat(delim: "[", x_2 \ -frac(g, L) sin(x_1)) \
@@ -107,7 +107,7 @@ $ dot.double(θ) + frac(g, L) sin θ + frac(k, m) dot(θ) = 0 $
 $
   dot(V)(x) = grad V_f & =
                          mat(delim: "[", pdv(V, x_1) & pdv(V, x_2))
-                         mat(delim: "[", f_1; f_2)                                 \
+                         mat(delim: "[", f_1; f_2) \
                        & =
                          mat(delim: "[", m g l sin(x_1), m l^2 x_2)
                          mat(delim: "[", x_2; -frac(g, L)sin(x_1) - frac(k, m)x_2) \
@@ -234,15 +234,15 @@ $
 进而有
 
 $
-  dot(δ) & = dot(x)_(2 d) - dot(x)_2                                               \
-         & = dot.double(x)(1 d) + k_1 dot(e) - (-α / m x_1^3 + 1 / m u)            \
+  dot(δ) & = dot(x)_(2 d) - dot(x)_2 \
+         & = dot.double(x)(1 d) + k_1 dot(e) - (-α / m x_1^3 + 1 / m u) \
          & = dot.double(x)(1 d) + k_1 (dot(x)_(1 d) - x_2) + α / m x_1^3 - 1 / m u
 $
 
 又$V_1$正定，现令$V_2 = V_1 + 1 / 2 δ^2$，则
 
 $
-  dot(V)_2 & = dot(V)_1 + δ dot(δ)       \
+  dot(V)_2 & = dot(V)_1 + δ dot(δ) \
            & = -k_1 e^2 + e δ + δ dot(δ) \
            & = -k_1 e^2 + δ(e + dot(δ))
 $

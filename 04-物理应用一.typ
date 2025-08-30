@@ -54,7 +54,7 @@ $ P_1 - P_a = ρ q_("out") R $
 即
 
 $
-  q_("out") & = frac(P_1 - P_a, ρ R)         \
+  q_("out") & = frac(P_1 - P_a, ρ R) \
             & = frac(P_a + ρ g h - P_a, ρ R) \
             & = frac(g h, R)
 $
