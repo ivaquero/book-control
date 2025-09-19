@@ -5,7 +5,7 @@
 #import "@preview/physica:0.9.5": *
 // control sketches
 #import "@preview/consketcher:0.1.0": *
-#import "@preview/lilaq:0.4.0" as lq
+#import "@preview/lilaq:0.5.0" as lq
 #import "@preview/tiptoe:0.3.1"
 #import "@preview/fletcher:0.5.8": diagram, edge, node
 
