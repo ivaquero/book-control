@@ -6,17 +6,23 @@
 
 对系统
 
-$ dot(x) = a x^2 + u $
+$
+  dot(x) = a x^2 + u
+$
 
 其中，$a$为常量（或一定时间内几乎不变）。
 
 令$e = x_d - x$，则
 
-$ dot(e) = dot(x)_d - dot(x) = dot(x)_d - a x^2 - u $
+$
+  dot(e) = dot(x)_d - dot(x) = dot(x)_d - a x^2 - u
+$
 
 当$a$已知，可采用反馈线性化，求得 Lyapunov 函数$V(x)$；当$a$未知，则有
 
-$ V(e, tilde(a)) = 1 / 2 e^2 + 1 / 2 a ̃^2 $
+$
+  V(e, tilde(a)) = 1 / 2 e^2 + 1 / 2 a ̃^2
+$
 
 其中
 
@@ -38,15 +44,21 @@ $
 
 由$dot(V)(e, tilde(a)) = -k e^2 ≤ - (k e^2)$，令$g(t) = k e^2$，得
 
-$ dot(V)(e, tilde(a)) ≤ - g(t) $
+$
+  dot(V)(e, tilde(a)) ≤ - g(t)
+$
 
 此时，$dot(g)(t) = 2 k e e ̇$有界，于是
 
-$ lim_(t → ∞) k e^2 = 0 $
+$
+  lim_(t → ∞) k e^2 = 0
+$
 
 由上，可得
 
-$ u = dot(x)_d + x^2 ∫_0^t e x^2 dd(t) + k e $
+$
+  u = dot(x)_d + x^2 ∫_0^t e x^2 dd(t) + k e
+$
 
 #theorem(title: "Barbalat 引理")[
   若函数$V$和$g(t)$满足
@@ -66,19 +78,27 @@ $ u = dot(x)_d + x^2 ∫_0^t e x^2 dd(t) + k e $
 
 对系统
 
-$ dot(x) = f(x) + u $
+$
+  dot(x) = f(x) + u
+$
 
 有
 
-$ dot(e) = dot(x)_d - dot(x) = dot(x)_d - f(x) - u $
+$
+  dot(e) = dot(x)_d - dot(x) = dot(x)_d - f(x) - u
+$
 
 令
 
-$ u = dot(x)_d + k e + u_(a u x) = dot(x)_d + k e + ρ|e| / e $
+$
+  u = dot(x)_d + k e + u_(a u x) = dot(x)_d + k e + ρ|e| / e
+$
 
 其中，
 
-$ |e| / e = "sign"(e) cases(delim: "{", 1 & e > 0, 0 & e = 0, - 1 & e < 0) $
+$
+  |e| / e = "sign"(e) cases(delim: "{", 1 & e > 0, 0 & e = 0, - 1 & e < 0)
+$
 
 #tip[
   $e = x_d - x$，则$lim_(t → ∞) e = 0$
@@ -86,15 +106,19 @@ $ |e| / e = "sign"(e) cases(delim: "{", 1 & e > 0, 0 & e = 0, - 1 & e < 0) $
 
 于是
 
-$ dot(e) = -k e - f(x) - ρ(x) e / (|e|) $
+$
+  dot(e) = -k e - f(x) - ρ(x) e / (|e|)
+$
 
-其中，$-k e$为平衡项，$f(x)$为系统项，$ρ(x) e / |e|$为控制器项，且$|f(x)| < ρ(x)$。
+其中，$-k e$为平衡项，$f(x)$为系统项，$ρ(x) e / (|e|)$为控制器项，且$|f(x)| < ρ(x)$。
 
 后两项的作用是，使输出回归到第一项上。
 
 对系统
 
-$ dot(x) = a x^2 + u $
+$
+  dot(x) = a x^2 + u
+$
 
 其中，$a$为变量。则
 
@@ -103,7 +127,9 @@ $ dot(x) = a x^2 + u $
 
 于是，可以设计
 
-$ u = k e + dot(x)_d + |a ̄|(x^2 + 0.1) |e| / e $
+$
+  u = k e + dot(x)_d + |a ̄|(x^2 + 0.1) |e| / e
+$
 
 == 高增益鲁棒控制
 <高增益鲁棒控制>
@@ -121,14 +147,18 @@ $
 
 于是有
 
-$ dot(V)≤ - k e^2 + p|e|(1 - 1 / ɛ ρ|e|) $
+$
+  dot(V)≤ - k e^2 + p|e|(1 - 1 / ɛ ρ|e|)
+$
 
 - 当$ρ|e| > ɛ$，$dot(V)≤ - k e^2$
 - 当$ρ|e| ≤ ɛ$，$dot(V)≤ 2 k V + ɛ$
 
 最终有
 
-$ lim_(t → ∞) e ≤ sqrt(ɛ / k) $
+$
+  lim_(t → ∞) e ≤ sqrt(ɛ / k)
+$
 
 == 高频鲁棒控制
 <高频鲁棒控制>
@@ -141,11 +171,15 @@ $
 
 其中，$0 ≤ frac(ρ|e|, p|e| + ɛ) ≤ 1$，即
 
-$ dot(V)≤ - k e^2 + ɛ $
+$
+  dot(V)≤ - k e^2 + ɛ
+$
 
 类似$u_(a u x 2)$，最终有
 
-$ lim_(t → ∞) e ≤ sqrt(ɛ / k) $
+$
+  lim_(t → ∞) e ≤ sqrt(ɛ / k)
+$
 
 #figure(
   table(
