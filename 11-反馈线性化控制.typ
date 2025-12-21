@@ -42,7 +42,10 @@
 
 $ sum F_x = m a_x = l dot.double(θ) $
 
-#figure(image("images/model/pendulum.drawio.png", width: 10%), caption: "钟摆")
+#figure(
+  image("images/model/pendulum.drawio.png", width: 10%),
+  caption: "钟摆",
+)
 
 即
 
@@ -141,7 +144,10 @@ $ dot(x) = f(x, u) $
 
 $ dot(x) = f(x, ϕ (x)) $
 
-#figure(image("images/block/feedback.drawio.png", width: 40%), caption: "反馈")
+#figure(
+  image("images/block/feedback.drawio.png", width: 40%),
+  caption: "反馈",
+)
 
 考虑系统
 

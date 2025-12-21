@@ -57,7 +57,10 @@ $ 7000 dot(m) + 10 m = u + d $
 
 $ frac(M(s), U(s) + D(s)) = frac(1, 7000s + 100) $
 
-#figure(image("images/block/prop.drawio.png", width: 40%), caption: "比例控制")
+#figure(
+  image("images/block/prop.drawio.png", width: 40%),
+  caption: "比例控制",
+)
 
 对控制器
 

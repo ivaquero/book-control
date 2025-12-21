@@ -163,7 +163,10 @@ $ I_1^′ = I_2^″ + I_2^′ $
 
 $ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
 
-#figure(image("images/model/circuit-rlc.png", width: 60%), caption: "RLC")
+#figure(
+  image("images/model/circuit-rlc.png", width: 60%),
+  caption: "RLC",
+)
 
 = 电磁学基础
 <电磁学基础>
@@ -214,7 +217,10 @@ $ ϕ = B S $
 
 == 并行系统
 
-#figure(image("images/model/circuit.drawio.png", width: 25%), caption: "电路")
+#figure(
+  image("images/model/circuit.drawio.png", width: 25%),
+  caption: "电路",
+)
 
 由 KCL 有
 

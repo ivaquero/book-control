@@ -342,7 +342,10 @@ $ 20 lg |G(j ω_i)| = 20 lg |G_1(j ω_i)| + 20 lg |G_2(j ω_i)| $
 
 对如下系统
 
-#figure(image("images/block/sensor.drawio.png", width: 40%), caption: "传感器")
+#figure(
+  image("images/block/sensor.drawio.png", width: 40%),
+  caption: "传感器",
+)
 
 - 开环传递函数：$G(s)H(s)$
 - 闭环传递函数：$G(s) / (1+G(s)H(s))$
