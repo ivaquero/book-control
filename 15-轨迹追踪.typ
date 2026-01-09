@@ -92,7 +92,7 @@ $ u = -x_d + (1 + g / L) x_1 + 2 x_2 $
 对弹簧振动阻尼系统
 
 #figure(
-  image("images/model/vibration.drawio.png", width: 40%),
+  image("images/vibration.drawio.png", width: 40%),
   caption: "弹簧振动阻尼系统",
 )
 
@@ -183,7 +183,7 @@ $ <cost-spring2>
 这就得到了一个新的 LQR 问题。
 
 #figure(
-  image("images/block/lqr-trk-const.drawio.png", width: 40%),
+  image("images/lqr-trk-const.drawio.png", width: 40%),
   caption: "轨迹追踪 LQR 系统",
 )
 
@@ -220,7 +220,7 @@ $
 $
 
 #figure(
-  image("images/block/lqr-trk-var.drawio.png", width: 40%),
+  image("images/lqr-trk-var.drawio.png", width: 40%),
   caption: "稳态非零矩阵输入",
 )
 

@@ -343,7 +343,7 @@ $ 20 lg |G(j ω_i)| = 20 lg |G_1(j ω_i)| + 20 lg |G_2(j ω_i)| $
 对如下系统
 
 #figure(
-  image("images/block/sensor.drawio.png", width: 40%),
+  image("images/sensor.drawio.png", width: 40%),
   caption: "传感器",
 )
 

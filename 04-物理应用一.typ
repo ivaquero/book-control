@@ -27,7 +27,7 @@ $ P_("abs") = P_a + P_("static") $
 $ P_("gauge") = P_("abs") - P_a = ρ g h $
 
 #figure(
-  image("images/model/liquid.drawio.png", width: 40%),
+  image("images/liquid.drawio.png", width: 40%),
   caption: "流体系统",
 )
 
@@ -128,15 +128,22 @@ RLC 电路是一种由电阻 R、电感 L、电容 C 组成的电路结构。
 #figure(
   zap.circuit({
     import zap: *
+    let (t, b) = (3, 0)
+    let (l, m, r) = (0, 3, 6)
 
-    isource("i", (0, 0), (5, 0))
+    node("n1", (m, t))
+    node("n2", (m, b))
+    vsource("v", (l, b), (l, t), variant: "ieee", label: $e_i$, i: (content: $i_1$, distance: 15pt))
+
+    capacitor("c", "n1", "n2", variant: "ieee", label: $C=1\/4F$)
+    inductor("i", "v.out", "n1", variant: "ieee", label: $L=2H$)
+    resistor("r1", "n1", (r, t), variant: "ieee", label: $R_1=1Ω$)
+    resistor("r2", "r1.out", (r, b), variant: "ieee", label: $R_2=3Ω$)
+
+    wire("r2.out", "n2")
+    wire("n2", "v.in")
   }),
   caption: "RLC",
-)
-
-#figure(
-  image("images/model/circuit-rlc.drawio.png", width: 40%),
-  caption: " RLC",
 )
 
 定义上图区域 1 和区域 2 的电流方向均为顺时针，则
@@ -177,7 +184,7 @@ $ I_1^′ = I_2^″ + I_2^′ $
 $ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
 
 #figure(
-  image("images/model/circuit-rlc.png", width: 60%),
+  image("images/circuit-rlc.png", width: 60%),
   caption: "RLC",
 )
 
@@ -237,13 +244,13 @@ $ ϕ = B S $
 #figure(
   zap.circuit({
     import zap: *
-    let (t, b) = (3, 0)
-    let (l, r) = (0, 5)
+    let (t, b) = (2.5, 0)
+    let (l, r) = (0, 4)
     vsource("v", (l, b), (l, t), variant: "ieee")
-    resistor("r", (l, t), (r, t), variant: "ieee", label: $R$)
+    resistor("r", "v.out", (r, t), variant: "ieee", label: $R$)
 
-    inductor("i", (r, t), (r, b), variant: "ieee", label: $L$)
-    capacitor("c", (r, b), (l, b), variant: "ieee", label: $C$)
+    inductor("i", "r.out", (r, b), variant: "ieee", label: $L$)
+    capacitor("c", "i.out", "v.in", variant: "ieee", label: $C$)
   }),
   caption: "电路",
 )
@@ -279,7 +286,7 @@ $ I(s) = frac(s, L s^2 + R s + 1 / C) E[s] $
 == 串行系统
 
 #figure(
-  image("images/model/liquid.drawio.png", width: 40%),
+  image("images/liquid.drawio.png", width: 40%),
   caption: "流体系统",
 )
 

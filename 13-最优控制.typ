@@ -12,7 +12,7 @@
 对独轮车模型
 
 #figure(
-  image("images/model/unicycle.drawio.png", width: 40%),
+  image("images/unicycle.drawio.png", width: 40%),
   caption: "独轮车",
 )
 

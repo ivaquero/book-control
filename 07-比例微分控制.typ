@@ -10,7 +10,7 @@
 对如下闭环系统
 
 #figure(
-  image("images/block/closed-1.drawio.png", width: 40%),
+  image("images/closed-1.drawio.png", width: 40%),
   caption: "闭环控制",
 )
 
@@ -48,7 +48,7 @@ $ G(s) = frac(N(s), D(s)) = frac(sum_(i=1)^m (s - z_i), sum_(j=1)^n (s - p_j)) $
 对弹簧阻尼系统
 
 #figure(
-  image("images/model/vibration.drawio.png", width: 40%),
+  image("images/vibration.drawio.png", width: 40%),
   caption: "弹簧阻尼系统",
 )
 
@@ -124,7 +124,7 @@ $ G(s) = frac(N(s), D(s)) $
 对如下系统
 
 #figure(
-  image("images/block/closed-2.drawio.png", width: 40%),
+  image("images/closed-2.drawio.png", width: 40%),
   caption: "闭环系统",
 )
 
@@ -156,7 +156,7 @@ $ C(t) = C e^(-σ_a t) sin ω_n t $
 - $8$为比例（proportion）
 
 #figure(
-  image("images/block/compens-lead.drawio.png", width: 40%),
+  image("images/compens-lead.drawio.png", width: 40%),
   caption: "PD 控制",
 )
 
@@ -194,7 +194,7 @@ $
 $
 
 #figure(
-  image("images/block/compens-lag.drawio.png", width: 40%),
+  image("images/compens-lag.drawio.png", width: 40%),
   caption: "closed-lag",
 )
 

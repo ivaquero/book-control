@@ -58,7 +58,7 @@ $ 7000 dot(m) + 10 m = u + d $
 $ frac(M(s), U(s) + D(s)) = frac(1, 7000s + 100) $
 
 #figure(
-  image("images/block/prop.drawio.png", width: 40%),
+  image("images/prop.drawio.png", width: 40%),
   caption: "比例控制",
 )
 
@@ -118,7 +118,7 @@ $ lim_(t → ∞) x(t) = lim_(s → 0) s X(s) $
 <弹簧阻尼系统>
 
 #figure(
-  image("images/model/vibration.drawio.png", width: 40%),
+  image("images/vibration.drawio.png", width: 40%),
   caption: "弹簧阻尼系统",
 )
 
@@ -163,7 +163,7 @@ $ lim_(t → ∞) x(t) = lim_(s → 0) c / s frac(s, m s^2 + B s + k) = c / k $
 <比例控制器>
 
 #figure(
-  image("images/block/prop-simple.drawio.png", width: 40%),
+  image("images/prop-simple.drawio.png", width: 40%),
   caption: "弹簧阻尼系统框图",
 )
 
