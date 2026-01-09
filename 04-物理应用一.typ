@@ -91,7 +91,11 @@ $ dv(h, t) = q_("in") / A - frac(g h, A R) $
 == 电学单位
 
 #let data = csv("data/electrics.csv")
-#figure(tableq(data, 5), caption: "电学单位", kind: table)
+#figure(
+  tableq(data, 5),
+  caption: "电学单位",
+  kind: table,
+)
 
 === 电压
 
@@ -120,6 +124,15 @@ $
 == RLC 电路
 
 RLC 电路是一种由电阻 R、电感 L、电容 C 组成的电路结构。
+
+#figure(
+  zap.circuit({
+    import zap: *
+
+    isource("i", (0, 0), (5, 0))
+  }),
+  caption: "RLC",
+)
 
 #figure(
   image("images/model/circuit-rlc.drawio.png", width: 40%),
@@ -174,7 +187,11 @@ $ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
 == 电磁学单位
 
 #let data = csv("data/magnetics.csv")
-#figure(tableq(data, 3), caption: "电磁学单位", kind: table)
+#figure(
+  tableq(data, 3),
+  caption: "电磁学单位",
+  kind: table,
+)
 
 $ ϕ = B S $
 
@@ -218,7 +235,16 @@ $ ϕ = B S $
 == 并行系统
 
 #figure(
-  image("images/model/circuit.drawio.png", width: 25%),
+  zap.circuit({
+    import zap: *
+    let (t, b) = (3, 0)
+    let (l, r) = (0, 5)
+    vsource("v", (l, b), (l, t), variant: "ieee")
+    resistor("r", (l, t), (r, t), variant: "ieee", label: $R$)
+
+    inductor("i", (r, t), (r, b), variant: "ieee", label: $L$)
+    capacitor("c", (r, b), (l, b), variant: "ieee", label: $C$)
+  }),
   caption: "电路",
 )
 

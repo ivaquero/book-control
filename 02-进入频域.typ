@@ -17,7 +17,6 @@
 ]
 
 #let (x, y, y2) = lq.load-txt(read("data/homegeneity.csv"))
-
 #trans-linear(x, y, y2, lq.vec.multiply(y2, 2), kind: "skip")
 #trans-linear(
   x,
@@ -174,24 +173,24 @@ $ x(t) = A cos(ω t +φ) $
 然后求解三个未知系数$A$（弹性幅度）、$ω$（弹性频率）和$φ$（初始起跳点）。 由于有三个未知数，我们需要三个方程来求解它们。对于第一个方程，我们可以计算$x(t)$的二阶导数，然后将$x(t)$插入运动方程中。
 
 $
-              x(t) & =   &     A ⋅ & cos(ω t + ϕ) \
-         dot(x)(t) & = - &   A ω ⋅ & sin(ω t + ϕ) \
-  dot.double(x)(t) & = - & A ω^2 ⋅ & cos(ω t + ϕ)
+              x(t) & =   &     A⋅ & cos(ω t + ϕ) \
+         dot(x)(t) & = - &   A ω⋅ & sin(ω t + ϕ) \
+  dot.double(x)(t) & = - & A ω^2⋅ & cos(ω t + ϕ)
 $
 
 代入@spring，同时令$h(t) = cos(ω t + ϕ)$，得
 
 $
-  m ⋅ (-A) w^2 ⋅ h(t) + k ⋅ A ⋅ h(t) = f(t)
+  m⋅(-A) w^2⋅h(t) + k⋅A⋅h(t) = f(t)
 $
 
 后两个方程来自两个已知的初始条件。我们知道初始位置为零，即$x(0) = 0$。 并且我们知道以前的瞬时力产生的结果是，瞬时速度等于物体质量的倒数，即$dot(x)(0) = −1 \/ m$。由于我们已经将输入力计为初始速度，因此我们在第一个方程中将力设为 0。于是有
 
 #block(height: 6em, columns(3, gutter: -80pt)[
   $
-    -A w^2 ⋅ h(t) ⋅ m + A ⋅ h(t) ⋅ k & = 0 \
-                          A ⋅ cos(ϕ) & = 0 quad ⇒ \
-                      - A w ⋅ sin(ϕ) & = - 1 \/m
+    -A w^2⋅h(t)⋅m + A⋅h(t)⋅k & = 0 \
+                    A⋅cos(ϕ) & = 0 quad ⇒ \
+                - A w⋅sin(ϕ) & = - 1 \/m
   $
   $
     \ \ quad quad quad quad ⇒
