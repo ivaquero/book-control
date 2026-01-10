@@ -91,10 +91,9 @@ $ u = -x_d + (1 + g / L) x_1 + 2 x_2 $
 
 对弹簧振动阻尼系统
 
-#figure(
-  image("images/vibration.drawio.png", width: 40%),
-  caption: "弹簧振动阻尼系统",
-)
+#import "images/mechanics.typ": *
+
+#vibration
 
 - 当目标$𝒙_d = vec(delim: "[", 0, 0)$，为经典 LQR 问题
 - 当目标$𝒙_d = vec(delim: "[", 1, 0)$或不为$𝟎$时，为轨迹追踪问题

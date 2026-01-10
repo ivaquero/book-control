@@ -47,14 +47,15 @@ $ G(s) = frac(N(s), D(s)) = frac(sum_(i=1)^m (s - z_i), sum_(j=1)^n (s - p_j)) $
 
 对弹簧阻尼系统
 
-#figure(
-  image("images/vibration.drawio.png", width: 40%),
-  caption: "弹簧阻尼系统",
-)
+#import "images/mechanics.typ": *
+
+#vibration
 
 有
 
-$ dot.double(x) + 2 ζ ω_n dot(x) + ω_n^2 x = u $
+$
+  dot.double(x) + 2 ζ ω_n dot(x) + ω_n^2 x = u
+$
 
 其中，$ζ$为阻尼比，$ω_n$为固有频率。
 

@@ -243,10 +243,9 @@ $ dot(x) = a(1 - x) $
 == 弹簧阻尼系统
 <弹簧阻尼系统>
 
-#figure(
-  image("images/vibration.drawio.png", width: 40%),
-  caption: "振动阻尼系统",
-)
+#import "images/mechanics.typ": *
+
+#vibration
 
 对弹簧阻尼系统
 
