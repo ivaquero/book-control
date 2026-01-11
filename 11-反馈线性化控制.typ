@@ -40,7 +40,9 @@
 
 对如下单摆系统，有
 
-$ sum F_x = m a_x = l dot.double(θ) $
+$
+  sum F_x = m a_x = l dot.double(θ)
+$
 
 #figure(
   image("images/pendulum.drawio.png", width: 10%),
@@ -49,7 +51,9 @@ $ sum F_x = m a_x = l dot.double(θ) $
 
 即
 
-$ -m g sin θ = m l dot.double(θ) $
+$
+  -m g sin θ = m l dot.double(θ)
+$
 
 整理，得
 
@@ -80,7 +84,7 @@ $
                          mat(delim: "[", f_1; f_2) \
                        & =
                          mat(delim: "[", m g l sin(x_1) & m l^2 x_2)
-                         mat(delim: "[", x_2 \ -frac(g, L) sin(x_1)) \
+                         mat(delim: "[", x_2 - frac(g, L) sin(x_1)) \
                        & = 0
 $
 
@@ -190,10 +194,8 @@ $ dot(V)= pdv(V, x) dv(x, t) = x dot(x) = x(x^2 - x^3 + u) = x^3 - x^4 + x u $
 
 $ m dot.double(x) + α x^3 = F $
 
-#figure(
-  image("images/vibration-nl.drawio.png", width: 40%),
-  caption: "非线性弹簧系统",
-)
+#import "images/mechanics.typ": *
+#vibration-nl
 
 令
 

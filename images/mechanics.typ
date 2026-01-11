@@ -45,3 +45,41 @@
   }),
   caption: "弹簧振动阻尼系统",
 )
+
+#let vibration-nl = figure(
+  patatrac.cetz.canvas(length: 5mm, {
+    import patatrac: *
+    import cetz.draw: content
+
+    let draw = cetz.standard(
+      spring: (radius: 0.5, pitch: 0.5),
+    )
+    let (t, b) = (3, 1.5)
+    let (l, m, r) = (0, 4, 8)
+
+    let W = rect(.1, 3)
+    let M = rect(3, 3)
+    let F = arrow((r + 3, (t + b) / 2, -90deg), 2.5)
+    let WX = rect(.01, 1)
+    let x = arrow((r + 1, t + 1.5, -90deg), 2)
+
+    let W = slide(W("c"), 0, (t + b) / 2)
+    let M = slide(M("c"), 9.5, (t + b) / 2)
+    let WX = slide(WX("c"), r + 1, t + 1.5)
+
+    let k = spring((l, (t + b) / 2), (r, (t + b) / 2))
+
+    content((m + .5, t + 1.5), [#text("α", size: 16pt)])
+    content((r + 1.5, (t + b) / 2), [#text("m", size: 16pt)])
+    content((r + 6, (t + b) / 2), [#text("F", size: 14pt)])
+    content((r + 1.8, t + 2.5), [#text("x", size: 14pt)])
+
+    draw(k)
+    draw(W, fill: black)
+    draw(M)
+    draw(F)
+    draw(x)
+    draw(WX)
+  }),
+  caption: "非线性弹簧系统",
+)
