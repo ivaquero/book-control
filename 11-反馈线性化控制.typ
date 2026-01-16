@@ -44,10 +44,8 @@ $
   sum F_x = m a_x = l dot.double(θ)
 $
 
-#figure(
-  image("images/pendulum.drawio.png", width: 10%),
-  caption: "钟摆",
-)
+#import "images/mechanics.typ": *
+#pendulum
 
 即
 

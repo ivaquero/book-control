@@ -11,8 +11,30 @@
 
 对独轮车模型
 
+#import "@preview/patatrac:0.5.0"
+
 #figure(
-  image("images/unicycle.drawio.png", width: 40%),
+  patatrac.cetz.canvas(length: 5mm, {
+    import patatrac: *
+    import cetz.draw: content, line
+    let draw = cetz.standard()
+
+    let ax = arrow((0, 0, 0deg), 8)
+    let ay = arrow((0, 0, -90deg), 8)
+    let a = arrow((5.5, 4.5, -60deg), 3.5)
+
+    let r = rect(4.5, 2)
+    let r = place(r, (3.5, 3.5))
+    let r = rotate(r, 30deg)
+
+    line((5.5, 4.5), (8.5, 4.5), name: "h", stroke: (dash: "dashed"))
+    content((7, 4.9), [#text("θ", size: 10pt)])
+
+    draw(r)
+    draw(a)
+    draw(ax)
+    draw(ay)
+  }),
   caption: "独轮车",
 )
 

@@ -83,3 +83,30 @@
   }),
   caption: "非线性弹簧系统",
 )
+
+#let pendulum = figure(
+  patatrac.cetz.canvas(length: 5mm, {
+    import patatrac: *
+    import cetz.draw: content
+    let draw = cetz.standard()
+    let mx = 1.5
+
+    let a1 = arrow((0, 0, 180deg), 6)
+    let a2 = arrow((0, 0, 200deg), 4)
+    let c = circle(.25)
+    let c = place(c, (mx, -4))
+    let f1 = arrow((mx, -4.2, 180deg), 1.5)
+    let f2 = arrow((mx + .25, -3.9, -60deg), 1.5)
+
+    draw(a1, stroke: (thickness: .3pt, dash: "dashed"))
+    draw(a2)
+    draw(c)
+    draw(f1, stroke: (thickness: .3pt, dash: "dashed"))
+    draw(f2, stroke: (thickness: .3pt, dash: "dashed"))
+
+    content((.4, -2.5), [#text($θ$)])
+    content((2.5, -4.5), [#text($m$, size: 10pt)])
+    content((1.5, -2), [#text($l$)])
+  }),
+  caption: "钟摆",
+)
