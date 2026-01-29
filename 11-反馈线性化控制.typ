@@ -25,7 +25,7 @@
   kind: table,
 )
 
-#theorem(title: "Lyapunov 第二方法")[
+#theorem(title: ctext("Lyapunov 第二方法"))[
   系统
   $ dot(𝒙) = f(x_0) $
 
@@ -121,7 +121,7 @@ $
 
 显然，$dot(V)(x)$半负定。
 
-#theorem(title: "LaSalle's 不变性原理")[
+#theorem(title: ctext("LaSalle's 不变性原理"))[
   系统
   $ dot(𝒙) = f(x_0) $
 

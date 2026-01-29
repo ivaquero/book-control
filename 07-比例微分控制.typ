@@ -270,7 +270,7 @@ $ U(s) = (k_p + k_I 1 / s + k_D s) 𝔼[s] $
   幅角：零点/极点与平面内的任一点连线与横轴的夹角
 ]
 
-#theorem(title: "幅角原理（Argument Principle）")[
+#theorem(title: ctext("幅角原理（Argument Principle）"))[
   在$S$平面内画一条闭环曲线$A$，曲线$B$由曲线$A$通过映射$F(s)$得到，则
 
   - 曲线$A$每包含1个$F(s)$的零点，曲线$B$就绕原点顺时针一圈

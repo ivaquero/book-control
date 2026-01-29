@@ -378,7 +378,7 @@ $ N = P - Z $
 
 变换映射函数为$F(s) - 1 = G(s)H(s)$，闭合曲线$B$将整体左移，中心点变为$(-1, 0)$，绘制出的图形称为 Nyquist Plot。
 
-#theorem(title: "Nyquist 稳定性")[
+#theorem(title: ctext("Nyquist 稳定性"))[
   若系统稳定，则其闭环传递函数在 Nyquist 闭合区没有极点，即
   $ P = N $
 ]

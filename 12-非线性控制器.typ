@@ -60,7 +60,7 @@ $
   u = dot(x)_d + x^2 ∫_0^t e x^2 dd(t) + k e
 $
 
-#theorem(title: "Barbalat 引理")[
+#theorem(title: ctext("Barbalat 引理"))[
   若函数$V$和$g(t)$满足
   - $V ≥ 0$
   - $dot(V)≤ - g(t)$，其中，$g(t) ≥ 0$
