@@ -197,7 +197,7 @@ $
   $
   $
     ω & = sqrt(k \/ m) \
-    φ & = π \/ 2 \
+    φ & = pi \/ 2 \
     A & = 1 \/ sqrt(k m)
   $
 ])
@@ -235,29 +235,29 @@ $ {1, cos θ, sin θ, cos 2 θ, sin 2 θ, …, cos n θ, sin n θ, … n in ℕ_
 - 正交性质 1
 
 $
-  ∫_(-π)^π sin n x = 0 quad
-  ∫_(-π)^π cos n x = 0 quad
-  ∫_(-π)^π sin n x cos m x dd(x) = 0
+  ∫_(-pi)^pi sin n x = 0 quad
+  ∫_(-pi)^pi cos n x = 0 quad
+  ∫_(-pi)^pi sin n x cos m x dd(x) = 0
 $
 
 
 - 正交性质 2（n ≠ m）
 
 $
-  ∫_(-π)^π sin n x sin m x dd(x) = 0 quad
-  ∫_(-π)^π cos n x cos m x dd(x) = 0
+  ∫_(-pi)^pi sin n x sin m x dd(x) = 0 quad
+  ∫_(-pi)^pi cos n x cos m x dd(x) = 0
 $
 
 #tip[
   利用积化和差公式，可证。
 ]
 
-== 周期为 2π 的函数
-<周期为-2π-的函数>
+== 周期为 2pi 的函数
+<周期为-2pi-的函数>
 
-对周期为$2π$的函数
+对周期为$2pi$的函数
 
-$ f(x) = f(x + 2π) $
+$ f(x) = f(x + 2pi) $
 
 利用三角函数构造函数
 
@@ -269,28 +269,28 @@ $
 - $a_0$
 
 $
-  ∫_(-π)^π f( x ) dd(x) &= ∫_(-π)^π a_0 dd(x) + ∫_(-π)^π sum_(n = 1)^∞ a_n cos n x dd(x) + ∫_(-π)^π sum_(n = 1)^∞ b_n sin n x dd(x)\
-  &= a_0 ∫_(-π)^π dd(x)
-  = 2π a_0 → π a_0
+  ∫_(-pi)^pi f( x ) dd(x) &= ∫_(-pi)^pi a_0 dd(x) + ∫_(-pi)^pi sum_(n = 1)^∞ a_n cos n x dd(x) + ∫_(-pi)^pi sum_(n = 1)^∞ b_n sin n x dd(x)\
+  &= a_0 ∫_(-pi)^pi dd(x)
+  = 2pi a_0 → pi a_0
 $
 
 故有
 
-$ a_0 = 1 / π ∫_(-π)^π f(x) dd(x) $
+$ a_0 = 1 / pi ∫_(-pi)^pi f(x) dd(x) $
 
 - $a_n$和$b_n$
 
 等式两边乘以$cos n x$，得
 
-$ ∫_(-π)^π f(n) cos n x dd(x) = a_n ∫_(-π)^π cos^2 x dd(x) = π a_n $
+$ ∫_(-pi)^pi f(n) cos n x dd(x) = a_n ∫_(-pi)^pi cos^2 x dd(x) = pi a_n $
 
 即
 
-$ a_n = 1 / π ∫_(-π)^π f(n) cos n x dd(x) $
+$ a_n = 1 / pi ∫_(-pi)^pi f(n) cos n x dd(x) $
 
 类似地，等式两边乘以$sin n x$，可得
 
-$ b_n = 1 / π ∫_(-π)^π f(n) sin n x dd(x) $
+$ b_n = 1 / pi ∫_(-pi)^pi f(n) sin n x dd(x) $
 
 == 周期为 2L 的函数
 <周期为-2l-的函数>
@@ -299,13 +299,13 @@ $ b_n = 1 / π ∫_(-π)^π f(n) sin n x dd(x) $
 
 $ f(t) = f(t + 2L) $
 
-令 $x = π / L t$，得
+令 $x = pi / L t$，得
 
-$ f(t) = f(L / π x) ≡ g(x) $
+$ f(t) = f(L / pi x) ≡ g(x) $
 
 从而可得
 
-$ g(x) = g(x + 2π) $
+$ g(x) = g(x + 2pi) $
 
 由之前的结论，可得
 
@@ -314,29 +314,29 @@ $ g(x) = a_0 / 2 + sum_(n = 1)^n (a_n cos n x + b_n sin n x) $
 将$x$回代，得
 
 $
-  cos n x & = cos frac(n π, L) t quad
-            sin n x & = sin frac(n π, L) t
+  cos n x & = cos frac(n pi, L) t quad
+            sin n x & = sin frac(n pi, L) t
 $
 
-由 $∫_(-π)^π dd(x) = ∫_(-L)^L d π / L t$
+由 $∫_(-pi)^pi dd(x) = ∫_(-L)^L d pi / L t$
 
 得
 
 $
-  1 / π ∫_(-π)^π dd(x)
-  = 1 / π π / L ∫_(-L)^L dd(t)
+  1 / pi ∫_(-pi)^pi dd(x)
+  = 1 / pi pi / L ∫_(-L)^L dd(t)
   = 1 / L ∫_(-L)^L dd(t)
 $
 
 最终有
 
 $
-  f(t) = a_0 / 2 + sum_(n = 1)^∞ (a_n cos frac(n π, L) t + b_n sin frac(n π, L) t)
+  f(t) = a_0 / 2 + sum_(n = 1)^∞ (a_n cos frac(n pi, L) t + b_n sin frac(n pi, L) t)
 $ <periode>
 
 工程中，因为时间总为正数，故令$t_0 = 0$，周期为$2 T$，则有
 
-$ ω = π / L = frac(2π, T) $
+$ ω = pi / L = frac(2pi, T) $
 
 同时
 
@@ -350,8 +350,8 @@ $
   figure(
     $
       a_0 & = 1 / L ∫_(-L)^L f(t) dd(t) \
-      a_n & = 1 / L ∫_(-L)^L f(t) cos frac(n π, L) t dd(t) \
-      b_n & = 1 / L ∫_(-L)^L f(t) sin frac(n π, L) t dd(t)
+      a_n & = 1 / L ∫_(-L)^L f(t) cos frac(n pi, L) t dd(t) \
+      b_n & = 1 / L ∫_(-L)^L f(t) sin frac(n pi, L) t dd(t)
     $,
   ),
   $=>\ \ \ \ \ \ $,
@@ -384,7 +384,7 @@ $
 回代入@periode，得
 
 $
-  f(t) & = a_0 / 2 + sum_(n = 1)^∞ (a_n cos frac(n π, L) t + b_n sin frac(n π, L) t) \
+  f(t) & = a_0 / 2 + sum_(n = 1)^∞ (a_n cos frac(n pi, L) t + b_n sin frac(n pi, L) t) \
        & = a_0 / 2 +
          sum_(n = 1)^∞ (a_n 1 / 2(e^(i n ω t) + e^(-i n ω t))) -
          1 / 2 i b_n (e^(i n ω t) - e^(-i n ω t)) \
@@ -432,14 +432,14 @@ $
 可得
 
 $
-  f(x) = a_0 / 2 + sum_(n = 1)^∞ ( a_n cos (frac(2π n, T) x) + b_n sin (frac(2π n, T) x) ), C ∈ ℝ
+  f(x) = a_0 / 2 + sum_(n = 1)^∞ ( a_n cos (frac(2pi n, T) x) + b_n sin (frac(2pi n, T) x) ), C ∈ ℝ
 $
 
 其中
 
 $
-  a_n = 2 / T ∫_(-T \ 2)^(T \ 2) f(x) cos frac(2 n π, T) x dd(x)\
-  b_n = 2 / T ∫_(-T \ 2)^(T \ 2) f(x) sin frac(2 n π, T) x dd(x)
+  a_n = 2 / T ∫_(-T \ 2)^(T \ 2) f(x) cos frac(2 n pi, T) x dd(x)\
+  b_n = 2 / T ∫_(-T \ 2)^(T \ 2) f(x) sin frac(2 n pi, T) x dd(x)
 $
 
 = 常用变换
@@ -456,15 +456,15 @@ $ f_T(t) = sum_(n = -∞)^∞ C_n e^(i n ω_0 t) $
 
 $ C_n = 1 / T ∫_(-T / 2)^(T / 2) f_T(t) e^(-i n ω_0 t) dd(t) $
 
-此处，称$ω_0 = frac(2π, T)$为基频率。当 Fourier 级数中的$T → ∞$，$f(t)$则不再是周期函数，此时需要寻找更一般的形式。对如下频率
+此处，称$ω_0 = frac(2pi, T)$为基频率。当 Fourier 级数中的$T → ∞$，$f(t)$则不再是周期函数，此时需要寻找更一般的形式。对如下频率
 
-$ Δ ω = (n + 1) ω_0 - n ω_0 = ω_0 = frac(2π, T) $
+$ Δ ω = (n + 1) ω_0 - n ω_0 = ω_0 = frac(2pi, T) $
 
-$T$增大，则$Δ ω$减小。此处，令$1 / T = frac(Δ ω, 2π)$，并将$C_n$表达式代入
+$T$增大，则$Δ ω$减小。此处，令$1 / T = frac(Δ ω, 2pi)$，并将$C_n$表达式代入
 Fourier 级数的复数表达式，得
 
 $
-  f_T(t) = sum_(n = -∞)^∞ frac(Δ ω, 2π) ∫_(-T / 2)^(T / 2) f_T(t) e^(-i n ω_0 t) dd(t) e^(i n ω_0 t)
+  f_T(t) = sum_(n = -∞)^∞ frac(Δ ω, 2pi) ∫_(-T / 2)^(T / 2) f_T(t) e^(-i n ω_0 t) dd(t) e^(i n ω_0 t)
 $
 
 当$T → ∞$，有
@@ -478,7 +478,7 @@ $
 于是，有
 
 $
-  f(t) = frac(1, 2π) ∫_(-∞)^(+∞) ∫_(-∞)^(+∞) f(t) e^(-i ω t) dd(t) e^(i ω t) d ω
+  f(t) = frac(1, 2pi) ∫_(-∞)^(+∞) ∫_(-∞)^(+∞) f(t) e^(-i ω t) dd(t) e^(i ω t) d ω
 $
 
 其中，将如下积分称为 Fourier 变换
@@ -487,4 +487,4 @@ $ F(ω) = ∫_(-∞)^(+∞) f(t) e^(-i ω t) dd(t) $
 
 而将如下公式，称为逆 Fourier 变换
 
-$ f(t) = frac(1, 2π) ∫_(-∞)^(+∞) F(ω) e^(i ω t) d ω $
+$ f(t) = frac(1, 2pi) ∫_(-∞)^(+∞) F(ω) e^(i ω t) d ω $
