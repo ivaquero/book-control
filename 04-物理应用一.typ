@@ -102,7 +102,7 @@ $ dv(h, t) = q_("in") / A - frac(g h, A R) $
 $
   e_R = I R\
   e_C = Q / C = 1 / C ∫_0^t I dd(t)\
-  e_L = L dv(I, t) = L I^′
+  e_L = L dv(I, t) = L I^'
 $
 
 == 电学定律
@@ -165,23 +165,23 @@ $ e_L + e_(R_1) + e_(R_2) - e_i = 0 $
 
 - $e_(R_1) = I_2 R_1 = I_2$
 - $e_(R_2) = I_2 R_2 = 3 I_2$
-- $e_L = L I_1^′ = 2 I_1^′$
+- $e_L = L I_1^' = 2 I_1^'$
 - $e_C = 1 / C ∫_0^t (I_1 - I_2) dd(t) = 4 ∫_0^t (I_1 - I_2) dd(t)$
 
 回代入第一个方程组，得
 
 $
-  2 I_1^′ + 4 I_2 = e_i\
+  2 I_1^' + 4 I_2 = e_i\
   I_2 = ∫_0^t (I_1 - I_2) dd(t)
 $
 
 对第二个子式连续求导，得
 
-$ I_1^′ = I_2^″ + I_2^′ $
+$ I_1^' = I_2^″ + I_2^' $
 
 又$e_o = I_2 R_2 = 3 I_2$，则
 
-$ 2 e_o^″ + 2 e_o^′ + 4 e_o = 3 e_i $
+$ 2 e_o^″ + 2 e_o^' + 4 e_o = 3 e_i $
 
 #figure(
   image("images/circuit-rlc.png", width: 60%),
@@ -257,7 +257,7 @@ $ ϕ = B S $
 
 由 KCL 有
 
-$ e^′ = L i^″ + R i^′ + 1 / C i $
+$ e^' = L i^″ + R i^' + 1 / C i $
 
 令初始条件为$0$，等式两边进行导数的 Laplace 变换，得
 
