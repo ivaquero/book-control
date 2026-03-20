@@ -1,12 +1,11 @@
-#import "@preview/qooklet:0.6.1": *
+#import "@preview/qooklet:0.6.2": *
 
 #import "@preview/subpar:0.2.2": grid as sgrid
 #import "@preview/rexllent:0.4.0": xlsx-parser
 #import "@preview/physica:0.9.8": *
-// control sketches
 #import "@preview/consketcher:0.1.0": *
-#import "@preview/lilaq:0.5.0" as lq
-#import "@preview/tiptoe:0.4.0"
+#import "@preview/lilaq:0.6.0" as lq
+#import "@preview/tiptoe:0.4.0": stealth
 #import "@preview/fletcher:0.5.8": diagram, edge, node
 #import "@preview/zap:0.5.0"
 
@@ -47,12 +46,12 @@
         height: y.at(-1) * .4,
       ),
       lq.line(
-        tip: tiptoe.stealth,
+        tip: stealth,
         (x.at(-1) * .7, y.at(-1) * .5),
         (x.at(-1) * .9, y.at(-1) * .5),
       ),
       lq.line(
-        tip: tiptoe.stealth,
+        tip: stealth,
         (x.at(-1) * .1, y.at(-1) * .5),
         (x.at(-1) * .3, y.at(-1) * .5),
       ),
