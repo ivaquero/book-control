@@ -9,18 +9,9 @@
 
 已知
 
+#let data = csv("data/lyapunov.csv")
 #figure(
-  table(
-    columns: 4,
-    align: center + horizon,
-    inset: 4pt,
-    stroke: table-three-line(rgb("000")),
-    [∀x ∈ D - {0}], [Abbr.], [V(0)], [V(x)],
-    [正定], [PD], [0], [$>$],
-    [半正定], [PSD], [0], [$≥$],
-    [负定], [ND], [0], [$<$],
-    [半负定], [NSD], [0], [$≤$],
-  ),
+  tableq(data, 4),
   caption: "Lyapunov 稳定性",
   kind: table,
 )
