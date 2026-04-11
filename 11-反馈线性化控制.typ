@@ -13,7 +13,6 @@
 #figure(
   tableq(data, 4),
   caption: "Lyapunov 稳定性",
-  kind: table,
 )
 
 #theorem(title: ctext("Lyapunov 第二方法"))[

@@ -275,7 +275,6 @@ $ |G(j ω_i)|_(ω = ω_n sqrt(1 - 2 ζ^2)) = frac(1, 2 ζ sqrt(1 - ζ^2)) $
   ),
   caption: "Bode 图构成",
   supplement: [表],
-  kind: table,
 )
 
 分贝（decibel），意为十分之一贝尔（Alexander Bell），最初用于度量电话/电报的噪声损失，定义为
@@ -316,7 +315,6 @@ $ "dB" = 10 lg P_M / P_R = 10 lg (M_0 / M_i)^2 = 20 lg M $
     [高频], [≫], [$1\/ω$], [$-20 lg ω$], [$-pi\/2$],
   ),
   caption: "频域分析",
-  kind: table,
 )
 
 == 绘制
