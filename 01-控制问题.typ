@@ -14,12 +14,11 @@
 通常，我们将以图形方式表示任何系统。进入框中的箭头表示作用于系统的外部输入。然后，系统会随着时间的推移响应这些输入以产生输出，也就是箭头离开框的箭头。
 
 #figure(
-  sys-block(
+  block-open(
     transfer: ctext("系统"),
     input: ctext("输入"),
-    output: ctext(
-      "输出",
-    ),
+    output: ctext("输出"),
+    width: 4,
   ),
   caption: "系统框图",
 )

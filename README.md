@@ -74,7 +74,7 @@ git clone --depth 1 --branch main https://github.com/typst/packages typst
 ### 使用绘图包
 
 ```typst
-#import "@preview/consketcher:0.1.0": *
+#import "@preview/consketcher:0.2.0": *
 ```
 
 ## 约定规范
@@ -90,12 +90,12 @@ git clone --depth 1 --branch main https://github.com/typst/packages typst
 
 ### 图表
 
-目前大部分图表采用 drawio 制作，后面会使用如下 typst 包重新绘制，力争实现全书代码 typst 占比100%。
+目前部分图表采用 drawio 制作，后面会使用如下 typst 包重新绘制，力争实现全书代码 typst 占比100%。
 
-- [lilaq](https://github.com/lilaq-project/lilaq)：数据图
 - [consketcher](https://github.com/ivaquero/typst-consketcher)：框图
-- [zap](https://github.com/l0uisgrange/zap)：电路
+- [lilaq](https://github.com/lilaq-project/lilaq)：数据图
 - [patatrac](https://github.com/ZaninDavide/patatrac)：力学
+- [zap](https://github.com/l0uisgrange/zap)：电路
 
 ## 说明
 
