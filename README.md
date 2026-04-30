@@ -38,7 +38,7 @@ git clone --depth 1 --branch main https://github.com/typst/packages typst
 
 ### 使用模版
 
-本仓库除了辅助教学外，还用于测试我的一个模板 [qooklet](https://github.com/ivaquero/typst-qooklet)，这是一个用于笔记 + 教材的双模式模板，可以在两种模式间丝滑切换，标题、公式和目录都会重新自动计数。
+本仓库除了辅助教学外，还用于测试我的一个模板 [qooklet](https://github.com/ivaquero/typst-qooklet)和我的一个绘图包 [consketcher](https://github.com/ivaquero/typst-consketcher)。其中，qooklet 是一个用于笔记 + 教材的双模式模板，可以在两种模式间丝滑切换，标题、公式和目录都会重新自动计数。而 consketcher 用于绘制框图。
 
 使用如下语句导入模版
 
@@ -76,8 +76,6 @@ git clone --depth 1 --branch main https://github.com/typst/packages typst
 ```typst
 #import "@preview/consketcher:0.1.0": *
 ```
-
-详情见 [consketcher](https://github.com/ivaquero/typst-consketcher)
 
 ## 约定规范
 

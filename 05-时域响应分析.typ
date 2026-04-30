@@ -117,7 +117,6 @@ $
     [$< 0$], [], [saddle], [×],
   ),
   caption: "实数根",
-  kind: table,
 )
 
 - 复数根
@@ -134,7 +133,6 @@ $
     [$a = 0$], [center], [✓⁻],
   ),
   caption: "复数根",
-  kind: table,
 )
 
 #tip[

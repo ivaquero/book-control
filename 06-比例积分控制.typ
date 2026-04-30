@@ -1,4 +1,5 @@
 #import "lib/lib.typ": *
+#import "images/blocks.typ": prop, prop-simple
 #show: chapter-style.with(title: "比例积分控制", info: info)
 
 = 比例控制
@@ -57,10 +58,7 @@ $ 7000 dot(m) + 10 m = u + d $
 
 $ frac(M(s), U(s) + D(s)) = frac(1, 7000s + 100) $
 
-#figure(
-  image("images/prop.drawio.png", width: 40%),
-  caption: "比例控制",
-)
+#prop
 
 对控制器
 
@@ -161,10 +159,7 @@ $ lim_(t → ∞) x(t) = lim_(s → 0) c / s frac(s, m s^2 + B s + k) = c / k $
 == 比例控制器
 <比例控制器>
 
-#figure(
-  image("images/prop-simple.drawio.png", width: 40%),
-  caption: "弹簧阻尼系统框图",
-)
+#prop-simple
 
 对上图系统，有
 

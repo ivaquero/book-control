@@ -104,7 +104,7 @@ quickerSimCFD/
 使用 `Toolbox Packaging Tool` 创建工具箱包装文件。在 MATLAB，转到 `Home` 选项卡的`Add-Ons`菜单，选择`Toolbox Packaging Tool`。
 
 #figure(
-  image("images/matlab-toolbox.png", width: 45%),
+  image("images/toolbox.png", width: 45%),
   caption: none,
 )
 

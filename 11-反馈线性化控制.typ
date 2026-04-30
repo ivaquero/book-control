@@ -13,7 +13,6 @@
 #figure(
   tableq(data, 4),
   caption: "Lyapunov 稳定性",
-  kind: table,
 )
 
 #theorem(title: ctext("Lyapunov 第二方法"))[
@@ -137,10 +136,8 @@ $ dot(x) = f(x, u) $
 
 $ dot(x) = f(x, ϕ (x)) $
 
-#figure(
-  image("images/feedback.drawio.png", width: 40%),
-  caption: "反馈",
-)
+#import "images/blocks.typ": feedback
+#feedback
 
 考虑系统
 
@@ -183,7 +180,7 @@ $ dot(V)= pdv(V, x) dv(x, t) = x dot(x) = x(x^2 - x^3 + u) = x^3 - x^4 + x u $
 
 $ m dot.double(x) + α x^3 = F $
 
-#import "images/mechanics.typ": *
+#import "images/mechanics.typ": vibration-nl
 #vibration-nl
 
 令

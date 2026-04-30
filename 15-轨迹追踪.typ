@@ -1,4 +1,5 @@
 #import "lib/lib.typ": *
+#import "images/blocks.typ": lqr-trk-const, lqr-trk-var
 #show: chapter-style.with(title: "轨迹追踪", info: info)
 
 = 钟摆系统
@@ -181,16 +182,15 @@ $ <cost-spring2>
 
 这就得到了一个新的 LQR 问题。
 
-#figure(
-  image("images/lqr-trk-const.drawio.png", width: 40%),
-  caption: "轨迹追踪 LQR 系统",
-)
+#lqr-trk-const
 
 == 稳态非零矩阵输入
 
 对非常数输入，@aug 中$𝑨_D ≠ 𝑰$。此时，定义输入增量
 
-$ Δ 𝒖_([k]) = underbrace(𝒖_([k]) - 𝒖_([k-1]), "平滑输入的变化") $
+$
+  Δ 𝒖_([k]) = underbrace(𝒖_([k]) - 𝒖_([k-1]), ctext("平滑输入的变化"))
+$
 
 代人@sys-spring，可得
 
@@ -218,10 +218,7 @@ $
   J = 1 / 2 𝒙^⊤_(a[N]) 𝑪^⊤_a 𝑺 𝑪_a 𝒙_(a[N]) + 1 / 2 sum_(k=0)^(N-1) ( 𝒙^⊤_(a[k]) 𝑪^⊤_a 𝑸 𝑪_a 𝒙_(a[k]) + Δ 𝒖^⊤_([k]) 𝑹 Δ 𝒖_([k]) )
 $
 
-#figure(
-  image("images/lqr-trk-var.drawio.png", width: 40%),
-  caption: "稳态非零矩阵输入",
-)
+#lqr-trk-var
 
 这里，我们通过矩阵变换将追踪（tracking）转换为了调控（regulation）。
 

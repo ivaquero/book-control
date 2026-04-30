@@ -1,4 +1,5 @@
 #import "lib/lib.typ": *
+#import "images/blocks.typ": sensor
 #show: chapter-style.with(title: "频域响应分析", info: info)
 
 = 一阶系统
@@ -275,7 +276,6 @@ $ |G(j ω_i)|_(ω = ω_n sqrt(1 - 2 ζ^2)) = frac(1, 2 ζ sqrt(1 - ζ^2)) $
   ),
   caption: "Bode 图构成",
   supplement: [表],
-  kind: table,
 )
 
 分贝（decibel），意为十分之一贝尔（Alexander Bell），最初用于度量电话/电报的噪声损失，定义为
@@ -316,7 +316,6 @@ $ "dB" = 10 lg P_M / P_R = 10 lg (M_0 / M_i)^2 = 20 lg M $
     [高频], [≫], [$1\/ω$], [$-20 lg ω$], [$-pi\/2$],
   ),
   caption: "频域分析",
-  kind: table,
 )
 
 == 绘制
@@ -342,10 +341,7 @@ $ 20 lg |G(j ω_i)| = 20 lg |G_1(j ω_i)| + 20 lg |G_2(j ω_i)| $
 
 对如下系统
 
-#figure(
-  image("images/sensor.drawio.png", width: 40%),
-  caption: "传感器",
-)
+#sensor
 
 - 开环传递函数：$G(s)H(s)$
 - 闭环传递函数：$G(s) / (1+G(s)H(s))$

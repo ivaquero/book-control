@@ -1,4 +1,5 @@
 #import "lib/lib.typ": *
+#import "images/blocks.typ": closed-one, closed-two, compens-lag, compens-lead, pid
 #show: chapter-style.with(title: "比例微分控制", info: info)
 
 = 根轨迹
@@ -9,12 +10,11 @@
 
 对如下闭环系统
 
-#figure(
-  image("images/closed-1.drawio.png", width: 40%),
-  caption: "闭环控制",
-)
+#closed-one
 
-$ frac(Y(s), R(s)) = frac(K G(s), 1 + K G(s)) $
+$
+  frac(Y(s), R(s)) = frac(K G(s), 1 + K G(s))
+$
 
 分子为$0$时得到的极点，即为根。
 
@@ -124,10 +124,7 @@ $ G(s) = frac(N(s), D(s)) $
 
 对如下系统
 
-#figure(
-  image("images/closed-2.drawio.png", width: 40%),
-  caption: "闭环系统",
-)
+#closed-two
 
 - 极点：$p_1 = 0$和$p_2 = -2$
 - 零点：无
@@ -156,10 +153,7 @@ $ C(t) = C e^(-σ_a t) sin ω_n t $
 - $s$为微分（derivative）
 - $8$为比例（proportion）
 
-#figure(
-  image("images/compens-lead.drawio.png", width: 40%),
-  caption: "PD 控制",
-)
+#compens-lead
 
 这就是比例微分控制（PD control），这种控制器有两个明显的缺点
 
@@ -194,10 +188,7 @@ $
                              & = frac(1, 1 + K N(0)) / D(0) &                         = frac(D(0), D(0)) + K N(0)
 $
 
-#figure(
-  image("images/compens-lag.drawio.png", width: 40%),
-  caption: "closed-lag",
-)
+#compens-lag
 
 加入滞后补偿器（lag compensator）后，$𝔼[s]$变为
 
@@ -233,7 +224,11 @@ $ e_(s s) = frac(D(0), D(0)) + K N(0) * z / p $
 
 将三者整合，得
 
-$ u = k_p e(t) + k_I ∫ t dd(t) + k_D dv(e, t) $ <pid>
+#pid
+
+$
+  u = k_p e(t) + k_I ∫ t dd(t) + k_D dv(e, t)
+$ <pid>
 
 两端同时 Laplace 变换，得
 
@@ -263,7 +258,6 @@ $ U(s) = (k_p + k_I 1 / s + k_D s) 𝔼[s] $
     [零点 + 极点], [$ϕ_1, ϕ_2$], [$ϕ_1 - ϕ_2$], [$v_1, v_2$], [$v_1 \/ v_2$],
   ),
   caption: "幅角",
-  kind: table,
 )
 
 #tip[

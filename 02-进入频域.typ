@@ -107,7 +107,6 @@ $ frac(1, Δ T) Δ T = 1 $
     [$A δ(t - i Δ T)_Δ$], [$A h_Δ(t - i Δ T)$],
   ),
   caption: "输入与输出",
-  kind: table,
 )
 
 表格中，$A = Δ T f(i Δ T)$，在$t = i Δ T$时刻，有
