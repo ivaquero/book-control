@@ -56,7 +56,9 @@ $ 7000 dot(m) + 10 m = u + d $
 
 等号两边同时进行 Laplace 变换，得
 
-$ frac(M(s), U(s) + D(s)) = frac(1, 7000s + 100) $
+$
+  frac(M(s), U(s) + D(s)) = frac(1, 7000s + 100)
+$
 
 #prop
 
@@ -71,7 +73,9 @@ $ u = k_p e $
 
 这里，有
 
-$ [k_p(R - M) + D] frac(1, 7000s + 10 α) = M $
+$
+  [k_p(R - M) + D] frac(1, 7000s + 10 α) = M
+$
 
 整理，得
 

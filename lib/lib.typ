@@ -6,7 +6,6 @@
 #import "@preview/consketcher:0.2.0": *
 #import "@preview/lilaq:0.6.0" as lq
 #import "@preview/tiptoe:0.4.0": stealth
-#import "@preview/fletcher:0.5.8": diagram, edge, node
 #import "@preview/zap:0.5.0"
 
 #let info = toml("info.toml").book
