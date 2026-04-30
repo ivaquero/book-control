@@ -1,62 +1,5 @@
-#import "@preview/consketcher:0.2.0": *
-#import "@preview/cetz:0.5.0": draw
-
-#let gain-node(
-  sym,
-  label,
-  dir: left,
-  width: 4em,
-  height: 4em,
-  fit: 0.8,
-  fill: none,
-  stroke: auto,
-  ..options,
-) = draw.get-ctx(ctx => {
-  let _ = (fit, options)
-  let stroke = if stroke == auto { _defaults(ctx).node-stroke } else { stroke }
-  let width = _resolve(ctx, width)
-  let height = _resolve(ctx, height)
-  let (cx, cy) = sym
-  let half-width = width / 2
-  let half-height = height / 2
-  let left-x = cx - half-width
-  let right-x = cx + half-width
-  let top-y = cy - half-height
-  let bottom-y = cy + half-height
-  let dir-name = repr(dir)
-  let points = if dir-name == "right" {
-    (
-      (left-x, bottom-y),
-      (left-x, top-y),
-      (right-x, cy),
-    )
-  } else if dir-name == "up" {
-    (
-      (left-x, top-y),
-      (right-x, top-y),
-      (cx, bottom-y),
-    )
-  } else if dir-name == "down" {
-    (
-      (left-x, bottom-y),
-      (right-x, bottom-y),
-      (cx, top-y),
-    )
-  } else {
-    (
-      (right-x, bottom-y),
-      (right-x, top-y),
-      (left-x, cy),
-    )
-  }
-
-  _register-shape(
-    sym,
-    (kind: "polygon", center: sym, points: points),
-    draw.line(..points, close: true, fill: fill, stroke: stroke),
-    label: label,
-  )
-})
+#import "@local/consketcher:0.1.0": *
+#import "@preview/fletcher:0.5.8": edge
 
 #let feedback = figure(
   control-diagram(
@@ -294,29 +237,29 @@
 
 #let prop = figure(
   control-diagram(
-    let far = 3.5,
-    let upper = 2.5,
-    let lower = -2.5,
-    let (left, mid1, mid2, mid3, mid4) = (0, 4, 9, 14, 17),
+    let far = 2,
+    let upper = -1.25,
+    let lower = 1.5,
+    let (mid1, mid2, mid3, mid4) = (2.5, 5, 7.5, 9.5),
     let (I, E, C, D, P, X, O) = (
       (-far, 0),
-      (left, 0),
+      (0, 0),
       (mid1, 0),
       (mid2, 0),
       (mid3, 0),
       (mid4, 0),
       (mid4 + far, 0),
     ),
+    let Disturbance = (D.at(0), upper),
     let (F1, F2) = (
-      (X.at(0), upper),
-      (E.at(0), upper),
+      (X.at(0), lower),
+      (E.at(0), lower),
     ),
-    arrow((D.at(0), D.at(1) - 3), (D.at(0), D.at(1) - 1), $D(s)$),
 
     reference(
       E,
-      x-offset: -0.5,
-      y-offset: 0.5,
+      x-offset: -0.3,
+      y-offset: 0.3,
       node-maker: onode.with(radius: 1.5em),
     ),
 
@@ -325,8 +268,8 @@
     reference(
       D,
       y-sign: "+",
-      x-offset: -0.5,
-      y-offset: -0.5,
+      x-offset: -0.28,
+      y-offset: -0.28,
       node-maker: onode.with(radius: 1.5em),
     ),
 
@@ -344,6 +287,7 @@
     arrow(C, D, $U(s)$),
     arrow(D, P, none),
     arrow(P, O, $M(s)$),
+    arrow(Disturbance, D, $D(s)$),
 
     edge(
       X,
@@ -457,12 +401,12 @@
 
 #let sensor = figure(
   control-diagram(
-    let far = 3,
-    let lower = 4,
-    let (left, mid1, mid2, mid3) = (0, 4, 10, 13),
+    let far = 2,
+    let lower = 2,
+    let (mid1, mid2, mid3) = (2, 3.5, 5),
     let (I, R, C, G, X, O) = (
       (-far, 0),
-      (left, 0),
+      (0, 0),
       (mid1, 0),
       (mid2, 0),
       (mid3, 0),
@@ -481,7 +425,7 @@
       node-maker: onode.with(radius: 1.5em),
     ),
 
-    label((C.at(0), C.at(1) - 1.5), ctext("控制器")),
+    label((C.at(0), C.at(1) - .65), ctext("控制器")),
     rnode(
       C,
       $
@@ -491,7 +435,7 @@
       height: 3em,
     ),
 
-    label((G.at(0), G.at(1) - 1.5), ctext("系统")),
+    label((G.at(0), G.at(1) - .65), ctext("系统")),
     rnode(
       G,
       $
@@ -501,7 +445,7 @@
       height: 3em,
     ),
 
-    label((H.at(0), H.at(1) - 1.5), ctext("传感器")),
+    label((H.at(0), H.at(1) - .65), ctext("传感器")),
     rnode(
       H,
       $
@@ -531,11 +475,10 @@
       corner: right,
       kind: "poly",
     ),
-    label(((C.at(0) + G.at(0)) / 2, upper - .8), $G(s)$),
-    draw.rect-around(C, G, padding: 4em, stroke: (thickness: 0.5pt, dash: "dashed"), fill: none, radius: 4pt),
-
-    label(((C.at(0) + G.at(0)) / 2, lower + 1.5), $H(s)$),
-    draw.rect-around(H, padding: 3.5em, stroke: (thickness: 0.5pt, dash: "dashed"), fill: none, radius: 4pt),
+    label(((C.at(0) + G.at(0)) / 2, upper), $G(s)$),
+    dashed-box((C, G), inset: 1.5em),
+    label(((C.at(0) + G.at(0)) / 2, lower + 1), $H(s)$),
+    dashed-box((H,), inset: 1.5em),
   ),
   caption: "传感器",
 )
