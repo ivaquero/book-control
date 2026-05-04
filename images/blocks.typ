@@ -1,5 +1,5 @@
-#import "@local/consketcher:0.1.0": *
 #import "@preview/fletcher:0.5.8": edge
+#import "@preview/consketcher:0.2.0": *
 
 #let feedback = figure(
   control-diagram(
