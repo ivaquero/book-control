@@ -1,4 +1,5 @@
 #import "lib/lib.typ": *
+#import "images/blocks.typ": sensor
 #show: chapter-style.with(title: "频域响应分析", info: info)
 
 = 一阶系统
@@ -332,7 +333,9 @@ $
 
 可知 Bode 图纵坐标可以通过对数的性质，将复合函数的振幅响应和幅角响应拆分成多个常见函数叠加组合的形式，即
 
-$ 20 lg |G(j ω_i)| = 20 lg |G_1(j ω_i)| + 20 lg |G_2(j ω_i)| $
+$
+  20 lg |G(j ω_i)| = 20 lg |G_1(j ω_i)| + 20 lg |G_2(j ω_i)|
+$
 
 = Nyquist 稳定性
 
@@ -340,10 +343,7 @@ $ 20 lg |G(j ω_i)| = 20 lg |G_1(j ω_i)| + 20 lg |G_2(j ω_i)| $
 
 对如下系统
 
-#figure(
-  image("images/sensor.drawio.png", width: 40%),
-  caption: "传感器",
-)
+#sensor
 
 - 开环传递函数：$G(s)H(s)$
 - 闭环传递函数：$G(s) / (1+G(s)H(s))$

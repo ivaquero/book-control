@@ -63,27 +63,39 @@ $
 
 - 质量守恒
 
-$ dv(m, t) = m_("in") - m_("out") $
+$
+  dv(m, t) = m_("in") - m_("out")
+$
 
 等式两端除以$ρ$，得
 
-$ dv(V, t) = q_("in") - q_("out") $
+$
+  dv(V, t) = q_("in") - q_("out")
+$
 
 两端除以$A$，从而有
 
-$ dv(h, t) = 1 / A (q_("in") - q_("out")) $
+$
+  dv(h, t) = 1 / A (q_("in") - q_("out"))
+$
 
 - 压力守恒
 
-$ dv(P, t) = dv(P_a + ρ g h, t) $
+$
+  dv(P, t) = dv(P_a + ρ g h, t)
+$
 
 可得
 
-$ dv(P, t) = ρ g dv(h, t) = frac(ρ g, A)(q_("in") - q_("out")) $
+$
+  dv(P, t) = ρ g dv(h, t) = frac(ρ g, A)(q_("in") - q_("out"))
+$
 
 由上，可得
 
-$ dv(h, t) = q_("in") / A - frac(g h, A R) $
+$
+  dv(h, t) = q_("in") / A - frac(g h, A R)
+$
 
 = 电学基础
 <电学基础>
@@ -270,7 +282,7 @@ $ I(s) = frac(s, L s^2 + R s + 1 / C) E[s] $
 转换为框图形式，即有
 
 #figure(
-  sys-block(
+  block-open(
     transfer: text($frac(s, L s^2 + R s + 1\/C)$, size: 1.2em),
     input: $E(s)$,
     output: $I(s)$,
@@ -290,7 +302,9 @@ $ I(s) = frac(s, L s^2 + R s + 1 / C) E[s] $
 
 由上图
 
-$ dv(h, t) + frac(g, R A) h = q_(i n) / A $
+$
+  dv(h, t) + frac(g, R A) h = q_(i n) / A
+$
 
 令$A = 1$，$x = h$，$u = q_(i n)$，得
 
@@ -315,13 +329,16 @@ $ lim_(t → ∞) h = C R / g $
 对闭环系统，此时引入参考值$V(s)$，输入值变成了$X(s) H(s)$
 
 #figure(
-  sys-block2(
+  block-closed(
     transfer: $D(s)G(s)$,
     transfer2: $H(s)$,
     input: $V(s)-X(s)H(s)$,
     output: $X(s)$,
     output2: $X(s)H(s)$,
     reference: $V(s)$,
+    reference-gap: 0,
+    input-gap: 7,
+    feedback-height: 4,
   ),
   caption: "闭环系统",
 )
@@ -345,7 +362,12 @@ $ X = V frac(D G, 1 + H D G) $
 于是可知
 
 #figure(
-  sys-block(transfer: $frac(D G, 1 + H D G)$, input: $V$, output: $X$),
+  block-open(
+    transfer: $frac(D G, 1 + H D G)$,
+    input: $V$,
+    output: $X$,
+    width: 3.5,
+  ),
   caption: "框图",
 )
 

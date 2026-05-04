@@ -150,6 +150,8 @@ $ 𝒖^* ∈ Ω $
 
 对无人机模型，现需要求解，从地面升高至 10m 的最短时间
 
+#import "@preview/fletcher:0.5.8": *
+
 #figure(
   diagram(
     node-fill: gradient.radial(white, blue, radius: 100%),

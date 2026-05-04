@@ -89,7 +89,7 @@ $
 对极点在复平面绘图，有如下结论
 
 #figure(
-  image("images/signal-poles-zeros.png", width: 60%),
+  image("images/plot-poles-zeros.png", width: 60%),
   caption: "复平面的极点",
 )
 
@@ -124,10 +124,8 @@ $
   - $X(s)$：输出
 ])
 
-#figure(
-  image("images/design-freq.drawio.png", width: 40%),
-  caption: "带有扰动和噪声的闭环控制系统",
-)
+#import "images/blocks.typ": freqres
+#freqres
 
 可得
 
