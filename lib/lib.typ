@@ -4,75 +4,7 @@
 #import "@preview/subpar:0.2.2": grid as sgrid
 #import "@preview/rexllent:0.4.1": xlsx-parser
 #import "@preview/physica:0.9.8": *
-#import "@preview/lilaq:0.6.0" as lq
-#import "@preview/tiptoe:0.4.0": stealth
 #import "@preview/zap:0.5.0"
+#import "@preview/gribouille:0.3.0": *
 
 #let info = toml("info.toml").book
-
-#let peak(value, distance) = value > 0 and distance < 5pt
-
-#let trans-linear(
-  x,
-  y,
-  y2,
-  ylim-base,
-  kind: image,
-  supplement: "图",
-  caption: none,
-  width: 100pt,
-  column: 60pt,
-  gutter: 50pt,
-) = {
-  sgrid(
-    lq.diagram(
-      width: width,
-      height: width * .5,
-      lq.plot(x, y, mark: none),
-      xlim: (x.at(0), x.at(-1)),
-      ylim: (ylim-base.at(0), ylim-base.at(-1) + ylim-base.at(-1) / 10),
-      xaxis: (position: 0, tip: none, ticks: none),
-      yaxis: (position: 0, tip: none, filter: peak),
-    ),
-    lq.diagram(
-      width: width,
-      height: width * .5,
-      lq.place(x.at(-1) * .5, y.at(-1) * .5)[$h(x)$],
-      lq.rect(
-        x.at(-1) * .3,
-        y.at(-1) * .3,
-        width: x.at(-1) * .4,
-        height: y.at(-1) * .4,
-      ),
-      lq.line(
-        tip: stealth,
-        (x.at(-1) * .7, y.at(-1) * .5),
-        (x.at(-1) * .9, y.at(-1) * .5),
-      ),
-      lq.line(
-        tip: stealth,
-        (x.at(-1) * .1, y.at(-1) * .5),
-        (x.at(-1) * .3, y.at(-1) * .5),
-      ),
-      xlim: (x.at(0), x.at(-1)),
-      ylim: (y.at(0), y.at(-1) + y.at(-1) / 10),
-      xaxis: (stroke: none, ticks: none),
-      yaxis: (stroke: none, ticks: none),
-    ),
-    lq.diagram(
-      width: width,
-      height: width * .5,
-      lq.plot(x, y2, mark: none),
-      xlim: (x.at(0), x.at(-1)),
-      ylim: (ylim-base.at(0), ylim-base.at(-1) + ylim-base.at(-1) / 10),
-      xaxis: (position: 0, tip: none, ticks: none),
-      yaxis: (position: 0, tip: none, filter: peak),
-    ),
-    columns: (column,) * 3,
-    gutter: gutter,
-    kind: kind,
-    supplement: supplement,
-    caption: caption,
-  )
-  if caption == none { counter(figure.where(kind: "skip")).update(n => n - 1) }
-}

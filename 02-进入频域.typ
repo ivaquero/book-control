@@ -16,6 +16,7 @@
   - 叠加性：$f(x_1 + x_2) = f(x_1) + f(x_2)$
 ]
 
+#import "images/plots.typ": *
 #let (x, y, y2) = lq.load-txt(read("data/homegeneity.csv"))
 #trans-linear(x, y, y2, lq.vec.multiply(y2, 2), kind: "skip")
 #trans-linear(
