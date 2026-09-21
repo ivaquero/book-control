@@ -73,7 +73,7 @@ $ z = "Re"^(i θ) $
 
 其中，$r = sqrt(𝑨^2 + b^2)$，$θ = arctan b / a$
 
-#theorem(title: ctext("Euler 恒等式"))[
+#theorem(ctext("Euler 恒等式"))[
   当$r = 1, θ = pi$，得
   $ z = e^(i pi) = -1 $
 

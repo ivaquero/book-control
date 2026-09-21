@@ -132,7 +132,7 @@ $
 
 两个多项式相乘可以通过对多项式系数进行离散卷积来实现，对此计算有如下法则。
 
-#theorem(title: ctext("FOILMM 法则"))[
+#theorem(ctext("FOILMM 法则"))[
   对多项式$a_1 x^2 + b_1 x + c_1$和$a_2 x + b_2 x c_2$，分别计算
   #block(height: 3em, columns(3)[
     - First: $a_1 a_2 x^4$
@@ -142,7 +142,9 @@ $
     - Last: $c_1 c_2$
     - Middle Last: $b_1 c_2 x$
   ])
+
   从而有
+
   $
     (a_1 a_2)x^4 + b_1 a_2 x^3 + (a_1 c_2 + a_2 c_1)x^2 + b_1 c_2 x + c_1 c_2
   $
@@ -201,8 +203,6 @@ $
     A & = 1 \/ sqrt(k m)
   $
 ])
-
-
 
 = 周期函数
 <周期函数>

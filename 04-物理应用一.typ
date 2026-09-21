@@ -118,16 +118,16 @@ $
 
 == 电学定律
 
-#theorem(title: ctext("Ohm 定律"))[
+#theorem(ctext("Ohm 定律"))[
   $ I = e_R / R $
 ]
 
-#theorem(title: ctext("Kirchhoff 电流定律（KCL）"))[
+#theorem(ctext("Kirchhoff 电流定律（KCL）"))[
 
   所有进入某节点的电流的总和等于所有离开这节点的电流的总和。
 ]
 
-#theorem(title: ctext("Kirchhoff 电压定律（KVL）"))[
+#theorem(ctext("Kirchhoff 电压定律（KVL）"))[
 
   沿着闭合回路所有元件两端的电压的代数和等于零。
 ]
@@ -216,7 +216,7 @@ $ ϕ = B S $
 
 == 电磁学定律
 
-#theorem(title: ctext("Lenz 定律"))[
+#theorem(ctext("Lenz 定律"))[
   感应电流产生的磁场总要阻碍引起感应电流的磁通量的变化。
 
   $ e_L = -n frac(Δ ϕ, Δ t) $
