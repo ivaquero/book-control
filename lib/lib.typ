@@ -1,4 +1,4 @@
-#import "@preview/qooklet:0.6.2": *
+#import "@preview/qooklet:0.7.2": *
 #import "@preview/consketcher:0.2.0": *
 
 #import "@preview/subpar:0.2.2": grid as sgrid
