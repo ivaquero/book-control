@@ -6,8 +6,5 @@
 #import "@preview/physica:0.9.8": *
 #import "@preview/gribouille:0.7.0": *
 #import "@preview/typed-physics:0.1.1": electricity as e
-#import "@preview/typed-physics:0.1.1": block as tblock
-#import "@preview/typed-physics:0.1.1": fbd, ramp, scene, situation
-solve
 
 #let info = toml("info.toml").book
