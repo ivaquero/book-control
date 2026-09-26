@@ -136,25 +136,23 @@ $
 
 RLC 电路是一种由电阻 R、电感 L、电容 C 组成的电路结构。
 
-#import "@preview/zap:0.6.0"
+#let rlc = e.dc-circuit(
+  e.voltage-source("v", label: $e_i$),
+  e.series(
+    e.resistor("L", resistance: 2, unit: "H", label: $L$, style: e.resistor-style(symbol: "rectangle")),
+    e.parallel(
+      e.capacitor("C", capacitance: $1\/4$, label: $C$, route: "under"),
+      e.series(
+        e.resistor("R1", resistance: 1, label: $R_1$),
+        e.resistor("R2", resistance: 3, label: $R_2$),
+        route: "over",
+      ),
+    ),
+  ),
+)
+
 #figure(
-  zap.circuit({
-    import zap: *
-    let (t, b) = (3, 0)
-    let (l, m, r) = (0, 3, 6)
-
-    node("n1", (m, t))
-    node("n2", (m, b))
-    vsource("v", (l, b), (l, t), variant: "ieee", label: $e_i$, i: (content: $i_1$, distance: 15pt))
-
-    capacitor("c", "n1", "n2", variant: "ieee", label: $C=1\/4F$)
-    inductor("i", "v.out", "n1", variant: "ieee", label: $L=2H$)
-    resistor("r1", "n1", (r, t), variant: "ieee", label: $R_1=1Ω$)
-    resistor("r2", "r1.out", (r, b), variant: "ieee", label: $R_2=3Ω$)
-
-    wire("r2.out", "n2")
-    wire("n2", "v.in")
-  }),
+  e.diagram(rlc),
   caption: "RLC",
 )
 
@@ -252,17 +250,17 @@ $ ϕ = B S $
 
 == 并行系统
 
-#figure(
-  zap.circuit({
-    import zap: *
-    let (t, b) = (2.5, 0)
-    let (l, r) = (0, 4)
-    vsource("v", (l, b), (l, t), variant: "ieee")
-    resistor("r", "v.out", (r, t), variant: "ieee", label: $R$)
+#let circuit = e.dc-circuit(
+  e.voltage-source("v", label: $e$),
+  e.series(
+    e.resistor("R", label: $R$),
+    e.resistor("L", label: $L$, style: e.resistor-style(symbol: "rectangle")),
+    e.capacitor("C", label: $C$),
+  ),
+)
 
-    inductor("i", "r.out", (r, b), variant: "ieee", label: $L$)
-    capacitor("c", "i.out", "v.in", variant: "ieee", label: $C$)
-  }),
+#figure(
+  e.diagram(circuit, labels: "name"),
   caption: "电路",
 )
 

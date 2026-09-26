@@ -115,14 +115,18 @@ $
 
 如下闭环控制系统，其中
 
-#block(height: 3em, columns(3)[
+#columns(3)[
   - $R(s)$：参考信号
   - $C(s)$：控制器
+
+  #colbreak()
   - $G(s)$：系统传递函数
   - $D(s)$：扰动函数
+
+  #colbreak()
   - $N(s)$：噪声函数
   - $X(s)$：输出
-])
+]
 
 #import "images/blocks.typ": freqres
 #freqres

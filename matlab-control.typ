@@ -7,7 +7,7 @@
 == 常用模型
 <常用模型>
 
-#block(height: 12em, columns()[
+#columns()[
   - 传递函数模型
     - `sys = tf(numerator,denominator)`
     - `sys = zpk(zeros,poles,gain)`
@@ -15,92 +15,106 @@
   - 状态空间模型
     - `sys = ss(A,B,C,D)`
     - `sys = dss(A,B,C,D,E)`
+
+  #colbreak()
   - 频率模型
     - `sys = frd(response,frequency)`
   - 广义模型
     - `sys = genss(sys)`
     - `sys = genfrd(sys,freqs,frequnits)`
     - `sys = ufrd(M,freqs)`
-])
+]
 
 == PID 控制器
 <pid-控制器>
 
-#block(height: 5em, columns()[
+#columns()[
   - `C = pid(Kp,Ki,Kd,Tf)`
   - `C = pid2(Kp,Ki,Kd,Tf,b,c)`
   - `C = pidstd(Kp,Ti,Td,N)`
+
+  #colbreak()
   - `C = pidstd2(Kp,Ti,Td,N,b,c)`
   - `C = pidtune(sys,type)`
     - `opt = pidtuneOptions`
-])
+]
 
 == 模型连接
 <模型连接>
 
 === 连接方式
 
-#block(height: 8em, columns()[
+#columns()[
   - `sys = series(H1,H2)`
   - `sys = parallel(H1,±H2)`
   - `sys = feedback(H1,H2)`
   - `sys = inv(H1)`
   - `sys = lft(H1,H2,nu,ny)`
+
+  #colbreak()
   - `sys = connect(sys1,...,sysN,inputs,outputs)`
   - `sys = stack(arraydim,sys1,sys2,...)`
   - `sys = blkdiag(sys1,sys2,...,sysN)`
   - `rsys = repsys(sys,[M N])`
-])
+]
 
 === 参数与运算
 
-#block(height: 1em, columns()[
+#columns()[
   - `p = realp(paramname,initvalue)`
+
+  #colbreak()
   - `S = sumblk(formula)`
-])
+]
 
 = 数据操作
 <数据操作>
 
 == 数据提取
 
-#block(height: 7em, columns()[
+#columns()[
   - `get(sys)`
   - `[num,den] = tfdata(sys)`
   - `[z,p,k] = zpkdata(sys)`
   - `[a,b,c,d] = ssdata(sys)`
+
+  #colbreak()
   - `[A,B,C,D,E] = dssdata(sys)`
   - `[response,freq] = frdata(sys)`
   - `[Kp,Ki,Kd,Tf] = piddata(sys)`
   - `[Kp,Ti,Td,N] = pidstddata(sys)`
-])
+]
 
 == 特征提取
 
-#block(height: 8em, columns()[
+#columns()[
   - `[C,X] = getComponents(C2,looptype)`
   - `H = getIOTransfer(T,in,out)`
   - `L = getLoopTransfer(T,Locations)`
   - `S = getSensitivity(T,location)`
   - `T = getCompSensitivity(CL,location)`
+
+  #colbreak()
   - `gpeak = getPeakGain(sys)`
   - `wc = getGainCrossover(sys,gain)`
   - `response = getPIDLoopResponse(C,G,looptype)`
   - `val = getBlockValue(M,blockname)`
-])
+]
 
 == 数据判断
 
-#block(height: 8em, columns()[
+#columns()[
   - 判断
     - `B = isstable(sys)`
     - `B = isproper(sys)`
     - `B = isdt(sys)`
     - `B = hasdelay(sys)`
+
+  #colbreak()
   - 查询
     - `NS = order(sys)`
     - `[wn,zeta] = damp(sys)`
-])
+]
 
 = 模型操作
 <模型操作>
@@ -108,41 +122,49 @@
 == 模型变换
 <模型变换>
 
-#block(height: 8em, columns()[
+#columns()[
   - 单位
     - `sys = chgTimeUnit(sys,newtimeunits)`
   - 转化
     - `sysd = c2d(sysc,Ts)`
       - `opts = c2dOptions`
+
+    #colbreak()
     - `sysc = d2c(sysd)`
       - `opts = d2cOptions`
-])
+]
 
 == 模型简化
 <模型简化>
 
 === 约分
 
-#block(height: 3em, columns()[
+#columns()[
   - `[rsys,info] = balred(sys,order)`
     - `opts = balredOptions`
+
+  #colbreak()
   - `sysr = minreal(sys)`
   - `msys = sminreal(sys)`
-])
+]
 
 === 分解
 
-#block(height: 1em, columns()[
+#columns()[
   - `[Gs,Gf] = freqsep(G,fcut)`
+
+  #colbreak()
   - `hsvplot(sys)`
-])
+]
 
 === 采样
 
-#block(height: 1em, columns()[
+#columns()[
   - `sys1 = d2d(sys, Ts)`
+
+  #colbreak()
   - `sysl = upsample(sys,L)`
-])
+]
 
 = 线性分析
 <线性分析>
@@ -152,27 +174,31 @@
 
 === 数值
 
-#block(height: 3em, columns()[
+#columns()[
   - `AP = AnalysisPoint(name)`
   - `S = lsiminfo(y,t,yfinal)`
+
+  #colbreak()
   - `S = stepinfo(sys)`
-])
+]
 
 === 可视化
 
-#block(height: 5em, columns()[
+#columns()[
   - `impulse(sys)`
     - `h = impulseplot(sys)`
   - `step(sys)`
+
+    #colbreak()
     - `h = stepplot(sys)`
   - `initial(sys,x0)`
     - `h = initialplot(sys,x0)`
-])
+]
 
 == 频域
 <频域>
 
-#block(height: 20em, columns()[
+#columns()[
   - 数值
     - `P = pole(sys)`
     - `Z = zero(sys)`
@@ -185,6 +211,8 @@
   - 可视化
     - `pzplot(sys)`
     - `iopzplot(sys)`
+
+    #colbreak()
     - `bode(sys)`
       - `h = bodeplot(sys)`
       - `bodemag(sys)`
@@ -197,54 +225,62 @@
     - `sigma(sys)`
       - `h = sigmaplot(sys)`
     - `lsim(sys,u,t)`
-])
+]
 
 == 无源性
 <无源性>
 
-#block(height: 10em, columns()[
+#columns()[
   - 数值
     - `R = getPassiveIndex(G)`
     - `pf = isPassive(G)`
   - 扇区
     - `RX = getSectorIndex(H,Q)`
     - `wc = getSectorCrossover(H,Q)`
+
+  #colbreak()
   - 可视化
     - `passiveplot(G)`
     - `sectorplot(H,Q)`
-])
+]
 
 = 模型设计
 <模型设计>
 
 === 子模块
 
-#block(height: 4.5em, columns()[
+#columns()[
   - `blk = tunablePID(name,type)`
   - `blk = tunablePID2(name,type)`
   - `blk = tunableGain(name,Ny,Nu)`
+
+  #colbreak()
   - `blk = tunableTF(name,Nz,Np)`
   - `blk = tunableSS(name,Nx,Ny,Nu)`
-])
+]
 
 === 仿真设计
 
-#block(height: 4.5em, columns()[
+#columns()[
   - `io = getlinio(mdl)`
   - `linsys = linearize(mdl,io)`
   - `sysest = frestimate(mdl,io,input)`
+
+  #colbreak()
   - `opspec = operspec(mdl)`
   - `op = findop(mdl,opspec)`
     - `options = findopOptions`
-])
+]
 
 === 其他
 
-#block(height: 3.5em, columns()[
+#columns()[
   - `init_config = sisoinit(config)`
   - `Msamp = sampleBlock(M,name,vals)`
+
+  #colbreak()
   - `h = rlocusplot(sys)`
-])
+]
 
 = 模型调参
 <模型调参>
@@ -252,11 +288,13 @@
 == 常规调参
 <常规调参>
 
-#block(height: 2.5em, columns()[
+#columns()[
   - `[CL,fSoft] = systune(CL0,SoftReqs)`
     - `options = systuneOptions`
+
+  #colbreak()
   - `[G,C,gam] = looptune(G0,C0,wc)`
-])
+]
 
 === 仿真设计
 
@@ -273,38 +311,44 @@
 
 === 需求
 
-#block(height: 7.5em, columns()[
+#columns()[
   - `TuningGoal.LQG`
   - `TuningGoal.Tracking`
     - `TuningGoal.StepTracking`
   - `TuningGoal.Rejection`
     - `TuningGoal.StepRejection`
+
+  #colbreak()
   - `TuningGoal.Sensitivity`
   - `TuningGoal.Margins`
   - `TuningGoal.Transient`
-])
+]
 
 === 约束
 
-#block(height: 8.5em, columns()[
+#columns()[
   - `TuningGoal.Gain`
     - `TuningGoal.WeightedGain`
   - `TuningGoal.Passivity`
     - `TuningGoal.WeightedPassivity`
   - `TuningGoal.Variance`
+
+    #colbreak()
     - `TuningGoal.WeightedVariance`
   - `TuningGoal.Poles`
     - `TuningGoal.ControllerPoles`
   - `TuningGoal.Overshoot`
-])
+]
 
 === 回环
 
-#block(height: 3em, columns()[
+#columns()[
   - `TuningGoal.LoopShape`
   - `TuningGoal.MaxLoopGain`
+
+  #colbreak()
   - `TuningGoal.MinLoopGain`
-])
+]
 
 == 调参器
 <调参器>
@@ -316,19 +360,23 @@
 
 === 常用
 
-#block(height: 4em, columns()[
+#columns()[
   - `linsys = getIOTransfer(s,in,out)`
   - `linsys = getLoopTransfer(s,pt)`
+
+  #colbreak()
   - `linsys = getSensitivity(s,pt)`
   - `linsys = getCompSensitivity(s,pt)`
-])
+]
 
 === 子模块
 
-#block(height: 1em, columns()[
+#columns()[
   - `setBlockParam(st,blk,tunable_mdl)`
+
+  #colbreak()
   - `setBlockRateConversion(st,blk,method)`
-])
+]
 
 
 == 调度

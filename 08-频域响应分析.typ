@@ -295,14 +295,16 @@ $ "dB" = 10 lg P_M / P_R = 10 lg (M_0 / M_i)^2 = 20 lg M $
 == 常见案例
 <常见案例>
 
-#block(height: 6em, columns()[
+#columns()[
   - 对$G(s) = 1 / s$
     - $|G(j ω_i)| = 1 / ω$
     - $20 lg |G(j ω_i)| = -20 lg ω$
     - $∠G(j ω_i) = pi / 2$
+
+  #colbreak()
   - 对$G(s) = a / (a + s)$
     - $|G(j ω_i)| = sqrt(frac(1, 1 + (ω / a)^2))$
-])
+]
 
 #figure(
   table(

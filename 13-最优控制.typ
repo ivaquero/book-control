@@ -170,16 +170,18 @@ $ 𝒖^* ∈ Ω $
   caption: "无人机模型",
 )
 
-#block(height: 9em, columns()[
+#columns()[
   初始和最终条件为
   - $h(0) = 0$
   - $dot(h)(0) = 0$
   - $h_f = 10$
   - $dot(h)_f = 0$
+
+  #colbreak()
   物理约束为
   - $a(t) in[-3, 2]$
   - $v(t) in[0, 3]$
-])
+]
 
 关系式为
 

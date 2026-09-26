@@ -134,14 +134,18 @@ $
 
 #theorem(ctext("FOILMM 法则"))[
   对多项式$a_1 x^2 + b_1 x + c_1$和$a_2 x + b_2 x c_2$，分别计算
-  #block(height: 3em, columns(3)[
+  #columns(3)[
     - First: $a_1 a_2 x^4$
     - Middle First: $b_1 a_2 x^3$
+
+    #colbreak()
     - Outer: $a_1 c_2 x^2$
     - Inner: $a_2 c_1 x^2$
+
+    #colbreak()
     - Last: $c_1 c_2$
     - Middle Last: $b_1 c_2 x$
-  ])
+  ]
 
   从而有
 
