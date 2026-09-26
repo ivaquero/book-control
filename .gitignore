@@ -3,12 +3,18 @@
 .AppleDouble
 .LSOverride
 
-# Icon must end with two \r
-Icon
-
 # Thumbnails
 ._*
 
-# Extras
-articles
+# Jupyter Notebook
+.ipynb_checkpoints
+
+__pycache__
+*.pyc
+
+
+.workbuddy
+.tmp
+
+*.pdf
 test.*

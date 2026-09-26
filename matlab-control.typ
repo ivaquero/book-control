@@ -298,7 +298,7 @@
 
 === 仿真设计
 
-#block(height: 7.5em, columns()[
+#columns()[
   - `addPoint(s,pt)`
   - `addBlock(st,blk)`
     - `value = getBlockValue(st,blk)`
