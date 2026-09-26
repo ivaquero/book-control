@@ -136,6 +136,7 @@ $
 
 RLC 电路是一种由电阻 R、电感 L、电容 C 组成的电路结构。
 
+#import "@preview/zap:0.6.0"
 #figure(
   zap.circuit({
     import zap: *

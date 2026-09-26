@@ -40,16 +40,18 @@
 
 令
 
-#block(height: 5em, columns(3)[
+#columns(3)[
   - 位置
     - $x_1(t) = p_x(t)$
     - $x_2(t) = p_y(t)$
+
+  #colbreak()
   - 速度
     - $x_3(t) = v(t)$
-  \
+  #colbreak()
   - 角速度
     - $x_4(t) = θ(t)$
-])
+]
 
 于是有
 

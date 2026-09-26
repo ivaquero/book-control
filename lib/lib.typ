@@ -4,7 +4,8 @@
 #import "@preview/subpar:0.2.2": grid as sgrid
 #import "@preview/rexllent:0.4.1": xlsx-parser
 #import "@preview/physica:0.9.8": *
-#import "@preview/zap:0.6.0"
 #import "@preview/gribouille:0.7.0": *
+#import "@preview/typed-physics:0.1.1": block as tblock
+#import "@preview/typed-physics:0.1.1": electricity as e
 
 #let info = toml("info.toml").book

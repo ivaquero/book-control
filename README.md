@@ -94,8 +94,7 @@ git clone --depth 1 --branch main https://github.com/typst/packages typst
 
 - [consketcher](https://github.com/ivaquero/typst-consketcher)：框图
 - [lilaq](https://github.com/lilaq-project/lilaq)：数据图
-- [patatrac](https://github.com/ZaninDavide/patatrac)：力学
-- [zap](https://github.com/l0uisgrange/zap)：电路
+- [typed-physics](https://github.com/GeronimoCastano/typed-physics)：力学和电学示意图
 
 ## 说明
 
