@@ -1,5 +1,5 @@
-#import "@preview/subpar:0.2.2": grid as sgrid
 #import "@preview/lilaq:0.6.0" as lq
+#import "@preview/subpar:0.2.2": grid as sgrid
 #import "@preview/tiptoe:0.4.0": stealth
 #let peak(value, distance) = value > 0 and distance < 5pt
 

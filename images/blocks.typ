@@ -1,5 +1,5 @@
-#import "@preview/fletcher:0.5.8": edge
 #import "@preview/consketcher:0.2.0": *
+#import "@preview/fletcher:0.5.8": edge
 
 #let feedback = figure(
   control-diagram(
@@ -103,7 +103,6 @@
       y-offset: .3,
       node-maker: onode.with(radius: 1.5em),
     ),
-
 
     arrow(S1, C, none),
     arrow(C, G, none),

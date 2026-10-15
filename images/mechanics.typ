@@ -1,6 +1,6 @@
 #import "@preview/patatrac:0.5.0"
-#import "@preview/typed-physics:0.1.1": block as tblock
-#import "@preview/typed-physics:0.1.1": ceiling, force, ground, pendulum, scene, situation, spring, surface-style, wall
+#import "@preview/typed-physics:0.3.0": block as tblock
+#import "@preview/typed-physics:0.3.0": ceiling, force, ground, pendulum, scene, situation, spring, surface-style, wall
 
 #let invisible = surface-style(stroke: none, hatch-stroke: none)
 
