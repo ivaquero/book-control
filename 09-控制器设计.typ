@@ -1,4 +1,5 @@
 #import "lib/lib.typ": *
+#import "images/blocks.typ": freqres
 #show: chapter-style.with(title: "控制器设计", info: info)
 
 = 基本要求
@@ -128,7 +129,6 @@ $
   - $X(s)$：输出
 ]
 
-#import "images/blocks.typ": freqres
 #freqres
 
 可得

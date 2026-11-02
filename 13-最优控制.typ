@@ -1,4 +1,6 @@
 #import "lib/lib.typ": *
+#import "@preview/fletcher:0.5.8": *
+#import "images/mechanics.typ": unicycle
 #show: chapter-style.with(title: "最优控制", info: info)
 
 = 最优控制
@@ -10,8 +12,6 @@
 <位置控制>
 
 对独轮车模型
-
-#import "images/mechanics.typ": unicycle
 
 #unicycle
 
@@ -129,8 +129,6 @@ $ 𝒖^* ∈ Ω $
 
 对无人机模型，现需要求解，从地面升高至 10m 的最短时间
 
-#import "@preview/fletcher:0.5.8": *
-
 #figure(
   diagram(
     node-fill: gradient.radial(white, blue, radius: 100%),
@@ -181,3 +179,55 @@ $ u = 1 / m (f(t)) - m g = a $
 
 - 以终为始
 - 空间换时间
+
+== Bellman 方程
+<Bellman-方程>
+
+#definition[
+  *最优性原理（Bellman's principle of optimality）*：一条整体最优的轨迹，其任意一段子轨迹相对于该子段自身的起点与终点也必然最优。据此，多步最优决策可以拆解为"从最后一步向前逐步递推"的递归过程。
+]
+
+令 $V_k(𝒙)$ 表示"从 $k$ 时刻状态 $𝒙$ 出发、采用最优策略到达目标所需的 *最小剩余代价*"，即 *值函数（value function, cost-to-go）*。终端条件与@实际约束 中的末端代价一致：
+
+$
+  V_N(𝒙) = 1 / 2 norm(𝒙 - 𝒙_(d[N]))_𝑺^2
+$
+
+于是对 $k = N - 1, N - 2, …, 0$，沿时间 *逆向* 递推：
+
+$
+  V_k(𝒙) & = min_𝒖 lr(1 / 2 norm(𝒙 - 𝒙_(d[k]))_𝑸^2 + 1 / 2 norm(𝒖)_𝑹^2 + V_(k+1)(f_d(𝒙, 𝒖))) \
+  "s.t." & 𝒖 in Ω, space f_d(𝒙, 𝒖) in X^*
+$ <bellman-rec>
+
+#tip[
+  递推方向是"以终为始"——先在 $k = N$ 定出 $V_N$，再一格一格前推至 $k = 0$，$V_0(𝒙_0)$ 即为所求最小总代价。这正是"策略"一节第一条原则的形式化。
+]
+
+对每个 $(k, 𝒙)$ 记录 argmin 的输入，即得 *最优反馈律*：
+
+$
+  𝒖_k^*(𝒙) = arg min_𝒖 lr(1 / 2 norm(𝒙 - 𝒙_(d[k]))_𝑸^2 + 1 / 2 norm(𝒖)_𝑹^2 + V_(k+1)(f_d(𝒙, 𝒖)))
+$ <bellman-policy>
+
+把 $V_k$ 与 $𝒖_k^*$ 在整个状态网格上 *离线* 预先算好并存表，运行 *时查表* 输出——就是"空间换时间"的落地形式：以离线一次算 $(N × |𝒙|)$ 的存储与算力，换在线每步 O(1) 查表的实时性。这也是经典动态规划在小规模低维问题上的常用做法；维数升高时，状态网格随维数指数膨胀（*curse of dimensionality*），需改用前文提及的 *伴随法/间接法* 或 *伪谱法/近似动态规划* 等数值手段。
+
+== 最短时间的 Bellman 递推
+
+对"高度控制"这类 *时间最优* 问题，代价只与"剩余拍数"有关，值函数退化为到达目标所需的最少步数：
+
+$
+  V_N(𝒙) = cases(
+    delim: "{",
+    0 & 𝒙 = 𝒙_d,
+    ∞ & "else"
+  )
+$
+
+@bellman-rec 相应化简为
+
+$
+  V_k(𝒙) = 1 + min_𝒖 V_(k+1)(f_d(𝒙, 𝒖)), space 𝒖 in Ω
+$ <bellman-time>
+
+若 $V_0(𝒙_0)$ 有限，则存在一条 $V_0(𝒙_0)$ 拍内到达 $𝒙_d$ 的容许轨迹；沿@bellman-policy 记录每步 argmin 的 $𝒖_k^*$，即得时间最优控制。工程上常以状态离散网格 + BFS/动态规划 求解@bellman-time，恰好对应"以终为始 + 空间换时间"两条原则。

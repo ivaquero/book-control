@@ -1,5 +1,6 @@
 #import "lib/lib.typ": *
 #import "images/blocks.typ": lqr-trk-const, lqr-trk-var
+#import "images/mechanics.typ": *
 #show: chapter-style.with(title: "轨迹追踪", info: info)
 
 = 钟摆系统
@@ -30,13 +31,13 @@ $
   dot(x)_2 = 0 ⇒ x_1 = 0
 $
 
-故当$t → ∞$，$x_1, x_2 → 0$。
+但开环矩阵$mat(delim: "[", 0, 1; g / L, 0)$的特征值为$±sqrt(g / L)$，一正一负，故该平衡点是鞍点，开环系统不稳定，需引入反馈将其镇定。
 
 == 误差函数
 
 设目标值$x_(1 d) = 5$，则误差为$e = x_(1 d) - x_1$，于是有
 
-$ dot(e) = dot(x)_(1 d) - dot(x)_1 = -dot(x)_1 = x_2 $
+$ dot(e) = dot(x)_(1 d) - dot(x)_1 = -dot(x)_1 = -x_2 $
 
 又
 
@@ -92,8 +93,6 @@ $ u = -x_d + (1 + g / L) x_1 + 2 x_2 $
 
 对弹簧振动阻尼系统
 
-#import "images/mechanics.typ": *
-
 #vibration
 
 - 当目标$𝒙_d = vec(delim: "[", 0, 0)$，为经典 LQR 问题
@@ -137,7 +136,7 @@ $ <cost-spring>
 
 对轨迹追踪问题，有
 
-$ 𝒙_(a[k+1]) = 𝑨_D 𝒙_(d[k]) $ <aug>
+$ 𝒙_(d[k+1]) = 𝑨_D 𝒙_(d[k]) $ <aug>
 
 考虑特例，如恒温或匀速控制，此时$𝑨_D = 𝑰$，即
 

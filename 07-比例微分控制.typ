@@ -1,5 +1,6 @@
 #import "lib/lib.typ": *
 #import "images/blocks.typ": closed-one, closed-two, compens-lag, compens-lead, pid
+#import "images/mechanics.typ": *
 #show: chapter-style.with(title: "比例微分控制", info: info)
 
 = 根轨迹
@@ -16,17 +17,17 @@ $
   frac(Y(s), R(s)) = frac(K G(s), 1 + K G(s))
 $
 
-分子为$0$时得到的极点，即为根。
+分母为$0$时得到的极点，即为根。
 
 #tip[
-  对根的分析，就是对分子中变量函数的分析。
+  对根的分析，就是对分母中变量函数的分析。
 ]
 
 对传递函数
 
-$ G(s) = frac(N(s), D(s)) = frac(sum_(i=1)^m (s - z_i), sum_(j=1)^n (s - p_j)) $
+$ G(s) = frac(N(s), D(s)) = frac(product_(i=1)^m (s - z_i), product_(j=1)^n (s - p_j)) $
 
-- $N(s) = 0$时，$s_1 = z_1, z_2 = z_2, …$，称零点（zeros），$N(s)$为$m$阶
+- $N(s) = 0$时，$s_1 = z_1, s_2 = z_2, …$，称零点（zeros），$N(s)$为$m$阶
 - $D(s) = 0$时，$s_1 = p_1, s_2 = p_2, …$，称极点（poles），$D(s)$为$n$阶
 
 此时有如下规则
@@ -36,7 +37,7 @@ $ G(s) = frac(N(s), D(s)) = frac(sum_(i=1)^m (s - z_i), sum_(j=1)^n (s - p_j)) $
 - 复平面实轴上的根轨迹存在于由右至左的第$2n + 1$个零点或极点左边
   - 当$m < n$，则有$n - m$条根轨迹从极点指向$∞$
   - 当$m > n$，则有$m - n$条根轨迹从$∞$指向零点
-- 若存在复数根，其必共轭，其更轨迹关于复平面实轴对称
+- 若存在复数根，其必共轭，其根轨迹关于复平面实轴对称
 - 根轨迹沿渐近线移动
   - 渐近线与实轴的交点为$δ = frac(sum p - sum z, n - m)$
   - 渐近线与实轴的夹角为$θ = frac(2 q + 1, n - m) pi, q = 0, 1, …, |m - n| - 1$
@@ -46,8 +47,6 @@ $ G(s) = frac(N(s), D(s)) = frac(sum_(i=1)^m (s - z_i), sum_(j=1)^n (s - p_j)) $
 <汇合点-分离点>
 
 对弹簧阻尼系统
-
-#import "images/mechanics.typ": *
 
 #vibration
 
@@ -227,7 +226,7 @@ $ e_(s s) = frac(D(0), D(0)) + K N(0) * z / p $
 #pid
 
 $
-  u = k_p e(t) + k_I ∫ t dd(t) + k_D dv(e, t)
+  u = k_p e(t) + k_I ∫ e(t) dd(t) + k_D dv(e, t)
 $ <pid>
 
 两端同时 Laplace 变换，得
@@ -289,7 +288,7 @@ $ u(t) = k_p e(t) + 1 / τ_I ∫ e(t) dd(t) + τ_D dot(e)(t) $ <pidstd>
 对@pidstd 两端进行 Laplace 变换，得
 
 $
-  u(s) = k_p (E(s) + E(s) / τ_I + τ_D E(s)) = underbrace(k_p (1 + 1 / τ_I + τ_D), "C(s)") E(s)
+  u(s) = k_p (E(s) + E(s) / (τ_I s) + τ_D s E(s)) = underbrace(k_p (1 + 1 / (τ_I s) + τ_D s), "C(s)") E(s)
 $
 
 由于传感器的微分相往往不稳定，会放大高频噪声。引入一阶滤波器除数$N$，得

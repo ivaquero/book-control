@@ -1,5 +1,6 @@
 #import "lib/lib.typ": *
 #import "images/blocks.typ": prop, prop-simple
+#import "images/mechanics.typ": *
 #show: chapter-style.with(title: "比例积分控制", info: info)
 
 = 比例控制
@@ -52,12 +53,12 @@ $
 
 于是，有
 
-$ 7000 dot(m) + 10 m = u + d $
+$ 7000 dot(m) + 10 α m = u + d $
 
 等号两边同时进行 Laplace 变换，得
 
 $
-  frac(M(s), U(s) + D(s)) = frac(1, 7000s + 100)
+  frac(M(s), U(s) + D(s)) = frac(1, 7000s + 10 α)
 $
 
 #prop
@@ -90,9 +91,9 @@ $ M = frac(k_p R + D, 7000s + 10 α + k_p) $
 
 $ M = frac(k_p r / s + d / s, 7000s + 10 α + k_p) $
 
-令分子为$0$，求出$P_1$和$P_2$
+令分母为$0$，求出$P_1$和$P_2$
 
-$ m(t) = C_1 e^(0 t) + C_2 e^(frac(-10 α - k_p, 1000)t) $
+$ m(t) = C_1 e^(0 t) + C_2 e^(frac(-10 α - k_p, 7000)t) $
 
 由于第一项为常数，系统稳定性由$k_p + 10 α$确定。
 
@@ -118,8 +119,6 @@ $ lim_(t → ∞) x(t) = lim_(s → 0) s X(s) $
 
 == 弹簧阻尼系统
 <弹簧阻尼系统>
-
-#import "images/mechanics.typ": *
 
 #vibration
 
@@ -212,6 +211,6 @@ $
 
 整理并进行 逆 Laplace 变换，得
 
-$ a x ̈(t) + x ̇(t) + k_I = r k_I $
+$ a x ̈(t) + x ̇(t) + k_I x = r k_I $
 
 这即是二阶系统的阶跃响应。即，通过引入积分，系统被升阶为了一个二阶系统。
