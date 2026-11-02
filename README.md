@@ -12,6 +12,8 @@
 - Simulink 程序
 - 福利：控制工具箱 API 梳理
 
+其中"福利"部分对应仓库根目录下的 `matlab-toolboxes.typ`，作为独立草稿维护，暂不纳入 `book-control.typ` 的正文。
+
 笔记原采用 Markdown 格式，但因该格式输出的 PDF 不够稳定，且样式单一，后转向现代排版软件[Typst](https://github.com/typst/typst)，其安装可参考[知乎帖子](https://zhuanlan.zhihu.com/p/642509853)。相信大家会喜欢上 Typst 这个软件。
 
 ## 构建

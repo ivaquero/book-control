@@ -65,13 +65,13 @@ $ e^(i θ) = cos θ + i sin θ $
 
 由 Euler 公式，得
 
-$ "Re"^(i θ) = r cos θ + r i sin θ $
+$ r e^(i θ) = r cos θ + r i sin θ $
 
-令横轴为实部，纵轴为虚部，则$r cos θ$和$i sin θ$分别为横轴和纵轴坐标，故
+令横轴为实部，纵轴为虚部，则$r cos θ$和$r sin θ$分别为横轴和纵轴坐标，故
 
-$ z = "Re"^(i θ) $
+$ z = r e^(i θ) $
 
-其中，$r = sqrt(𝑨^2 + b^2)$，$θ = arctan b / a$
+其中，$r = sqrt(a^2 + b^2)$，$θ = arctan b / a$
 
 #theorem(ctext("Euler 恒等式"))[
   当$r = 1, θ = pi$，得
@@ -150,7 +150,7 @@ $ macron(q)_i^⊤ q_j = q_i^H q_j = cases(delim: "{", 0 & i ≠ j, 1 & i = j) $
 
 此前，我们定义标准正交阵：$𝑸 =[q_1 med q_2 med ⋯ med q_n]$有$𝑸^⊤ 𝑸 = 𝑰$。现在对于复矩阵则有
 
-$ 𝑸^H 𝑸 = i $
+$ 𝑸^H 𝑸 = 𝑰 $
 
 正交性（orthogonal）在复数情况下也有了新名字，酉（unitary），酉阵（unitary matrix）与正交阵类似，满足$𝑸^H 𝑸 = 𝑰$的性质。
 
@@ -172,7 +172,7 @@ $ 𝑸^H 𝑸 = i $
 
   - 复数$z$的绝对值表示为$|z|$，定义为
   $
-    |z| = sqrt(("Re" z))^2 + ("Im" z)^2
+    |z| = sqrt(("Re" z)^2 + ("Im" z)^2)
   $
 ]
 

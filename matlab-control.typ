@@ -304,7 +304,7 @@
     - `value = getBlockValue(st,blk)`
     - `writeBlockValue(st)`
     - `writeLookupTableData(st,blockid,breakpoints)`
-])
+]
 
 == 类方法
 <类方法>
