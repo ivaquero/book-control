@@ -133,7 +133,7 @@ $
 两个多项式相乘可以通过对多项式系数进行离散卷积来实现，对此计算有如下法则。
 
 #theorem(ctext("FOILMM 法则"))[
-  对多项式$a_1 x^2 + b_1 x + c_1$和$a_2 x + b_2 x c_2$，分别计算
+  对多项式$a_1 x^2 + b_1 x + c_1$和$a_2 x^2 + b_2 x + c_2$，分别计算
   #columns(3)[
     - First: $a_1 a_2 x^4$
     - Middle First: $b_1 a_2 x^3$
@@ -179,24 +179,24 @@ $ x(t) = A cos(ω t +φ) $
 然后求解三个未知系数$A$（弹性幅度）、$ω$（弹性频率）和$φ$（初始起跳点）。 由于有三个未知数，我们需要三个方程来求解它们。对于第一个方程，我们可以计算$x(t)$的二阶导数，然后将$x(t)$插入运动方程中。
 
 $
-              x(t) & =   &     A⋅ & cos(ω t + ϕ) \
-         dot(x)(t) & = - &   A ω⋅ & sin(ω t + ϕ) \
-  dot.double(x)(t) & = - & A ω^2⋅ & cos(ω t + ϕ)
+              x(t) & =   &     A⋅ & cos(ω t + φ) \
+         dot(x)(t) & = - &   A ω⋅ & sin(ω t + φ) \
+  dot.double(x)(t) & = - & A ω^2⋅ & cos(ω t + φ)
 $
 
-代入@spring，同时令$h(t) = cos(ω t + ϕ)$，得
+代入@spring，同时令$h(t) = cos(ω t + φ)$，得
 
 $
-  m⋅(-A) w^2⋅h(t) + k⋅A⋅h(t) = f(t)
+  m⋅(-A) ω^2⋅h(t) + k⋅A⋅h(t) = f(t)
 $
 
 后两个方程来自两个已知的初始条件。我们知道初始位置为零，即$x(0) = 0$。 并且我们知道以前的瞬时力产生的结果是，瞬时速度等于物体质量的倒数，即$dot(x)(0) = −1 \/ m$。由于我们已经将输入力计为初始速度，因此我们在第一个方程中将力设为 0。于是有
 
 #columns(3, gutter: -80pt)[
   $
-    -A w^2⋅h(t)⋅m + A⋅h(t)⋅k & = 0 \
-                    A⋅cos(ϕ) & = 0 quad ⇒ \
-                - A w⋅sin(ϕ) & = - 1 \/m
+    -A ω^2⋅h(t)⋅m + A⋅h(t)⋅k & = 0 \
+                    A⋅cos(φ) & = 0 quad ⇒ \
+                - A ω⋅sin(φ) & = - 1 \/m
   $
   $
     \ \ quad quad quad quad ⇒
@@ -277,7 +277,7 @@ $
 - $a_0$
 
 $
-  ∫_(-pi)^pi f( x ) dd(x) &= ∫_(-pi)^pi a_0 dd(x) + ∫_(-pi)^pi sum_(n = 1)^∞ a_n cos n x dd(x) + ∫_(-pi)^pi sum_(n = 1)^∞ b_n sin n x dd(x)\
+  ∫_(-pi)^pi f(x) dd(x) &= ∫_(-pi)^pi a_0 dd(x) + ∫_(-pi)^pi sum_(n = 1)^∞ a_n cos n x dd(x) + ∫_(-pi)^pi sum_(n = 1)^∞ b_n sin n x dd(x)\
   &= a_0 ∫_(-pi)^pi dd(x)
   = 2pi a_0 → pi a_0
 $
@@ -290,15 +290,15 @@ $ a_0 = 1 / pi ∫_(-pi)^pi f(x) dd(x) $
 
 等式两边乘以$cos n x$，得
 
-$ ∫_(-pi)^pi f(n) cos n x dd(x) = a_n ∫_(-pi)^pi cos^2 x dd(x) = pi a_n $
+$ ∫_(-pi)^pi f(x) cos n x dd(x) = a_n ∫_(-pi)^pi cos^2 n x dd(x) = pi a_n $
 
 即
 
-$ a_n = 1 / pi ∫_(-pi)^pi f(n) cos n x dd(x) $
+$ a_n = 1 / pi ∫_(-pi)^pi f(x) cos n x dd(x) $
 
 类似地，等式两边乘以$sin n x$，可得
 
-$ b_n = 1 / pi ∫_(-pi)^pi f(n) sin n x dd(x) $
+$ b_n = 1 / pi ∫_(-pi)^pi f(x) sin n x dd(x) $
 
 == 周期为 2L 的函数
 <周期为-2l-的函数>
@@ -317,7 +317,7 @@ $ g(x) = g(x + 2pi) $
 
 由之前的结论，可得
 
-$ g(x) = a_0 / 2 + sum_(n = 1)^n (a_n cos n x + b_n sin n x) $
+$ g(x) = a_0 / 2 + sum_(n = 1)^∞ (a_n cos n x + b_n sin n x) $
 
 将$x$回代，得
 
@@ -385,7 +385,7 @@ $
 由 Euler 公式，可知
 
 $
-  cos θ & = 1 / 2(e^(i θ) + e^(-j θ)) \
+  cos θ & = 1 / 2(e^(i θ) + e^(-i θ)) \
   sin θ & = -1 / 2(e^(i θ) - e^(-i θ))
 $
 
