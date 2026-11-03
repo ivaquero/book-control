@@ -1,4 +1,6 @@
 #import "lib/lib.typ": *
+#import "images/blocks.typ": feedback
+#import "images/mechanics.typ": *
 #show: chapter-style.with(title: "反馈线性化控制", info: info)
 
 = 非线性系统稳定性
@@ -34,7 +36,6 @@ $
   sum F_x = m a_x = l dot.double(θ)
 $
 
-#import "images/mechanics.typ": *
 #pendulum
 
 即
@@ -72,7 +73,7 @@ $
                          mat(delim: "[", f_1; f_2) \
                        & =
                          mat(delim: "[", m g l sin(x_1) & m l^2 x_2)
-                         mat(delim: "[", x_2 - frac(g, L) sin(x_1)) \
+                         mat(delim: "[", x_2; - frac(g, L) sin(x_1)) \
                        & = 0
 $
 
@@ -81,7 +82,7 @@ $
 - $V(0) = 0$
 - $V(x) > 0$
 
-故，该系统渐近稳定。其意味着
+故，该系统稳定（Lyapunov 稳定），但非渐近稳定。其意味着
 
 - $x_1, x_2$有界
 - $x_1, x_2$不趋近于$0$
@@ -106,7 +107,7 @@ $
                        & =
                          mat(delim: "[", m g l sin(x_1), m l^2 x_2)
                          mat(delim: "[", x_2; -frac(g, L)sin(x_1) - frac(k, m)x_2) \
-                       & = k l^2 x_2^2
+                       & = -k l^2 x_2^2
 $
 
 显然，$dot(V)(x)$半负定。
@@ -136,7 +137,6 @@ $ dot(x) = f(x, u) $
 
 $ dot(x) = f(x, ϕ (x)) $
 
-#import "images/blocks.typ": feedback
 #feedback
 
 考虑系统
@@ -180,7 +180,6 @@ $ dot(V)= pdv(V, x) dv(x, t) = x dot(x) = x(x^2 - x^3 + u) = x^3 - x^4 + x u $
 
 $ m dot.double(x) + α x^3 = F $
 
-#import "images/mechanics.typ": vibration-nl
 #vibration-nl
 
 令
@@ -267,6 +266,6 @@ $
 不难得出
 
 - $λ_1 + λ_2 = -k_1 - k_2 < 0$
-- $λ_1 λ_2 = k_1 k_2 > 0$
+- $λ_1 λ_2 = k_1 k_2 + 1 > 0$
 
 故，$∀λ < 0$。又$mat(delim: "[", e ̇; dot(δ)) = 0$，故，$mat(delim: "[", e; δ) = 0$，从而知，系统渐近稳定。
