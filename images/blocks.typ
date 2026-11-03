@@ -401,7 +401,7 @@
 #let sensor = figure(
   control-diagram(
     let far = 2,
-    let lower = 2,
+    let (upper, lower) = (-1.25, 2),
     let (mid1, mid2, mid3) = (2, 3.5, 5),
     let (I, R, C, G, X, O) = (
       (-far, 0),
